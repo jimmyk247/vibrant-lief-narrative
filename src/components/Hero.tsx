@@ -1,94 +1,92 @@
-import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import heroImage from "@/assets/hero-home.jpg";
 
 const Hero = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
+    <section
+      ref={containerRef}
+      className="relative h-[100vh] flex items-center justify-center overflow-hidden"
+    >
+      {/* Parallax Background */}
+      <motion.div className="absolute inset-0" style={{ scale }}>
         <img
           src={heroImage}
-          alt="Luxury desert modern home by Lïef Development"
+          alt="Lïef Development luxury residence"
           className="w-full h-full object-cover"
         />
-        <div 
-          className="absolute inset-0"
-          style={{ background: "var(--hero-overlay)" }}
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-tricorn-black/40 via-tricorn-black/20 to-tricorn-black/60"
         />
-      </div>
+      </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 container-wide text-center">
+      <motion.div
+        className="relative z-10 w-full max-w-[90vw] mx-auto"
+        style={{ y, opacity }}
+      >
+        {/* Main Headline - Massive, Statement Typography */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-6"
+          transition={{ duration: 1.2, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+          className="mb-8"
         >
-          <span className="hero-subheadline text-greek-villa/90">
-            Arizona's Premier Luxury Builder
-          </span>
+          <h1 className="font-display text-greek-villa text-[12vw] sm:text-[10vw] md:text-[8vw] leading-[0.9] tracking-[-0.02em] font-medium">
+            We don't
+            <br />
+            build homes.
+          </h1>
         </motion.div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="hero-headline text-greek-villa mb-8 max-w-4xl mx-auto"
-        >
-          Crafting Homes
-          <br />
-          <span className="italic font-normal">That Endure</span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="font-body text-greek-villa/80 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light"
-        >
-          Where Japanese tranquility meets Scandinavian minimalism, 
-          nestled in the serenity of the Sonoran Desert.
-        </motion.p>
-
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          transition={{ duration: 1.2, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <a 
-            href="#projects" 
-            className="inline-flex items-center justify-center px-8 py-4 bg-greek-villa text-tricorn-black font-body font-medium tracking-wide uppercase text-sm transition-all duration-300 hover:bg-greek-villa/90 hover:-translate-y-0.5"
-          >
-            View Our Work
-          </a>
-          <a 
-            href="#contact" 
-            className="inline-flex items-center justify-center px-8 py-4 border-2 border-greek-villa text-greek-villa font-body font-medium tracking-wide uppercase text-sm transition-all duration-300 hover:bg-greek-villa hover:text-tricorn-black"
-          >
-            Start Your Project
-          </a>
+          <h2 className="font-display text-goldenrod text-[12vw] sm:text-[10vw] md:text-[8vw] leading-[0.9] tracking-[-0.02em] italic font-normal">
+            We craft legacies.
+          </h2>
         </motion.div>
-      </div>
 
-      {/* Scroll Indicator */}
+        {/* Subtle Descriptor */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.2 }}
+          className="mt-16 md:mt-24"
+        >
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-px bg-greek-villa/40" />
+            <span className="font-body text-greek-villa/60 text-sm tracking-[0.3em] uppercase">
+              Arizona's Premier Luxury Builder
+            </span>
+          </div>
+        </motion.div>
+      </motion.div>
+
+      {/* Scroll Indicator - Minimal */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        transition={{ duration: 1, delay: 1.8 }}
+        className="absolute bottom-12 left-1/2 -translate-x-1/2"
       >
-        <motion.a
-          href="#metrics"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-2 text-greek-villa/70 hover:text-greek-villa transition-colors"
-        >
-          <span className="text-xs tracking-[0.2em] uppercase font-body">Discover</span>
-          <ArrowDown size={20} />
-        </motion.a>
+        <motion.div
+          animate={{ y: [0, 12, 0] }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+          className="w-px h-16 bg-gradient-to-b from-greek-villa/60 to-transparent"
+        />
       </motion.div>
     </section>
   );

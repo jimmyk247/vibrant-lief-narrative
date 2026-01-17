@@ -1,149 +1,88 @@
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-24 md:py-32 bg-background">
-      <div className="container-wide">
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Left Column */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+    <section id="contact" className="relative bg-greek-villa py-32 md:py-48">
+      <div className="max-w-[1200px] mx-auto px-6 text-center">
+        {/* Main CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <h2 className="font-display text-tricorn-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-[-0.02em] leading-[1.1] mb-8">
+            Ready to begin
+            <br />
+            <span className="italic font-normal">your legacy?</span>
+          </h2>
+          <p className="font-body text-urbane-bronze/70 text-lg md:text-xl max-w-xl mx-auto">
+            Every exceptional home starts with a conversation.
+          </p>
+        </motion.div>
+
+        {/* Contact Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <a
+            href="mailto:hello@liefdevelopment.com"
+            className="group inline-flex items-center gap-4 px-10 py-5 bg-tricorn-black text-greek-villa font-body text-lg tracking-wide hover:bg-urbane-bronze transition-colors duration-500"
           >
-            <span className="section-subtitle">Get in Touch</span>
-            <h2 className="section-title mt-4 mb-6">
-              Let's Build Your
-              <br />
-              <span className="italic font-normal">Forever Home</span>
-            </h2>
-            <p className="font-body text-muted-foreground leading-relaxed mb-10 max-w-md">
-              Every exceptional home begins with a conversation. Share your vision, 
-              and we'll bring our expertise to craft something truly extraordinary.
-            </p>
+            <span>Start a conversation</span>
+            <ArrowRight
+              size={20}
+              className="transform group-hover:translate-x-2 transition-transform duration-300"
+            />
+          </a>
+        </motion.div>
 
-            {/* Contact Info */}
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-sm">
-                  <MapPin className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-display text-foreground font-medium">Location</h4>
-                  <p className="font-body text-muted-foreground text-sm mt-1">
-                    Scottsdale, Arizona
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-sm">
-                  <Phone className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-display text-foreground font-medium">Phone</h4>
-                  <p className="font-body text-muted-foreground text-sm mt-1">
-                    (480) 555-0123
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-sm">
-                  <Mail className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-display text-foreground font-medium">Email</h4>
-                  <p className="font-body text-muted-foreground text-sm mt-1">
-                    hello@liefdevelopment.com
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right Column - Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <form className="bg-card p-8 md:p-10 border border-border rounded-sm">
-              <div className="grid sm:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label htmlFor="firstName" className="block font-body text-sm text-foreground mb-2">
-                    First Name
-                  </label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    name="firstName"
-                    className="w-full px-4 py-3 bg-background border border-input rounded-sm font-body text-foreground focus:outline-none focus:border-primary transition-colors"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block font-body text-sm text-foreground mb-2">
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    className="w-full px-4 py-3 bg-background border border-input rounded-sm font-body text-foreground focus:outline-none focus:border-primary transition-colors"
-                  />
-                </div>
-              </div>
-
-              <div className="mb-6">
-                <label htmlFor="email" className="block font-body text-sm text-foreground mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="w-full px-4 py-3 bg-background border border-input rounded-sm font-body text-foreground focus:outline-none focus:border-primary transition-colors"
-                />
-              </div>
-
-              <div className="mb-6">
-                <label htmlFor="projectType" className="block font-body text-sm text-foreground mb-2">
-                  Project Type
-                </label>
-                <select
-                  id="projectType"
-                  name="projectType"
-                  className="w-full px-4 py-3 bg-background border border-input rounded-sm font-body text-foreground focus:outline-none focus:border-primary transition-colors"
-                >
-                  <option value="">Select an option</option>
-                  <option value="custom">Custom Home</option>
-                  <option value="renovation">Renovation</option>
-                  <option value="consultation">Consultation</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div className="mb-8">
-                <label htmlFor="message" className="block font-body text-sm text-foreground mb-2">
-                  Tell us about your vision
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  className="w-full px-4 py-3 bg-background border border-input rounded-sm font-body text-foreground focus:outline-none focus:border-primary transition-colors resize-none"
-                />
-              </div>
-
-              <button type="submit" className="btn-primary w-full">
-                Start the Conversation
-              </button>
-            </form>
-          </motion.div>
-        </div>
+        {/* Subtle Info */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-20 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12"
+        >
+          <div className="text-center">
+            <span className="block font-body text-urbane-bronze/40 text-xs tracking-[0.2em] uppercase mb-2">
+              Location
+            </span>
+            <span className="font-body text-tricorn-black text-sm">
+              Scottsdale, Arizona
+            </span>
+          </div>
+          <div className="hidden sm:block w-px h-8 bg-urbane-bronze/20" />
+          <div className="text-center">
+            <span className="block font-body text-urbane-bronze/40 text-xs tracking-[0.2em] uppercase mb-2">
+              Email
+            </span>
+            <a
+              href="mailto:hello@liefdevelopment.com"
+              className="font-body text-tricorn-black text-sm hover:text-primary transition-colors"
+            >
+              hello@liefdevelopment.com
+            </a>
+          </div>
+          <div className="hidden sm:block w-px h-8 bg-urbane-bronze/20" />
+          <div className="text-center">
+            <span className="block font-body text-urbane-bronze/40 text-xs tracking-[0.2em] uppercase mb-2">
+              Phone
+            </span>
+            <a
+              href="tel:+14805550123"
+              className="font-body text-tricorn-black text-sm hover:text-primary transition-colors"
+            >
+              (480) 555-0123
+            </a>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
