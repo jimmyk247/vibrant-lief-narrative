@@ -2,20 +2,13 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-const navItems = [
-  { label: "Projects", href: "#projects" },
-  { label: "Services", href: "#services" },
-  { label: "Technology", href: "#technology" },
-  { label: "Contact", href: "#contact" },
-];
-
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 100);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -23,56 +16,44 @@ const Header = () => {
 
   return (
     <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? "bg-background/95 backdrop-blur-md shadow-sm py-4" 
-          : "bg-transparent py-6"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, delay: 0.5 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+        isScrolled
+          ? "bg-greek-villa/95 backdrop-blur-md py-5"
+          : "bg-transparent py-8"
       }`}
     >
-      <div className="container-wide flex items-center justify-between">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="group">
-          <div className="flex flex-col">
-            <span 
-              className={`font-display text-2xl tracking-[0.3em] font-medium transition-colors duration-300 ${
-                isScrolled ? "text-foreground" : "text-greek-villa"
-              }`}
-            >
-              lïef
-            </span>
-            <span 
-              className={`text-[10px] tracking-[0.4em] uppercase font-body transition-colors duration-300 ${
-                isScrolled ? "text-muted-foreground" : "text-greek-villa/80"
-              }`}
-            >
-              Development
-            </span>
-          </div>
+          <span
+            className={`font-display text-2xl tracking-[0.4em] font-medium transition-colors duration-500 ${
+              isScrolled ? "text-tricorn-black" : "text-greek-villa"
+            }`}
+          >
+            lïef
+          </span>
         </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-10">
-          {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className={`text-sm font-body tracking-wide transition-colors duration-300 hover:opacity-70 ${
-                isScrolled ? "text-foreground" : "text-greek-villa"
-              }`}
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
+        {/* Desktop - Minimal CTA */}
+        <a
+          href="#contact"
+          className={`hidden md:inline-flex font-body text-sm tracking-wider transition-colors duration-500 ${
+            isScrolled
+              ? "text-tricorn-black hover:text-primary"
+              : "text-greek-villa/80 hover:text-greek-villa"
+          }`}
+        >
+          Contact
+        </a>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className={`md:hidden p-2 transition-colors ${
-            isScrolled ? "text-foreground" : "text-greek-villa"
+            isScrolled ? "text-tricorn-black" : "text-greek-villa"
           }`}
           aria-label="Toggle menu"
         >
@@ -87,20 +68,17 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-background border-t border-border"
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="md:hidden bg-greek-villa border-t border-tricorn-black/10"
           >
-            <nav className="container-wide py-6 flex flex-col gap-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-foreground font-body text-lg py-2 transition-opacity hover:opacity-70"
-                >
-                  {item.label}
-                </a>
-              ))}
+            <nav className="px-6 py-8 flex flex-col gap-6">
+              <a
+                href="#contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="font-body text-tricorn-black text-lg"
+              >
+                Contact
+              </a>
             </nav>
           </motion.div>
         )}
