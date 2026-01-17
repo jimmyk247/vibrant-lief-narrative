@@ -2,95 +2,120 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Lïef Development Design System
+   Japanese Tranquility × Scandinavian Minimalism × Sonoran Serenity
+   All colors in HSL format
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Brand Colors - from Lïef Brand Guide */
+    --succulent-green: 126 6% 41%;
+    --loggia-tan: 34 16% 71%;
+    --brick-paver: 16 52% 40%;
+    --greek-villa: 40 45% 91%;
+    --urbane-bronze: 27 12% 32%;
+    --goldenrod: 40 64% 63%;
+    --tricorn-black: 0 0% 10%;
+    
+    /* Semantic Tokens */
+    --background: 40 45% 95%;
+    --foreground: 0 0% 10%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 45% 91%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 45% 95%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 126 6% 41%;
+    --primary-foreground: 40 45% 95%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 34 16% 71%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 34 10% 85%;
+    --muted-foreground: 27 12% 42%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 40 64% 63%;
+    --accent-foreground: 0 0% 10%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 16 52% 40%;
+    --destructive-foreground: 40 45% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 34 16% 75%;
+    --input: 34 16% 80%;
+    --ring: 126 6% 41%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Custom Design Tokens */
+    --hero-overlay: linear-gradient(135deg, hsla(27, 12%, 20%, 0.7) 0%, hsla(0, 0%, 0%, 0.4) 100%);
+    --section-gradient: linear-gradient(180deg, hsl(40, 45%, 95%) 0%, hsl(40, 45%, 91%) 100%);
+    --card-shadow: 0 4px 24px -4px hsla(27, 12%, 20%, 0.1);
+    --card-shadow-hover: 0 12px 40px -8px hsla(27, 12%, 20%, 0.2);
+    --text-shadow-hero: 0 2px 20px hsla(0, 0%, 0%, 0.3);
+    
+    /* Typography */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', -apple-system, sans-serif;
+    
+    /* Spacing rhythm */
+    --section-padding: clamp(4rem, 10vw, 8rem);
+    
+    /* Sidebar tokens (keeping system defaults) */
+    --sidebar-background: 40 45% 93%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 126 6% 41%;
+    --sidebar-primary-foreground: 40 45% 95%;
+    --sidebar-accent: 34 16% 85%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 34 16% 80%;
+    --sidebar-ring: 126 6% 41%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 8%;
+    --foreground: 40 45% 91%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 12%;
+    --card-foreground: 40 45% 91%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 40 45% 91%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 126 6% 50%;
+    --primary-foreground: 0 0% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 27 12% 28%;
+    --secondary-foreground: 40 45% 91%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 27 12% 20%;
+    --muted-foreground: 34 16% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 40 64% 55%;
+    --accent-foreground: 0 0% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 16 52% 45%;
+    --destructive-foreground: 40 45% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 27 12% 22%;
+    --input: 27 12% 22%;
+    --ring: 126 6% 50%;
+
+    --hero-overlay: linear-gradient(135deg, hsla(0, 0%, 0%, 0.8) 0%, hsla(0, 0%, 0%, 0.5) 100%);
+    --section-gradient: linear-gradient(180deg, hsl(0, 0%, 8%) 0%, hsl(0, 0%, 12%) 100%);
+    
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 40 45% 91%;
+    --sidebar-primary: 126 6% 50%;
+    --sidebar-primary-foreground: 0 0% 8%;
+    --sidebar-accent: 27 12% 18%;
+    --sidebar-accent-foreground: 40 45% 91%;
+    --sidebar-border: 27 12% 20%;
+    --sidebar-ring: 126 6% 50%;
   }
 }
 
@@ -99,7 +124,146 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
+  html {
+    scroll-behavior: smooth;
   }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-medium tracking-tight;
+  }
+}
+
+@layer components {
+  /* Hero Typography */
+  .hero-headline {
+    font-family: var(--font-display);
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.1] tracking-tight;
+    text-shadow: var(--text-shadow-hero);
+  }
+  
+  .hero-subheadline {
+    font-family: var(--font-body);
+    @apply text-base sm:text-lg md:text-xl font-light tracking-wide uppercase;
+    letter-spacing: 0.2em;
+  }
+  
+  /* Section Titles */
+  .section-title {
+    font-family: var(--font-display);
+    @apply text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight;
+  }
+  
+  .section-subtitle {
+    font-family: var(--font-body);
+    @apply text-sm uppercase tracking-[0.25em] text-muted-foreground font-medium;
+  }
+  
+  /* Metric Display */
+  .metric-value {
+    font-family: var(--font-display);
+    @apply text-5xl sm:text-6xl md:text-7xl font-medium;
+  }
+  
+  .metric-label {
+    font-family: var(--font-body);
+    @apply text-sm uppercase tracking-[0.2em] text-muted-foreground;
+  }
+  
+  /* Card Styles */
+  .card-elevated {
+    @apply bg-card rounded-sm overflow-hidden transition-all duration-500;
+    box-shadow: var(--card-shadow);
+  }
+  
+  .card-elevated:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-4px);
+  }
+  
+  /* Button Variants */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-medium tracking-wide uppercase text-sm transition-all duration-300;
+  }
+  
+  .btn-primary:hover {
+    @apply bg-primary/90;
+    transform: translateY(-2px);
+  }
+  
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-4 border border-current font-medium tracking-wide uppercase text-sm transition-all duration-300;
+  }
+  
+  .btn-outline:hover {
+    @apply bg-foreground text-background;
+  }
+  
+  /* Divider Line */
+  .divider-line {
+    @apply w-16 h-px bg-primary/40;
+  }
+  
+  /* Container */
+  .container-wide {
+    @apply max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12;
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+  }
+  
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Stagger delays */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
 }
