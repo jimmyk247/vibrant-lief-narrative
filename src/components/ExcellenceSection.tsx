@@ -38,15 +38,15 @@ const ExcellenceSection = () => {
             <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-[-0.02em] leading-[1.1] mb-8">
               Arizona's #1 builder.
               <br />
-              <span className="text-goldenrod">SABS certified.</span>
+              <span className="text-goldenrod">SABS™ certified.</span>
             </h2>
             <p className="font-body text-greek-villa/70 text-lg leading-relaxed mb-8">
-              Our partnership with Strata's revolutionary SABS technology isn't
+              Our partnership with Xtrata's revolutionary SABS™ technology isn't
               just a certification—it's validation. We don't just meet
               building codes. We exceed them by generations.
             </p>
             <p className="font-body text-greek-villa/50 text-base leading-relaxed">
-              The SABS (Saebi Alternative Building System) represents the most
+              The SABS™ (Saebi Alternative Building System) represents the most
               advanced construction methodology available. Combined with Lïef's
               execution standards, it produces homes engineered to endure
               centuries.
