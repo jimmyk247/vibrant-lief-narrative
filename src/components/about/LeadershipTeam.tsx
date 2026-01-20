@@ -37,7 +37,7 @@ const leaders = [
     role: "Chief Architectural Design",
     experience: "40+ Years of Architectural Design in Residential & Commercial",
     image: scottMeiers,
-    imagePosition: "object-[center_15%]",
+    imagePosition: "object-[center_5%]",
     description:
       "The artistic soul of Lïef. With four decades spanning residential and commercial design, Scott brings a rare cross-industry perspective that elevates every home into a work of art.",
   },
