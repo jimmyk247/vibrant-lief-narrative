@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import jesseFowler from "@/assets/jesse-fowler.png";
 
 const FounderStory = () => {
   return (
@@ -14,12 +15,11 @@ const FounderStory = () => {
             className="relative"
           >
             <div className="aspect-[4/5] bg-urbane-bronze/10 relative overflow-hidden">
-              {/* Placeholder for founder image */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-body text-urbane-bronze/30 text-sm tracking-widest uppercase">
-                  Founder Portrait
-                </span>
-              </div>
+              <img 
+                src={jesseFowler} 
+                alt="Jesse Fowler - Principal / Manager" 
+                className="absolute inset-0 w-full h-full object-cover object-top"
+              />
               {/* Decorative element */}
               <div className="absolute -bottom-6 -right-6 w-32 h-32 border-2 border-goldenrod/30" />
             </div>
@@ -72,8 +72,14 @@ const FounderStory = () => {
                   <p className="font-display text-tricorn-black text-xl italic">
                     "Excellence is not negotiable."
                   </p>
-                  <p className="font-body text-urbane-bronze/60 text-sm mt-2">
-                    — Founder & CEO
+                  <p className="font-body text-tricorn-black font-medium text-base mt-2">
+                    Jesse Fowler
+                  </p>
+                  <p className="font-body text-urbane-bronze/80 text-sm">
+                    Principal / Manager
+                  </p>
+                  <p className="font-body text-urbane-bronze/60 text-sm">
+                    20+ Years in Design, Build Development
                   </p>
                 </div>
               </div>
