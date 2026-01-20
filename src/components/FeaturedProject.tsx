@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import vistaImage from "@/assets/project-vista.jpg";
+import liefOsbornImage from "@/assets/lief-osborn.jpg";
 
 const FeaturedProject = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -45,8 +45,8 @@ const FeaturedProject = () => {
       <div className="relative h-[80vh] overflow-hidden">
         <motion.div className="absolute inset-0" style={{ scale: imageScale }}>
           <img
-            src={vistaImage}
-            alt="Vista Residence by Lïef Development"
+            src={liefOsbornImage}
+            alt="Lïef Osborn by Lïef Development"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-tricorn-black via-tricorn-black/10 to-transparent" />
@@ -64,17 +64,17 @@ const FeaturedProject = () => {
             >
               <div>
                 <h3 className="font-display text-greek-villa text-5xl sm:text-6xl md:text-7xl font-bold tracking-[-0.02em] mb-4">
-                  Vista
+                  Lïef Osborn
                 </h3>
                 <p className="font-body text-greek-villa/60 text-lg max-w-lg">
-                  8,400 square feet of architectural precision. Paradise Valley.
+                  40,000 square feet of architectural precision. Midtown Phoenix.
                 </p>
               </div>
               <div className="flex items-center gap-3 text-greek-villa/40">
-                <span className="font-body text-sm tracking-wider">2024</span>
+                <span className="font-body text-sm tracking-wider">2026</span>
                 <span>•</span>
                 <span className="font-body text-sm tracking-wider">
-                  Paradise Valley, AZ
+                  Phoenix, AZ
                 </span>
               </div>
             </motion.div>
