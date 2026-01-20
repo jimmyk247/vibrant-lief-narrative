@@ -1,11 +1,16 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import liefLogoLight from "@/assets/lief-logo-light.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  
+  // Check if we're on a dark hero page
+  const isDarkHero = location.pathname === "/" || location.pathname === "/about";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +19,11 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navLinks = [
+    { href: "/about", label: "About" },
+    { href: "/#contact", label: "Contact" },
+  ];
 
   return (
     <motion.header
@@ -28,7 +38,7 @@ const Header = () => {
     >
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="group">
+        <Link to="/" className="group">
           <img
             src={liefLogoLight}
             alt="Lïef"
@@ -36,25 +46,32 @@ const Header = () => {
               isScrolled ? "brightness-0" : ""
             }`}
           />
-        </a>
+        </Link>
 
-        {/* Desktop - Minimal CTA */}
-        <a
-          href="#contact"
-          className={`hidden md:inline-flex font-body text-sm tracking-wider transition-colors duration-500 ${
-            isScrolled
-              ? "text-tricorn-black hover:text-primary"
-              : "text-greek-villa/80 hover:text-greek-villa"
-          }`}
-        >
-          Contact
-        </a>
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-10">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              to={link.href}
+              className={`font-body text-sm tracking-wider transition-colors duration-500 ${
+                isScrolled
+                  ? "text-tricorn-black hover:text-goldenrod"
+                  : isDarkHero
+                  ? "text-greek-villa/80 hover:text-greek-villa"
+                  : "text-tricorn-black hover:text-goldenrod"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className={`md:hidden p-2 transition-colors ${
-            isScrolled ? "text-tricorn-black" : "text-greek-villa"
+            isScrolled ? "text-tricorn-black" : isDarkHero ? "text-greek-villa" : "text-tricorn-black"
           }`}
           aria-label="Toggle menu"
         >
@@ -73,13 +90,16 @@ const Header = () => {
             className="md:hidden bg-greek-villa border-t border-tricorn-black/10"
           >
             <nav className="px-6 py-8 flex flex-col gap-6">
-              <a
-                href="#contact"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="font-body text-tricorn-black text-lg"
-              >
-                Contact
-              </a>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="font-body text-tricorn-black text-lg"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </nav>
           </motion.div>
         )}
