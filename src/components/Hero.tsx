@@ -55,7 +55,7 @@ const Hero = () => {
           <img
             src={liefDevLogo}
             alt="Lïef Development"
-            className="h-[18vw] sm:h-[14vw] md:h-[12vw] lg:h-[10vw] w-auto"
+            className="h-[36vw] sm:h-[28vw] md:h-[24vw] lg:h-[20vw] w-auto"
           />
         </motion.div>
 
