@@ -28,7 +28,7 @@ const leaders = [
     role: "Principal / Manager",
     experience: "15+ Years in Custom Residential & Commercial Building",
     image: jonArmstrong,
-    imagePosition: "object-[center_15%]",
+    imagePosition: "object-right-bottom scale-[1.35] origin-bottom-right",
     description:
       "The build authority behind every project. As owner of Armstrong Construction Group, Jon commands 300+ specialized trades to deliver uncompromising craftsmanship from foundation to finish.",
   },
