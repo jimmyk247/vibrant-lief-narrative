@@ -31,7 +31,7 @@ const ContactSection = () => {
           viewport={{ once: true }}
         >
           <a
-            href="mailto:hello@liefdevelopment.com"
+            href="mailto:hello@liefdev.com"
             className="group inline-flex items-center gap-4 px-10 py-5 bg-tricorn-black text-greek-villa font-body text-lg tracking-wide hover:bg-urbane-bronze transition-colors duration-500"
           >
             <span>Start a conversation</span>
@@ -55,7 +55,7 @@ const ContactSection = () => {
               Location
             </span>
             <span className="font-body text-tricorn-black text-sm">
-              Scottsdale, Arizona
+              Phoenix, Arizona
             </span>
           </div>
           <div className="hidden sm:block w-px h-8 bg-urbane-bronze/20" />
@@ -64,10 +64,10 @@ const ContactSection = () => {
               Email
             </span>
             <a
-              href="mailto:hello@liefdevelopment.com"
+              href="mailto:hello@liefdev.com"
               className="font-body text-tricorn-black text-sm hover:text-primary transition-colors"
             >
-              hello@liefdevelopment.com
+              hello@liefdev.com
             </a>
           </div>
           <div className="hidden sm:block w-px h-8 bg-urbane-bronze/20" />
@@ -76,10 +76,10 @@ const ContactSection = () => {
               Phone
             </span>
             <a
-              href="tel:+14805550123"
+              href="tel:+18057227598"
               className="font-body text-tricorn-black text-sm hover:text-primary transition-colors"
             >
-              (480) 555-0123
+              (805) 722-7598
             </a>
           </div>
         </motion.div>
