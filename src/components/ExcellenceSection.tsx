@@ -105,15 +105,15 @@ const ExcellenceSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="border border-greek-villa/20 p-6 md:p-8"
+              className="group border border-greek-villa/20 p-6 md:p-8 transition-all duration-300 hover:border-goldenrod/40 hover:bg-greek-villa/[0.02]"
             >
-              <div className="w-12 h-12 flex items-center justify-center bg-greek-villa/10 mb-6">
-                <feature.icon className="w-6 h-6 text-goldenrod" />
+              <div className="w-12 h-12 flex items-center justify-center bg-greek-villa/10 mb-6 transition-all duration-300 group-hover:bg-goldenrod/20 group-hover:scale-110">
+                <feature.icon className="w-6 h-6 text-goldenrod transition-transform duration-300 group-hover:scale-110" />
               </div>
-              <h3 className="font-display text-goldenrod text-lg font-bold mb-3">
+              <h3 className="font-display text-goldenrod text-lg font-bold mb-3 transition-colors duration-300 group-hover:text-goldenrod">
                 {feature.title}
               </h3>
-              <p className="font-body text-greek-villa/60 text-sm leading-relaxed">
+              <p className="font-body text-greek-villa/60 text-sm leading-relaxed transition-colors duration-300 group-hover:text-greek-villa/80">
                 {feature.description}
               </p>
             </motion.div>
@@ -129,23 +129,23 @@ const ExcellenceSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
               viewport={{ once: true }}
-              className="border border-greek-villa/20 p-6 md:p-8"
+              className="group border border-greek-villa/20 p-6 md:p-8 transition-all duration-300 hover:border-goldenrod/40 hover:bg-greek-villa/[0.02]"
             >
-              <div className="w-12 h-12 flex items-center justify-center bg-greek-villa/10 mb-6">
-                <stat.icon className="w-6 h-6 text-goldenrod" />
+              <div className="w-12 h-12 flex items-center justify-center bg-greek-villa/10 mb-6 transition-all duration-300 group-hover:bg-goldenrod/20 group-hover:scale-110">
+                <stat.icon className="w-6 h-6 text-goldenrod transition-transform duration-300 group-hover:scale-110" />
               </div>
               <div className="flex items-baseline gap-1 mb-3">
-                <span className="font-display text-greek-villa text-4xl md:text-5xl font-bold">
+                <span className="font-display text-greek-villa text-4xl md:text-5xl font-bold transition-colors duration-300 group-hover:text-goldenrod">
                   {stat.value}
                 </span>
-                <span className="font-body text-greek-villa/50 text-lg">
+                <span className="font-body text-greek-villa/50 text-lg transition-colors duration-300 group-hover:text-goldenrod/70">
                   {stat.unit}
                 </span>
               </div>
-              <h3 className="font-display text-greek-villa text-base font-bold mb-2">
+              <h3 className="font-display text-greek-villa text-base font-bold mb-2 transition-colors duration-300 group-hover:text-greek-villa">
                 {stat.label}
               </h3>
-              <p className="font-body text-greek-villa/50 text-sm leading-relaxed">
+              <p className="font-body text-greek-villa/50 text-sm leading-relaxed transition-colors duration-300 group-hover:text-greek-villa/70">
                 {stat.detail}
               </p>
             </motion.div>
