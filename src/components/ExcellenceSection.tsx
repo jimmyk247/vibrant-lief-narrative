@@ -70,14 +70,6 @@ const ExcellenceSection = () => {
       ref={containerRef}
       className="relative bg-tricorn-black text-greek-villa py-32 md:py-48 overflow-hidden"
     >
-      {/* Subtle Gradient */}
-      <motion.div
-        className="absolute inset-0 opacity-40"
-        style={{ y: bgY }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-goldenrod/10 via-transparent to-transparent" />
-      </motion.div>
-
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
         {/* Header */}
         <motion.div
