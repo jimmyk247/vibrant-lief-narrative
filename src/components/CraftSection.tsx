@@ -39,7 +39,7 @@ const CraftSection = () => {
           {[...capabilities, ...capabilities].map((cap, i) => (
             <span
               key={i}
-              className="font-display text-greek-villa/[0.03] text-[15vw] font-medium tracking-[-0.02em]"
+              className="font-display text-greek-villa/[0.03] text-[15vw] font-bold tracking-[-0.02em]"
             >
               {cap}
             </span>
@@ -59,7 +59,7 @@ const CraftSection = () => {
             <span className="block font-body text-goldenrod text-sm tracking-[0.3em] uppercase mb-6">
               Complete Mastery
             </span>
-            <h2 className="font-display text-greek-villa text-4xl sm:text-5xl md:text-6xl font-medium tracking-[-0.02em] leading-[1.1] mb-8">
+            <h2 className="font-display text-greek-villa text-4xl sm:text-5xl md:text-6xl font-bold tracking-[-0.02em] leading-[1.1] mb-8">
               One company.
               <br />
               Every discipline.

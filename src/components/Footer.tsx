@@ -14,7 +14,7 @@ const Footer = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <span className="font-display text-2xl tracking-[0.4em] font-medium">
+            <span className="font-wordmark text-2xl tracking-[0.13em] font-normal">
               lïef
             </span>
           </motion.div>

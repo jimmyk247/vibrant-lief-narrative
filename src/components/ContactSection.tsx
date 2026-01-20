@@ -13,7 +13,7 @@ const ContactSection = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="font-display text-tricorn-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-[-0.02em] leading-[1.1] mb-8">
+          <h2 className="font-display text-tricorn-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[-0.02em] leading-[1.1] mb-8">
             Ready to begin
             <br />
             <span className="italic font-normal">your legacy?</span>

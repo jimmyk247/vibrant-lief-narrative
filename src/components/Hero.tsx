@@ -40,7 +40,7 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
           className="mb-8"
         >
-          <span className="font-body text-goldenrod text-sm tracking-[0.4em] uppercase">
+          <span className="font-body text-goldenrod text-sm tracking-[0.4em] uppercase font-medium">
             Arizona's Premier Luxury Builder
           </span>
         </motion.div>
@@ -51,7 +51,7 @@ const Hero = () => {
           transition={{ duration: 1.2, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
           className="mb-12"
         >
-          <h1 className="font-display text-greek-villa text-[18vw] sm:text-[14vw] md:text-[12vw] lg:text-[10vw] leading-[0.85] tracking-[-0.03em] font-medium">
+          <h1 className="font-wordmark text-greek-villa text-[18vw] sm:text-[14vw] md:text-[12vw] lg:text-[10vw] leading-[0.85] tracking-[0.13em] font-normal">
             Lïef
           </h1>
         </motion.div>
