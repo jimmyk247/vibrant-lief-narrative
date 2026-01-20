@@ -54,7 +54,7 @@ const BrandPillars = () => {
             <span className="block font-body text-urbane-bronze/60 text-sm tracking-[0.3em] uppercase mb-6">
               What Defines Us
             </span>
-            <h2 className="font-display text-tricorn-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-[-0.02em] leading-[1.05] max-w-4xl">
+            <h2 className="font-display text-tricorn-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[-0.02em] leading-[1.05] max-w-4xl">
               The difference isn't in what we build.
               <br />
               <span className="text-urbane-bronze">It's in how we build.</span>
@@ -77,7 +77,7 @@ const BrandPillars = () => {
             <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-start">
               {/* Number */}
               <div className="md:col-span-1">
-                <span className="font-display text-urbane-bronze/30 text-6xl md:text-7xl font-medium">
+                <span className="font-display text-urbane-bronze/30 text-6xl md:text-7xl font-bold">
                   {pillar.number}
                 </span>
               </div>
@@ -99,7 +99,7 @@ const BrandPillars = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="font-display text-tricorn-black text-3xl sm:text-4xl md:text-5xl font-medium tracking-[-0.02em] leading-[1.1] mb-8"
+                  className="font-display text-tricorn-black text-3xl sm:text-4xl md:text-5xl font-bold tracking-[-0.02em] leading-[1.1] mb-8"
                 >
                   {pillar.headline}
                 </motion.h3>
@@ -123,7 +123,7 @@ const BrandPillars = () => {
                   transition={{ duration: 0.8, delay: 0.4 }}
                   viewport={{ once: true }}
                 >
-                  <span className="block font-display text-tricorn-black text-7xl sm:text-8xl md:text-9xl font-medium tracking-[-0.03em] leading-none">
+                  <span className="block font-display text-tricorn-black text-7xl sm:text-8xl md:text-9xl font-bold tracking-[-0.03em] leading-none">
                     {pillar.stat}
                   </span>
                   <span className="block font-body text-urbane-bronze/50 text-sm tracking-[0.2em] uppercase mt-4">

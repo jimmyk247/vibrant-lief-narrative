@@ -35,7 +35,7 @@ const ExcellenceSection = () => {
             <span className="block font-body text-goldenrod text-sm tracking-[0.3em] uppercase mb-6">
               Built to Last
             </span>
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-medium tracking-[-0.02em] leading-[1.1] mb-8">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-[-0.02em] leading-[1.1] mb-8">
               Arizona's #1 builder.
               <br />
               <span className="text-goldenrod">SABS certified.</span>
@@ -84,7 +84,7 @@ const ExcellenceSection = () => {
                 className="flex items-start gap-8 p-8 bg-greek-villa/5 border-l-2 border-goldenrod"
               >
                 <div className="flex items-baseline gap-1">
-                  <span className="font-display text-5xl md:text-6xl font-medium">
+                  <span className="font-display text-5xl md:text-6xl font-bold">
                     {stat.value}
                   </span>
                   <span className="font-body text-goldenrod text-lg">

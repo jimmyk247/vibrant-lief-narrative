@@ -29,7 +29,7 @@ const Header = () => {
         {/* Logo */}
         <a href="#" className="group">
           <span
-            className={`font-display text-2xl tracking-[0.4em] font-medium transition-colors duration-500 ${
+            className={`font-wordmark text-2xl tracking-[0.13em] font-normal transition-colors duration-500 ${
               isScrolled ? "text-tricorn-black" : "text-greek-villa"
             }`}
           >

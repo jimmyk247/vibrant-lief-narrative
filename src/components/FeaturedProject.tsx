@@ -28,7 +28,7 @@ const FeaturedProject = () => {
               <span className="block font-body text-goldenrod text-sm tracking-[0.3em] uppercase mb-4">
                 The Work
               </span>
-              <h2 className="font-display text-greek-villa text-3xl sm:text-4xl md:text-5xl font-medium tracking-[-0.02em] leading-[1.1]">
+              <h2 className="font-display text-greek-villa text-3xl sm:text-4xl md:text-5xl font-bold tracking-[-0.02em] leading-[1.1]">
                 Where vision becomes reality.
               </h2>
             </div>
@@ -62,7 +62,7 @@ const FeaturedProject = () => {
               className="flex flex-col md:flex-row md:items-end justify-between gap-8"
             >
               <div>
-                <h3 className="font-display text-greek-villa text-5xl sm:text-6xl md:text-7xl font-medium tracking-[-0.02em] mb-4">
+                <h3 className="font-display text-greek-villa text-5xl sm:text-6xl md:text-7xl font-bold tracking-[-0.02em] mb-4">
                   Vista
                 </h3>
                 <p className="font-body text-greek-villa/60 text-lg max-w-lg">

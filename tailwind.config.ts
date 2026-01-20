@@ -14,8 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Playfair Display', 'Georgia', 'serif'],
-        body: ['Inter', '-apple-system', 'sans-serif'],
+        wordmark: ['Cormorant Garamond', 'Georgia', 'serif'],
+        display: ['Jost', '-apple-system', 'sans-serif'],
+        body: ['Jost', '-apple-system', 'sans-serif'],
       },
       colors: {
         // Lïef Brand Colors

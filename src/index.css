@@ -7,7 +7,12 @@
    All colors in HSL format
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+/* Font Stack:
+   - Wordmark: Cormorant Garamond (Piala alternative - elegant, refined)
+   - Headings: Jost Bold (Japandi alternative - clean, minimal)
+   - Body: Jost Regular (Japandi alternative - clean, minimal)
+*/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -59,8 +64,9 @@
     --text-shadow-hero: 0 2px 20px hsla(0, 0%, 0%, 0.3);
     
     /* Typography */
-    --font-display: 'Playfair Display', Georgia, serif;
-    --font-body: 'Inter', -apple-system, sans-serif;
+    --font-wordmark: 'Cormorant Garamond', Georgia, serif;
+    --font-heading: 'Jost', -apple-system, sans-serif;
+    --font-body: 'Jost', -apple-system, sans-serif;
     
     /* Spacing rhythm */
     --section-padding: clamp(4rem, 10vw, 8rem);
@@ -134,8 +140,14 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
-    @apply font-medium tracking-tight;
+    font-family: var(--font-heading);
+    @apply font-bold tracking-tight;
+  }
+  
+  /* Wordmark specific styling */
+  .font-wordmark {
+    font-family: var(--font-wordmark);
+    letter-spacing: 0.13em;
   }
 }
 
