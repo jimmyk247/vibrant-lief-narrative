@@ -12,7 +12,7 @@ const leaders = [
     image: jesseFowler,
     imagePosition: "object-[center_15%]",
     description:
-      "The driving force behind Lïef. Jesse brings two decades of design-build expertise to Arizona, fusing development strategy with hands-on construction knowledge to deliver luxury homes that exceed expectations.",
+      "Jesse brings two decades of design-build expertise to Arizona, fusing development strategy with hands-on construction knowledge to deliver luxury homes that exceed expectations.",
   },
   {
     name: "Jimmy Khounlavong",
