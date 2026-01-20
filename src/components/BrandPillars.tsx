@@ -57,7 +57,7 @@ const BrandPillars = () => {
             <h2 className="font-display text-tricorn-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[-0.02em] leading-[1.05] max-w-4xl">
               The difference isn't in what we build.
               <br />
-              <span className="text-coral-accent">It's in how we build.</span>
+              <span className="text-goldenrod">It's in how we build.</span>
             </h2>
           </motion.div>
         </div>
