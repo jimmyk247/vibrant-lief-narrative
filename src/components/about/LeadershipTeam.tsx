@@ -1,27 +1,36 @@
 import { motion } from "framer-motion";
+import jesseFowler from "@/assets/jesse-fowler.png";
 
 const leaders = [
   {
-    name: "Leadership Name",
-    role: "Founder & CEO",
+    name: "Jesse Fowler",
+    role: "Principal / Manager",
+    experience: "20+ Years in Design, Build Development",
+    image: jesseFowler,
     description:
       "Three decades of visionary leadership. Built Lïef from a single-person operation to Arizona's premier luxury home builder.",
   },
   {
     name: "Leadership Name",
     role: "President & COO",
+    experience: "",
+    image: null,
     description:
       "Oversees all construction operations and our 300+ in-house trades. 25 years of building excellence.",
   },
   {
     name: "Leadership Name",
     role: "Chief Design Officer",
+    experience: "",
+    image: null,
     description:
       "Leads architectural vision and design integration. Ensures every Lïef home achieves harmony of form and function.",
   },
   {
     name: "Leadership Name",
     role: "VP of Construction",
+    experience: "",
+    image: null,
     description:
       "Masters the art of execution. Coordinates complex builds with precision and unwavering attention to detail.",
   },
@@ -61,13 +70,21 @@ const LeadershipTeam = () => {
               className="group"
             >
               <div className="relative overflow-hidden">
-                {/* Image Placeholder */}
+                {/* Image */}
                 <div className="aspect-[4/3] bg-urbane-bronze/10 relative overflow-hidden mb-6">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="font-body text-urbane-bronze/30 text-sm tracking-widest uppercase">
-                      Portrait
-                    </span>
-                  </div>
+                  {leader.image ? (
+                    <img 
+                      src={leader.image} 
+                      alt={leader.name} 
+                      className="absolute inset-0 w-full h-full object-cover object-top"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="font-body text-urbane-bronze/30 text-sm tracking-widest uppercase">
+                        Portrait
+                      </span>
+                    </div>
+                  )}
                   {/* Hover overlay */}
                   <div className="absolute inset-0 bg-goldenrod/0 group-hover:bg-goldenrod/10 transition-colors duration-500" />
                 </div>
@@ -77,9 +94,14 @@ const LeadershipTeam = () => {
                   <h3 className="font-display text-tricorn-black text-2xl md:text-3xl font-bold mb-2">
                     {leader.name}
                   </h3>
-                  <span className="block font-body text-goldenrod text-sm tracking-[0.15em] uppercase mb-4">
+                  <span className="block font-body text-goldenrod text-sm tracking-[0.15em] uppercase mb-3">
                     {leader.role}
                   </span>
+                  {leader.experience && (
+                    <span className="block font-body text-urbane-bronze/80 text-sm mb-4">
+                      {leader.experience}
+                    </span>
+                  )}
                   <p className="font-body text-urbane-bronze/70 text-base leading-relaxed">
                     {leader.description}
                   </p>
