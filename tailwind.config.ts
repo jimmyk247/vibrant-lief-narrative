@@ -19,14 +19,18 @@ export default {
         body: ['Jost', '-apple-system', 'sans-serif'],
       },
       colors: {
-        // Lïef Brand Colors
-        'succulent-green': 'hsl(var(--succulent-green))',
-        'loggia-tan': 'hsl(var(--loggia-tan))',
-        'brick-paver': 'hsl(var(--brick-paver))',
-        'greek-villa': 'hsl(var(--greek-villa))',
-        'urbane-bronze': 'hsl(var(--urbane-bronze))',
-        'goldenrod': 'hsl(var(--goldenrod))',
-        'tricorn-black': 'hsl(var(--tricorn-black))',
+        // Lïef Brand Colors - Key Brand Colors
+        'succulent-green': 'hsl(var(--succulent-green))',   // #636c64
+        'loggia-tan': 'hsl(var(--loggia-tan))',             // #c2b8a7
+        'greek-villa': 'hsl(var(--greek-villa))',           // #efece3
+        // Accents
+        'goldenrod': 'hsl(var(--goldenrod))',               // #e8b15a
+        'brick-paver': 'hsl(var(--brick-paver))',           // #894534
+        'urbane-bronze': 'hsl(var(--urbane-bronze))',       // #5e5345
+        // Foundation
+        'pure-white': 'hsl(var(--pure-white))',             // #FFFFFF
+        'tricorn-black': 'hsl(var(--tricorn-black))',       // #303030
+        'black-out': 'hsl(var(--black-out))',               // #000000
         // Semantic Tokens
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

@@ -17,50 +17,57 @@
 @layer base {
   :root {
     /* Core Brand Colors - from Lïef Brand Guide */
-    --succulent-green: 126 6% 41%;
-    --loggia-tan: 34 16% 71%;
-    --brick-paver: 16 52% 40%;
-    --greek-villa: 40 45% 91%;
-    --urbane-bronze: 27 12% 32%;
-    --goldenrod: 40 64% 63%;
-    --tricorn-black: 0 0% 10%;
+    /* Key Brand Colors */
+    --succulent-green: 127 4% 41%;        /* #636c64 */
+    --loggia-tan: 38 19% 71%;             /* #c2b8a7 */
+    --greek-villa: 45 32% 91%;            /* #efece3 */
     
-    /* Semantic Tokens */
-    --background: 40 45% 95%;
-    --foreground: 0 0% 10%;
+    /* Accents */
+    --goldenrod: 37 76% 63%;              /* #e8b15a */
+    --brick-paver: 12 45% 37%;            /* #894534 */
+    --urbane-bronze: 34 15% 32%;          /* #5e5345 */
+    
+    /* Foundation */
+    --pure-white: 0 0% 100%;              /* #FFFFFF */
+    --tricorn-black: 0 0% 19%;            /* #303030 */
+    --black-out: 0 0% 0%;                 /* #000000 */
+    
+    /* Semantic Tokens - mapped to brand colors */
+    --background: 45 32% 91%;             /* greek-villa */
+    --foreground: 0 0% 19%;               /* tricorn-black */
 
-    --card: 40 45% 91%;
-    --card-foreground: 0 0% 10%;
+    --card: 45 32% 91%;                   /* greek-villa */
+    --card-foreground: 0 0% 19%;          /* tricorn-black */
 
-    --popover: 40 45% 95%;
-    --popover-foreground: 0 0% 10%;
+    --popover: 45 32% 91%;                /* greek-villa */
+    --popover-foreground: 0 0% 19%;       /* tricorn-black */
 
-    --primary: 126 6% 41%;
-    --primary-foreground: 40 45% 95%;
+    --primary: 127 4% 41%;                /* succulent-green */
+    --primary-foreground: 45 32% 91%;     /* greek-villa */
 
-    --secondary: 34 16% 71%;
-    --secondary-foreground: 0 0% 10%;
+    --secondary: 38 19% 71%;              /* loggia-tan */
+    --secondary-foreground: 0 0% 19%;     /* tricorn-black */
 
-    --muted: 34 10% 85%;
-    --muted-foreground: 27 12% 42%;
+    --muted: 38 19% 80%;                  /* lighter loggia-tan */
+    --muted-foreground: 34 15% 42%;       /* lighter urbane-bronze */
 
-    --accent: 40 64% 63%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 37 76% 63%;                 /* goldenrod */
+    --accent-foreground: 0 0% 19%;        /* tricorn-black */
 
-    --destructive: 16 52% 40%;
-    --destructive-foreground: 40 45% 95%;
+    --destructive: 12 45% 37%;            /* brick-paver */
+    --destructive-foreground: 45 32% 91%; /* greek-villa */
 
-    --border: 34 16% 75%;
-    --input: 34 16% 80%;
-    --ring: 126 6% 41%;
+    --border: 38 19% 75%;                 /* lighter loggia-tan */
+    --input: 38 19% 80%;                  /* lighter loggia-tan */
+    --ring: 127 4% 41%;                   /* succulent-green */
 
     --radius: 0.25rem;
 
     /* Custom Design Tokens */
-    --hero-overlay: linear-gradient(135deg, hsla(27, 12%, 20%, 0.7) 0%, hsla(0, 0%, 0%, 0.4) 100%);
-    --section-gradient: linear-gradient(180deg, hsl(40, 45%, 95%) 0%, hsl(40, 45%, 91%) 100%);
-    --card-shadow: 0 4px 24px -4px hsla(27, 12%, 20%, 0.1);
-    --card-shadow-hover: 0 12px 40px -8px hsla(27, 12%, 20%, 0.2);
+    --hero-overlay: linear-gradient(135deg, hsla(34, 15%, 20%, 0.7) 0%, hsla(0, 0%, 0%, 0.4) 100%);
+    --section-gradient: linear-gradient(180deg, hsl(45, 32%, 91%) 0%, hsl(45, 32%, 87%) 100%);
+    --card-shadow: 0 4px 24px -4px hsla(34, 15%, 20%, 0.1);
+    --card-shadow-hover: 0 12px 40px -8px hsla(34, 15%, 20%, 0.2);
     --text-shadow-hero: 0 2px 20px hsla(0, 0%, 0%, 0.3);
     
     /* Typography */
@@ -71,57 +78,57 @@
     /* Spacing rhythm */
     --section-padding: clamp(4rem, 10vw, 8rem);
     
-    /* Sidebar tokens (keeping system defaults) */
-    --sidebar-background: 40 45% 93%;
-    --sidebar-foreground: 0 0% 10%;
-    --sidebar-primary: 126 6% 41%;
-    --sidebar-primary-foreground: 40 45% 95%;
-    --sidebar-accent: 34 16% 85%;
-    --sidebar-accent-foreground: 0 0% 10%;
-    --sidebar-border: 34 16% 80%;
-    --sidebar-ring: 126 6% 41%;
+    /* Sidebar tokens */
+    --sidebar-background: 45 32% 89%;     /* slightly darker greek-villa */
+    --sidebar-foreground: 0 0% 19%;       /* tricorn-black */
+    --sidebar-primary: 127 4% 41%;        /* succulent-green */
+    --sidebar-primary-foreground: 45 32% 91%; /* greek-villa */
+    --sidebar-accent: 38 19% 80%;         /* lighter loggia-tan */
+    --sidebar-accent-foreground: 0 0% 19%; /* tricorn-black */
+    --sidebar-border: 38 19% 75%;         /* lighter loggia-tan */
+    --sidebar-ring: 127 4% 41%;           /* succulent-green */
   }
 
   .dark {
-    --background: 0 0% 8%;
-    --foreground: 40 45% 91%;
+    --background: 0 0% 19%;               /* tricorn-black */
+    --foreground: 45 32% 91%;             /* greek-villa */
 
-    --card: 0 0% 12%;
-    --card-foreground: 40 45% 91%;
+    --card: 0 0% 15%;                     /* darker tricorn */
+    --card-foreground: 45 32% 91%;        /* greek-villa */
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 40 45% 91%;
+    --popover: 0 0% 19%;                  /* tricorn-black */
+    --popover-foreground: 45 32% 91%;     /* greek-villa */
 
-    --primary: 126 6% 50%;
-    --primary-foreground: 0 0% 8%;
+    --primary: 127 4% 50%;                /* lighter succulent-green */
+    --primary-foreground: 0 0% 19%;       /* tricorn-black */
 
-    --secondary: 27 12% 28%;
-    --secondary-foreground: 40 45% 91%;
+    --secondary: 34 15% 28%;              /* darker urbane-bronze */
+    --secondary-foreground: 45 32% 91%;   /* greek-villa */
 
-    --muted: 27 12% 20%;
-    --muted-foreground: 34 16% 65%;
+    --muted: 34 15% 24%;                  /* darker urbane-bronze */
+    --muted-foreground: 38 19% 65%;       /* lighter loggia-tan */
 
-    --accent: 40 64% 55%;
-    --accent-foreground: 0 0% 8%;
+    --accent: 37 76% 55%;                 /* slightly darker goldenrod */
+    --accent-foreground: 0 0% 19%;        /* tricorn-black */
 
-    --destructive: 16 52% 45%;
-    --destructive-foreground: 40 45% 95%;
+    --destructive: 12 45% 42%;            /* slightly lighter brick-paver */
+    --destructive-foreground: 45 32% 91%; /* greek-villa */
 
-    --border: 27 12% 22%;
-    --input: 27 12% 22%;
-    --ring: 126 6% 50%;
+    --border: 34 15% 26%;                 /* darker urbane-bronze */
+    --input: 34 15% 26%;                  /* darker urbane-bronze */
+    --ring: 127 4% 50%;                   /* lighter succulent-green */
 
     --hero-overlay: linear-gradient(135deg, hsla(0, 0%, 0%, 0.8) 0%, hsla(0, 0%, 0%, 0.5) 100%);
-    --section-gradient: linear-gradient(180deg, hsl(0, 0%, 8%) 0%, hsl(0, 0%, 12%) 100%);
+    --section-gradient: linear-gradient(180deg, hsl(0, 0%, 19%) 0%, hsl(0, 0%, 15%) 100%);
     
-    --sidebar-background: 0 0% 10%;
-    --sidebar-foreground: 40 45% 91%;
-    --sidebar-primary: 126 6% 50%;
-    --sidebar-primary-foreground: 0 0% 8%;
-    --sidebar-accent: 27 12% 18%;
-    --sidebar-accent-foreground: 40 45% 91%;
-    --sidebar-border: 27 12% 20%;
-    --sidebar-ring: 126 6% 50%;
+    --sidebar-background: 0 0% 19%;       /* tricorn-black */
+    --sidebar-foreground: 45 32% 91%;     /* greek-villa */
+    --sidebar-primary: 127 4% 50%;        /* lighter succulent-green */
+    --sidebar-primary-foreground: 0 0% 19%; /* tricorn-black */
+    --sidebar-accent: 34 15% 22%;         /* darker urbane-bronze */
+    --sidebar-accent-foreground: 45 32% 91%; /* greek-villa */
+    --sidebar-border: 34 15% 26%;         /* darker urbane-bronze */
+    --sidebar-ring: 127 4% 50%;           /* lighter succulent-green */
   }
 }
 
