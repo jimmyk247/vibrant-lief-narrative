@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import liefLogoLight from "@/assets/lief-logo-light.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -14,9 +15,11 @@ const Footer = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <span className="font-wordmark text-2xl tracking-[0.13em] font-normal">
-              lïef
-            </span>
+            <img
+              src={liefLogoLight}
+              alt="Lïef"
+              className="h-6 md:h-8 w-auto"
+            />
           </motion.div>
 
           {/* Copyright */}

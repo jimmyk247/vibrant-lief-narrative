@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import liefLogoLight from "@/assets/lief-logo-light.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,13 +29,13 @@ const Header = () => {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="group">
-          <span
-            className={`font-wordmark text-2xl tracking-[0.13em] font-normal transition-colors duration-500 ${
-              isScrolled ? "text-tricorn-black" : "text-greek-villa"
+          <img
+            src={liefLogoLight}
+            alt="Lïef"
+            className={`h-6 md:h-8 w-auto transition-all duration-500 ${
+              isScrolled ? "brightness-0" : ""
             }`}
-          >
-            lïef
-          </span>
+          />
         </a>
 
         {/* Desktop - Minimal CTA */}
