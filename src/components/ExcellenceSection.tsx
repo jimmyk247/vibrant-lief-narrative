@@ -70,6 +70,8 @@ const ExcellenceSection = () => {
       ref={containerRef}
       className="relative bg-tricorn-black text-greek-villa py-32 md:py-48 overflow-hidden"
     >
+      {/* Subtle Divider */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-[600px] h-px bg-gradient-to-r from-transparent via-greek-villa/20 to-transparent" />
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
         {/* Header */}
         <motion.div
