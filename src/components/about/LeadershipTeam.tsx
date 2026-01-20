@@ -12,7 +12,7 @@ const leaders = [
     image: jesseFowler,
     imagePosition: "object-[center_15%]",
     description:
-      "The visionary behind Lïef. Jesse brings two decades of design-build expertise to Arizona, fusing development strategy with hands-on construction knowledge to deliver luxury homes that exceed expectations.",
+      "The visionary. Jesse brings two decades of design-build expertise to Arizona, fusing development strategy with hands-on construction knowledge to deliver luxury homes that exceed expectations.",
   },
   {
     name: "Jimmy Khounlavong",
@@ -21,7 +21,7 @@ const leaders = [
     image: jimmyKhounlavong,
     imagePosition: "object-[center_15%]",
     description:
-      "The creative compass of Lïef. Jimmy transforms brand vision into compelling client experiences, leveraging decades of merchandising expertise to position every project for lasting impact.",
+      "The creative compass. Jimmy transforms brand vision into compelling client experiences, leveraging decades of merchandising expertise to position every project for lasting impact.",
   },
   {
     name: "Jon Armstrong",
@@ -30,7 +30,7 @@ const leaders = [
     image: jonArmstrong,
     imagePosition: "object-[center_10%] scale-[1.25] origin-top",
     description:
-      "The master builder of Lïef. As owner of Armstrong Construction Group, Jon commands 300+ specialized trades to deliver uncompromising craftsmanship from foundation to finish.",
+      "The master builder. As owner of Armstrong Construction Group, Jon commands 300+ specialized trades to deliver uncompromising craftsmanship from foundation to finish.",
   },
   {
     name: "Scott Meiers",
@@ -39,7 +39,7 @@ const leaders = [
     image: scottMeiers,
     imagePosition: "object-top scale-[1.48] origin-top",
     description:
-      "The artistic soul of Lïef. With four decades spanning residential and commercial design, Scott brings a rare cross-industry perspective that elevates every home into a work of art.",
+      "The artistic soul. With four decades spanning residential and commercial design, Scott brings a rare cross-industry perspective that elevates every home into a work of art.",
   },
 ];
 
