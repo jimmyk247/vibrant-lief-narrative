@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import heroImage from "@/assets/hero-home.jpg";
-import liefLogo from "@/assets/lief-logo-light.png";
+import liefDevLogo from "@/assets/lief-dev-greek-villa.png";
 
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -53,8 +53,8 @@ const Hero = () => {
           className="mb-12"
         >
           <img
-            src={liefLogo}
-            alt="Lïef"
+            src={liefDevLogo}
+            alt="Lïef Development"
             className="h-[18vw] sm:h-[14vw] md:h-[12vw] lg:h-[10vw] w-auto"
           />
         </motion.div>
