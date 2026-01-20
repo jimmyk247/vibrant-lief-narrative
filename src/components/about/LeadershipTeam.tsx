@@ -12,7 +12,7 @@ const leaders = [
     image: jesseFowler,
     imagePosition: "object-[center_15%]",
     description:
-      "Three decades of visionary leadership. Built Lïef from a single-person operation to Arizona's premier luxury home builder.",
+      "The driving force behind Lïef. Jesse brings two decades of design-build expertise to Arizona, fusing development strategy with hands-on construction knowledge to deliver luxury homes that exceed expectations.",
   },
   {
     name: "Jimmy Khounlavong",
@@ -21,7 +21,7 @@ const leaders = [
     image: jimmyKhounlavong,
     imagePosition: "object-[center_15%]",
     description:
-      "Shapes the Lïef brand identity and client experience. Transforms vision into compelling narratives that resonate across every touchpoint.",
+      "The creative compass of Lïef. Jimmy transforms brand vision into compelling client experiences, leveraging decades of merchandising expertise to position every project for lasting impact.",
   },
   {
     name: "Jon Armstrong",
@@ -30,7 +30,7 @@ const leaders = [
     image: jonArmstrong,
     imagePosition: "object-[center_15%]",
     description:
-      "Our build partner and owner of Armstrong Construction Group. Commands 300+ specialized trades to deliver uncompromising craftsmanship on every project.",
+      "The build authority behind every project. As owner of Armstrong Construction Group, Jon commands 300+ specialized trades to deliver uncompromising craftsmanship from foundation to finish.",
   },
   {
     name: "Scott Meiers",
@@ -39,7 +39,7 @@ const leaders = [
     image: scottMeiers,
     imagePosition: "object-[center_15%]",
     description:
-      "An artist at heart with four decades of design mastery. Scott's creative vision spans residential, commercial, and beyond—bringing a rare cross-industry perspective to every Lïef project.",
+      "The artistic soul of Lïef. With four decades spanning residential and commercial design, Scott brings a rare cross-industry perspective that elevates every home into a work of art.",
   },
 ];
 
