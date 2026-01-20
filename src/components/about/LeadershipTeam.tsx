@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import jesseFowler from "@/assets/jesse-fowler.png";
+import jimmyKhounlavong from "@/assets/jimmy-khounlavong.png";
 
 const leaders = [
   {
@@ -7,6 +8,7 @@ const leaders = [
     role: "Principal / Manager",
     experience: "20+ Years in Design, Build Development",
     image: jesseFowler,
+    imagePosition: "object-top",
     description:
       "Three decades of visionary leadership. Built Lïef from a single-person operation to Arizona's premier luxury home builder.",
   },
@@ -14,7 +16,8 @@ const leaders = [
     name: "Jimmy Khounlavong",
     role: "Principal / Creative Director",
     experience: "20+ Years of Brand, Merchandising & Marketplace Strategy",
-    image: null,
+    image: jimmyKhounlavong,
+    imagePosition: "object-[center_20%]",
     description:
       "Oversees all construction operations and our 300+ in-house trades. 25 years of building excellence.",
   },
@@ -76,7 +79,7 @@ const LeadershipTeam = () => {
                     <img 
                       src={leader.image} 
                       alt={leader.name} 
-                      className="absolute inset-0 w-full h-full object-cover object-top"
+                      className={`absolute inset-0 w-full h-full object-cover ${leader.imagePosition || 'object-top'}`}
                     />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
