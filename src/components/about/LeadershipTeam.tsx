@@ -19,7 +19,7 @@ const leaders = [
     image: jimmyKhounlavong,
     imagePosition: "object-[center_20%]",
     description:
-      "Oversees all construction operations and our 300+ in-house trades. 25 years of building excellence.",
+      "Shapes the Lïef brand identity and client experience. Transforms vision into compelling narratives that resonate across every touchpoint.",
   },
   {
     name: "Leadership Name",
