@@ -13,7 +13,7 @@ const ExcellenceSection = () => {
   return (
     <section
       ref={containerRef}
-      className="relative bg-urbane-bronze text-greek-villa py-32 md:py-48 overflow-hidden"
+      className="relative bg-succulent-green text-greek-villa py-32 md:py-48 overflow-hidden"
     >
       {/* Subtle Gradient */}
       <motion.div
