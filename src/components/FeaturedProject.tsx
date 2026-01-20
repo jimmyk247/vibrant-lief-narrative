@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import vistaImage from "@/assets/project-vista.jpg";
 
 const FeaturedProject = () => {
@@ -90,8 +91,8 @@ const FeaturedProject = () => {
         className="py-12 border-t border-greek-villa/10"
       >
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-          <a
-            href="#projects"
+          <Link
+            to="/projects"
             className="group inline-flex items-center gap-4 font-body text-greek-villa text-lg tracking-wide hover:text-goldenrod transition-colors duration-500"
           >
             <span>View all projects</span>
@@ -99,7 +100,7 @@ const FeaturedProject = () => {
               size={20}
               className="transform group-hover:translate-x-2 transition-transform duration-300"
             />
-          </a>
+          </Link>
         </div>
       </motion.div>
     </section>
