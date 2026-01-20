@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const AboutHero = () => {
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center bg-urbane-bronze overflow-hidden">
+    <section className="relative min-h-[70vh] flex items-center justify-center bg-succulent-green overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-to-br from-goldenrod/30 via-transparent to-transparent" />
