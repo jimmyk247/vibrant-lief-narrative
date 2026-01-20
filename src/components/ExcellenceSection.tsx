@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Flame, Droplets, Bug, Thermometer, DollarSign, Clock, TrendingUp, BadgeCheck } from "lucide-react";
-import AnimatedCounter from "./AnimatedCounter";
+
 
 const features = [
   {
@@ -136,10 +136,9 @@ const ExcellenceSection = () => {
                 <stat.icon className="w-6 h-6 text-goldenrod transition-transform duration-300 group-hover:scale-110" />
               </div>
               <div className="flex items-baseline gap-1 mb-3">
-                <AnimatedCounter 
-                  value={stat.value} 
-                  className="font-display text-greek-villa text-4xl md:text-5xl font-bold transition-colors duration-300 group-hover:text-goldenrod"
-                />
+                <span className="font-display text-greek-villa text-4xl md:text-5xl font-bold transition-colors duration-300 group-hover:text-goldenrod">
+                  {stat.value}
+                </span>
                 <span className="font-body text-greek-villa/50 text-lg transition-colors duration-300 group-hover:text-goldenrod/70">
                   {stat.unit}
                 </span>
