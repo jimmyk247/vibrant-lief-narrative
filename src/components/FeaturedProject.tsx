@@ -10,79 +10,78 @@ const FeaturedProject = () => {
     offset: ["start end", "end start"],
   });
 
-  const imageScale = useTransform(scrollYProgress, [0, 0.5], [1.2, 1]);
-  const textY = useTransform(scrollYProgress, [0.2, 0.5], [100, 0]);
+  const imageScale = useTransform(scrollYProgress, [0, 0.5], [1.15, 1]);
 
   return (
     <section ref={containerRef} className="relative bg-tricorn-black">
-      {/* Full-bleed Image */}
-      <div className="relative h-[90vh] overflow-hidden">
+      {/* Section Intro */}
+      <div className="py-20 md:py-28 border-b border-greek-villa/10">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row md:items-end md:justify-between gap-8"
+          >
+            <div>
+              <span className="block font-body text-goldenrod text-sm tracking-[0.3em] uppercase mb-4">
+                The Work
+              </span>
+              <h2 className="font-display text-greek-villa text-3xl sm:text-4xl md:text-5xl font-medium tracking-[-0.02em] leading-[1.1]">
+                Where vision becomes reality.
+              </h2>
+            </div>
+            <p className="font-body text-greek-villa/50 text-base max-w-md leading-relaxed">
+              Each project is a testament to what's possible when experience,
+              craftsmanship, and uncompromising standards converge.
+            </p>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Featured Image */}
+      <div className="relative h-[80vh] overflow-hidden">
         <motion.div className="absolute inset-0" style={{ scale: imageScale }}>
           <img
             src={vistaImage}
             alt="Vista Residence by Lïef Development"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-tricorn-black via-tricorn-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-tricorn-black via-tricorn-black/10 to-transparent" />
         </motion.div>
 
-        {/* Project Info Overlay */}
-        <motion.div
-          className="absolute bottom-0 left-0 right-0 p-8 md:p-16"
-          style={{ y: textY }}
-        >
+        {/* Project Info */}
+        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16">
           <div className="max-w-[1400px] mx-auto">
-            <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="block font-body text-goldenrod text-sm tracking-[0.3em] uppercase mb-4"
-            >
-              Featured Work
-            </motion.span>
-
-            <motion.h2
+            <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
+              transition={{ duration: 1 }}
               viewport={{ once: true }}
-              className="font-display text-greek-villa text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium tracking-[-0.02em] mb-6"
+              className="flex flex-col md:flex-row md:items-end justify-between gap-8"
             >
-              Vista
-            </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="font-body text-greek-villa/70 text-lg md:text-xl max-w-xl leading-relaxed mb-8"
-            >
-              A sanctuary of light and infinite horizon. 8,400 square feet 
-              where architecture dissolves into the landscape.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-3"
-            >
-              <span className="font-body text-greek-villa/40 text-sm tracking-wider">
-                Paradise Valley, Arizona
-              </span>
-              <span className="text-greek-villa/20">•</span>
-              <span className="font-body text-greek-villa/40 text-sm tracking-wider">
-                2024
-              </span>
+              <div>
+                <h3 className="font-display text-greek-villa text-5xl sm:text-6xl md:text-7xl font-medium tracking-[-0.02em] mb-4">
+                  Vista
+                </h3>
+                <p className="font-body text-greek-villa/60 text-lg max-w-lg">
+                  8,400 square feet of architectural precision. Paradise Valley.
+                </p>
+              </div>
+              <div className="flex items-center gap-3 text-greek-villa/40">
+                <span className="font-body text-sm tracking-wider">2024</span>
+                <span>•</span>
+                <span className="font-body text-sm tracking-wider">
+                  Paradise Valley, AZ
+                </span>
+              </div>
             </motion.div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
-      {/* View More Projects Link */}
+      {/* View All Link */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -90,12 +89,12 @@ const FeaturedProject = () => {
         viewport={{ once: true }}
         className="py-12 border-t border-greek-villa/10"
       >
-        <div className="max-w-[1400px] mx-auto px-8 md:px-16">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           <a
             href="#projects"
             className="group inline-flex items-center gap-4 font-body text-greek-villa text-lg tracking-wide hover:text-goldenrod transition-colors duration-500"
           >
-            <span>Explore all projects</span>
+            <span>View all projects</span>
             <ArrowRight
               size={20}
               className="transform group-hover:translate-x-2 transition-transform duration-300"

@@ -25,61 +25,88 @@ const Hero = () => {
           alt="Lïef Development luxury residence"
           className="w-full h-full object-cover"
         />
-        <div
-          className="absolute inset-0 bg-gradient-to-b from-tricorn-black/40 via-tricorn-black/20 to-tricorn-black/60"
-        />
+        <div className="absolute inset-0 bg-gradient-to-b from-tricorn-black/50 via-tricorn-black/30 to-tricorn-black/70" />
       </motion.div>
 
       {/* Content */}
       <motion.div
-        className="relative z-10 w-full max-w-[90vw] mx-auto"
+        className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12"
         style={{ y, opacity }}
       >
-        {/* Main Headline - Massive, Statement Typography */}
+        {/* Brand Name - The Hero */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+          className="mb-8"
+        >
+          <span className="font-body text-goldenrod text-sm tracking-[0.4em] uppercase">
+            Arizona's Premier Luxury Builder
+          </span>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-          className="mb-8"
+          transition={{ duration: 1.2, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+          className="mb-12"
         >
-          <h1 className="font-display text-greek-villa text-[12vw] sm:text-[10vw] md:text-[8vw] leading-[0.9] tracking-[-0.02em] font-medium">
-            We don't
-            <br />
-            build homes.
+          <h1 className="font-display text-greek-villa text-[18vw] sm:text-[14vw] md:text-[12vw] lg:text-[10vw] leading-[0.85] tracking-[-0.03em] font-medium">
+            Lïef
           </h1>
         </motion.div>
 
+        {/* Authority Statement */}
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ duration: 1, delay: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+          className="max-w-2xl"
         >
-          <h2 className="font-display text-goldenrod text-[12vw] sm:text-[10vw] md:text-[8vw] leading-[0.9] tracking-[-0.02em] italic font-normal">
-            We craft legacies.
-          </h2>
+          <p className="font-body text-greek-villa/80 text-xl md:text-2xl leading-relaxed">
+            Three decades of uncompromising craft.
+            <br />
+            <span className="text-goldenrod">300+ in-house trades.</span>
+            <br />
+            One standard: excellence.
+          </p>
         </motion.div>
 
-        {/* Subtle Descriptor */}
+        {/* The Three Pillars - Subtle Preview */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="mt-16 md:mt-24"
+          transition={{ duration: 1, delay: 1.4 }}
+          className="mt-20 md:mt-28 flex flex-wrap gap-8 md:gap-16"
         >
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-px bg-greek-villa/40" />
-            <span className="font-body text-greek-villa/60 text-sm tracking-[0.3em] uppercase">
-              Arizona's Premier Luxury Builder
-            </span>
-          </div>
+          {[
+            { number: "30+", label: "Years of Legacy" },
+            { number: "300+", label: "In-House Trades" },
+            { number: "100%", label: "Vertical Integration" },
+          ].map((item, i) => (
+            <motion.div
+              key={item.label}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.6 + i * 0.15 }}
+              className="flex items-baseline gap-3"
+            >
+              <span className="font-display text-goldenrod text-3xl md:text-4xl font-medium">
+                {item.number}
+              </span>
+              <span className="font-body text-greek-villa/50 text-sm tracking-wide">
+                {item.label}
+              </span>
+            </motion.div>
+          ))}
         </motion.div>
       </motion.div>
 
-      {/* Scroll Indicator - Minimal */}
+      {/* Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.8 }}
+        transition={{ duration: 1, delay: 2 }}
         className="absolute bottom-12 left-1/2 -translate-x-1/2"
       >
         <motion.div
