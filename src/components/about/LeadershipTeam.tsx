@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import jesseFowler from "@/assets/jesse-fowler.png";
 import jimmyKhounlavong from "@/assets/jimmy-khounlavong.png";
+import jonArmstrong from "@/assets/jon-armstrong.png";
 
 const leaders = [
   {
@@ -22,12 +23,13 @@ const leaders = [
       "Shapes the Lïef brand identity and client experience. Transforms vision into compelling narratives that resonate across every touchpoint.",
   },
   {
-    name: "Leadership Name",
-    role: "Chief Design Officer",
-    experience: "",
-    image: null,
+    name: "Jon Armstrong",
+    role: "Principal / Manager",
+    experience: "15+ Years in Custom Residential & Commercial Building",
+    image: jonArmstrong,
+    imagePosition: "object-top",
     description:
-      "Leads architectural vision and design integration. Ensures every Lïef home achieves harmony of form and function.",
+      "Our build partner and owner of Armstrong Construction Group. Commands 300+ specialized trades to deliver uncompromising craftsmanship on every project.",
   },
   {
     name: "Leadership Name",
