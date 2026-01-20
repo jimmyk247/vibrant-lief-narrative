@@ -11,9 +11,9 @@ const leaders = [
       "Three decades of visionary leadership. Built Lïef from a single-person operation to Arizona's premier luxury home builder.",
   },
   {
-    name: "Leadership Name",
-    role: "President & COO",
-    experience: "",
+    name: "Jimmy Khounlavong",
+    role: "Principal / Creative Director",
+    experience: "20+ Years of Brand, Merchandising & Marketplace Strategy",
     image: null,
     description:
       "Oversees all construction operations and our 300+ in-house trades. 25 years of building excellence.",
