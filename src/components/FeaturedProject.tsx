@@ -68,7 +68,7 @@ const FeaturedProject = () => {
                   <img 
                     src={liefLogoLight} 
                     alt="Lïef" 
-                    className="h-12 sm:h-14 md:h-16 w-auto"
+                    className="h-16 sm:h-20 md:h-24 w-auto"
                   />
                   <span className="font-display text-greek-villa text-5xl sm:text-6xl md:text-7xl font-bold tracking-[-0.02em]">
                     Osborn
