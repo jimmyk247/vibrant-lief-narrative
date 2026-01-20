@@ -12,7 +12,7 @@ const leaders = [
     image: jesseFowler,
     imagePosition: "object-[center_15%]",
     description:
-      "Jesse brings two decades of design-build expertise to Arizona, fusing development strategy with hands-on construction knowledge to deliver luxury homes that exceed expectations.",
+      "The visionary behind Lïef. Jesse brings two decades of design-build expertise to Arizona, fusing development strategy with hands-on construction knowledge to deliver luxury homes that exceed expectations.",
   },
   {
     name: "Jimmy Khounlavong",
@@ -30,7 +30,7 @@ const leaders = [
     image: jonArmstrong,
     imagePosition: "object-[60%_15%] scale-100",
     description:
-      "The build authority behind every project. As owner of Armstrong Construction Group, Jon commands 300+ specialized trades to deliver uncompromising craftsmanship from foundation to finish.",
+      "The master builder of Lïef. As owner of Armstrong Construction Group, Jon commands 300+ specialized trades to deliver uncompromising craftsmanship from foundation to finish.",
   },
   {
     name: "Scott Meiers",
