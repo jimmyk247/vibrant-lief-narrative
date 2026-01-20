@@ -25,6 +25,7 @@ export default {
         'greek-villa': 'hsl(var(--greek-villa))',           // #efece3
         // Accents
         'goldenrod': 'hsl(var(--goldenrod))',               // #e8b15a
+        'coral-accent': 'hsl(var(--coral-accent))',         // #e8615a
         'brick-paver': 'hsl(var(--brick-paver))',           // #894534
         'urbane-bronze': 'hsl(var(--urbane-bronze))',       // #5e5345
         // Foundation
