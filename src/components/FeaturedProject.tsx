@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import liefOsbornImage from "@/assets/lief-osborn.jpg";
+import liefLogoLight from "@/assets/lief-logo-light.png";
 
 const FeaturedProject = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -63,9 +64,16 @@ const FeaturedProject = () => {
               className="flex flex-col md:flex-row md:items-end justify-between gap-8"
             >
               <div>
-                <h3 className="font-display text-greek-villa text-5xl sm:text-6xl md:text-7xl font-bold tracking-[-0.02em] mb-4">
-                  Lïef Osborn
-                </h3>
+                <div className="flex items-baseline gap-4 mb-4">
+                  <img 
+                    src={liefLogoLight} 
+                    alt="Lïef" 
+                    className="h-12 sm:h-14 md:h-16 w-auto"
+                  />
+                  <span className="font-display text-greek-villa text-5xl sm:text-6xl md:text-7xl font-bold tracking-[-0.02em]">
+                    Osborn
+                  </span>
+                </div>
                 <p className="font-body text-greek-villa/60 text-lg max-w-lg">
                   40,000 square feet of architectural precision. Midtown Phoenix.
                 </p>
