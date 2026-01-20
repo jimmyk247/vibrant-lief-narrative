@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import jesseFowler from "@/assets/jesse-fowler.png";
 import jimmyKhounlavong from "@/assets/jimmy-khounlavong.png";
 import jonArmstrong from "@/assets/jon-armstrong.png";
+import scottMeiers from "@/assets/scott-meiers.png";
 
 const leaders = [
   {
@@ -9,7 +10,7 @@ const leaders = [
     role: "Principal / Manager",
     experience: "20+ Years in Design, Build Development",
     image: jesseFowler,
-    imagePosition: "object-top",
+    imagePosition: "object-[center_15%]",
     description:
       "Three decades of visionary leadership. Built Lïef from a single-person operation to Arizona's premier luxury home builder.",
   },
@@ -18,7 +19,7 @@ const leaders = [
     role: "Principal / Creative Director",
     experience: "20+ Years of Brand, Merchandising & Marketplace Strategy",
     image: jimmyKhounlavong,
-    imagePosition: "object-[center_20%]",
+    imagePosition: "object-[center_15%]",
     description:
       "Shapes the Lïef brand identity and client experience. Transforms vision into compelling narratives that resonate across every touchpoint.",
   },
@@ -27,17 +28,18 @@ const leaders = [
     role: "Principal / Manager",
     experience: "15+ Years in Custom Residential & Commercial Building",
     image: jonArmstrong,
-    imagePosition: "object-top",
+    imagePosition: "object-[center_15%]",
     description:
       "Our build partner and owner of Armstrong Construction Group. Commands 300+ specialized trades to deliver uncompromising craftsmanship on every project.",
   },
   {
-    name: "Leadership Name",
-    role: "VP of Construction",
-    experience: "",
-    image: null,
+    name: "Scott Meiers",
+    role: "Chief Architectural Design",
+    experience: "40+ Years of Architectural Design in Residential & Commercial",
+    image: scottMeiers,
+    imagePosition: "object-[center_15%]",
     description:
-      "Masters the art of execution. Coordinates complex builds with precision and unwavering attention to detail.",
+      "An artist at heart with four decades of design mastery. Scott's creative vision spans residential, commercial, and beyond—bringing a rare cross-industry perspective to every Lïef project.",
   },
 ];
 
