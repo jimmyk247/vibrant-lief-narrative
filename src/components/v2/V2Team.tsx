@@ -75,7 +75,7 @@ const V2Team = () => {
 
   return (
     <section id="team" className="relative py-32 md:py-44" style={{ background: "var(--v2-deep)" }}>
-      <div className="v2-ghost-text top-16 right-8" style={{ fontSize: "min(12vw, 160px)", color: "rgba(0,255,136,.03)" }}>TEAM</div>
+      <div className="v2-ghost-text top-16 right-8" style={{ fontSize: "min(12vw, 160px)", color: "rgba(0,255,136,.23)" }}>TEAM</div>
 
       <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
         {inView && (
