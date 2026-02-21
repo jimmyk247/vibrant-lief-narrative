@@ -20,7 +20,7 @@ const V2Disciplines = () => {
   const { ref, inView } = useInView(0.1);
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
-  const ghostX = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+  const ghostX = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
 
   return (
     <section ref={sectionRef} className="relative py-32 md:py-44 overflow-hidden" style={{ background: "var(--v2-deep)" }}>
