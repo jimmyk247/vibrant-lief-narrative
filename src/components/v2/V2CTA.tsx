@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "./useInView";
+import dotsGreen from "@/assets/v2/dots-green.png";
 
 const ease = [.16, 1, .3, 1] as const;
 
@@ -10,6 +11,9 @@ const V2CTA = () => {
     <section id="contact" className="relative py-32 md:py-44" style={{ background: "var(--v2-black)" }}>
       {/* Thin neon line from top */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px" style={{ height: "100px", background: "linear-gradient(to bottom, var(--v2-neon), transparent)" }} />
+
+      {/* Leaf dots accent — top-right */}
+      <img src={dotsGreen} alt="" className="absolute top-16 right-12 w-10 md:w-14 opacity-[0.06] pointer-events-none" />
 
       <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 text-center flex flex-col items-center">
         {inView && (
@@ -27,15 +31,9 @@ const V2CTA = () => {
               href="mailto:contact@liefdevelopment.com"
               className="inline-block transition-all duration-300 hover:brightness-110"
               style={{
-                fontFamily: "var(--v2-font-body)",
-                fontSize: "0.75rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.14em",
-                fontWeight: 600,
-                background: "var(--v2-neon)",
-                color: "var(--v2-deep)",
-                padding: "16px 40px",
-                textDecoration: "none",
+                fontFamily: "var(--v2-font-body)", fontSize: "0.75rem", textTransform: "uppercase",
+                letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-neon)",
+                color: "var(--v2-deep)", padding: "16px 40px", textDecoration: "none",
               }}
             >
               Start a Conversation

@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import logoGreen from "@/assets/v2/logo-green.png";
+import dotsNeon from "@/assets/v2/dots-neon.png";
 
 const stagger = (i: number) => ({ delay: 0.3 + i * 0.15 });
 
@@ -8,6 +9,7 @@ const V2Hero = () => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const watermarkY = useTransform(scrollYProgress, [0, 1], [0, 80]);
+  const dotsY = useTransform(scrollYProgress, [0, 1], [0, -40]);
   const [showScroll, setShowScroll] = useState(true);
 
   useEffect(() => {
@@ -27,6 +29,11 @@ const V2Hero = () => {
       {/* Ghost watermark logo */}
       <motion.div className="absolute top-20 right-12 pointer-events-none" style={{ y: watermarkY }}>
         <img src={logoGreen} alt="" className="w-[30vw] max-w-[400px] opacity-[0.04]" />
+      </motion.div>
+
+      {/* Leaf dots — bottom-left decorative accent */}
+      <motion.div className="absolute bottom-32 right-16 md:right-32 pointer-events-none" style={{ y: dotsY }}>
+        <img src={dotsNeon} alt="" className="w-12 md:w-16 opacity-[0.06]" />
       </motion.div>
 
       {/* Content */}
@@ -81,16 +88,9 @@ const V2Hero = () => {
             onClick={() => document.querySelector("#communities")?.scrollIntoView({ behavior: "smooth" })}
             className="transition-all duration-300 hover:brightness-110"
             style={{
-              fontFamily: "var(--v2-font-body)",
-              fontSize: "0.75rem",
-              textTransform: "uppercase",
-              letterSpacing: "0.14em",
-              fontWeight: 600,
-              background: "var(--v2-neon)",
-              color: "var(--v2-deep)",
-              border: "none",
-              padding: "14px 32px",
-              cursor: "pointer",
+              fontFamily: "var(--v2-font-body)", fontSize: "0.75rem", textTransform: "uppercase",
+              letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-neon)",
+              color: "var(--v2-deep)", border: "none", padding: "14px 32px", cursor: "pointer",
             }}
           >
             View Projects
@@ -99,16 +99,9 @@ const V2Hero = () => {
             onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
             className="transition-all duration-300 hover:bg-[#00FF88] hover:text-[#0a0a0a]"
             style={{
-              fontFamily: "var(--v2-font-body)",
-              fontSize: "0.75rem",
-              textTransform: "uppercase",
-              letterSpacing: "0.14em",
-              fontWeight: 600,
-              background: "transparent",
-              color: "var(--v2-neon)",
-              border: "1px solid var(--v2-neon)",
-              padding: "14px 32px",
-              cursor: "pointer",
+              fontFamily: "var(--v2-font-body)", fontSize: "0.75rem", textTransform: "uppercase",
+              letterSpacing: "0.14em", fontWeight: 600, background: "transparent",
+              color: "var(--v2-neon)", border: "1px solid var(--v2-neon)", padding: "14px 32px", cursor: "pointer",
             }}
           >
             Partner With Us
