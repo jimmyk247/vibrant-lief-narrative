@@ -21,16 +21,16 @@ interface TeamMember {
 
 const principals: TeamMember[] = [
   { name: "Jesse Fowler", role: "Principal / Manager", cred: "20+ Yrs in Design, Build & Development", img: jesseImg, zoom: 1.32 },
-  { name: "Jimmy Khounlavong", role: "Principal / Creative Director", cred: "20+ Yrs of Brand, Merchandising & Marketplace Strategy", img: jimmyImg },
+  { name: "Jimmy Khounlavong", role: "Principal / Creative Director", cred: "20+ Yrs of Brand, Merchandising & Marketplace Strategy", img: jimmyImg, zoom: 1.10 },
   { name: "Jon Armstrong", role: "Principal / Manager", cred: "15+ Yrs in Custom Residential & Commercial Building", img: jonImg, zoom: 1.32 },
 ];
 
 const extended: TeamMember[] = [
-  { name: "Scott Hibler", role: "Real Estate / B2B Partnerships", cred: "20+ Yrs of Sales & Investment Strategy", img: hiblerImg },
+  { name: "Scott Hibler", role: "Real Estate / B2B Partnerships", cred: "20+ Yrs of Sales & Investment Strategy", img: hiblerImg, zoom: 1.20 },
   { name: "Nick Scavio", role: "General Counsel", cred: "15+ Yrs of Business Law, >$100M In Transactions Closed", img: nickImg },
-  { name: "Scott Meiers", role: "Chief Architectural Design", cred: "40+ Yrs of Architectural Design in Commercial & Residential", img: scottImg, zoom: 1.5 },
+  { name: "Scott Meiers", role: "Chief Architectural Design", cred: "40+ Yrs of Architectural Design in Commercial & Residential", img: scottImg, zoom: 1.6 },
   { name: "Tania Karenina Gonzalez", role: "Architectural & Interior Design", cred: "15+ Yrs of Multi-residential Commercial & Interior Design", img: taniaImg },
-  { name: "Alex Prince", role: "Investor Relations", cred: "20+ Yrs of Institutional Asset Mgmt. & Investment Banking", img: alexImg, zoom: 1.32 },
+  { name: "Alex Prince", role: "Investor Relations", cred: "20+ Yrs of Institutional Asset Mgmt. & Investment Banking", img: alexImg, zoom: 1.42 },
 ];
 
 const Portrait = ({ member, delay, size = 180 }: { member: TeamMember; delay: number; size?: number }) => (
