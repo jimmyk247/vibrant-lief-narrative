@@ -30,8 +30,8 @@ const V2Hero = () => {
 
 
       {/* Leaf dots — bottom-left decorative accent */}
-      <motion.div className="absolute bottom-32 right-16 md:right-32 pointer-events-none" style={{ y: dotsY }}>
-        <img src={dotsNeon} alt="" className="w-12 md:w-16 opacity-[0.06]" />
+      <motion.div className="absolute bottom-40 right-8 md:bottom-32 md:right-32 pointer-events-none" style={{ y: dotsY }}>
+        <img src={dotsNeon} alt="" className="w-8 md:w-16 opacity-[0.06]" />
       </motion.div>
 
       {/* Content */}
@@ -60,7 +60,7 @@ const V2Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(1), ease: [.16, 1, .3, 1] }}
           className="v2-headline leading-[0.95] mb-8"
-          style={{ fontSize: "clamp(4.25rem, 10.2vw, 9.35rem)" }}
+          style={{ fontSize: "clamp(3rem, 10.2vw, 9.35rem)" }}
         >
           BUILT<span className="v2-neon-period">.</span>
           <br />
@@ -73,7 +73,9 @@ const V2Hero = () => {
           transition={{ duration: 0.75, ...stagger(2), ease: [.16, 1, .3, 1] }}
           style={{ fontStyle: "italic", fontWeight: 300, fontSize: "1.4rem", color: "var(--v2-muted)", lineHeight: 1.5 }}
         >
-          We draw it. We build it. We own it.
+          We draw it. We build it.
+          <br />
+          We own it.
         </motion.p>
 
         <motion.p
@@ -81,9 +83,13 @@ const V2Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(3), ease: [.16, 1, .3, 1] }}
           className="mt-4 max-w-[420px]"
-          style={{ fontSize: "0.9rem", color: "var(--v2-dim)", lineHeight: 1.7 }}
+          style={{ fontSize: "0.85rem", color: "var(--v2-dim)", lineHeight: 1.7 }}
         >
-          Development + Construction consolidated. Concept to concrete. 300 trades, one team, no gaps. Phoenix, AZ.
+          Development + Construction consolidated.
+          <br className="hidden sm:inline" />
+          Concept to concrete. 300 trades,
+          <br className="hidden sm:inline" />
+          one team, no gaps. Phoenix, AZ.
         </motion.p>
 
         <motion.div
@@ -121,10 +127,10 @@ const V2Hero = () => {
       <motion.div
         animate={{ opacity: showScroll ? 1 : 0 }}
         transition={{ duration: 0.5 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
+        className="absolute bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 md:gap-3"
       >
         <span style={{ fontSize: "0.55rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--v2-muted)" }}>Scroll</span>
-        <div className="w-px h-16" style={{ background: "linear-gradient(to bottom, var(--v2-neon), transparent)" }} />
+        <div className="w-px h-10 md:h-16" style={{ background: "linear-gradient(to bottom, var(--v2-neon), transparent)" }} />
       </motion.div>
     </section>
   );
