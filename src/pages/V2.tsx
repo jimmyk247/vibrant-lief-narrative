@@ -5,6 +5,7 @@ import V2Ticker from "@/components/v2/V2Ticker";
 import V2Model from "@/components/v2/V2Model";
 import V2Communities from "@/components/v2/V2Communities";
 import V2Edge from "@/components/v2/V2Edge";
+import V2Disciplines from "@/components/v2/V2Disciplines";
 import V2Team from "@/components/v2/V2Team";
 import V2CTA from "@/components/v2/V2CTA";
 import V2Footer from "@/components/v2/V2Footer";
@@ -17,6 +18,7 @@ const V2 = () => {
         <V2Hero />
         <V2Ticker />
         <V2Model />
+        <V2Disciplines />
         <V2Communities />
         <V2Edge />
         <V2Team />
