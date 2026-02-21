@@ -1,4 +1,5 @@
 import logoConcrete from "@/assets/v2/logo-concrete.png";
+import dotsConcrete from "@/assets/v2/dots-concrete.png";
 
 const footerLinks = {
   explore: ["The Model", "Communities", "Technology", "Team"],
@@ -18,7 +19,10 @@ const V2Footer = () => {
   };
 
   return (
-    <footer style={{ background: "var(--v2-deep)", borderTop: "1px solid var(--v2-rule)" }}>
+    <footer className="relative" style={{ background: "var(--v2-deep)", borderTop: "1px solid var(--v2-rule)" }}>
+      {/* Leaf dots watermark — bottom-right */}
+      <img src={dotsConcrete} alt="" className="absolute bottom-8 right-12 w-20 md:w-28 opacity-[0.03] pointer-events-none" />
+
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
