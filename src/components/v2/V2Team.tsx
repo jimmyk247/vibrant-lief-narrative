@@ -79,7 +79,7 @@ const V2Team = () => {
 
   return (
     <section id="team" className="relative py-12 md:py-28" style={{ background: "var(--v2-deep)" }}>
-      <div className="v2-ghost-text hidden md:block top-16 right-8" style={{ fontSize: "min(12vw, 160px)", color: "rgba(0,255,136,.23)" }}>TEAM</div>
+      <div className="v2-ghost-text hidden lg:block top-16 right-8" style={{ fontSize: "min(12vw, 160px)", color: "rgba(0,255,136,.23)" }}>TEAM</div>
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <img src={dotsNeon} alt="" className="w-[176vw] max-w-[1512px] opacity-[0.01]" />
       </div>

@@ -48,7 +48,7 @@ const V2Nav = () => {
             <img src={logoConcrete} alt="Lïef" className="h-6 md:h-7 w-auto block" />
           </button>
           <span
-            className="v2-headline hidden md:flex items-center transition-all duration-500"
+            className="v2-headline hidden lg:flex items-center transition-all duration-500"
             style={{
               fontSize: "clamp(0.85rem, 1.5vw, 1.1rem)",
               color: "var(--v2-neon)",
@@ -64,7 +64,7 @@ const V2Nav = () => {
         </div>
 
         {/* Desktop */}
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden lg:flex items-center gap-10">
           {navLinks.map((l) => (
             <button
               key={l.href}
@@ -106,7 +106,7 @@ const V2Nav = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden"
+          className="lg:hidden"
           style={{ color: "#F5F5F3" }}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -119,7 +119,7 @@ const V2Nav = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden"
+            className="lg:hidden"
             style={{ background: "rgba(10,10,10,.98)", borderTop: "1px solid rgba(0,255,136,.06)" }}
           >
             <nav className="px-6 py-8 flex flex-col gap-6">
