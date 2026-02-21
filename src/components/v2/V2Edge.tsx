@@ -58,7 +58,7 @@ const V2Edge = () => {
                       <Icon size={18} style={{ color: accentColor }} />
                     </div>
                     <h4 className="mb-3" style={{ fontSize: "1.25rem", fontWeight: 600, color: accentColor }}>{attr.title}</h4>
-                    <p style={{ fontSize: "1.125rem", color: "rgba(245,245,243,.6)", lineHeight: 1.6 }}>{attr.desc}</p>
+                    <p style={{ fontSize: "1.25rem", color: "rgba(245,245,243,.6)", lineHeight: 1.6 }}>{attr.desc}</p>
                   </div>
                 );
               })}
@@ -83,7 +83,7 @@ const V2Edge = () => {
                       {stat.value}<span style={{ fontSize: "0.5em", fontWeight: 400 }}>{stat.suffix}</span>
                     </div>
                     <div className="mb-2" style={{ fontSize: "0.95rem", textTransform: "uppercase", color: "var(--v2-white)", letterSpacing: "0.1em", fontWeight: 600 }}>{stat.label}</div>
-                    <div style={{ fontSize: "1.06rem", color: "rgba(245,245,243,.55)", lineHeight: 1.5 }}>{stat.desc}</div>
+                    <div style={{ fontSize: "1.25rem", color: "rgba(245,245,243,.55)", lineHeight: 1.5 }}>{stat.desc}</div>
                   </div>
                 );
               })}
@@ -94,7 +94,7 @@ const V2Edge = () => {
               <p className="mb-3" style={{ fontSize: "1.25rem", color: "var(--v2-white)" }}>
                 <span style={{ color: accentColor }}>Structural Superiority:</span> Anti-Fire, Anti-Mold, and Anti-Termite protection are standard.
               </p>
-              <p className="max-w-2xl mx-auto" style={{ fontSize: "1.125rem", color: "rgba(245,245,243,.55)", lineHeight: 1.7 }}>
+              <p className="max-w-2xl mx-auto" style={{ fontSize: "1.25rem", color: "rgba(245,245,243,.55)", lineHeight: 1.7 }}>
                 SABS™ technology radically reduces the number of trades required on-site, allowing for total schedule control and unprecedented quality consistency.
               </p>
             </motion.div>

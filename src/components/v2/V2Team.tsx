@@ -64,7 +64,7 @@ const Portrait = ({ member, delay, size = 180 }: { member: TeamMember; delay: nu
     >
       {member.role}
     </p>
-    <p style={{ fontSize: "0.95rem", color: "var(--v2-muted)", lineHeight: 1.5, maxWidth: 200 }}>
+    <p style={{ fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.5, maxWidth: 220 }}>
       {member.cred}
     </p>
   </motion.div>
