@@ -12,10 +12,6 @@ const V2CTA = () => {
       {/* Thin neon line from top */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px" style={{ height: "100px", background: "linear-gradient(to bottom, var(--v2-neon), transparent)" }} />
 
-      {/* Centered leaf dots watermark */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <img src={dotsGreen} alt="" className="w-[196vw] max-w-[1680px] opacity-[0.02]" />
-      </div>
 
       <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 text-center flex flex-col items-center">
         {inView && (

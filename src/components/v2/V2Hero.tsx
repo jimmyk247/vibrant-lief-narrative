@@ -29,10 +29,6 @@ const V2Hero = () => {
       </div>
 
 
-      {/* Centered leaf dots watermark */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <img src={dotsNeon} alt="" className="w-[196vw] max-w-[1680px] opacity-[0.02]" />
-      </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 w-full">
