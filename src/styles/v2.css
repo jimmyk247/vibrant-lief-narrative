@@ -37,15 +37,6 @@
   color: var(--v2-neon);
 }
 
-.v2-label::before {
-  content: '';
-  display: inline-block;
-  width: 24px;
-  height: 1px;
-  background: var(--v2-neon);
-  margin-right: 12px;
-  vertical-align: middle;
-}
 
 .v2-neon-period {
   color: var(--v2-neon);
