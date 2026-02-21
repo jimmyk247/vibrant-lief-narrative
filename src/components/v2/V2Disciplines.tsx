@@ -58,7 +58,7 @@ const V2Disciplines = () => {
                 className="max-w-md"
                 style={{ fontSize: "1.25rem", color: "rgba(245,245,243,.7)", lineHeight: 1.8 }}
               >
-                From the first line drawn to the final fixture placed, Lief commands every aspect of creation. No handoffs. No compromises. No excuses.
+                From the first line drawn to the final fixture placed, Lïef commands every aspect of creation. No handoffs. No compromises. No excuses.
               </motion.p>
             </div>
 

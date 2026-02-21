@@ -84,8 +84,8 @@ const V2Nav = () => {
               {l.label}
             </button>
           ))}
-          <button
-            onClick={() => handleNav("#contact")}
+          <a
+            href="mailto:hello@liefdev.com"
             className="transition-all duration-300 hover:bg-[#00FF88] hover:text-[#0a0a0a]"
             style={{
               fontFamily: "'DM Sans', sans-serif",
@@ -100,7 +100,7 @@ const V2Nav = () => {
             }}
           >
             Contact
-          </button>
+          </a>
         </nav>
 
         {/* Mobile toggle */}
@@ -123,7 +123,7 @@ const V2Nav = () => {
             style={{ background: "rgba(10,10,10,.98)", borderTop: "1px solid rgba(0,255,136,.06)" }}
           >
             <nav className="px-6 py-8 flex flex-col gap-6">
-              {[...navLinks, { href: "#contact", label: "Contact" }].map((l) => (
+              {navLinks.map((l) => (
                 <button
                   key={l.href}
                   onClick={() => handleNav(l.href)}
@@ -132,7 +132,7 @@ const V2Nav = () => {
                     fontSize: "1.25rem",
                     textTransform: "uppercase",
                     letterSpacing: "0.16em",
-                    color: l.href === "#contact" ? "#00FF88" : "#F5F5F3",
+                    color: "#F5F5F3",
                     background: "none",
                     border: "none",
                     cursor: "pointer",
@@ -142,6 +142,20 @@ const V2Nav = () => {
                   {l.label}
                 </button>
               ))}
+              <a
+                href="mailto:hello@liefdev.com"
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "1.25rem",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.16em",
+                  color: "#00FF88",
+                  textDecoration: "none",
+                  textAlign: "left",
+                }}
+              >
+                Contact
+              </a>
             </nav>
           </motion.div>
         )}
