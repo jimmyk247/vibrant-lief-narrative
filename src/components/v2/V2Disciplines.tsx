@@ -23,7 +23,7 @@ const V2Disciplines = () => {
   const ghostX = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "var(--v2-deep)" }}>
+    <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "var(--v2-green)" }}>
       <motion.div
         className="absolute top-1/2 -translate-y-1/2 whitespace-nowrap pointer-events-none select-none"
         style={{
@@ -31,7 +31,7 @@ const V2Disciplines = () => {
           fontFamily: "'Archivo Black', sans-serif",
           textTransform: "uppercase",
           fontSize: "min(10vw, 140px)",
-          color: "rgba(0,107,63,.04)",
+          color: "rgba(0,50,25,.15)",
         }}
       >
         {ghostText}
@@ -75,7 +75,7 @@ const V2Disciplines = () => {
                     <div
                       key={d}
                       className="py-6"
-                      style={{ borderBottom: "1px solid var(--v2-rule)" }}
+                      style={{ borderBottom: "1px solid rgba(255,255,255,.12)" }}
                     >
                       <span style={{ fontSize: "1.05rem", color: "var(--v2-muted)", fontWeight: 400 }}>{d}</span>
                     </div>
