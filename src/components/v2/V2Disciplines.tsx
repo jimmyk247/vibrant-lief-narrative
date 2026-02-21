@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "./useInView";
+import { useRef } from "react";
 
 const disciplines = [
   ["Architectural Design", "Structural Engineering"],
@@ -10,16 +11,31 @@ const disciplines = [
   ["Custom Stone & Tile", "Fine Finishing"],
 ];
 
+const allDisciplines = disciplines.flat();
+const ghostText = allDisciplines.join(" · ") + " · " + allDisciplines.join(" · ");
+
 const ease = [.16, 1, .3, 1] as const;
 
 const V2Disciplines = () => {
   const { ref, inView } = useInView(0.1);
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
+  const ghostX = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
 
   return (
-    <section className="relative py-32 md:py-44" style={{ background: "var(--v2-deep)" }}>
-      <div className="v2-ghost-text top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style={{ fontSize: "min(14vw, 200px)" }}>
-        Total Systems
-      </div>
+    <section ref={sectionRef} className="relative py-32 md:py-44 overflow-hidden" style={{ background: "var(--v2-deep)" }}>
+      <motion.div
+        className="absolute top-1/2 -translate-y-1/2 whitespace-nowrap pointer-events-none select-none"
+        style={{
+          x: ghostX,
+          fontFamily: "'Archivo Black', sans-serif",
+          textTransform: "uppercase",
+          fontSize: "min(10vw, 140px)",
+          color: "rgba(0,107,63,.04)",
+        }}
+      >
+        {ghostText}
+      </motion.div>
 
       <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
         {inView && (
