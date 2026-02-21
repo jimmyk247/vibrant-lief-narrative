@@ -21,7 +21,7 @@ const V2CTA = () => {
             <motion.h2 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="v2-headline mb-6" style={{ fontSize: "clamp(3rem, 6vw, 5rem)", color: "var(--v2-white)" }}>
               LET'S<br />BUILD<span className="v2-neon-period">.</span>
             </motion.h2>
-            <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="mb-10 max-w-[380px]" style={{ fontWeight: 300, fontSize: "1rem", color: "var(--v2-dim)", lineHeight: 1.7 }}>
+            <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="mb-10 max-w-[380px]" style={{ fontWeight: 300, fontSize: "1.05rem", color: "var(--v2-muted)", lineHeight: 1.7 }}>
               Whether you're an investor, a developer, or a future homeowner — we'd like to hear from you.
             </motion.p>
             <motion.a

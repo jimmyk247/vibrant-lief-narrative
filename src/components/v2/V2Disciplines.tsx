@@ -42,7 +42,8 @@ const V2Disciplines = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-0 items-start">
             {/* Left — copy */}
             <div className="mb-12 md:mb-0 md:sticky md:top-32">
-              <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0, ease }} className="v2-label mb-6">
+              <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0, ease }} className="mb-6" style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.22em", color: "rgba(0,255,136,.7)" }}>
+                <span className="inline-block w-6 h-px mr-3 align-middle" style={{ background: "rgba(0,255,136,.7)" }} />
                 Complete Mastery
               </motion.div>
               <motion.h2
@@ -55,7 +56,7 @@ const V2Disciplines = () => {
               <motion.p
                 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }}
                 className="max-w-md"
-                style={{ fontSize: "1.05rem", color: "var(--v2-dim)", lineHeight: 1.8 }}
+                style={{ fontSize: "1rem", color: "rgba(245,245,243,.7)", lineHeight: 1.8 }}
               >
                 From the first line drawn to the final fixture placed, Lief commands every aspect of creation. No handoffs. No compromises. No excuses.
               </motion.p>
@@ -77,7 +78,7 @@ const V2Disciplines = () => {
                       className="py-6"
                       style={{ borderBottom: "1px solid rgba(255,255,255,.12)" }}
                     >
-                      <span style={{ fontSize: "1.05rem", color: "var(--v2-muted)", fontWeight: 400 }}>{d}</span>
+                      <span style={{ fontSize: "1rem", color: "rgba(245,245,243,.8)", fontWeight: 400 }}>{d}</span>
                     </div>
                   ))}
                 </motion.div>

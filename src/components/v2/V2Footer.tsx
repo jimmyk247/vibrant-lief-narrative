@@ -32,18 +32,18 @@ const V2Footer = () => {
               DEVELOPMENT + CONSTRUCTION
             </p>
             <p style={{ fontSize: "0.75rem", color: "var(--v2-neon)" }}>BUILT. DIFFERENT.</p>
-            <p className="mt-2" style={{ fontSize: "0.7rem", color: "var(--v2-dim)" }}>Phoenix, Arizona</p>
+            <p className="mt-2" style={{ fontSize: "0.8rem", color: "var(--v2-dim)" }}>Phoenix, Arizona</p>
           </div>
 
           {/* Explore */}
           <div>
-            <h5 className="mb-4" style={{ fontSize: "0.6rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-muted)" }}>Explore</h5>
+            <h5 className="mb-4" style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-muted)" }}>Explore</h5>
             <ul className="space-y-3">
               {footerLinks.explore.map((l) => (
                 <li key={l}>
                   <button
                     onClick={() => handleNav(l)}
-                    style={{ fontSize: "0.8rem", color: "var(--v2-dim)", background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                    style={{ fontSize: "0.9rem", color: "var(--v2-dim)", background: "none", border: "none", cursor: "pointer", padding: 0 }}
                     className="hover:text-[#00FF88] transition-colors duration-300"
                   >
                     {l}
@@ -55,11 +55,11 @@ const V2Footer = () => {
 
           {/* Partner */}
           <div>
-            <h5 className="mb-4" style={{ fontSize: "0.6rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-muted)" }}>Partner</h5>
+            <h5 className="mb-4" style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-muted)" }}>Partner</h5>
             <ul className="space-y-3">
               {footerLinks.partner.map((l) => (
                 <li key={l}>
-                  <span style={{ fontSize: "0.8rem", color: "var(--v2-dim)" }}>{l}</span>
+                  <span style={{ fontSize: "0.9rem", color: "var(--v2-dim)" }}>{l}</span>
                 </li>
               ))}
             </ul>
@@ -67,15 +67,15 @@ const V2Footer = () => {
 
           {/* Connect */}
           <div>
-            <h5 className="mb-4" style={{ fontSize: "0.6rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-muted)" }}>Connect</h5>
+            <h5 className="mb-4" style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-muted)" }}>Connect</h5>
             <ul className="space-y-3">
               <li>
-                <a href="mailto:hello@liefdev.com" style={{ fontSize: "0.8rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#00FF88] transition-colors duration-300">
+                <a href="mailto:hello@liefdev.com" style={{ fontSize: "0.9rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#00FF88] transition-colors duration-300">
                   hello@liefdev.com
                 </a>
               </li>
               <li>
-                <a href="#" style={{ fontSize: "0.8rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#00FF88] transition-colors duration-300">
+                <a href="#" style={{ fontSize: "0.9rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#00FF88] transition-colors duration-300">
                   LinkedIn
                 </a>
               </li>
@@ -86,10 +86,10 @@ const V2Footer = () => {
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4" style={{ borderTop: "1px solid var(--v2-rule)" }}>
           <div>
-            <p style={{ fontSize: "0.65rem", color: "var(--v2-dim)" }}>© 2026 Lïef Development + Construction</p>
-            <p style={{ fontSize: "0.55rem", color: "var(--v2-dim)", opacity: 0.6, marginTop: "4px" }}>A Common Ground venture.</p>
+            <p style={{ fontSize: "0.75rem", color: "var(--v2-dim)" }}>© 2026 Lïef Development + Construction</p>
+            <p style={{ fontSize: "0.65rem", color: "var(--v2-dim)", opacity: 0.6, marginTop: "4px" }}>A Common Ground venture.</p>
           </div>
-          <p style={{ fontSize: "0.55rem", color: "var(--v2-dim)", opacity: 0.5 }}>
+          <p style={{ fontSize: "0.65rem", color: "var(--v2-dim)", opacity: 0.5 }}>
             Branded by Lip Loi &nbsp;|&nbsp; Powered by Apexx AI
           </p>
         </div>

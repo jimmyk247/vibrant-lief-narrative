@@ -54,17 +54,17 @@ const Portrait = ({ member, delay, size = 180 }: { member: TeamMember; delay: nu
     </div>
     <h4
       className="v2-headline mb-1"
-      style={{ fontSize: "0.7rem", color: "var(--v2-white)", letterSpacing: "0.05em" }}
+      style={{ fontSize: "0.8rem", color: "var(--v2-white)", letterSpacing: "0.05em" }}
     >
       {member.name}
     </h4>
     <p
       className="mb-2 v2-headline"
-      style={{ fontSize: "0.55rem", color: "var(--v2-neon)", letterSpacing: "0.05em" }}
+      style={{ fontSize: "0.65rem", color: "var(--v2-neon)", letterSpacing: "0.05em" }}
     >
       {member.role}
     </p>
-    <p style={{ fontSize: "0.65rem", color: "var(--v2-muted)", lineHeight: 1.5, maxWidth: 200 }}>
+    <p style={{ fontSize: "0.75rem", color: "var(--v2-muted)", lineHeight: 1.5, maxWidth: 200 }}>
       {member.cred}
     </p>
   </motion.div>
@@ -84,7 +84,7 @@ const V2Team = () => {
             <motion.h2 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="v2-headline text-4xl md:text-6xl lg:text-7xl mb-4" style={{ color: "var(--v2-white)" }}>
               BIG IDEAS<span className="v2-neon-period">.</span><br />DIRTY HANDS<span className="v2-neon-period">.</span>
             </motion.h2>
-            <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="mb-20" style={{ fontStyle: "italic", fontWeight: 300, color: "var(--v2-dim)", maxWidth: "550px" }}>
+            <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="mb-20" style={{ fontStyle: "italic", fontWeight: 300, fontSize: "1.1rem", color: "var(--v2-muted)", maxWidth: "550px", lineHeight: 1.7 }}>
               The entire chain — design, construction, development, brand — one team, no gaps.
             </motion.p>
 
