@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import logoGreen from "@/assets/v2/logo-green.png";
+import logoLight from "@/assets/lief-logo-light.png";
 import dotsNeon from "@/assets/v2/dots-neon.png";
 
 const stagger = (i: number) => ({ delay: 0.3 + i * 0.15 });
@@ -8,7 +8,9 @@ const stagger = (i: number) => ({ delay: 0.3 + i * 0.15 });
 const V2Hero = () => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const watermarkY = useTransform(scrollYProgress, [0, 1], [0, 80]);
+  const heroLogoOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
+  const heroLogoScale = useTransform(scrollYProgress, [0, 0.15], [1, 0.4]);
+  const heroLogoY = useTransform(scrollYProgress, [0, 0.15], [0, -60]);
   const dotsY = useTransform(scrollYProgress, [0, 1], [0, -40]);
   const [showScroll, setShowScroll] = useState(true);
 
@@ -26,10 +28,6 @@ const V2Hero = () => {
         <div className="absolute bottom-0 left-0 w-[50%] h-[50%]" style={{ background: "radial-gradient(ellipse at bottom left, rgba(0,255,136,.04), transparent 70%)" }} />
       </div>
 
-      {/* Ghost watermark logo */}
-      <motion.div className="absolute top-20 right-12 pointer-events-none" style={{ y: watermarkY }}>
-        <img src={logoGreen} alt="" className="w-[50vw] max-w-[700px] opacity-[0.04]" />
-      </motion.div>
 
       {/* Leaf dots — bottom-left decorative accent */}
       <motion.div className="absolute bottom-32 right-16 md:right-32 pointer-events-none" style={{ y: dotsY }}>
@@ -45,6 +43,16 @@ const V2Hero = () => {
           className="v2-label mb-10"
         >
           Development + Construction · Phoenix, AZ
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, ...stagger(0.5), ease: [.16, 1, .3, 1] }}
+          style={{ opacity: heroLogoOpacity, scale: heroLogoScale, y: heroLogoY, transformOrigin: "left center" }}
+          className="mb-8"
+        >
+          <img src={logoLight} alt="Lïef" className="h-14 md:h-20 w-auto" />
         </motion.div>
 
         <motion.h1
