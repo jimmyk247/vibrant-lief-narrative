@@ -21,7 +21,7 @@ const V2Hero = () => {
   }, []);
 
   return (
-    <section ref={ref} className="relative h-screen flex items-center overflow-hidden" style={{ background: "var(--v2-deep)" }}>
+    <section ref={ref} className="relative h-screen flex items-center overflow-x-hidden" style={{ background: "var(--v2-deep)" }}>
       {/* Ambient glows */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[60%] h-[60%]" style={{ background: "radial-gradient(ellipse at top right, rgba(0,107,63,.12), transparent 70%)" }} />
@@ -137,10 +137,10 @@ const V2Hero = () => {
       <motion.div
         animate={{ opacity: showScroll ? 1 : 0 }}
         transition={{ duration: 0.5 }}
-        className="absolute bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 md:gap-3"
+        className="absolute bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
         <span style={{ fontSize: "0.55rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--v2-muted)" }}>Scroll</span>
-        <div className="w-px h-10 md:h-16" style={{ background: "linear-gradient(to bottom, var(--v2-neon), transparent)" }} />
+        <div className="w-px h-8 md:h-12" style={{ background: "linear-gradient(to bottom, var(--v2-neon), transparent)" }} />
       </motion.div>
     </section>
   );
