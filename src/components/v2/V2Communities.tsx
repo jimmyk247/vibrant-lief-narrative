@@ -21,7 +21,7 @@ const V2Communities = () => {
       </div>
 
       {/* Ghost text */}
-      <div className="v2-ghost-text top-8 right-8 text-right" style={{ fontSize: "min(12vw, 150px)" }}>PROJECTS</div>
+      <div className="v2-ghost-text top-8 right-8 text-right" style={{ fontSize: "min(12vw, 150px)", color: "rgba(0,107,63,.24)" }}>PROJECTS</div>
 
       <div ref={headerRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 mb-16">
         {headerInView && (
