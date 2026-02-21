@@ -28,7 +28,7 @@ const V2CTA = () => {
               initial={{ opacity: 0, y: 35 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.75, delay: 0.16, ease }}
-              href="mailto:contact@liefdevelopment.com"
+              href="mailto:hello@liefdev.com"
               className="inline-block transition-all duration-300 hover:brightness-110"
               style={{
                 fontFamily: "var(--v2-font-body)", fontSize: "0.75rem", textTransform: "uppercase",
