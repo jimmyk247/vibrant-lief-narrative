@@ -19,86 +19,88 @@ interface TeamMember {
 }
 
 const principals: TeamMember[] = [
-  { name: "Jesse Fowler", role: "CEO / COO · Principal", cred: "20+ years. $300M+ built. LA Clippers. Greensburg KS. Concept to concrete.", img: jesseImg },
-  { name: "Jimmy Khounlavong", role: "CMO · Principal", cred: "16+ years Nike. $1B+ P&Ls. The project's story matches the project's quality.", img: jimmyImg },
-  { name: "Jon Armstrong", role: "General Contractor · Principal", cred: "300+ trades. Ritz-Carlton Paradise Valley. Schedule controlled, not contracted.", img: jonImg },
+  { name: "Jesse Fowler", role: "Principal / Manager", cred: "20+ Yrs in Design, Build & Development", img: jesseImg },
+  { name: "Jimmy Khounlavong", role: "Principal / Creative Director", cred: "20+ Yrs of Brand, Merchandising & Marketplace Strategy", img: jimmyImg },
+  { name: "Jon Armstrong", role: "Principal / Manager", cred: "15+ Yrs in Custom Residential & Commercial Building", img: jonImg },
 ];
 
 const extended: TeamMember[] = [
-  { name: "Scott Meiers", role: "Design & Architecture", cred: "50+ years. Still sketches by hand.", img: scottImg },
-  { name: "Nick Scavio", role: "General Counsel", cred: "15+ yrs. >$100M in transactions.", img: nickImg },
-  { name: "Scott Hibler", role: "Real Estate / B2B", cred: "20+ yrs sales & investment.", img: hiblerImg },
-  { name: "Tania Karenina Gonzalez", role: "Architecture & Interior", cred: "15+ yrs multi-residential.", img: taniaImg },
-  { name: "Alex Prince", role: "Investor Relations", cred: "20+ yrs institutional finance.", img: alexImg },
+  { name: "Scott Hibler", role: "Real Estate / B2B Partnerships", cred: "20+ Yrs of Sales & Investment Strategy", img: hiblerImg },
+  { name: "Nick Scavio", role: "General Counsel", cred: "15+ Yrs of Business Law, >$100M In Transactions Closed", img: nickImg },
+  { name: "Scott Meiers", role: "Chief Architectural Design", cred: "40+ Yrs of Architectural Design in Commercial & Residential", img: scottImg },
+  { name: "Tania Karenina Gonzalez", role: "Architectural & Interior Design", cred: "15+ Yrs of Multi-residential Commercial & Interior Design", img: taniaImg },
+  { name: "Alex Prince", role: "Investor Relations", cred: "20+ Yrs of Institutional Asset Mgmt. & Investment Banking", img: alexImg },
 ];
+
+const Portrait = ({ member, delay, size = 180 }: { member: TeamMember; delay: number; size?: number }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7, delay, ease }}
+    className="flex flex-col items-center text-center group"
+  >
+    <div
+      className="relative overflow-hidden mb-5"
+      style={{ width: size, height: size * 1.2, border: "1px solid var(--v2-rule)" }}
+    >
+      <img
+        src={member.img}
+        alt={member.name}
+        className="w-full h-full object-cover object-top grayscale brightness-[.5] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.85]"
+        style={{ transform: "scale(1.15)", transformOrigin: "center 15%" }}
+      />
+    </div>
+    <h4
+      className="v2-headline mb-1"
+      style={{ fontSize: "0.7rem", color: "var(--v2-white)", letterSpacing: "0.05em" }}
+    >
+      {member.name}
+    </h4>
+    <p
+      className="mb-2 v2-headline"
+      style={{ fontSize: "0.55rem", color: "var(--v2-neon)", letterSpacing: "0.05em" }}
+    >
+      {member.role}
+    </p>
+    <p style={{ fontSize: "0.65rem", color: "var(--v2-muted)", lineHeight: 1.5, maxWidth: 200 }}>
+      {member.cred}
+    </p>
+  </motion.div>
+);
 
 const V2Team = () => {
   const { ref, inView } = useInView(0.1);
-  const { ref: photoRef, inView: photosInView } = useInView(0.1);
 
   return (
     <section id="team" className="relative py-32 md:py-44" style={{ background: "var(--v2-deep)" }}>
-      {/* Ghost watermark */}
       <div className="v2-ghost-text top-16 right-8" style={{ fontSize: "min(12vw, 160px)", color: "rgba(0,255,136,.03)" }}>TEAM</div>
 
-      <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 mb-16">
+      <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
         {inView && (
           <>
             <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="v2-label mb-6">The Team</motion.div>
             <motion.h2 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="v2-headline text-4xl md:text-6xl lg:text-7xl mb-4" style={{ color: "var(--v2-white)" }}>
               BIG IDEAS<span className="v2-neon-period">.</span><br />DIRTY HANDS<span className="v2-neon-period">.</span>
             </motion.h2>
-            <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} style={{ fontStyle: "italic", fontWeight: 300, color: "var(--v2-dim)", maxWidth: "550px" }}>
+            <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="mb-20" style={{ fontStyle: "italic", fontWeight: 300, color: "var(--v2-dim)", maxWidth: "550px" }}>
               The entire chain — design, construction, development, brand — one team, no gaps.
             </motion.p>
+
+            {/* Principals row */}
+            <div className="flex flex-wrap justify-center gap-12 md:gap-16 mb-20">
+              {principals.map((m, i) => (
+                <Portrait key={m.name} member={m} delay={0.24 + i * 0.08} size={200} />
+              ))}
+            </div>
+
+            {/* Extended row */}
+            <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+              {extended.map((m, i) => (
+                <Portrait key={m.name} member={m} delay={0.5 + i * 0.06} size={150} />
+              ))}
+            </div>
           </>
         )}
-      </div>
-
-      {/* Principals — 3 across */}
-      <div ref={photoRef} className="max-w-[1400px] mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-          {principals.map((m) => (
-            <div key={m.name} className="relative overflow-hidden group" style={{ height: "520px" }}>
-              <div className="absolute inset-0 overflow-hidden">
-                <img
-                  src={m.img}
-                  alt={m.name}
-                  className="w-full h-full object-cover object-top grayscale brightness-[.4] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.7]"
-                  style={{ transform: "scale(1.3)", transformOrigin: "center 20%" }}
-                />
-              </div>
-              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.95) 0%, rgba(10,10,10,.4) 60%, transparent 100%)" }} />
-              <div className="absolute bottom-0 left-0 p-8 z-10">
-                <h4 className="v2-headline text-base mb-1" style={{ color: "var(--v2-white)" }}>{m.name}</h4>
-                <p className="mb-2" style={{ fontSize: "0.55rem", fontWeight: 600, textTransform: "uppercase", color: "var(--v2-neon)" }}>{m.role}</p>
-                <p style={{ fontSize: "0.75rem", fontWeight: 300, fontStyle: "italic", color: "var(--v2-muted)", lineHeight: 1.6 }}>{m.cred}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Extended team */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          {extended.map((m) => (
-            <div key={m.name} className="relative overflow-hidden group" style={{ height: "320px" }}>
-              <div className="absolute inset-0 flex items-start justify-center overflow-hidden">
-                <img
-                  src={m.img}
-                  alt={m.name}
-                  className="w-full h-full object-cover object-top grayscale brightness-[.4] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.7]"
-                  style={{ transform: "scale(1.4)", transformOrigin: "center 18%" }}
-                />
-              </div>
-              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.95) 0%, rgba(10,10,10,.4) 60%, transparent 100%)" }} />
-              <div className="absolute bottom-0 left-0 p-5 z-10">
-                <h4 className="v2-headline mb-1" style={{ fontSize: "0.7rem", color: "var(--v2-white)" }}>{m.name}</h4>
-                <p className="mb-1" style={{ fontSize: "0.5rem", fontWeight: 600, textTransform: "uppercase", color: "var(--v2-neon)" }}>{m.role}</p>
-                <p style={{ fontSize: "0.65rem", fontWeight: 300, fontStyle: "italic", color: "var(--v2-muted)" }}>{m.cred}</p>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
