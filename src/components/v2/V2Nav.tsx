@@ -40,16 +40,17 @@ const V2Nav = () => {
     >
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
         <div className="flex items-center gap-6">
-          <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-            <img src={logoConcrete} alt="Lïef" className="h-6 md:h-7 w-auto" />
+          <button className="flex items-center" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+            <img src={logoConcrete} alt="Lïef" className="h-6 md:h-7 w-auto block" />
           </button>
           <span
-            className="v2-headline hidden md:block"
+            className="v2-headline hidden md:flex items-center"
             style={{
               fontSize: "clamp(0.85rem, 1.5vw, 1.1rem)",
               color: "var(--v2-neon)",
               lineHeight: 1,
               letterSpacing: "0.02em",
+              height: "28px",
             }}
           >
             BUILT<span className="v2-neon-period">.</span> DIFFERENT<span className="v2-neon-period">.</span>
