@@ -16,20 +16,21 @@ interface TeamMember {
   role: string;
   cred: string;
   img: string;
+  zoom?: number;
 }
 
 const principals: TeamMember[] = [
-  { name: "Jesse Fowler", role: "Principal / Manager", cred: "20+ Yrs in Design, Build & Development", img: jesseImg },
+  { name: "Jesse Fowler", role: "Principal / Manager", cred: "20+ Yrs in Design, Build & Development", img: jesseImg, zoom: 1.32 },
   { name: "Jimmy Khounlavong", role: "Principal / Creative Director", cred: "20+ Yrs of Brand, Merchandising & Marketplace Strategy", img: jimmyImg },
-  { name: "Jon Armstrong", role: "Principal / Manager", cred: "15+ Yrs in Custom Residential & Commercial Building", img: jonImg },
+  { name: "Jon Armstrong", role: "Principal / Manager", cred: "15+ Yrs in Custom Residential & Commercial Building", img: jonImg, zoom: 1.32 },
 ];
 
 const extended: TeamMember[] = [
   { name: "Scott Hibler", role: "Real Estate / B2B Partnerships", cred: "20+ Yrs of Sales & Investment Strategy", img: hiblerImg },
   { name: "Nick Scavio", role: "General Counsel", cred: "15+ Yrs of Business Law, >$100M In Transactions Closed", img: nickImg },
-  { name: "Scott Meiers", role: "Chief Architectural Design", cred: "40+ Yrs of Architectural Design in Commercial & Residential", img: scottImg },
+  { name: "Scott Meiers", role: "Chief Architectural Design", cred: "40+ Yrs of Architectural Design in Commercial & Residential", img: scottImg, zoom: 1.5 },
   { name: "Tania Karenina Gonzalez", role: "Architectural & Interior Design", cred: "15+ Yrs of Multi-residential Commercial & Interior Design", img: taniaImg },
-  { name: "Alex Prince", role: "Investor Relations", cred: "20+ Yrs of Institutional Asset Mgmt. & Investment Banking", img: alexImg },
+  { name: "Alex Prince", role: "Investor Relations", cred: "20+ Yrs of Institutional Asset Mgmt. & Investment Banking", img: alexImg, zoom: 1.32 },
 ];
 
 const Portrait = ({ member, delay, size = 180 }: { member: TeamMember; delay: number; size?: number }) => (
@@ -41,13 +42,13 @@ const Portrait = ({ member, delay, size = 180 }: { member: TeamMember; delay: nu
   >
     <div
       className="relative overflow-hidden mb-5"
-      style={{ width: size, height: size * 1.2, border: "1px solid var(--v2-rule)" }}
+      style={{ width: size, height: size * 1.2, border: "2px solid rgba(0,255,136,.15)" }}
     >
       <img
         src={member.img}
         alt={member.name}
         className="w-full h-full object-cover object-top grayscale brightness-[.5] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.85]"
-        style={{ transform: "scale(1.15)", transformOrigin: "center 15%" }}
+        style={{ transform: `scale(${member.zoom ?? 1.15})`, transformOrigin: "center 15%" }}
       />
     </div>
     <h4
