@@ -20,10 +20,6 @@ const V2Footer = () => {
 
   return (
     <footer className="relative" style={{ background: "var(--v2-deep)", borderTop: "1px solid var(--v2-rule)" }}>
-      {/* Centered leaf dots watermark */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        <img src={dotsConcrete} alt="" className="w-[196vw] max-w-[1680px] opacity-[0.02]" />
-      </div>
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
