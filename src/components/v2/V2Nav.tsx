@@ -5,7 +5,7 @@ import logoConcrete from "@/assets/v2/logo-concrete.png";
 
 const navLinks = [
   { href: "#model", label: "The Model" },
-  { href: "#communities", label: "Communities" },
+  { href: "#communities", label: "Projects" },
   { href: "#edge", label: "The Edge" },
   { href: "#team", label: "Team" },
 ];
