@@ -115,8 +115,8 @@ const V2Hero = () => {
           >
             View Projects
           </button>
-          <button
-            onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
+          <a
+            href="mailto:hello@liefdev.com"
             className="transition-all duration-300 hover:bg-[#00FF88] hover:text-[#0a0a0a]"
             style={{
               fontFamily: "var(--v2-font-body)", fontSize: "1.25rem", textTransform: "uppercase",
@@ -125,7 +125,7 @@ const V2Hero = () => {
             }}
           >
             Partner With Us
-          </button>
+          </a>
         </motion.div>
       </div>
 
