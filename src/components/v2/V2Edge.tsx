@@ -17,7 +17,7 @@ const stats = [
 ];
 
 const ease = [.16, 1, .3, 1] as const;
-const goldenrod = "#e8b15a";
+const accentColor = "#00FF88";
 
 const V2Edge = () => {
   const { ref, inView } = useInView(0.1);
@@ -51,13 +51,13 @@ const V2Edge = () => {
                     key={attr.title}
                     className="p-6 md:p-8 transition-all duration-500 group"
                     style={{ border: "1px solid rgba(245,245,243,.08)", background: "rgba(0,0,0,.15)" }}
-                    onMouseEnter={(e) => e.currentTarget.style.boxShadow = `0 0 40px rgba(232,177,90,.12), inset 0 1px 0 ${goldenrod}40`}
+                    onMouseEnter={(e) => e.currentTarget.style.boxShadow = `0 0 40px rgba(0,255,136,.12), inset 0 1px 0 ${accentColor}40`}
                     onMouseLeave={(e) => e.currentTarget.style.boxShadow = "none"}
                   >
-                    <div className="w-10 h-10 flex items-center justify-center mb-5" style={{ border: `1px solid ${goldenrod}40` }}>
-                      <Icon size={18} style={{ color: goldenrod }} />
+                    <div className="w-10 h-10 flex items-center justify-center mb-5" style={{ border: `1px solid ${accentColor}40` }}>
+                      <Icon size={18} style={{ color: accentColor }} />
                     </div>
-                    <h4 className="mb-3" style={{ fontSize: "0.9rem", fontWeight: 600, color: goldenrod }}>{attr.title}</h4>
+                    <h4 className="mb-3" style={{ fontSize: "0.9rem", fontWeight: 600, color: accentColor }}>{attr.title}</h4>
                     <p style={{ fontSize: "0.8rem", color: "rgba(245,245,243,.4)", lineHeight: 1.6 }}>{attr.desc}</p>
                   </div>
                 );
@@ -73,11 +73,11 @@ const V2Edge = () => {
                     key={stat.label}
                     className="p-6 md:p-8 transition-all duration-500"
                     style={{ border: "1px solid rgba(245,245,243,.08)", background: "rgba(0,0,0,.15)" }}
-                    onMouseEnter={(e) => e.currentTarget.style.boxShadow = `0 0 40px rgba(232,177,90,.12), inset 0 1px 0 ${goldenrod}40`}
+                    onMouseEnter={(e) => e.currentTarget.style.boxShadow = `0 0 40px rgba(0,255,136,.12), inset 0 1px 0 ${accentColor}40`}
                     onMouseLeave={(e) => e.currentTarget.style.boxShadow = "none"}
                   >
-                    <div className="w-10 h-10 flex items-center justify-center mb-5" style={{ border: `1px solid ${goldenrod}40` }}>
-                      <Icon size={18} style={{ color: goldenrod }} />
+                    <div className="w-10 h-10 flex items-center justify-center mb-5" style={{ border: `1px solid ${accentColor}40` }}>
+                      <Icon size={18} style={{ color: accentColor }} />
                     </div>
                     <div className="v2-headline mb-1" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", color: "var(--v2-white)" }}>
                       {stat.value}<span style={{ fontSize: "0.5em", fontWeight: 400 }}>{stat.suffix}</span>
@@ -92,7 +92,7 @@ const V2Edge = () => {
             {/* Bottom context text */}
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.4, ease }} className="text-center pt-12" style={{ borderTop: "1px solid rgba(245,245,243,.1)" }}>
               <p className="mb-3" style={{ fontSize: "0.95rem", color: "var(--v2-white)" }}>
-                <span style={{ color: goldenrod }}>Structural Superiority:</span> Anti-Fire, Anti-Mold, and Anti-Termite protection are standard.
+                <span style={{ color: accentColor }}>Structural Superiority:</span> Anti-Fire, Anti-Mold, and Anti-Termite protection are standard.
               </p>
               <p className="max-w-2xl mx-auto" style={{ fontSize: "0.8rem", color: "rgba(245,245,243,.4)", lineHeight: 1.7 }}>
                 SABS™ technology radically reduces the number of trades required on-site, allowing for total schedule control and unprecedented quality consistency.
