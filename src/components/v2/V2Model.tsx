@@ -1,27 +1,30 @@
 import { motion } from "framer-motion";
 import { useInView } from "./useInView";
 
-const cards = [
+const rows = [
   {
     num: "01",
-    title: "DRAW",
-    name: "SCOTT MEIERS · 50+ YEARS",
-    body: "Still sketches by hand. Architecture and design intent that survives the build — because the architect and builder sit at the same table.",
-    accent: "The craft.",
+    label: "VERTICAL INTEGRATION",
+    title: "Everything under one roof.",
+    body: "While others outsource, we own every step. Design. Engineering. Construction. Interiors. When the same team carries your vision from first sketch to final walkthrough, nothing gets lost in translation.",
+    stat: "100%",
+    statLabel: "IN-HOUSE CAPABILITY",
   },
   {
     num: "02",
-    title: "BUILD",
-    name: "JON ARMSTRONG · 300+ TRADES",
-    body: "300+ in-house trades. No subcontractor roulette. Strata SABS prefab. The schedule is controlled, not contracted.",
-    accent: "The army.",
+    label: "UNRIVALED WORKFORCE",
+    title: "An army of masters.",
+    body: "Over 300 specialized tradespeople — each an expert in their craft. This isn't a network of subcontractors. This is a dedicated force that builds together, thinks together, and executes with one singular standard.",
+    stat: "300+",
+    statLabel: "SPECIALIZED TRADES",
   },
   {
     num: "03",
-    title: "OWN",
-    name: "JESSE FOWLER · $300M+ BUILT",
-    body: "$300M+ built. From concept to community — development, construction, brand under one roof. Our name is on every unit.",
-    accent: "The conviction.",
+    label: "GENERATIONAL EXPERIENCE",
+    title: "Three decades of proof.",
+    body: "Experience doesn't list on a brochure. It shows in the silence of a perfectly sealed home. In walls that breathe with the desert. In craftsmanship that our grandchildren will inherit. Thirty years of doing it right.",
+    stat: "30+",
+    statLabel: "YEARS OF EXCELLENCE",
   },
 ];
 
@@ -45,26 +48,41 @@ const V2Model = () => {
               The entire chain, under one roof.
             </motion.p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3">
-              {cards.map((card, i) => (
+            <div className="flex flex-col">
+              {rows.map((row, i) => (
                 <motion.div
-                  key={card.num}
+                  key={row.num}
                   initial={{ opacity: 0, y: 35 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.75, delay: 0.24 + i * 0.08, ease }}
-                  className="relative flex flex-col v2-hover-line"
-                  style={{
-                    padding: "3rem 2.5rem",
-                    minHeight: "380px",
-                    borderRight: i < 2 ? "1px solid var(--v2-rule)" : "none",
-                    borderTop: "1px solid var(--v2-rule)",
-                  }}
+                  transition={{ duration: 0.75, delay: 0.24 + i * 0.1, ease }}
+                  className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-6 md:gap-12 items-start py-16 md:py-20"
+                  style={{ borderTop: "1px solid var(--v2-rule)" }}
                 >
-                  <span className="v2-headline mb-4" style={{ fontSize: "4rem", color: "rgba(0,255,136,.04)" }}>{card.num}</span>
-                  <h3 className="v2-headline mb-3" style={{ fontSize: "1.5rem", color: "var(--v2-neon)" }}>{card.title}</h3>
-                  <span className="mb-4" style={{ fontSize: "0.7rem", fontWeight: 600, textTransform: "uppercase", color: "var(--v2-muted)" }}>{card.name}</span>
-                  <p className="flex-1" style={{ fontSize: "0.85rem", color: "var(--v2-dim)", lineHeight: 1.8 }}>{card.body}</p>
-                  <p className="mt-6" style={{ fontStyle: "italic", fontWeight: 300, color: "var(--v2-muted)" }}>{card.accent}</p>
+                  {/* Number */}
+                  <span className="v2-headline" style={{ fontSize: "clamp(3rem, 5vw, 4.5rem)", color: "rgba(0,255,136,.06)", lineHeight: 1 }}>
+                    {row.num}
+                  </span>
+
+                  {/* Text content */}
+                  <div className="max-w-xl">
+                    <span className="v2-label mb-3 block" style={{ fontSize: "0.6rem" }}>{row.label}</span>
+                    <h3 className="mb-4" style={{ fontFamily: "var(--v2-font-body)", fontSize: "clamp(1.5rem, 3vw, 2.2rem)", fontWeight: 400, color: "var(--v2-white)", lineHeight: 1.2 }}>
+                      {row.title}
+                    </h3>
+                    <p style={{ fontSize: "0.9rem", color: "var(--v2-dim)", lineHeight: 1.8 }}>
+                      {row.body}
+                    </p>
+                  </div>
+
+                  {/* Stat */}
+                  <div className="text-right md:min-w-[200px]">
+                    <span className="v2-headline block" style={{ fontSize: "clamp(3rem, 6vw, 5.5rem)", color: "var(--v2-white)", lineHeight: 1 }}>
+                      {row.stat}
+                    </span>
+                    <span className="block mt-2" style={{ fontSize: "0.6rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--v2-muted)" }}>
+                      {row.statLabel}
+                    </span>
+                  </div>
                 </motion.div>
               ))}
             </div>
