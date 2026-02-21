@@ -27,12 +27,15 @@ const principals: TeamMember[] = [
   { name: "Jon Armstrong", role: "Principal / Manager", cred: "15+ Yrs in Custom Residential & Commercial Building", img: jonImg, zoom: 1.32 },
 ];
 
-const extended: TeamMember[] = [
-  { name: "Scott Hibler", role: "Real Estate / B2B Partnerships", cred: "20+ Yrs of Sales & Investment Strategy", img: hiblerImg, zoom: 1.20, originY: "13%" },
-  { name: "Nick Scavio", role: "General Counsel", cred: "15+ Yrs of Business Law, >$100M In Transactions Closed", img: nickImg, zoom: 1.12, originY: "13%" },
-  { name: "Scott Meiers", role: "Chief Architectural Design", cred: "40+ Yrs of Architectural Design in Commercial & Residential", img: scottImg, zoom: 1.63, originY: "8%" },
+const row2: TeamMember[] = [
+  { name: "Scott Meiers", role: "Chief Architectural Design", cred: "40+ Yrs of Architectural Design in Commercial & Residential", img: scottImg, zoom: 1.63, originY: "18%" },
   { name: "Tania Karenina Gonzalez", role: "Architectural & Interior Design", cred: "15+ Yrs of Multi-residential Commercial & Interior Design", img: taniaImg },
-  { name: "Alex Prince", role: "Investor Relations", cred: "20+ Yrs of Institutional Asset Mgmt. & Investment Banking", img: alexImg, zoom: 1.45, originY: "7%" },
+];
+
+const row3: TeamMember[] = [
+  { name: "Scott Hibler", role: "Real Estate / B2B Partnerships", cred: "20+ Yrs of Sales & Investment Strategy", img: hiblerImg, zoom: 1.20, originY: "23%" },
+  { name: "Nick Scavio", role: "General Counsel", cred: "15+ Yrs of Business Law, >$100M In Transactions Closed", img: nickImg, zoom: 1.12, originY: "23%" },
+  { name: "Alex Prince", role: "Investor Relations", cred: "20+ Yrs of Institutional Asset Mgmt. & Investment Banking", img: alexImg, zoom: 1.60, originY: "7%" },
 ];
 
 const Portrait = ({ member, delay, size = 180 }: { member: TeamMember; delay: number; size?: number }) => (
@@ -99,10 +102,17 @@ const V2Team = () => {
               ))}
             </div>
 
+            {/* Design row */}
+            <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-20">
+              {row2.map((m, i) => (
+                <Portrait key={m.name} member={m} delay={0.5 + i * 0.06} size={150} />
+              ))}
+            </div>
+
             {/* Extended row */}
             <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-              {extended.map((m, i) => (
-                <Portrait key={m.name} member={m} delay={0.5 + i * 0.06} size={150} />
+              {row3.map((m, i) => (
+                <Portrait key={m.name} member={m} delay={0.62 + i * 0.06} size={150} />
               ))}
             </div>
           </>
