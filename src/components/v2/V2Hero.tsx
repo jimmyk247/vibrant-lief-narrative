@@ -52,7 +52,7 @@ const V2Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(1), ease: [.16, 1, .3, 1] }}
           className="v2-headline leading-[0.95] mb-8"
-          style={{ fontSize: "clamp(5rem, 12vw, 11rem)" }}
+          style={{ fontSize: "clamp(4.25rem, 10.2vw, 9.35rem)" }}
         >
           BUILT<span className="v2-neon-period">.</span>
           <br />
