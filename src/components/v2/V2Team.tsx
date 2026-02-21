@@ -17,6 +17,7 @@ interface TeamMember {
   cred: string;
   img: string;
   zoom?: number;
+  originY?: string;
 }
 
 const principals: TeamMember[] = [
@@ -26,11 +27,11 @@ const principals: TeamMember[] = [
 ];
 
 const extended: TeamMember[] = [
-  { name: "Scott Hibler", role: "Real Estate / B2B Partnerships", cred: "20+ Yrs of Sales & Investment Strategy", img: hiblerImg, zoom: 1.20 },
-  { name: "Nick Scavio", role: "General Counsel", cred: "15+ Yrs of Business Law, >$100M In Transactions Closed", img: nickImg },
-  { name: "Scott Meiers", role: "Chief Architectural Design", cred: "40+ Yrs of Architectural Design in Commercial & Residential", img: scottImg, zoom: 1.6 },
+  { name: "Scott Hibler", role: "Real Estate / B2B Partnerships", cred: "20+ Yrs of Sales & Investment Strategy", img: hiblerImg, zoom: 1.20, originY: "10%" },
+  { name: "Nick Scavio", role: "General Counsel", cred: "15+ Yrs of Business Law, >$100M In Transactions Closed", img: nickImg, originY: "10%" },
+  { name: "Scott Meiers", role: "Chief Architectural Design", cred: "40+ Yrs of Architectural Design in Commercial & Residential", img: scottImg, zoom: 1.6, originY: "8%" },
   { name: "Tania Karenina Gonzalez", role: "Architectural & Interior Design", cred: "15+ Yrs of Multi-residential Commercial & Interior Design", img: taniaImg },
-  { name: "Alex Prince", role: "Investor Relations", cred: "20+ Yrs of Institutional Asset Mgmt. & Investment Banking", img: alexImg, zoom: 1.42 },
+  { name: "Alex Prince", role: "Investor Relations", cred: "20+ Yrs of Institutional Asset Mgmt. & Investment Banking", img: alexImg, zoom: 1.42, originY: "10%" },
 ];
 
 const Portrait = ({ member, delay, size = 180 }: { member: TeamMember; delay: number; size?: number }) => (
@@ -48,7 +49,7 @@ const Portrait = ({ member, delay, size = 180 }: { member: TeamMember; delay: nu
         src={member.img}
         alt={member.name}
         className="w-full h-full object-cover object-top grayscale brightness-[.5] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.85]"
-        style={{ transform: `scale(${member.zoom ?? 1.15})`, transformOrigin: "center 15%" }}
+        style={{ transform: `scale(${member.zoom ?? 1.15})`, transformOrigin: `center ${member.originY ?? "15%"}` }}
       />
     </div>
     <h4
