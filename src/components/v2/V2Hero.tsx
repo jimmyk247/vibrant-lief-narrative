@@ -37,16 +37,16 @@ const V2Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(0), ease: [.16, 1, .3, 1] }}
           style={{ opacity: heroLogoOpacity, scale: heroLogoScale, y: heroLogoY, transformOrigin: "left center" }}
-          className="mb-6"
+          className="mb-3 md:mb-6"
         >
-          <img src={logoLight} alt="Lïef" className="h-20 md:h-28 lg:h-36 w-auto" />
+          <img src={logoLight} alt="Lïef" className="h-14 md:h-28 lg:h-36 w-auto" />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(1), ease: [.16, 1, .3, 1] }}
-          className="v2-label mb-6 text-[1.25rem]"
+          className="v2-label mb-3 md:mb-6 text-[1rem] md:text-[1.25rem]"
         >
           <span className="hidden md:inline">Development + Construction · Phoenix, AZ</span>
           <span className="md:hidden">
@@ -60,8 +60,8 @@ const V2Hero = () => {
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(1), ease: [.16, 1, .3, 1] }}
-          className="v2-headline leading-[0.95] mb-4"
-          style={{ fontSize: "clamp(2.5rem, 7vw, 6.5rem)" }}
+          className="v2-headline leading-[0.95] mb-3 md:mb-4"
+          style={{ fontSize: "clamp(2.2rem, 7vw, 6.5rem)" }}
         >
           BUILT<span className="v2-neon-period">.</span>
           <br />
@@ -72,15 +72,11 @@ const V2Hero = () => {
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(2), ease: [.16, 1, .3, 1] }}
-          style={{ fontStyle: "italic", fontWeight: 300, fontSize: "1.4rem", color: "var(--v2-muted)", lineHeight: 1.5 }}
+          style={{ fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.1rem, 3vw, 1.4rem)", color: "var(--v2-muted)", lineHeight: 1.5 }}
         >
           <span className="hidden md:inline">We draw it. We build it. We own it.</span>
           <span className="md:hidden">
-            We draw it.
-            <br />
-            We build it.
-            <br />
-            We own it.
+            We draw it. We build it. We own it.
           </span>
         </motion.p>
 
@@ -88,7 +84,7 @@ const V2Hero = () => {
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(3), ease: [.16, 1, .3, 1] }}
-          className="mt-4 max-w-[420px]"
+          className="mt-2 md:mt-4 max-w-[420px] hidden md:block"
           style={{ fontSize: "1.25rem", color: "var(--v2-dim)", lineHeight: 1.7 }}
         >
           Development + Construction consolidated.
@@ -102,15 +98,15 @@ const V2Hero = () => {
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(4), ease: [.16, 1, .3, 1] }}
-          className="mt-6 flex flex-wrap gap-4"
+          className="mt-4 md:mt-6 flex flex-wrap gap-3 md:gap-4"
         >
           <button
             onClick={() => document.querySelector("#communities")?.scrollIntoView({ behavior: "smooth" })}
             className="transition-all duration-300 hover:brightness-110"
             style={{
-              fontFamily: "var(--v2-font-body)", fontSize: "1.25rem", textTransform: "uppercase",
+              fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase",
               letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-neon)",
-              color: "var(--v2-deep)", border: "none", padding: "14px 32px", cursor: "pointer",
+              color: "var(--v2-deep)", border: "none", padding: "10px 24px", cursor: "pointer",
             }}
           >
             View Projects
@@ -119,9 +115,9 @@ const V2Hero = () => {
             href="mailto:hello@liefdev.com"
             className="transition-all duration-300 hover:bg-[#00FF88] hover:text-[#0a0a0a]"
             style={{
-              fontFamily: "var(--v2-font-body)", fontSize: "1.25rem", textTransform: "uppercase",
+              fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase",
               letterSpacing: "0.14em", fontWeight: 600, background: "transparent",
-              color: "var(--v2-neon)", border: "1px solid var(--v2-neon)", padding: "14px 32px", cursor: "pointer",
+              color: "var(--v2-neon)", border: "1px solid var(--v2-neon)", padding: "10px 24px", cursor: "pointer",
             }}
           >
             Partner With Us

@@ -61,7 +61,7 @@ const V2Model = () => {
   const { ref, inView } = useInView(0.1);
 
   return (
-    <section id="model" className="relative py-20 md:py-28" style={{ background: "var(--v2-deep)" }}>
+    <section id="model" className="relative py-12 md:py-28" style={{ background: "var(--v2-deep)" }}>
       <div className="v2-ghost-text top-20 right-8 text-right" style={{ fontSize: "min(20vw, 250px)", color: "rgba(0,107,63,.24)" }}>MODEL</div>
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <img src={dotsNeon} alt="" className="w-[176vw] max-w-[1512px] opacity-[0.01]" />

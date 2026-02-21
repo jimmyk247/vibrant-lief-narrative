@@ -8,7 +8,7 @@ const V2CTA = () => {
   const { ref, inView } = useInView(0.1);
 
   return (
-    <section id="contact" className="relative py-20 md:py-28" style={{ background: "var(--v2-black)" }}>
+    <section id="contact" className="relative py-16 md:py-28" style={{ background: "var(--v2-black)" }}>
       {/* Thin neon line from top */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px" style={{ height: "100px", background: "linear-gradient(to bottom, var(--v2-neon), transparent)" }} />
 
