@@ -46,13 +46,15 @@ const V2Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(1), ease: [.16, 1, .3, 1] }}
-          className="v2-label mb-3 md:mb-6 text-[1rem] md:text-[1.25rem]"
+          className="mb-3 md:mb-6"
         >
-          <span className="hidden md:inline">Development + Construction · Phoenix, AZ</span>
-          <span className="md:hidden">
-            Development + Construction
-            <br />
-            Phoenix, AZ
+          <span className="v2-label hidden md:inline text-[1.25rem]">Development + Construction · Phoenix, AZ</span>
+          <span
+            className="md:hidden"
+            style={{ fontSize: "0.62rem", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--v2-neon)" }}
+          >
+            <span className="inline-block w-4 h-px mr-2 align-middle" style={{ background: "var(--v2-neon)" }} />
+            Development + Construction · Phoenix, AZ
           </span>
         </motion.div>
 
