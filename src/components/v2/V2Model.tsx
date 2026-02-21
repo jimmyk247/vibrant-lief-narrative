@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import { useInView } from "./useInView";
+import { useRef, useState } from "react";
 
 const rows = [
   {
@@ -7,7 +8,8 @@ const rows = [
     label: "VERTICAL INTEGRATION",
     title: "Everything under one roof.",
     body: "While others outsource, we own every step. Design. Engineering. Construction. Interiors. When the same team carries your vision from first sketch to final walkthrough, nothing gets lost in translation.",
-    stat: "100%",
+    statValue: 100,
+    statSuffix: "%",
     statLabel: "IN-HOUSE CAPABILITY",
   },
   {
@@ -15,7 +17,8 @@ const rows = [
     label: "UNRIVALED WORKFORCE",
     title: "An army of masters.",
     body: "Over 300 specialized tradespeople — each an expert in their craft. This isn't a network of subcontractors. This is a dedicated force that builds together, thinks together, and executes with one singular standard.",
-    stat: "300+",
+    statValue: 300,
+    statSuffix: "+",
     statLabel: "SPECIALIZED TRADES",
   },
   {
@@ -23,12 +26,35 @@ const rows = [
     label: "GENERATIONAL EXPERIENCE",
     title: "Three decades of proof.",
     body: "Experience doesn't list on a brochure. It shows in the silence of a perfectly sealed home. In walls that breathe with the desert. In craftsmanship that our grandchildren will inherit. Thirty years of doing it right.",
-    stat: "30+",
+    statValue: 30,
+    statSuffix: "+",
     statLabel: "YEARS OF EXCELLENCE",
   },
 ];
 
 const ease = [.16, 1, .3, 1] as const;
+
+const ScrollStat = ({ value, suffix }: { value: number; suffix: string }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [display, setDisplay] = useState(0);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "center center"],
+  });
+  const counter = useTransform(scrollYProgress, [0, 1], [0, value]);
+
+  useMotionValueEvent(counter, "change", (v) => {
+    setDisplay(Math.round(v));
+  });
+
+  return (
+    <div ref={ref}>
+      <span className="v2-headline block" style={{ fontSize: "clamp(3rem, 6vw, 5.5rem)", color: "var(--v2-white)", lineHeight: 1 }}>
+        {display}{suffix}
+      </span>
+    </div>
+  );
+};
 
 const V2Model = () => {
   const { ref, inView } = useInView(0.1);
@@ -58,12 +84,10 @@ const V2Model = () => {
                   className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-6 md:gap-12 items-start py-16 md:py-20"
                   style={{ borderTop: "1px solid var(--v2-rule)" }}
                 >
-                  {/* Number */}
                   <span className="v2-headline" style={{ fontSize: "clamp(3rem, 5vw, 4.5rem)", color: "rgba(0,255,136,.06)", lineHeight: 1 }}>
                     {row.num}
                   </span>
 
-                  {/* Text content */}
                   <div className="max-w-xl">
                     <span className="v2-label mb-3 block" style={{ fontSize: "0.6rem" }}>{row.label}</span>
                     <h3 className="mb-4" style={{ fontFamily: "var(--v2-font-body)", fontSize: "clamp(1.5rem, 3vw, 2.2rem)", fontWeight: 400, color: "var(--v2-white)", lineHeight: 1.2 }}>
@@ -74,11 +98,8 @@ const V2Model = () => {
                     </p>
                   </div>
 
-                  {/* Stat */}
                   <div className="text-right md:min-w-[200px]">
-                    <span className="v2-headline block" style={{ fontSize: "clamp(3rem, 6vw, 5.5rem)", color: "var(--v2-white)", lineHeight: 1 }}>
-                      {row.stat}
-                    </span>
+                    <ScrollStat value={row.statValue} suffix={row.statSuffix} />
                     <span className="block mt-2" style={{ fontSize: "0.6rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--v2-muted)" }}>
                       {row.statLabel}
                     </span>
