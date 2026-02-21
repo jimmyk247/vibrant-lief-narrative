@@ -75,7 +75,7 @@ const V2Nav = () => {
                 fontSize: "1.25rem",
                 textTransform: "uppercase",
                 letterSpacing: "0.16em",
-                color: "#777",
+                color: scrolled ? "#00FF88" : "#777",
                 background: "none",
                 border: "none",
                 cursor: "pointer",
@@ -92,11 +92,11 @@ const V2Nav = () => {
               fontSize: "1.25rem",
               textTransform: "uppercase",
               letterSpacing: "0.16em",
-              color: "#00FF88",
+              color: scrolled ? "#0a0a0a" : "#00FF88",
               border: "1px solid #00FF88",
               padding: "8px 20px",
               cursor: "pointer",
-              background: "transparent",
+              background: scrolled ? "#00FF88" : "transparent",
             }}
           >
             Contact
