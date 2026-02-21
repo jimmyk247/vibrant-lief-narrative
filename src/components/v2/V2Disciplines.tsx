@@ -23,7 +23,7 @@ const V2Disciplines = () => {
   const ghostX = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
 
   return (
-    <section ref={sectionRef} className="relative py-32 md:py-44 overflow-hidden" style={{ background: "var(--v2-deep)" }}>
+    <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "var(--v2-deep)" }}>
       <motion.div
         className="absolute top-1/2 -translate-y-1/2 whitespace-nowrap pointer-events-none select-none"
         style={{
@@ -55,7 +55,7 @@ const V2Disciplines = () => {
               <motion.p
                 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }}
                 className="max-w-md"
-                style={{ fontSize: "0.9rem", color: "var(--v2-dim)", lineHeight: 1.8 }}
+                style={{ fontSize: "1.05rem", color: "var(--v2-dim)", lineHeight: 1.8 }}
               >
                 From the first line drawn to the final fixture placed, Lief commands every aspect of creation. No handoffs. No compromises. No excuses.
               </motion.p>
@@ -74,10 +74,10 @@ const V2Disciplines = () => {
                   {pair.map((d) => (
                     <div
                       key={d}
-                      className="py-5"
+                      className="py-6"
                       style={{ borderBottom: "1px solid var(--v2-rule)" }}
                     >
-                      <span style={{ fontSize: "0.85rem", color: "var(--v2-muted)", fontWeight: 400 }}>{d}</span>
+                      <span style={{ fontSize: "1.05rem", color: "var(--v2-muted)", fontWeight: 400 }}>{d}</span>
                     </div>
                   ))}
                 </motion.div>
