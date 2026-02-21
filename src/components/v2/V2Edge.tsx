@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { useInView } from "./useInView";
 
 const stats = [
-  { value: "20–30%", label: "Faster Timelines" },
-  { value: "15–25%", label: "Lower Labor Costs" },
-  { value: "$56M", label: "Saved · 440 Basin" },
-  { value: "#1", label: "Strata Builder · AZ" },
+  { value: "$13", suffix: "/sq ft", label: "Average Savings", desc: "Average residential construction costs" },
+  { value: "14", suffix: "%", label: "Timeline Reduction", desc: "Average reduction across build types" },
+  { value: "+20", suffix: "%", label: "Efficiency", desc: "Increases total project efficiency" },
+  { value: "100", suffix: "+", label: "Projects Delivered", desc: "Proven track record across residential, commercial, and custom builds" },
 ];
 
 const ease = [.16, 1, .3, 1] as const;
@@ -36,8 +36,11 @@ const V2Edge = () => {
             <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.24, ease }} className="grid grid-cols-2 md:grid-cols-4" style={{ borderTop: "1px solid rgba(245,245,243,.1)" }}>
               {stats.map((stat, i) => (
                 <div key={stat.label} className="py-10 px-6" style={{ borderRight: i < stats.length - 1 ? "1px solid rgba(245,245,243,.1)" : "none" }}>
-                  <div className="v2-headline text-2xl md:text-3xl mb-3" style={{ color: "var(--v2-neon)", textShadow: "0 0 30px rgba(0,255,136,.1)" }}>{stat.value}</div>
-                  <div style={{ fontSize: "0.6rem", textTransform: "uppercase", color: "rgba(245,245,243,.35)", letterSpacing: "0.1em" }}>{stat.label}</div>
+                  <div className="v2-headline mb-1" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", color: "var(--v2-neon)", textShadow: "0 0 30px rgba(0,255,136,.1)" }}>
+                    {stat.value}<span style={{ fontSize: "0.5em", fontWeight: 400 }}>{stat.suffix}</span>
+                  </div>
+                  <div className="mb-2" style={{ fontSize: "0.7rem", textTransform: "uppercase", color: "var(--v2-white)", letterSpacing: "0.1em", fontWeight: 600 }}>{stat.label}</div>
+                  <div style={{ fontSize: "0.7rem", color: "rgba(245,245,243,.35)", lineHeight: 1.5 }}>{stat.desc}</div>
                 </div>
               ))}
             </motion.div>
