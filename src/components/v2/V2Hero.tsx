@@ -40,19 +40,19 @@ const V2Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(0), ease: [.16, 1, .3, 1] }}
-          className="v2-label mb-10"
+          style={{ opacity: heroLogoOpacity, scale: heroLogoScale, y: heroLogoY, transformOrigin: "left center" }}
+          className="mb-10"
         >
-          Development + Construction · Phoenix, AZ
+          <img src={logoLight} alt="Lïef" className="h-28 md:h-44 lg:h-56 w-auto" />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, ...stagger(0.5), ease: [.16, 1, .3, 1] }}
-          style={{ opacity: heroLogoOpacity, scale: heroLogoScale, y: heroLogoY, transformOrigin: "left center" }}
-          className="mb-8"
+          transition={{ duration: 0.75, ...stagger(1), ease: [.16, 1, .3, 1] }}
+          className="v2-label mb-10"
         >
-          <img src={logoLight} alt="Lïef" className="h-14 md:h-20 w-auto" />
+          Development + Construction · Phoenix, AZ
         </motion.div>
 
         <motion.h1
