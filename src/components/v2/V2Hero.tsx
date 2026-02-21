@@ -76,7 +76,7 @@ const V2Hero = () => {
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(2), ease: [.16, 1, .3, 1] }}
-          style={{ fontStyle: "italic", fontWeight: 300, fontSize: "1.4rem", color: "var(--v2-muted)", lineHeight: 1.5 }}
+          style={{ fontStyle: "italic", fontWeight: 300, fontSize: "1.75rem", color: "var(--v2-muted)", lineHeight: 1.5 }}
         >
           <span className="hidden md:inline">We draw it. We build it. We own it.</span>
           <span className="md:hidden">
@@ -93,7 +93,7 @@ const V2Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(3), ease: [.16, 1, .3, 1] }}
           className="mt-4 max-w-[420px]"
-          style={{ fontSize: "1rem", color: "var(--v2-dim)", lineHeight: 1.7 }}
+          style={{ fontSize: "1.25rem", color: "var(--v2-dim)", lineHeight: 1.7 }}
         >
           Development + Construction consolidated.
           <br className="hidden sm:inline" />

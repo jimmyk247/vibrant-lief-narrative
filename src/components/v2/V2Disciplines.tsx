@@ -56,7 +56,7 @@ const V2Disciplines = () => {
               <motion.p
                 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }}
                 className="max-w-md"
-                style={{ fontSize: "1rem", color: "rgba(245,245,243,.7)", lineHeight: 1.8 }}
+                style={{ fontSize: "1.25rem", color: "rgba(245,245,243,.7)", lineHeight: 1.8 }}
               >
                 From the first line drawn to the final fixture placed, Lief commands every aspect of creation. No handoffs. No compromises. No excuses.
               </motion.p>
@@ -78,7 +78,7 @@ const V2Disciplines = () => {
                       className="py-6"
                       style={{ borderBottom: "1px solid rgba(255,255,255,.12)" }}
                     >
-                      <span style={{ fontSize: "1rem", color: "rgba(245,245,243,.8)", fontWeight: 400 }}>{d}</span>
+                      <span style={{ fontSize: "1.25rem", color: "rgba(245,245,243,.8)", fontWeight: 400 }}>{d}</span>
                     </div>
                   ))}
                 </motion.div>
