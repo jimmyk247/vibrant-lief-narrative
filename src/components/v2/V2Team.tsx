@@ -60,12 +60,14 @@ const V2Team = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
           {principals.map((m) => (
             <div key={m.name} className="relative overflow-hidden group" style={{ height: "520px" }}>
-              <img
-                src={m.img}
-                alt={m.name}
-                className="absolute inset-0 w-full h-full object-cover grayscale brightness-[.4] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.7]"
-                style={{ objectPosition: "center 15%" }}
-              />
+              <div className="absolute inset-0 overflow-hidden">
+                <img
+                  src={m.img}
+                  alt={m.name}
+                  className="w-full h-full object-cover object-top grayscale brightness-[.4] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.7]"
+                  style={{ transform: "scale(1.3)", transformOrigin: "center 20%" }}
+                />
+              </div>
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.95) 0%, rgba(10,10,10,.4) 60%, transparent 100%)" }} />
               <div className="absolute bottom-0 left-0 p-8 z-10">
                 <h4 className="v2-headline text-base mb-1" style={{ color: "var(--v2-white)" }}>{m.name}</h4>
@@ -80,12 +82,14 @@ const V2Team = () => {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           {extended.map((m) => (
             <div key={m.name} className="relative overflow-hidden group" style={{ height: "320px" }}>
-              <img
-                src={m.img}
-                alt={m.name}
-                className="absolute inset-0 w-full h-full object-cover grayscale brightness-[.4] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.7]"
-                style={{ objectPosition: "center 15%" }}
-              />
+              <div className="absolute inset-0 flex items-start justify-center overflow-hidden">
+                <img
+                  src={m.img}
+                  alt={m.name}
+                  className="w-full h-full object-cover object-top grayscale brightness-[.4] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.7]"
+                  style={{ transform: "scale(1.4)", transformOrigin: "center 18%" }}
+                />
+              </div>
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.95) 0%, rgba(10,10,10,.4) 60%, transparent 100%)" }} />
               <div className="absolute bottom-0 left-0 p-5 z-10">
                 <h4 className="v2-headline mb-1" style={{ fontSize: "0.7rem", color: "var(--v2-white)" }}>{m.name}</h4>
