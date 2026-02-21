@@ -32,7 +32,7 @@ const V2Model = () => {
 
   return (
     <section id="model" className="relative py-32 md:py-44" style={{ background: "var(--v2-deep)" }}>
-      <div className="v2-ghost-text top-20 left-8" style={{ fontSize: "min(20vw, 250px)" }}>MODEL</div>
+      <div className="v2-ghost-text top-20 right-8 text-right" style={{ fontSize: "min(20vw, 250px)" }}>MODEL</div>
 
       <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
         {inView && (

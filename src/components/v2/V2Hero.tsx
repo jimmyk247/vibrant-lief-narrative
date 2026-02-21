@@ -28,7 +28,7 @@ const V2Hero = () => {
 
       {/* Ghost watermark logo */}
       <motion.div className="absolute top-20 right-12 pointer-events-none" style={{ y: watermarkY }}>
-        <img src={logoGreen} alt="" className="w-[30vw] max-w-[400px] opacity-[0.04]" />
+        <img src={logoGreen} alt="" className="w-[50vw] max-w-[700px] opacity-[0.04]" />
       </motion.div>
 
       {/* Leaf dots — bottom-left decorative accent */}
