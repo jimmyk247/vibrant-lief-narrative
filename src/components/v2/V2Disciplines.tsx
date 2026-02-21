@@ -23,7 +23,7 @@ const V2Disciplines = () => {
   const ghostX = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "var(--v2-green)" }}>
+    <section ref={sectionRef} className="relative py-20 md:py-28 overflow-hidden" style={{ background: "var(--v2-green)" }}>
       <motion.div
         className="absolute top-1/2 -translate-y-1/2 whitespace-nowrap pointer-events-none select-none"
         style={{

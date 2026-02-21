@@ -61,7 +61,7 @@ const V2Model = () => {
   const { ref, inView } = useInView(0.1);
 
   return (
-    <section id="model" className="relative py-32 md:py-44" style={{ background: "var(--v2-deep)" }}>
+    <section id="model" className="relative py-20 md:py-28" style={{ background: "var(--v2-deep)" }}>
       <div className="v2-ghost-text top-20 right-8 text-right" style={{ fontSize: "min(20vw, 250px)", color: "rgba(0,107,63,.24)" }}>MODEL</div>
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <img src={dotsNeon} alt="" className="w-[176vw] max-w-[1512px] opacity-[0.01]" />
@@ -85,7 +85,7 @@ const V2Model = () => {
                   initial={{ opacity: 0, y: 35 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.75, delay: 0.24 + i * 0.1, ease }}
-                  className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-6 md:gap-12 items-start py-16 md:py-20"
+                  className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-6 md:gap-12 items-start py-10 md:py-14"
                   style={{ borderTop: "1px solid var(--v2-rule)" }}
                 >
                   <span className="v2-headline" style={{ fontSize: "clamp(3rem, 5vw, 4.5rem)", color: "rgba(0,255,136,.06)", lineHeight: 1 }}>

@@ -14,7 +14,7 @@ const V2Communities = () => {
   const { ref: pvRef, inView: pvInView } = useInView(0.1);
 
   return (
-    <section id="communities" className="relative overflow-hidden py-32 md:py-44" style={{ background: "var(--v2-deep)" }}>
+    <section id="communities" className="relative overflow-hidden py-20 md:py-28" style={{ background: "var(--v2-deep)" }}>
       {/* Ambient glows */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[60%] h-[60%]" style={{ background: "radial-gradient(ellipse at top right, rgba(0,107,63,.12), transparent 70%)" }} />
