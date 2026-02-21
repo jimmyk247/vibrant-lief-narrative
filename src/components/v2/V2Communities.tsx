@@ -1,5 +1,6 @@
 import { useInView } from "./useInView";
 import { motion } from "framer-motion";
+import dotsNeon from "@/assets/v2/dots-neon.png";
 import osbornImg from "@/assets/v2/osborn.jpg";
 import basinImg from "@/assets/v2/basin.jpg";
 import pvmallImg from "@/assets/v2/pvmall.jpg";
@@ -22,6 +23,9 @@ const V2Communities = () => {
 
       {/* Ghost text */}
       <div className="v2-ghost-text top-8 right-8 text-right" style={{ fontSize: "min(12vw, 150px)", color: "rgba(0,107,63,.24)" }}>PROJECTS</div>
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+        <img src={dotsNeon} alt="" className="w-[70vw] max-w-[600px] opacity-[0.03]" />
+      </div>
 
       <div ref={headerRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 mb-16">
         {headerInView && (
