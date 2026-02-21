@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import liefLogo from "@/assets/lief-logo-light.png";
+import logoGreen from "@/assets/v2/logo-green.png";
 
 const stagger = (i: number) => ({ delay: 0.3 + i * 0.15 });
 
@@ -26,7 +26,7 @@ const V2Hero = () => {
 
       {/* Ghost watermark logo */}
       <motion.div className="absolute top-20 right-12 pointer-events-none" style={{ y: watermarkY }}>
-        <img src={liefLogo} alt="" className="w-[30vw] max-w-[400px] opacity-[0.04]" style={{ filter: "brightness(0) invert(0.3) sepia(1) saturate(5) hue-rotate(100deg)" }} />
+        <img src={logoGreen} alt="" className="w-[30vw] max-w-[400px] opacity-[0.04]" />
       </motion.div>
 
       {/* Content */}

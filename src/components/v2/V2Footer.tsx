@@ -1,4 +1,4 @@
-import liefLogo from "@/assets/lief-logo-light.png";
+import logoConcrete from "@/assets/v2/logo-concrete.png";
 
 const footerLinks = {
   explore: ["The Model", "Communities", "Technology", "Team"],
@@ -23,7 +23,7 @@ const V2Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div>
-            <img src={liefLogo} alt="Lïef" className="h-6 w-auto mb-4" />
+            <img src={logoConcrete} alt="Lïef" className="h-6 w-auto mb-4" />
             <p className="v2-headline text-sm mb-2" style={{ color: "var(--v2-white)" }}>
               DEVELOPMENT + CONSTRUCTION
             </p>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import liefLogo from "@/assets/lief-logo-light.png";
+import logoConcrete from "@/assets/v2/logo-concrete.png";
 
 const navLinks = [
   { href: "#model", label: "The Model" },
@@ -40,7 +40,7 @@ const V2Nav = () => {
     >
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
         <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-          <img src={liefLogo} alt="Lïef" className="h-6 md:h-7 w-auto" />
+          <img src={logoConcrete} alt="Lïef" className="h-6 md:h-7 w-auto" />
         </button>
 
         {/* Desktop */}
