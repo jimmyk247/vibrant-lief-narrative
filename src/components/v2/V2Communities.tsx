@@ -70,7 +70,7 @@ const V2Communities = () => {
             <img src={pvmallImg} alt="PV Mall" className="absolute inset-0 w-full h-full object-cover grayscale brightness-[.45] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.65]" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.92) 0%, rgba(10,10,10,.35) 55%, transparent 100%)" }} />
             <div className="absolute bottom-0 left-0 p-6 z-10">
-              <span style={{ fontSize: "0.55rem", textTransform: "uppercase", color: "var(--v2-neon)", letterSpacing: "0.1em" }}>Coming Soon</span>
+              <span style={{ fontSize: "0.55rem", textTransform: "uppercase", color: "var(--v2-neon)", letterSpacing: "0.1em" }}>● Coming Soon</span>
               <h3 className="v2-headline text-lg mt-2 mb-1" style={{ color: "var(--v2-white)" }}>PV MALL</h3>
               <p style={{ fontSize: "0.65rem", color: "var(--v2-neon)", marginBottom: "8px" }}>Paradise Valley, AZ</p>
               <p style={{ fontSize: "0.75rem", color: "var(--v2-dim)", lineHeight: 1.6 }}>Mixed-use redevelopment. Details forthcoming.</p>
