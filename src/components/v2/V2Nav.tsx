@@ -72,7 +72,7 @@ const V2Nav = () => {
               className="transition-colors duration-300 hover:text-[#00FF88]"
               style={{
                 fontFamily: "'DM Sans', sans-serif",
-                fontSize: "0.68rem",
+                fontSize: "1.25rem",
                 textTransform: "uppercase",
                 letterSpacing: "0.16em",
                 color: "#777",
@@ -89,7 +89,7 @@ const V2Nav = () => {
             className="transition-all duration-300 hover:bg-[#00FF88] hover:text-[#0a0a0a]"
             style={{
               fontFamily: "'DM Sans', sans-serif",
-              fontSize: "0.68rem",
+              fontSize: "1.25rem",
               textTransform: "uppercase",
               letterSpacing: "0.16em",
               color: "#00FF88",
@@ -129,7 +129,7 @@ const V2Nav = () => {
                   onClick={() => handleNav(l.href)}
                   style={{
                     fontFamily: "'DM Sans', sans-serif",
-                    fontSize: "0.85rem",
+                    fontSize: "1.25rem",
                     textTransform: "uppercase",
                     letterSpacing: "0.16em",
                     color: l.href === "#contact" ? "#00FF88" : "#F5F5F3",

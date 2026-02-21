@@ -41,9 +41,9 @@ const V2Communities = () => {
             <img src={osbornImg} alt="301 W Osborn" className="absolute inset-0 w-full h-full object-cover grayscale brightness-[.45] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.65]" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.92) 0%, rgba(10,10,10,.35) 55%, transparent 100%)" }} />
             <div className="absolute bottom-0 left-0 p-8 md:p-12 z-10">
-              <span style={{ fontSize: "0.55rem", textTransform: "uppercase", color: "var(--v2-neon)", letterSpacing: "0.1em" }}>● Xtrata Showcase</span>
+              <span style={{ fontSize: "1.25rem", textTransform: "uppercase", color: "var(--v2-neon)", letterSpacing: "0.1em" }}>● Xtrata Showcase</span>
               <h3 className="v2-headline text-xl md:text-2xl mt-3 mb-2" style={{ color: "var(--v2-white)" }}>301 W OSBORN</h3>
-              <p style={{ fontSize: "0.7rem", color: "var(--v2-neon)", marginBottom: "12px" }}>Midtown · Phoenix, AZ</p>
+              <p style={{ fontSize: "1.25rem", color: "var(--v2-neon)", marginBottom: "12px" }}>Midtown · Phoenix, AZ</p>
               <p className="max-w-md" style={{ fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.7 }}>
                 Commercial to residential adaptive reuse. SABS technology. Luxury urban living — 23 units, secure parking & conditioned storage.
               </p>
@@ -55,12 +55,12 @@ const V2Communities = () => {
             <img src={basinImg} alt="440 Basin" className="absolute inset-0 w-full h-full object-cover grayscale brightness-[.45] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.65]" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.92) 0%, rgba(10,10,10,.35) 55%, transparent 100%)" }} />
             <div className="absolute bottom-0 left-0 p-6 z-10">
-              <span style={{ fontSize: "0.55rem", textTransform: "uppercase", color: "var(--v2-neon)", letterSpacing: "0.1em" }}>● Coming Soon</span>
+              <span style={{ fontSize: "1.25rem", textTransform: "uppercase", color: "var(--v2-neon)", letterSpacing: "0.1em" }}>● Coming Soon</span>
               <h3 className="v2-headline text-lg mt-2 mb-1" style={{ color: "var(--v2-white)" }}>440 E BASIN</h3>
-              <p style={{ fontSize: "0.65rem", color: "var(--v2-neon)", marginBottom: "8px" }}>Pahrump, NV</p>
+              <p style={{ fontSize: "1.25rem", color: "var(--v2-neon)", marginBottom: "8px" }}>Pahrump, NV</p>
               <p style={{ fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.6 }}>204 units. Integrated model at scale.</p>
               <div className="mt-3 pt-3" style={{ borderTop: "1px solid var(--v2-rule)" }}>
-                <span style={{ fontSize: "0.7rem", color: "var(--v2-neon)", fontWeight: 600 }}>$56M saved vs. traditional</span>
+                <span style={{ fontSize: "1.25rem", color: "var(--v2-neon)", fontWeight: 600 }}>$56M saved vs. traditional</span>
               </div>
             </div>
           </div>
@@ -70,9 +70,9 @@ const V2Communities = () => {
             <img src={pvmallImg} alt="PV Mall" className="absolute inset-0 w-full h-full object-cover grayscale brightness-[.45] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.65]" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.92) 0%, rgba(10,10,10,.35) 55%, transparent 100%)" }} />
             <div className="absolute bottom-0 left-0 p-6 z-10">
-              <span style={{ fontSize: "0.55rem", textTransform: "uppercase", color: "var(--v2-neon)", letterSpacing: "0.1em" }}>● Coming Soon</span>
+              <span style={{ fontSize: "1.25rem", textTransform: "uppercase", color: "var(--v2-neon)", letterSpacing: "0.1em" }}>● Coming Soon</span>
               <h3 className="v2-headline text-lg mt-2 mb-1" style={{ color: "var(--v2-white)" }}>PV MALL</h3>
-              <p style={{ fontSize: "0.65rem", color: "var(--v2-neon)", marginBottom: "8px" }}>Paradise Valley, AZ</p>
+              <p style={{ fontSize: "1.25rem", color: "var(--v2-neon)", marginBottom: "8px" }}>Paradise Valley, AZ</p>
               <p style={{ fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.6 }}>Mixed-use redevelopment. Details forthcoming.</p>
             </div>
           </div>

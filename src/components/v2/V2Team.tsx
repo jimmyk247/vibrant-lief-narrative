@@ -54,13 +54,13 @@ const Portrait = ({ member, delay, size = 180 }: { member: TeamMember; delay: nu
     </div>
     <h4
       className="v2-headline mb-1"
-      style={{ fontSize: "0.8rem", color: "var(--v2-white)", letterSpacing: "0.05em" }}
+      style={{ fontSize: "1.25rem", color: "var(--v2-white)", letterSpacing: "0.05em" }}
     >
       {member.name}
     </h4>
     <p
       className="mb-2 v2-headline"
-      style={{ fontSize: "0.65rem", color: "var(--v2-neon)", letterSpacing: "0.05em" }}
+      style={{ fontSize: "1.25rem", color: "var(--v2-neon)", letterSpacing: "0.05em" }}
     >
       {member.role}
     </p>
