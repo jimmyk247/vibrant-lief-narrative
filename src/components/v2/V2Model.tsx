@@ -70,7 +70,7 @@ const V2Model = () => {
             <motion.h2 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="v2-headline text-4xl md:text-6xl lg:text-7xl mb-4" style={{ color: "var(--v2-white)" }}>
               ONE TEAM<span className="v2-neon-period">.</span><br />NO GAPS<span className="v2-neon-period">.</span>
             </motion.h2>
-            <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="mb-16 max-w-lg" style={{ fontSize: "1.1rem", color: "var(--v2-muted)", fontWeight: 300 }}>
+            <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="mb-16 max-w-lg" style={{ fontSize: "1.1rem", color: "var(--v2-muted)", fontWeight: 300, lineHeight: 1.7 }}>
               The entire chain, under one roof.
             </motion.p>
 
@@ -89,18 +89,18 @@ const V2Model = () => {
                   </span>
 
                   <div className="max-w-xl">
-                    <span className="v2-label mb-3 block" style={{ fontSize: "0.6rem" }}>{row.label}</span>
+                    <span className="v2-label mb-3 block" style={{ fontSize: "0.7rem" }}>{row.label}</span>
                     <h3 className="mb-4" style={{ fontFamily: "var(--v2-font-body)", fontSize: "clamp(1.5rem, 3vw, 2.2rem)", fontWeight: 400, color: "var(--v2-white)", lineHeight: 1.2 }}>
                       {row.title}
                     </h3>
-                    <p style={{ fontSize: "0.9rem", color: "var(--v2-dim)", lineHeight: 1.8 }}>
+                    <p style={{ fontSize: "1rem", color: "var(--v2-dim)", lineHeight: 1.8 }}>
                       {row.body}
                     </p>
                   </div>
 
                   <div className="text-right md:min-w-[200px]">
                     <ScrollStat value={row.statValue} suffix={row.statSuffix} />
-                    <span className="block mt-2" style={{ fontSize: "0.6rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--v2-muted)" }}>
+                    <span className="block mt-2" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--v2-muted)" }}>
                       {row.statLabel}
                     </span>
                   </div>
