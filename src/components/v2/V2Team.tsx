@@ -55,18 +55,19 @@ const V2Team = () => {
         )}
       </div>
 
-      {/* Principals */}
+      {/* Principals — 3 across */}
       <div ref={photoRef} className="max-w-[1400px] mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap: 0 }}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
           {principals.map((m) => (
-            <div key={m.name} className="relative overflow-hidden" style={{ height: "480px" }}>
+            <div key={m.name} className="relative overflow-hidden group" style={{ height: "520px" }}>
               <img
                 src={m.img}
                 alt={m.name}
-                className={`absolute inset-0 w-full h-full object-cover object-top v2-team-photo ${photosInView ? "in-view" : ""}`}
+                className="absolute inset-0 w-full h-full object-cover grayscale brightness-[.4] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.7]"
+                style={{ objectPosition: "center 15%" }}
               />
-              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.95) 0%, rgba(10,10,10,.5) 80%, transparent 100%)" }} />
-              <div className="absolute bottom-0 left-0 p-6 z-10">
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.95) 0%, rgba(10,10,10,.4) 60%, transparent 100%)" }} />
+              <div className="absolute bottom-0 left-0 p-8 z-10">
                 <h4 className="v2-headline text-base mb-1" style={{ color: "var(--v2-white)" }}>{m.name}</h4>
                 <p className="mb-2" style={{ fontSize: "0.55rem", fontWeight: 600, textTransform: "uppercase", color: "var(--v2-neon)" }}>{m.role}</p>
                 <p style={{ fontSize: "0.75rem", fontWeight: 300, fontStyle: "italic", color: "var(--v2-muted)", lineHeight: 1.6 }}>{m.cred}</p>
@@ -76,19 +77,20 @@ const V2Team = () => {
         </div>
 
         {/* Extended team */}
-        <div className="grid grid-cols-2 md:grid-cols-5" style={{ gap: 0 }}>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           {extended.map((m) => (
-            <div key={m.name} className="relative overflow-hidden" style={{ height: "280px" }}>
+            <div key={m.name} className="relative overflow-hidden group" style={{ height: "320px" }}>
               <img
                 src={m.img}
                 alt={m.name}
-                className={`absolute inset-0 w-full h-full object-cover object-top v2-team-photo ${photosInView ? "in-view" : ""}`}
+                className="absolute inset-0 w-full h-full object-cover grayscale brightness-[.4] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.7]"
+                style={{ objectPosition: "center 15%" }}
               />
-              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.95) 0%, rgba(10,10,10,.5) 80%, transparent 100%)" }} />
-              <div className="absolute bottom-0 left-0 p-4 z-10">
-                <h4 className="v2-headline mb-1" style={{ fontSize: "0.65rem", color: "var(--v2-white)" }}>{m.name}</h4>
-                <p className="mb-1" style={{ fontSize: "0.44rem", fontWeight: 600, textTransform: "uppercase", color: "var(--v2-neon)" }}>{m.role}</p>
-                <p style={{ fontSize: "0.6rem", fontWeight: 300, fontStyle: "italic", color: "var(--v2-muted)" }}>{m.cred}</p>
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.95) 0%, rgba(10,10,10,.4) 60%, transparent 100%)" }} />
+              <div className="absolute bottom-0 left-0 p-5 z-10">
+                <h4 className="v2-headline mb-1" style={{ fontSize: "0.7rem", color: "var(--v2-white)" }}>{m.name}</h4>
+                <p className="mb-1" style={{ fontSize: "0.5rem", fontWeight: 600, textTransform: "uppercase", color: "var(--v2-neon)" }}>{m.role}</p>
+                <p style={{ fontSize: "0.65rem", fontWeight: 300, fontStyle: "italic", color: "var(--v2-muted)" }}>{m.cred}</p>
               </div>
             </div>
           ))}
