@@ -22,7 +22,7 @@ const V2Communities = () => {
       </div>
 
       {/* Ghost text */}
-      <div className="v2-ghost-text top-8 right-8 text-right" style={{ fontSize: "min(12vw, 150px)", color: "rgba(0,107,63,.24)" }}>PROJECTS</div>
+      <div className="v2-ghost-text hidden md:block top-8 right-8 text-right" style={{ fontSize: "min(12vw, 150px)", color: "rgba(0,107,63,.24)" }}>PROJECTS</div>
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <img src={dotsNeon} alt="" className="w-[176vw] max-w-[1512px] opacity-[0.01]" />
       </div>
