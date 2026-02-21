@@ -50,9 +50,14 @@ const V2Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(1), ease: [.16, 1, .3, 1] }}
-          className="v2-label mb-10 whitespace-nowrap text-[0.5rem] sm:text-[0.6rem]"
+          className="v2-label mb-10 text-[0.7rem] md:text-[0.8rem]"
         >
-          Development + Construction · Phoenix, AZ
+          <span className="hidden md:inline">Development + Construction · Phoenix, AZ</span>
+          <span className="md:hidden">
+            Development + Construction
+            <br />
+            Phoenix, AZ
+          </span>
         </motion.div>
 
         <motion.h1
@@ -73,9 +78,14 @@ const V2Hero = () => {
           transition={{ duration: 0.75, ...stagger(2), ease: [.16, 1, .3, 1] }}
           style={{ fontStyle: "italic", fontWeight: 300, fontSize: "1.4rem", color: "var(--v2-muted)", lineHeight: 1.5 }}
         >
-          We draw it. We build it.
-          <br />
-          We own it.
+          <span className="hidden md:inline">We draw it. We build it. We own it.</span>
+          <span className="md:hidden">
+            We draw it.
+            <br />
+            We build it.
+            <br />
+            We own it.
+          </span>
         </motion.p>
 
         <motion.p
