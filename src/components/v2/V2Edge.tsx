@@ -23,7 +23,7 @@ const V2Edge = () => {
   const { ref, inView } = useInView(0.1);
 
   return (
-    <section id="edge" className="relative py-32 md:py-44" style={{ background: "#006B3F" }}>
+    <section id="edge" className="relative py-20 md:py-28" style={{ background: "#006B3F" }}>
       <div className="absolute inset-x-0 top-0 h-[40%] pointer-events-none" style={{ background: "linear-gradient(180deg, rgba(0,0,0,.12), transparent)" }} />
 
       <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
