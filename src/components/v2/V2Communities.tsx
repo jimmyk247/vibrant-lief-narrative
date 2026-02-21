@@ -44,7 +44,7 @@ const V2Communities = () => {
               <span style={{ fontSize: "0.55rem", textTransform: "uppercase", color: "var(--v2-neon)", letterSpacing: "0.1em" }}>● Xtrata Showcase</span>
               <h3 className="v2-headline text-xl md:text-2xl mt-3 mb-2" style={{ color: "var(--v2-white)" }}>301 W OSBORN</h3>
               <p style={{ fontSize: "0.7rem", color: "var(--v2-neon)", marginBottom: "12px" }}>Midtown · Phoenix, AZ</p>
-              <p className="max-w-md" style={{ fontSize: "1.125rem", color: "var(--v2-muted)", lineHeight: 1.7 }}>
+              <p className="max-w-md" style={{ fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.7 }}>
                 Commercial to residential adaptive reuse. SABS technology. Luxury urban living — 23 units, secure parking & conditioned storage.
               </p>
             </div>
@@ -58,7 +58,7 @@ const V2Communities = () => {
               <span style={{ fontSize: "0.55rem", textTransform: "uppercase", color: "var(--v2-neon)", letterSpacing: "0.1em" }}>● Coming Soon</span>
               <h3 className="v2-headline text-lg mt-2 mb-1" style={{ color: "var(--v2-white)" }}>440 E BASIN</h3>
               <p style={{ fontSize: "0.65rem", color: "var(--v2-neon)", marginBottom: "8px" }}>Pahrump, NV</p>
-              <p style={{ fontSize: "1.06rem", color: "var(--v2-muted)", lineHeight: 1.6 }}>204 units. Integrated model at scale.</p>
+              <p style={{ fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.6 }}>204 units. Integrated model at scale.</p>
               <div className="mt-3 pt-3" style={{ borderTop: "1px solid var(--v2-rule)" }}>
                 <span style={{ fontSize: "0.7rem", color: "var(--v2-neon)", fontWeight: 600 }}>$56M saved vs. traditional</span>
               </div>
@@ -73,7 +73,7 @@ const V2Communities = () => {
               <span style={{ fontSize: "0.55rem", textTransform: "uppercase", color: "var(--v2-neon)", letterSpacing: "0.1em" }}>● Coming Soon</span>
               <h3 className="v2-headline text-lg mt-2 mb-1" style={{ color: "var(--v2-white)" }}>PV MALL</h3>
               <p style={{ fontSize: "0.65rem", color: "var(--v2-neon)", marginBottom: "8px" }}>Paradise Valley, AZ</p>
-              <p style={{ fontSize: "1.06rem", color: "var(--v2-muted)", lineHeight: 1.6 }}>Mixed-use redevelopment. Details forthcoming.</p>
+              <p style={{ fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.6 }}>Mixed-use redevelopment. Details forthcoming.</p>
             </div>
           </div>
         </div>
