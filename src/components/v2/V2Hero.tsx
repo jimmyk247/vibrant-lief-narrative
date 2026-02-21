@@ -50,7 +50,7 @@ const V2Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(1), ease: [.16, 1, .3, 1] }}
-          className="v2-label mb-10"
+          className="v2-label mb-10 whitespace-nowrap text-[0.5rem] sm:text-[0.6rem]"
         >
           Development + Construction · Phoenix, AZ
         </motion.div>
