@@ -13,8 +13,17 @@ const V2Communities = () => {
   const { ref: pvRef, inView: pvInView } = useInView(0.1);
 
   return (
-    <section id="communities" style={{ background: "var(--v2-black)" }} className="py-32 md:py-44">
-      <div ref={headerRef} className="max-w-[1400px] mx-auto px-6 md:px-12 mb-16">
+    <section id="communities" className="relative overflow-hidden py-32 md:py-44" style={{ background: "var(--v2-deep)" }}>
+      {/* Ambient glows */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 right-0 w-[60%] h-[60%]" style={{ background: "radial-gradient(ellipse at top right, rgba(0,107,63,.12), transparent 70%)" }} />
+        <div className="absolute bottom-0 left-0 w-[50%] h-[50%]" style={{ background: "radial-gradient(ellipse at bottom left, rgba(0,255,136,.04), transparent 70%)" }} />
+      </div>
+
+      {/* Ghost text */}
+      <div className="v2-ghost-text top-20 right-8 text-right" style={{ fontSize: "min(20vw, 250px)" }}>PROJECTS</div>
+
+      <div ref={headerRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 mb-16">
         {headerInView && (
           <>
             <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="v2-label mb-6">Communities</motion.div>
@@ -25,7 +34,7 @@ const V2Communities = () => {
         )}
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2" style={{ minHeight: "600px" }}>
           {/* Osborn - 2 cols, 2 rows */}
           <div ref={osbornRef} className="md:col-span-2 md:row-span-2 relative overflow-hidden" style={{ minHeight: "500px" }}>
