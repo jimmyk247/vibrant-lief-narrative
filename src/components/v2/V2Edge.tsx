@@ -43,7 +43,7 @@ const V2Edge = () => {
             </motion.p>
 
             {/* Attribute cards */}
-            <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.24, ease }} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px mb-px">
+            <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.24, ease }} className="grid grid-cols-1 sm:grid-cols-2 gap-px mb-px">
               {attributes.map((attr) => {
                 const Icon = attr.icon;
                 return (
@@ -65,7 +65,7 @@ const V2Edge = () => {
             </motion.div>
 
             {/* Stat cards */}
-            <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.32, ease }} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px mb-20">
+            <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.32, ease }} className="grid grid-cols-1 sm:grid-cols-2 gap-px mb-20">
               {stats.map((stat) => {
                 const Icon = stat.icon;
                 return (

@@ -22,7 +22,7 @@ const V2Communities = () => {
       </div>
 
       {/* Ghost text */}
-      <div className="v2-ghost-text hidden md:block top-8 right-8 text-right" style={{ fontSize: "min(12vw, 150px)", color: "rgba(0,107,63,.24)" }}>PROJECTS</div>
+      <div className="v2-ghost-text hidden lg:block top-8 right-8 text-right" style={{ fontSize: "min(12vw, 150px)", color: "rgba(0,107,63,.24)" }}>PROJECTS</div>
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <img src={dotsNeon} alt="" className="w-[176vw] max-w-[1512px] opacity-[0.01]" />
       </div>
@@ -39,9 +39,9 @@ const V2Communities = () => {
       </div>
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2" style={{ minHeight: "600px" }}>
+        <div className="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2" style={{ minHeight: "600px" }}>
           {/* Osborn - 2 cols, 2 rows */}
-          <div ref={osbornRef} className="md:col-span-2 md:row-span-2 relative overflow-hidden group" style={{ minHeight: "500px" }}>
+          <div ref={osbornRef} className="lg:col-span-2 lg:row-span-2 relative overflow-hidden group" style={{ minHeight: "500px" }}>
             <img src={osbornImg} alt="301 W Osborn" className="absolute inset-0 w-full h-full object-cover grayscale brightness-[.45] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.65]" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.92) 0%, rgba(10,10,10,.35) 55%, transparent 100%)" }} />
             <div className="absolute bottom-0 left-0 p-8 md:p-12 z-10">
