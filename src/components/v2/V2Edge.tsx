@@ -29,7 +29,7 @@ const V2Edge = () => {
       <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
         {inView && (
           <>
-            <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="mb-6" style={{ fontSize: "0.6rem", textTransform: "uppercase", letterSpacing: "0.22em", color: "rgba(0,255,136,.6)" }}>
+            <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="mb-6" style={{ fontSize: "1.25rem", textTransform: "uppercase", letterSpacing: "0.22em", color: "rgba(0,255,136,.6)" }}>
               <span className="inline-block w-6 h-px mr-3 align-middle" style={{ background: "rgba(0,255,136,.6)" }} />
               The Edge
             </motion.div>
@@ -82,7 +82,7 @@ const V2Edge = () => {
                     <div className="v2-headline mb-1" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", color: "var(--v2-white)" }}>
                       {stat.value}<span style={{ fontSize: "0.5em", fontWeight: 400 }}>{stat.suffix}</span>
                     </div>
-                    <div className="mb-2" style={{ fontSize: "0.95rem", textTransform: "uppercase", color: "var(--v2-white)", letterSpacing: "0.1em", fontWeight: 600 }}>{stat.label}</div>
+                    <div className="mb-2" style={{ fontSize: "1.25rem", textTransform: "uppercase", color: "var(--v2-white)", letterSpacing: "0.1em", fontWeight: 600 }}>{stat.label}</div>
                     <div style={{ fontSize: "1.25rem", color: "rgba(245,245,243,.55)", lineHeight: 1.5 }}>{stat.desc}</div>
                   </div>
                 );

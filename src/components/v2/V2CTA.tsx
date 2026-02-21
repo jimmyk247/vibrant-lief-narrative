@@ -31,7 +31,7 @@ const V2CTA = () => {
               href="mailto:hello@liefdev.com"
               className="inline-block transition-all duration-300 hover:brightness-110"
               style={{
-                fontFamily: "var(--v2-font-body)", fontSize: "0.75rem", textTransform: "uppercase",
+                fontFamily: "var(--v2-font-body)", fontSize: "1.25rem", textTransform: "uppercase",
                 letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-neon)",
                 color: "var(--v2-deep)", padding: "16px 40px", textDecoration: "none",
               }}

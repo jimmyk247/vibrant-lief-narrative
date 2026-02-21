@@ -89,7 +89,7 @@ const V2Model = () => {
                   </span>
 
                   <div className="max-w-xl">
-                    <span className="v2-label mb-3 block" style={{ fontSize: "0.7rem" }}>{row.label}</span>
+                    <span className="v2-label mb-3 block" style={{ fontSize: "1.25rem" }}>{row.label}</span>
                     <h3 className="mb-4" style={{ fontFamily: "var(--v2-font-body)", fontSize: "clamp(1.5rem, 3vw, 2.2rem)", fontWeight: 400, color: "var(--v2-white)", lineHeight: 1.2 }}>
                       {row.title}
                     </h3>
@@ -100,7 +100,7 @@ const V2Model = () => {
 
                   <div className="text-right md:min-w-[200px]">
                     <ScrollStat value={row.statValue} suffix={row.statSuffix} />
-                    <span className="block mt-2" style={{ fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--v2-muted)" }}>
+                    <span className="block mt-2" style={{ fontSize: "1.25rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--v2-muted)" }}>
                       {row.statLabel}
                     </span>
                   </div>

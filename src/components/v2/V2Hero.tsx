@@ -50,7 +50,7 @@ const V2Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(1), ease: [.16, 1, .3, 1] }}
-          className="v2-label mb-10 text-[0.7rem] md:text-[0.8rem]"
+          className="v2-label mb-10 text-[1.25rem]"
         >
           <span className="hidden md:inline">Development + Construction · Phoenix, AZ</span>
           <span className="md:hidden">
@@ -112,7 +112,7 @@ const V2Hero = () => {
             onClick={() => document.querySelector("#communities")?.scrollIntoView({ behavior: "smooth" })}
             className="transition-all duration-300 hover:brightness-110"
             style={{
-              fontFamily: "var(--v2-font-body)", fontSize: "0.75rem", textTransform: "uppercase",
+              fontFamily: "var(--v2-font-body)", fontSize: "1.25rem", textTransform: "uppercase",
               letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-neon)",
               color: "var(--v2-deep)", border: "none", padding: "14px 32px", cursor: "pointer",
             }}
@@ -123,7 +123,7 @@ const V2Hero = () => {
             onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
             className="transition-all duration-300 hover:bg-[#00FF88] hover:text-[#0a0a0a]"
             style={{
-              fontFamily: "var(--v2-font-body)", fontSize: "0.75rem", textTransform: "uppercase",
+              fontFamily: "var(--v2-font-body)", fontSize: "1.25rem", textTransform: "uppercase",
               letterSpacing: "0.14em", fontWeight: 600, background: "transparent",
               color: "var(--v2-neon)", border: "1px solid var(--v2-neon)", padding: "14px 32px", cursor: "pointer",
             }}
@@ -139,7 +139,7 @@ const V2Hero = () => {
         transition={{ duration: 0.5 }}
         className="absolute bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span style={{ fontSize: "0.55rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--v2-muted)" }}>Scroll</span>
+        <span style={{ fontSize: "1.25rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--v2-muted)" }}>Scroll</span>
         <div className="w-px h-8 md:h-12" style={{ background: "linear-gradient(to bottom, var(--v2-neon), transparent)" }} />
       </motion.div>
     </section>

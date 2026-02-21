@@ -31,13 +31,13 @@ const V2Footer = () => {
             <p className="v2-headline text-sm mb-2" style={{ color: "var(--v2-white)" }}>
               DEVELOPMENT + CONSTRUCTION
             </p>
-            <p style={{ fontSize: "0.75rem", color: "var(--v2-neon)" }}>BUILT. DIFFERENT.</p>
+            <p style={{ fontSize: "1.25rem", color: "var(--v2-neon)" }}>BUILT. DIFFERENT.</p>
             <p className="mt-2" style={{ fontSize: "1.25rem", color: "var(--v2-dim)" }}>Phoenix, Arizona</p>
           </div>
 
           {/* Explore */}
           <div>
-            <h5 className="mb-4" style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-muted)" }}>Explore</h5>
+            <h5 className="mb-4" style={{ fontSize: "1.25rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-muted)" }}>Explore</h5>
             <ul className="space-y-3">
               {footerLinks.explore.map((l) => (
                 <li key={l}>
@@ -55,7 +55,7 @@ const V2Footer = () => {
 
           {/* Partner */}
           <div>
-            <h5 className="mb-4" style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-muted)" }}>Partner</h5>
+            <h5 className="mb-4" style={{ fontSize: "1.25rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-muted)" }}>Partner</h5>
             <ul className="space-y-3">
               {footerLinks.partner.map((l) => (
                 <li key={l}>
@@ -67,7 +67,7 @@ const V2Footer = () => {
 
           {/* Connect */}
           <div>
-            <h5 className="mb-4" style={{ fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-muted)" }}>Connect</h5>
+            <h5 className="mb-4" style={{ fontSize: "1.25rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-muted)" }}>Connect</h5>
             <ul className="space-y-3">
               <li>
                 <a href="mailto:hello@liefdev.com" style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#00FF88] transition-colors duration-300">
