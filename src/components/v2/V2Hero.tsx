@@ -39,7 +39,7 @@ const V2Hero = () => {
           style={{ opacity: heroLogoOpacity, scale: heroLogoScale, y: heroLogoY, transformOrigin: "left center" }}
           className="mb-3 md:mb-4"
         >
-          <img src={logoLight} alt="Lïef" className="h-14 md:h-20 lg:h-24 w-auto" />
+          <img src={logoLight} alt="Lïef" className="h-14 md:h-24 lg:h-32 w-auto" />
         </motion.div>
 
         <motion.div
