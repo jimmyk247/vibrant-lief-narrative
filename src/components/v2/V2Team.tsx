@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "./useInView";
+import dotsNeon from "@/assets/v2/dots-neon.png";
 import jesseImg from "@/assets/v2/jesse.png";
 import jimmyImg from "@/assets/v2/jimmy.png";
 import jonImg from "@/assets/v2/jon.png";
@@ -76,6 +77,9 @@ const V2Team = () => {
   return (
     <section id="team" className="relative py-32 md:py-44" style={{ background: "var(--v2-deep)" }}>
       <div className="v2-ghost-text top-16 right-8" style={{ fontSize: "min(12vw, 160px)", color: "rgba(0,255,136,.23)" }}>TEAM</div>
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+        <img src={dotsNeon} alt="" className="w-[70vw] max-w-[600px] opacity-[0.03]" />
+      </div>
 
       <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
         {inView && (

@@ -11,7 +11,7 @@ const V2Hero = () => {
   const heroLogoOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
   const heroLogoScale = useTransform(scrollYProgress, [0, 0.15], [1, 0.4]);
   const heroLogoY = useTransform(scrollYProgress, [0, 0.15], [0, -60]);
-  const dotsY = useTransform(scrollYProgress, [0, 1], [0, -40]);
+  
   const [showScroll, setShowScroll] = useState(true);
 
   useEffect(() => {
@@ -29,10 +29,10 @@ const V2Hero = () => {
       </div>
 
 
-      {/* Leaf dots — bottom-left decorative accent */}
-      <motion.div className="absolute bottom-40 right-8 md:bottom-32 md:right-32 pointer-events-none" style={{ y: dotsY }}>
-        <img src={dotsNeon} alt="" className="w-8 md:w-16 opacity-[0.06]" />
-      </motion.div>
+      {/* Centered leaf dots watermark */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <img src={dotsNeon} alt="" className="w-[70vw] max-w-[600px] opacity-[0.03]" />
+      </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 w-full">
