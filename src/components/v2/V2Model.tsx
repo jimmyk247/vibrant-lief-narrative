@@ -64,7 +64,7 @@ const V2Model = () => {
     <section id="model" className="relative py-32 md:py-44" style={{ background: "var(--v2-deep)" }}>
       <div className="v2-ghost-text top-20 right-8 text-right" style={{ fontSize: "min(20vw, 250px)", color: "rgba(0,107,63,.24)" }}>MODEL</div>
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        <img src={dotsNeon} alt="" className="w-[70vw] max-w-[600px] opacity-[0.03]" />
+        <img src={dotsNeon} alt="" className="w-[280vw] max-w-[2400px] opacity-[0.02]" />
       </div>
 
       <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
