@@ -37,16 +37,16 @@ const V2Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(0), ease: [.16, 1, .3, 1] }}
           style={{ opacity: heroLogoOpacity, scale: heroLogoScale, y: heroLogoY, transformOrigin: "left center" }}
-          className="mb-3 md:mb-6"
+          className="mb-3 md:mb-4"
         >
-          <img src={logoLight} alt="Lïef" className="h-14 md:h-28 lg:h-36 w-auto" />
+          <img src={logoLight} alt="Lïef" className="h-14 md:h-20 lg:h-24 w-auto" />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(1), ease: [.16, 1, .3, 1] }}
-          className="mb-3 md:mb-6"
+          className="mb-3 md:mb-4"
         >
           <span className="v2-label hidden md:inline text-[1.25rem]">Development + Construction · Phoenix, AZ</span>
           <span
@@ -63,7 +63,7 @@ const V2Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(1), ease: [.16, 1, .3, 1] }}
           className="v2-headline leading-[0.95] mb-3 md:mb-4"
-          style={{ fontSize: "clamp(2.2rem, 7vw, 6.5rem)" }}
+          style={{ fontSize: "clamp(2.2rem, 5.5vw, 5rem)" }}
         >
           BUILT<span className="v2-neon-period">.</span>
           <br />
@@ -86,8 +86,8 @@ const V2Hero = () => {
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(3), ease: [.16, 1, .3, 1] }}
-          className="mt-2 md:mt-4 max-w-[420px] hidden md:block"
-          style={{ fontSize: "1.25rem", color: "var(--v2-dim)", lineHeight: 1.7 }}
+          className="mt-2 md:mt-2 max-w-[420px] hidden md:block"
+          style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.6 }}
         >
           Development + Construction consolidated.
           <br className="hidden sm:inline" />
