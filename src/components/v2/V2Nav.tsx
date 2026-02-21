@@ -39,9 +39,35 @@ const V2Nav = () => {
       }}
     >
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
-        <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-          <img src={logoConcrete} alt="Lïef" className="h-6 md:h-7 w-auto" />
-        </button>
+        <div className="flex items-center gap-6">
+          <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex flex-col items-start">
+            <img src={logoConcrete} alt="Lïef" className="h-6 md:h-7 w-auto" />
+            <span
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "0.45rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.18em",
+                color: "#F5F5F3",
+                fontWeight: 700,
+                marginTop: "4px",
+              }}
+            >
+              Development + Construction
+            </span>
+          </button>
+          <span
+            className="v2-headline hidden md:block"
+            style={{
+              fontSize: "clamp(0.85rem, 1.5vw, 1.1rem)",
+              color: "var(--v2-neon)",
+              lineHeight: 1,
+              letterSpacing: "0.02em",
+            }}
+          >
+            BUILT<span className="v2-neon-period">.</span> DIFFERENT<span className="v2-neon-period">.</span>
+          </span>
+        </div>
 
         {/* Desktop */}
         <nav className="hidden md:flex items-center gap-10">
