@@ -54,8 +54,8 @@ const V2Edge = () => {
                     onMouseEnter={(e) => e.currentTarget.style.boxShadow = `0 0 40px rgba(0,255,136,.12), inset 0 1px 0 ${accentColor}40`}
                     onMouseLeave={(e) => e.currentTarget.style.boxShadow = "none"}
                   >
-                    <div className="w-12 h-12 flex items-center justify-center mb-5" style={{ border: `1px solid ${accentColor}40` }}>
-                      <Icon size={24} style={{ color: accentColor }} />
+                    <div className="w-14 h-14 flex items-center justify-center mb-5" style={{ border: `1px solid ${accentColor}40` }}>
+                      <Icon size={32} style={{ color: accentColor }} />
                     </div>
                     <h4 className="mb-3" style={{ fontSize: "1.25rem", fontWeight: 600, color: accentColor, textTransform: "uppercase" }}>{attr.title}</h4>
                     <p style={{ fontSize: "1.25rem", color: "rgba(245,245,243,.6)", lineHeight: 1.6 }}>{attr.desc}</p>
@@ -76,8 +76,8 @@ const V2Edge = () => {
                     onMouseEnter={(e) => e.currentTarget.style.boxShadow = `0 0 40px rgba(0,255,136,.12), inset 0 1px 0 ${accentColor}40`}
                     onMouseLeave={(e) => e.currentTarget.style.boxShadow = "none"}
                   >
-                    <div className="w-12 h-12 flex items-center justify-center mb-5" style={{ border: `1px solid ${accentColor}40` }}>
-                      <Icon size={24} style={{ color: accentColor }} />
+                    <div className="w-14 h-14 flex items-center justify-center mb-5" style={{ border: `1px solid ${accentColor}40` }}>
+                      <Icon size={32} style={{ color: accentColor }} />
                     </div>
                     <div className="v2-headline mb-1" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", color: "var(--v2-white)" }}>
                       {stat.value}<span style={{ fontSize: "0.5em", fontWeight: 400 }}>{stat.suffix}</span>
