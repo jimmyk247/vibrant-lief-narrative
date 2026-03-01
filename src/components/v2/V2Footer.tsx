@@ -3,7 +3,7 @@ import dotsConcrete from "@/assets/v2/dots-concrete.png";
 
 const footerLinks = {
   explore: ["The Model", "Communities", "Technology", "Team"],
-  partner: ["Investors", "Developers", "GC Partners"],
+  partner: ["Developers", "Managing General Contractor", "Distributors"],
 };
 
 const V2Footer = () => {
@@ -55,11 +55,19 @@ const V2Footer = () => {
           <div>
             <h5 className="mb-4" style={{ fontSize: "1.25rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-neon)" }}>Partner</h5>
             <ul className="space-y-3">
-              {footerLinks.partner.map((l) => (
-                <li key={l}>
-                  <span style={{ fontSize: "1.25rem", color: "var(--v2-dim)" }}>{l}</span>
-                </li>
-              ))}
+              <li>
+                <span style={{ fontSize: "1.25rem", color: "var(--v2-dim)" }}>Developers</span>
+              </li>
+              <li>
+                <a href="https://acgarizona.com/" target="_blank" rel="noopener noreferrer" style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#00FF88] transition-colors duration-300">
+                  Managing General Contractor
+                </a>
+              </li>
+              <li>
+                <a href="https://www.strataus.com/" target="_blank" rel="noopener noreferrer" style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#00FF88] transition-colors duration-300">
+                  Distributors
+                </a>
+              </li>
             </ul>
           </div>
 
