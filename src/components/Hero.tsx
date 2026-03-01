@@ -67,9 +67,9 @@ const Hero = () => {
           className="max-w-2xl"
         >
           <p className="font-body text-greek-villa/80 text-xl md:text-2xl leading-relaxed">
-            Three decades of uncompromising craft.
+            Created 300+ skilled tradesmen.
             <br />
-            <span className="text-goldenrod">300+ in-house trades.</span>
+            <span className="text-goldenrod">80% in-house capability.</span>
             <br />
             One standard: excellence.
           </p>
@@ -83,9 +83,9 @@ const Hero = () => {
           className="mt-20 md:mt-28 flex flex-wrap gap-8 md:gap-16"
         >
           {[
-            { number: "30+", label: "Years of Legacy" },
-            { number: "300+", label: "In-House Trades" },
-            { number: "100%", label: "Vertical Integration" },
+            { number: "25+", label: "Years of Legacy" },
+            { number: "300+", label: "Skilled Tradesmen" },
+            { number: "80%", label: "In-House Capability" },
           ].map((item, i) => (
             <motion.div
               key={item.label}

@@ -1,8 +1,8 @@
 const items = [
-  { value: "$300M+", label: "Built Project Value" },
-  { value: "300", label: "Trades · One Team" },
-  { value: "20–30%", label: "Faster" },
-  { value: "$56M", label: "Saved · 440 E Basin" },
+  { value: "$600M+", label: "Billed Project Value" },
+  { value: "300+", label: "Skilled Tradesmen" },
+  { value: "$14/sq ft", label: "Average Savings" },
+  { value: "$56M", label: "Saved" },
 ];
 
 const TickerItem = ({ value, label }: { value: string; label: string }) => (

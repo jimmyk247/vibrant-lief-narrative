@@ -88,7 +88,14 @@ const V2Footer = () => {
             <p style={{ fontSize: "1.25rem", color: "var(--v2-dim)", opacity: 0.6, marginTop: "4px" }}>A Common Ground venture.</p>
           </div>
           <p style={{ fontSize: "1.25rem", color: "var(--v2-dim)", opacity: 0.5 }}>
-            Branded by Lip Loi &nbsp;|&nbsp; Powered by Apexx AI
+            Branded by{" "}
+            <a href="https://liploicreative.com" target="_blank" rel="noopener noreferrer" style={{ color: "#D4A843", textDecoration: "none" }} className="hover:opacity-80 transition-opacity">
+              Lip Loi Creative
+            </a>
+            &nbsp;|&nbsp;Enhanced by{" "}
+            <a href="https://apexx.agency" target="_blank" rel="noopener noreferrer" style={{ color: "#8B5CF6", textDecoration: "none" }} className="hover:opacity-80 transition-opacity">
+              APEXX AI
+            </a>
           </p>
         </div>
       </div>

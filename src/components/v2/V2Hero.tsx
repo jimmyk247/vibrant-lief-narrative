@@ -91,7 +91,7 @@ const V2Hero = () => {
         >
           Development + Construction consolidated.
           <br className="hidden sm:inline" />
-          Concept to concrete. 300 trades,
+          Created 300+ skilled tradesmen,
           <br className="hidden sm:inline" />
           one team, no gaps. Phoenix, AZ.
         </motion.p>

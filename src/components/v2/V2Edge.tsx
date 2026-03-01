@@ -13,7 +13,7 @@ const stats = [
   { icon: DollarSign, value: "$13", suffix: "/sq ft", label: "Average Savings", desc: "Average residential construction costs" },
   { icon: Clock, value: "14", suffix: "%", label: "Timeline Reduction", desc: "Average reduction across build types" },
   { icon: TrendingUp, value: "+20", suffix: "%", label: "Efficiency", desc: "Increases total project efficiency" },
-  { icon: CheckCircle, value: "100", suffix: "+", label: "Projects Delivered", desc: "Proven track record across residential, commercial, and custom builds" },
+  { icon: CheckCircle, value: "100", suffix: "+", label: "SABS Projects Delivered", desc: "SABS Technology has delivered 100+ projects in multiple climates and regions" },
 ];
 
 const ease = [.16, 1, .3, 1] as const;
@@ -39,7 +39,7 @@ const V2Edge = () => {
             </motion.h2>
 
             <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="max-w-[550px] mb-20" style={{ fontWeight: 300, fontSize: "1.25rem", color: "rgba(245,245,243,.7)", lineHeight: 1.8 }}>
-              Arizona's #1 Strata-trained builder. SABS prefab technology. 300+ trades in-house. When most GCs lose weeks waiting on a sub, we deploy from our own army.
+              Arizona's #1 Strata-trained builder. SABS prefab technology. 300+ skilled tradesmen in-house. When most GCs lose weeks waiting on a sub, we deploy from our own army.
             </motion.p>
 
             {/* Attribute cards */}

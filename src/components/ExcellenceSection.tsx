@@ -52,8 +52,8 @@ const stats = [
     icon: BadgeCheck,
     value: "100",
     unit: "+",
-    label: "Projects Delivered",
-    detail: "Proven track record across residential, commercial, and custom builds",
+    label: "SABS Projects Delivered",
+    detail: "SABS Technology has delivered 100+ projects in multiple climates and regions",
   },
 ];
 

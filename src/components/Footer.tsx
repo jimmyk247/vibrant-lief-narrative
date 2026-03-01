@@ -33,6 +33,24 @@ const Footer = () => {
             © {currentYear} Lïef Development. Crafting legacies in Arizona.
           </motion.p>
 
+          {/* Branded By */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="font-body text-greek-villa/40 text-sm"
+          >
+            Branded by{" "}
+            <a href="https://liploicreative.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" style={{ color: "#D4A843" }}>
+              Lip Loi Creative
+            </a>
+            {" "}|{" "}Enhanced by{" "}
+            <a href="https://apexx.agency" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" style={{ color: "#8B5CF6" }}>
+              APEXX AI
+            </a>
+          </motion.p>
+
           {/* Minimal Links */}
           <motion.div
             initial={{ opacity: 0 }}

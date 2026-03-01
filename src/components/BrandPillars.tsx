@@ -8,7 +8,7 @@ const pillars = [
     headline: "Everything under one roof.",
     description:
       "While others outsource, we own every step. Design. Engineering. Construction. Interiors. When the same team carries your vision from first sketch to final walkthrough, nothing gets lost in translation.",
-    stat: "100%",
+    stat: "80%",
     statLabel: "In-House Capability",
   },
   {
@@ -16,17 +16,17 @@ const pillars = [
     title: "Unrivaled Workforce",
     headline: "An army of masters.",
     description:
-      "Over 300 specialized tradespeople—each an expert in their craft. This isn't a network of subcontractors. This is a dedicated force that builds together, thinks together, and executes with one singular standard.",
+      "Over 300 skilled tradesmen—each an expert in their craft. This isn't a network of subcontractors. This is a dedicated force that builds together, thinks together, and executes with one singular standard.",
     stat: "300+",
-    statLabel: "Specialized Trades",
+    statLabel: "Skilled Tradesmen",
   },
   {
     number: "03",
     title: "Generational Experience",
-    headline: "Three decades of proof.",
+    headline: "Twenty-five years of proof.",
     description:
-      "Experience doesn't list on a brochure. It shows in the silence of a perfectly sealed home. In walls that breathe with the desert. In craftsmanship that our grandchildren will inherit. Thirty years of doing it right.",
-    stat: "30+",
+      "Experience doesn't list on a brochure. It shows in the silence of a perfectly sealed home. In walls that breathe with the desert. In craftsmanship that our grandchildren will inherit. Twenty-five years of doing it right.",
+    stat: "25+",
     statLabel: "Years of Excellence",
   },
 ];
