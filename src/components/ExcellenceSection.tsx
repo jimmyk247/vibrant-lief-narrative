@@ -88,10 +88,10 @@ const ExcellenceSection = () => {
           <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-[-0.02em] leading-[1.1] mb-8">
             Arizona's #1 builder.
             <br />
-            <span className="text-goldenrod">SABS™ certified.</span>
+            <span className="text-goldenrod">Lïef Blocks certified.</span>
           </h2>
           <p className="font-body text-greek-villa/70 text-lg leading-relaxed max-w-2xl">
-            Our partnership with Xtrata's revolutionary SABS™ technology isn't
+            Our partnership with Xtrata's revolutionary Lïef Blocks with SABS Technology isn't
             just a certification—it's validation. We don't just meet
             building codes. We exceed them by generations.
           </p>
@@ -166,7 +166,7 @@ const ExcellenceSection = () => {
             Anti-Fire, Anti-Mold, and Anti-Termite protection are standard.
           </p>
           <p className="font-body text-greek-villa/50 text-base leading-relaxed max-w-3xl mx-auto">
-            SABS™ technology radically reduces the number of trades required on-site, 
+            Lïef Blocks with SABS Technology radically reduces the number of trades required on-site,
             allowing for total schedule control and unprecedented quality consistency.
           </p>
         </motion.div>

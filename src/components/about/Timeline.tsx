@@ -27,9 +27,9 @@ const milestones = [
   },
   {
     year: "2020",
-    title: "SABS™ Certification",
+    title: "Lïef Blocks Certification",
     description:
-      "Became Arizona's first and only builder certified in Xtrata's revolutionary SABS™ technology—homes engineered to endure for 300 years.",
+      "Became Arizona's first and only builder certified in Lïef Blocks with SABS Technology—homes engineered to endure for 300 years.",
   },
   {
     year: "2024",

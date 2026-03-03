@@ -2,7 +2,9 @@ const items = [
   { value: "$600M+", label: "Billed Project Value" },
   { value: "300+", label: "Skilled Tradesmen" },
   { value: "$14/sq ft", label: "Average Savings" },
-  { value: "$56M", label: "Saved" },
+  { value: "14%", label: "Average Cost Savings" },
+  { value: "14%", label: "Time Savings" },
+  { value: "$12/sq ft", label: "Build Cost Savings" },
 ];
 
 const TickerItem = ({ value, label }: { value: string; label: string }) => (

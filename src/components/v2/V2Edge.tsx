@@ -39,7 +39,7 @@ const V2Edge = () => {
             </motion.h2>
 
             <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="max-w-[550px] mb-20" style={{ fontWeight: 300, fontSize: "1.25rem", color: "rgba(245,245,243,.7)", lineHeight: 1.8 }}>
-              Arizona's #1 Strata-trained builder. SABS prefab technology. 300+ skilled tradesmen in-house. When most GCs lose weeks waiting on a sub, we deploy from our own army.
+              Arizona's #1 SABS-trained builder. Lïef Blocks with SABS Technology. 300+ skilled tradesmen in-house. When most GCs lose weeks waiting on a sub, we deploy from our own army.
             </motion.p>
 
             {/* Attribute cards */}
@@ -95,7 +95,7 @@ const V2Edge = () => {
                 <span style={{ color: accentColor }}>Structural Superiority:</span> Anti-Fire, Anti-Mold, and Anti-Termite protection are standard.
               </p>
               <p className="max-w-2xl mx-auto" style={{ fontSize: "1.25rem", color: "rgba(245,245,243,.55)", lineHeight: 1.7 }}>
-                SABS™ technology radically reduces the number of trades required on-site, allowing for total schedule control and unprecedented quality consistency.
+                Lïef Blocks with SABS Technology radically reduces the number of trades required on-site, allowing for total schedule control and unprecedented quality consistency.
               </p>
             </motion.div>
           </>
