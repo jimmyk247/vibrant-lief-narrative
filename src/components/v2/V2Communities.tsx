@@ -4,14 +4,13 @@ import dotsNeon from "@/assets/v2/dots-neon.png";
 import osbornImg from "@/assets/v2/osborn.jpg";
 import basinImg from "@/assets/v2/basin.jpg";
 import pvmallImg from "@/assets/v2/pvmall.jpg";
+import canyonImg from "@/assets/v2/canyon-corporate.jpg";
+import silverImg from "@/assets/v2/silver-mountain.jpg";
 
 const ease = [.16, 1, .3, 1] as const;
 
 const V2Communities = () => {
   const { ref: headerRef, inView: headerInView } = useInView(0.1);
-  const { ref: osbornRef, inView: osbornInView } = useInView(0.1);
-  const { ref: basinRef, inView: basinInView } = useInView(0.1);
-  const { ref: pvRef, inView: pvInView } = useInView(0.1);
 
   return (
     <section id="communities" className="relative overflow-hidden py-12 md:py-28" style={{ background: "var(--v2-deep)" }}>
@@ -42,13 +41,14 @@ const V2Communities = () => {
       </div>
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
+        {/* Top grid: Osborn featured + Basin + Canyon */}
         <div className="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2" style={{ minHeight: "600px" }}>
           {/* Osborn - 2 cols, 2 rows */}
-          <div ref={osbornRef} className="lg:col-span-2 lg:row-span-2 relative overflow-hidden group" style={{ minHeight: "500px" }}>
+          <div className="lg:col-span-2 lg:row-span-2 relative overflow-hidden group" style={{ minHeight: "500px" }}>
             <img src={osbornImg} alt="301 W Osborn" className="absolute inset-0 w-full h-full object-cover grayscale brightness-[.45] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.65]" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.92) 0%, rgba(10,10,10,.35) 55%, transparent 100%)" }} />
             <div className="absolute bottom-0 left-0 p-8 md:p-12 z-10">
-              <span style={{ fontSize: "1.25rem", textTransform: "uppercase", color: "var(--v2-neon)", letterSpacing: "0.1em" }}>● Xtrata Showcase</span>
+              <span style={{ fontSize: "1.25rem", textTransform: "uppercase", color: "var(--v2-neon)", letterSpacing: "0.1em" }}>● SABS Showcase</span>
               <h3 className="v2-headline text-xl md:text-2xl mt-3 mb-2" style={{ color: "var(--v2-white)" }}>301 W OSBORN</h3>
               <p style={{ fontSize: "1.25rem", color: "var(--v2-neon)", marginBottom: "12px" }}>Midtown · Phoenix, AZ</p>
               <p className="max-w-md" style={{ fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.7 }}>
@@ -58,12 +58,12 @@ const V2Communities = () => {
           </div>
 
           {/* Basin */}
-          <div ref={basinRef} className="relative overflow-hidden group" style={{ minHeight: "280px" }}>
+          <div className="relative overflow-hidden group" style={{ minHeight: "280px" }}>
             <img src={basinImg} alt="440 Basin" className="absolute inset-0 w-full h-full object-cover grayscale brightness-[.45] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.65]" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.92) 0%, rgba(10,10,10,.35) 55%, transparent 100%)" }} />
             <div className="absolute bottom-0 left-0 p-6 z-10">
               <span style={{ fontSize: "1.25rem", textTransform: "uppercase", color: "var(--v2-neon)", letterSpacing: "0.1em" }}>● In Development</span>
-              <h3 className="v2-headline text-lg mt-2 mb-1" style={{ color: "var(--v2-white)" }}>444 E BASIN</h3>
+              <h3 className="v2-headline text-lg mt-2 mb-1" style={{ color: "var(--v2-white)" }}>440 BASIN AVENUE</h3>
               <p style={{ fontSize: "1.25rem", color: "var(--v2-neon)", marginBottom: "8px" }}>Pahrump, NV</p>
               <p style={{ fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.6 }}>204 units. Integrated model at scale.</p>
               <div className="mt-3 pt-3" style={{ borderTop: "1px solid var(--v2-rule)" }}>
@@ -72,15 +72,42 @@ const V2Communities = () => {
             </div>
           </div>
 
-          {/* PV Mall */}
-          <div ref={pvRef} className="relative overflow-hidden group" style={{ minHeight: "280px" }}>
-            <img src={pvmallImg} alt="PV Mall" className="absolute inset-0 w-full h-full object-cover grayscale brightness-[.45] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.65]" />
+          {/* Canyon Corporate */}
+          <div className="relative overflow-hidden group" style={{ minHeight: "280px" }}>
+            <img src={canyonImg} alt="Canyon Corporate Plaza" className="absolute inset-0 w-full h-full object-cover grayscale brightness-[.45] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.65]" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.92) 0%, rgba(10,10,10,.35) 55%, transparent 100%)" }} />
             <div className="absolute bottom-0 left-0 p-6 z-10">
-              <span style={{ fontSize: "1.25rem", textTransform: "uppercase", color: "var(--v2-neon)", letterSpacing: "0.1em" }}>● Planning and Design</span>
-              <h3 className="v2-headline text-lg mt-2 mb-1" style={{ color: "var(--v2-white)" }}>PV MALL</h3>
+              <span style={{ fontSize: "1.25rem", textTransform: "uppercase", color: "var(--v2-neon)", letterSpacing: "0.1em" }}>● In Development</span>
+              <h3 className="v2-headline text-lg mt-2 mb-1" style={{ color: "var(--v2-white)" }}>CANYON CORPORATE PLAZA</h3>
+              <p style={{ fontSize: "1.25rem", color: "var(--v2-neon)", marginBottom: "8px" }}>Phoenix, AZ</p>
+              <p style={{ fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.6 }}>14-story office-to-residential conversion. Full SABS build.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom row: Silver Mountain + PV Mall */}
+        <div className="grid grid-cols-1 lg:grid-cols-2" style={{ marginTop: "2px" }}>
+          {/* Silver Mountain */}
+          <div className="relative overflow-hidden group" style={{ minHeight: "320px" }}>
+            <img src={silverImg} alt="Silver Mountain Ranches" className="absolute inset-0 w-full h-full object-cover grayscale brightness-[.45] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.65]" />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.92) 0%, rgba(10,10,10,.35) 55%, transparent 100%)" }} />
+            <div className="absolute bottom-0 left-0 p-6 md:p-8 z-10">
+              <span style={{ fontSize: "1.25rem", textTransform: "uppercase", color: "var(--v2-neon)", letterSpacing: "0.1em" }}>● In Development</span>
+              <h3 className="v2-headline text-lg md:text-xl mt-2 mb-1" style={{ color: "var(--v2-white)" }}>SILVER MOUNTAIN RANCHES</h3>
+              <p style={{ fontSize: "1.25rem", color: "var(--v2-neon)", marginBottom: "8px" }}>Scottsdale, AZ</p>
+              <p className="max-w-sm" style={{ fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.6 }}>100+ acre equestrian community. Luxury custom homes built with LIEF Blocks.</p>
+            </div>
+          </div>
+
+          {/* PV Mall */}
+          <div className="relative overflow-hidden group" style={{ minHeight: "320px" }}>
+            <img src={pvmallImg} alt="PV Mall" className="absolute inset-0 w-full h-full object-cover grayscale brightness-[.45] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.65]" />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.92) 0%, rgba(10,10,10,.35) 55%, transparent 100%)" }} />
+            <div className="absolute bottom-0 left-0 p-6 md:p-8 z-10">
+              <span style={{ fontSize: "1.25rem", textTransform: "uppercase", color: "var(--v2-neon)", letterSpacing: "0.1em" }}>● Planning & Design</span>
+              <h3 className="v2-headline text-lg md:text-xl mt-2 mb-1" style={{ color: "var(--v2-white)" }}>PV MALL</h3>
               <p style={{ fontSize: "1.25rem", color: "var(--v2-neon)", marginBottom: "8px" }}>Paradise Valley, AZ</p>
-              <p style={{ fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.6 }}>Mixed-use redevelopment. In Development.</p>
+              <p className="max-w-sm" style={{ fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.6 }}>Mixed-use redevelopment. Premier retail and residential destination.</p>
             </div>
           </div>
         </div>

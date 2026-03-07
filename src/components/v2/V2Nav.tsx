@@ -1,18 +1,27 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 import logoConcrete from "@/assets/v2/logo-concrete.png";
 
-const navLinks = [
-  { href: "#model", label: "The Model" },
-  { href: "#communities", label: "Projects" },
-  { href: "#edge", label: "The Edge" },
-  { href: "#team", label: "Team" },
+interface NavLink {
+  href: string;
+  label: string;
+  type: "scroll" | "route";
+}
+
+const navLinks: NavLink[] = [
+  { href: "#model", label: "The Model", type: "scroll" },
+  { href: "#communities", label: "Projects", type: "scroll" },
+  { href: "/liefblocks", label: "LIEF Blocks", type: "route" },
+  { href: "/team", label: "Team", type: "route" },
 ];
 
 const V2Nav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -20,10 +29,32 @@ const V2Nav = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleNav = (href: string) => {
+  const handleNav = (link: NavLink) => {
     setMobileOpen(false);
-    const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: "smooth" });
+    if (link.type === "route") {
+      navigate(link.href);
+    } else {
+      // If we're not on homepage, go there first
+      if (location.pathname !== "/") {
+        navigate("/");
+        // Wait for navigation then scroll
+        setTimeout(() => {
+          const el = document.querySelector(link.href);
+          el?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      } else {
+        const el = document.querySelector(link.href);
+        el?.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
+  const handleLogo = () => {
+    if (location.pathname !== "/") {
+      navigate("/");
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   return (
@@ -42,7 +73,7 @@ const V2Nav = () => {
         <div className="flex items-center gap-6">
           <button
             className="flex items-center transition-all duration-500"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            onClick={handleLogo}
             style={{ opacity: scrolled ? 1 : 0, transform: scrolled ? "translateY(0)" : "translateY(8px)", pointerEvents: scrolled ? "auto" : "none" }}
           >
             <img src={logoConcrete} alt="Lïef" className="h-6 md:h-7 w-auto block" />
@@ -68,14 +99,14 @@ const V2Nav = () => {
           {navLinks.map((l) => (
             <button
               key={l.href}
-              onClick={() => handleNav(l.href)}
+              onClick={() => handleNav(l)}
               className="transition-colors duration-300 hover:text-[#00FF88]"
               style={{
                 fontFamily: "'DM Sans', sans-serif",
                 fontSize: "1.25rem",
                 textTransform: "uppercase",
                 letterSpacing: "0.16em",
-                color: "#777",
+                color: location.pathname === l.href ? "#00FF88" : "#777",
                 background: "none",
                 border: "none",
                 cursor: "pointer",
@@ -126,13 +157,13 @@ const V2Nav = () => {
               {navLinks.map((l) => (
                 <button
                   key={l.href}
-                  onClick={() => handleNav(l.href)}
+                  onClick={() => handleNav(l)}
                   style={{
                     fontFamily: "'DM Sans', sans-serif",
                     fontSize: "1.25rem",
                     textTransform: "uppercase",
                     letterSpacing: "0.16em",
-                    color: "#F5F5F3",
+                    color: location.pathname === l.href ? "#00FF88" : "#F5F5F3",
                     background: "none",
                     border: "none",
                     cursor: "pointer",
