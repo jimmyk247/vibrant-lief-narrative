@@ -28,7 +28,7 @@ interface TeamMember {
 const principals: TeamMember[] = [
   { name: "Jesse Fowler", role: "Principal / Manager", cred: "20+ Yrs in Design, Build & Development", img: jesseImg, zoom: 1.32 },
   { name: "Jon Armstrong", role: "Principal / Manager", cred: "15+ Yrs in Custom Residential & Commercial Building", img: jonImg, zoom: 1.32 },
-  { name: "Jimmy Khounlavong", role: "Principal / Creative Director", cred: "20+ Yrs of Brand, Merchandising & Marketplace Strategy", img: jimmyImg, zoom: 1.10 },
+  { name: "Jimmy Khounlavong", role: "Principal / Creative Director", cred: "20+ Yrs of Brand, Product & Marketplace Strategy", img: jimmyImg, zoom: 1.10 },
 ];
 
 const row2: TeamMember[] = [

@@ -17,7 +17,7 @@ const leaders = [
   {
     name: "Jimmy Khounlavong",
     role: "Principal / Creative Director",
-    experience: "20+ Years of Brand, Merchandising & Marketplace Strategy",
+    experience: "20+ Years of Brand, Product & Marketplace Strategy",
     image: jimmyKhounlavong,
     imagePosition: "object-[center_15%]",
     description:

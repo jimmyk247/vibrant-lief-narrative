@@ -60,7 +60,7 @@
 }
 
 .v2-ticker-track {
-  animation: v2-scroll 25s linear infinite;
+  animation: v2-scroll 35s linear infinite;
 }
 
 .v2-ticker-track:hover {
@@ -105,4 +105,18 @@
 
 .v2-hover-line:hover {
   background: rgba(0,255,136,.015);
+}
+
+/* Footer link hovers */
+footer a:hover,
+footer button:hover {
+  color: #00FF88 !important;
+}
+
+footer a.hover-gold:hover {
+  color: #f8d456 !important;
+}
+
+footer a.hover-purple:hover {
+  color: #9b59b6 !important;
 }

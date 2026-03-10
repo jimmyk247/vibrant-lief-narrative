@@ -30,7 +30,7 @@ const V2Edge = () => {
         {inView && (
           <>
             <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="mb-6" style={{ fontSize: "1.25rem", textTransform: "uppercase", letterSpacing: "0.22em", color: "rgba(0,255,136,.6)" }}>
-              <span className="inline-block w-6 h-px mr-3 align-middle" style={{ background: "rgba(0,255,136,.6)" }} />
+
               The Edge
             </motion.div>
 

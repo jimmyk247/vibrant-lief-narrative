@@ -16,7 +16,7 @@ const V2Hero = () => {
 
   useEffect(() => {
     const onScroll = () => setShowScroll(window.scrollY < 200);
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -36,7 +36,7 @@ const V2Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(0), ease: [.16, 1, .3, 1] }}
-          style={{ opacity: heroLogoOpacity, scale: heroLogoScale, y: heroLogoY, transformOrigin: "left center" }}
+          style={{ opacity: heroLogoOpacity, scale: heroLogoScale, y: heroLogoY, transformOrigin: "left center", willChange: "transform, opacity" }}
           className="mb-3 md:mb-4"
         >
           <img src={logoLight} alt="Lïef" className="h-14 md:h-24 lg:h-32 w-auto" />

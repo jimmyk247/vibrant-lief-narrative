@@ -16,7 +16,7 @@ const V2CTA = () => {
       <div ref={ref} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 text-center flex flex-col items-center">
         {inView && (
           <>
-            <motion.h2 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="v2-headline mb-6" style={{ fontSize: "clamp(3rem, 6vw, 5rem)", color: "var(--v2-white)" }}>
+            <motion.h2 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="v2-headline mb-6" style={{ fontSize: "clamp(3rem, 6vw, 5rem)", lineHeight: 1.2, color: "var(--v2-white)" }}>
               LET'S<br />BUILD<span className="v2-neon-period">.</span>
             </motion.h2>
             <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="mb-10 max-w-[380px]" style={{ fontWeight: 300, fontSize: "1.3rem", color: "var(--v2-muted)", lineHeight: 1.7 }}>

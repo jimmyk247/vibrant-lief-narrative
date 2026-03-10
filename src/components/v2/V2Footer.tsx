@@ -2,17 +2,27 @@ import logoConcrete from "@/assets/v2/logo-concrete.png";
 import dotsConcrete from "@/assets/v2/dots-concrete.png";
 
 const footerLinks = {
-  explore: ["The Model", "Communities", "Technology", "Team"],
+  explore: ["Home", "The Model", "Projects", "Lïef x SABS", "Team"],
   partner: ["Developers", "Managing General Contractor", "Distributors"],
 };
 
 const V2Footer = () => {
   const handleNav = (label: string) => {
+    if (label === "Home") {
+      window.location.href = "/";
+      return;
+    }
+    if (label === "Lïef x SABS") {
+      window.location.href = "/liefblocks";
+      return;
+    }
+    if (label === "Team") {
+      window.location.href = "/team";
+      return;
+    }
     const map: Record<string, string> = {
       "The Model": "#model",
-      Communities: "#communities",
-      Technology: "#edge",
-      Team: "#team",
+      Projects: "#communities",
     };
     const target = map[label];
     if (target) document.querySelector(target)?.scrollIntoView({ behavior: "smooth" });
@@ -93,15 +103,21 @@ const V2Footer = () => {
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4" style={{ borderTop: "1px solid var(--v2-rule)" }}>
           <div>
             <p style={{ fontSize: "1.25rem", color: "var(--v2-dim)" }}>© 2026 Lïef Development + Construction</p>
-            <p style={{ fontSize: "1.25rem", color: "var(--v2-dim)", opacity: 0.6, marginTop: "4px" }}>A Common Ground venture.</p>
+            <p style={{ fontSize: "1.25rem", color: "var(--v2-dim)", opacity: 0.6, marginTop: "4px" }}>
+              A{" "}
+              <a href="https://commonground.ventures" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }} className="hover:text-[#00FF88] transition-colors duration-300">
+                Common Ground
+              </a>{" "}
+              venture.
+            </p>
           </div>
           <p style={{ fontSize: "1.25rem", color: "var(--v2-dim)", opacity: 0.5 }}>
             Branded by{" "}
-            <a href="https://liploicreative.com" target="_blank" rel="noopener noreferrer" style={{ color: "#D4A843", textDecoration: "none" }} className="hover:opacity-80 transition-opacity">
+            <a href="https://liploicreative.com" target="_blank" rel="noopener noreferrer" style={{ color: "#D4A843", textDecoration: "none" }} className="hover-gold transition-colors duration-300">
               Lip Loi Creative
             </a>
             &nbsp;|&nbsp;Enhanced by{" "}
-            <a href="https://apexx.agency" target="_blank" rel="noopener noreferrer" style={{ color: "#8B5CF6", textDecoration: "none" }} className="hover:opacity-80 transition-opacity">
+            <a href="https://apexx.agency" target="_blank" rel="noopener noreferrer" style={{ color: "#8B5CF6", textDecoration: "none" }} className="hover-purple transition-colors duration-300">
               APEXX AI
             </a>
           </p>

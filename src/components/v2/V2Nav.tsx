@@ -11,33 +11,74 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
+  { href: "/", label: "Home", type: "route" },
   { href: "#model", label: "The Model", type: "scroll" },
   { href: "#communities", label: "Projects", type: "scroll" },
-  { href: "/liefblocks", label: "LIEF Blocks", type: "route" },
+  { href: "/liefblocks", label: "LÏEF X SABS", type: "route" },
   { href: "/team", label: "Team", type: "route" },
 ];
 
 const V2Nav = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("");
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  const [contactHovered, setContactHovered] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Track which section is currently in view for scroll-type nav links
+  useEffect(() => {
+    if (location.pathname !== "/") {
+      setActiveSection("");
+      return;
+    }
+
+    const sectionIds = navLinks
+      .filter((l) => l.type === "scroll")
+      .map((l) => l.href.replace("#", ""));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(`#${entry.target.id}`);
+          }
+        });
+      },
+      { threshold: 0.05, rootMargin: "-80px 0px -60% 0px" }
+    );
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [location.pathname]);
+
+  const isLinkActive = (link: NavLink) => {
+    if (link.type === "route") {
+      return location.pathname === link.href;
+    }
+    // For scroll links, check if we're on homepage and section is active
+    return location.pathname === "/" && activeSection === link.href;
+  };
 
   const handleNav = (link: NavLink) => {
     setMobileOpen(false);
     if (link.type === "route") {
       navigate(link.href);
+      window.scrollTo({ top: 0 });
     } else {
-      // If we're not on homepage, go there first
       if (location.pathname !== "/") {
         navigate("/");
-        // Wait for navigation then scroll
         setTimeout(() => {
           const el = document.querySelector(link.href);
           el?.scrollIntoView({ behavior: "smooth" });
@@ -96,38 +137,50 @@ const V2Nav = () => {
 
         {/* Desktop */}
         <nav className="hidden lg:flex items-center gap-10">
-          {navLinks.map((l) => (
-            <button
-              key={l.href}
-              onClick={() => handleNav(l)}
-              className="transition-colors duration-300 hover:text-[#00FF88]"
-              style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: "1.25rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.16em",
-                color: location.pathname === l.href ? "#00FF88" : "#777",
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-              }}
-            >
-              {l.label}
-            </button>
-          ))}
+          {navLinks.map((l) => {
+            const active = isLinkActive(l);
+            const hovered = hoveredLink === l.href;
+            return (
+              <button
+                key={l.href}
+                onClick={() => handleNav(l)}
+                onMouseEnter={() => setHoveredLink(l.href)}
+                onMouseLeave={() => setHoveredLink(null)}
+                className="transition-all duration-300"
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "1rem",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.16em",
+                  color: active || hovered
+                    ? "#00FF88"
+                    : scrolled
+                      ? "#F5F5F3"
+                      : "#777",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                }}
+              >
+                {l.label}
+              </button>
+            );
+          })}
           <a
             href="mailto:hello@liefdev.com"
-            className="transition-all duration-300 hover:bg-[#00FF88] hover:text-[#0a0a0a]"
+            className="transition-all duration-300"
+            onMouseEnter={() => setContactHovered(true)}
+            onMouseLeave={() => setContactHovered(false)}
             style={{
               fontFamily: "'DM Sans', sans-serif",
-              fontSize: "1.25rem",
+              fontSize: "1rem",
               textTransform: "uppercase",
               letterSpacing: "0.16em",
-              color: "#00FF88",
+              color: contactHovered ? "#0a0a0a" : "#00FF88",
               border: "1px solid #00FF88",
               padding: "8px 20px",
               cursor: "pointer",
-              background: "transparent",
+              background: contactHovered ? "#00FF88" : "transparent",
             }}
           >
             Contact
@@ -160,10 +213,10 @@ const V2Nav = () => {
                   onClick={() => handleNav(l)}
                   style={{
                     fontFamily: "'DM Sans', sans-serif",
-                    fontSize: "1.25rem",
+                    fontSize: "1rem",
                     textTransform: "uppercase",
                     letterSpacing: "0.16em",
-                    color: location.pathname === l.href ? "#00FF88" : "#F5F5F3",
+                    color: isLinkActive(l) ? "#00FF88" : "#F5F5F3",
                     background: "none",
                     border: "none",
                     cursor: "pointer",
@@ -177,7 +230,7 @@ const V2Nav = () => {
                 href="mailto:hello@liefdev.com"
                 style={{
                   fontFamily: "'DM Sans', sans-serif",
-                  fontSize: "1.25rem",
+                  fontSize: "1rem",
                   textTransform: "uppercase",
                   letterSpacing: "0.16em",
                   color: "#00FF88",

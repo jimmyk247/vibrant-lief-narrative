@@ -43,7 +43,7 @@ const V2Disciplines = () => {
             {/* Left — copy */}
             <div className="mb-12 md:mb-0 md:sticky md:top-32">
               <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0, ease }} className="mb-6" style={{ fontSize: "1.25rem", textTransform: "uppercase", letterSpacing: "0.22em", color: "rgba(0,255,136,.7)" }}>
-                <span className="inline-block w-6 h-px mr-3 align-middle" style={{ background: "rgba(0,255,136,.7)" }} />
+
                 Complete Mastery
               </motion.div>
               <motion.h2

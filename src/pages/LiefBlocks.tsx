@@ -6,10 +6,12 @@ import { Flame, Droplets, Bug, Thermometer, Shield, Wind, Recycle, Volume2 } fro
 import V2Nav from "@/components/v2/V2Nav";
 import V2Footer from "@/components/v2/V2Footer";
 import logoConcrete from "@/assets/v2/logo-concrete.png";
+import liefLogoGreen from "@/assets/v2/lief-logo-green.png";
 import osbornImg from "@/assets/v2/301-osborn.png";
 import canyonImg from "@/assets/v2/canyon-corporate.jpg";
 import silverImg from "@/assets/v2/silver-mountain.jpg";
 import basinImg from "@/assets/v2/pahrump-basin.jpg";
+import dotsNeon from "@/assets/v2/dots-neon.png";
 
 const ease = [.16, 1, .3, 1] as const;
 const accentColor = "#00FF88";
@@ -71,7 +73,7 @@ const projects = [
     img: silverImg,
     name: "Silver Mountain Ranches",
     type: "Equestrian Community",
-    desc: "100+ acre equestrian community with luxury custom homes built using LIEF Blocks with SABS Technology.",
+    desc: "100+ acre equestrian community with luxury custom homes built using LÏEF Blocks with SABS Technology.",
     location: "Scottsdale, AZ",
     status: "In Development",
   },
@@ -136,25 +138,23 @@ const LiefBlocks = () => {
       <main>
 
         {/* ════════ HERO ════════ */}
-        <section ref={heroRef} className="relative min-h-screen flex flex-col justify-center" style={{ background: "var(--v2-deep)" }}>
+        <section ref={heroRef} className="relative h-screen flex items-center overflow-x-hidden" style={{ background: "var(--v2-deep)" }}>
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 right-0 w-[70%] h-[70%]" style={{ background: "radial-gradient(ellipse at top right, rgba(0,107,63,.15), transparent 70%)" }} />
             <div className="absolute bottom-0 left-0 w-[50%] h-[50%]" style={{ background: "radial-gradient(ellipse at bottom left, rgba(0,255,136,.06), transparent 70%)" }} />
           </div>
-
-          <motion.div style={{ opacity: heroOpacity, y: heroY }} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 pt-24">
+          <motion.div style={{ opacity: heroOpacity, y: heroY, willChange: "transform, opacity" }} className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12">
             <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.3, ease }}>
               <div className="v2-label mb-8">
-                <span className="inline-block w-6 h-px mr-3 align-middle" style={{ background: "rgba(0,255,136,.6)" }} />
                 Proprietary Building System
               </div>
-              <h1 className="v2-headline mb-4" style={{ fontSize: "clamp(3rem, 8vw, 6.5rem)", color: "var(--v2-white)", lineHeight: 0.95 }}>
-                LIEF<br />BLOCKS<span className="v2-neon-period">.</span>
-              </h1>
-              <p className="v2-headline mb-2" style={{ fontSize: "clamp(1.2rem, 3vw, 2rem)", color: "var(--v2-neon)" }}>
-                WITH SABS<span className="v2-neon-period">.</span>
-              </p>
-              <p className="mt-8 max-w-[550px]" style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
+              <div className="mb-4">
+                <img src={liefLogoGreen} alt="Lïef" className="h-[clamp(4.6rem,20.7vw,10.91rem)] md:h-[clamp(5.03rem,13.42vw,10.91rem)] w-auto block mb-[-1rem] md:mb-[-0.15em]" style={{ border: "none", filter: "brightness(0) invert(1)" }} />
+                <h1 className="v2-headline leading-[1.1] md:leading-[0.3]" style={{ fontSize: "clamp(36px, 10vw, 80px)", color: "var(--v2-white)" }}>
+                  BLOCKS<br className="md:hidden" /><span className="md:inline"> &nbsp;</span><span style={{ color: "var(--v2-neon)" }}>x</span>&nbsp; SABS
+                </h1>
+              </div>
+              <p className="mt-10 max-w-[550px]" style={{ fontWeight: 300, fontSize: "1.1rem", color: "var(--v2-muted)", lineHeight: 1.6 }}>
                 Our proprietary EPS foam structural panel system, engineered with SABS cementitious technology. Faster. Stronger. Smarter.
               </p>
               <div className="flex flex-wrap gap-4 mt-10">
@@ -162,9 +162,9 @@ const LiefBlocks = () => {
                   href="mailto:hello@liefdev.com"
                   className="inline-block transition-all duration-300 hover:brightness-110"
                   style={{
-                    fontFamily: "var(--v2-font-body)", fontSize: "1.1rem", textTransform: "uppercase",
+                    fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase",
                     letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-neon)",
-                    color: "var(--v2-deep)", padding: "16px 36px", textDecoration: "none",
+                    color: "var(--v2-deep)", padding: "10px 24px", textDecoration: "none",
                   }}
                 >
                   Get a Quote
@@ -173,9 +173,9 @@ const LiefBlocks = () => {
                   onClick={() => document.querySelector("#what-section")?.scrollIntoView({ behavior: "smooth" })}
                   className="transition-all duration-300 hover:bg-[#00FF88] hover:text-[#0a0a0a]"
                   style={{
-                    fontFamily: "var(--v2-font-body)", fontSize: "1.1rem", textTransform: "uppercase",
+                    fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase",
                     letterSpacing: "0.14em", color: accentColor, border: `1px solid ${accentColor}`,
-                    padding: "16px 36px", background: "transparent", cursor: "pointer",
+                    padding: "10px 24px", background: "transparent", cursor: "pointer",
                   }}
                 >
                   Learn More
@@ -190,24 +190,27 @@ const LiefBlocks = () => {
           </div>
         </section>
 
-        {/* ════════ WHAT ARE LIEF BLOCKS ════════ */}
+        {/* ════════ WHAT ARE LÏEF BLOCKS ════════ */}
         <section id="what-section" className="relative py-12 md:py-28" style={{ background: "var(--v2-deep)", borderTop: "1px solid var(--v2-rule)" }}>
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+            <img src={dotsNeon} alt="" className="w-[176vw] max-w-[1512px] opacity-[0.01]" />
+          </div>
           <div ref={whatRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
             {whatInView && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-12 items-center">
                 <div>
                   <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="v2-label mb-6">
-                    <span className="inline-block w-6 h-px mr-3 align-middle" style={{ background: "rgba(0,255,136,.6)" }} />
+
                     The Technology
                   </motion.div>
                   <motion.h2 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="v2-headline text-3xl md:text-5xl lg:text-6xl mb-6" style={{ color: "var(--v2-white)" }}>
-                    WHAT ARE<br />LIEF BLOCKS<span className="v2-neon-period">?</span>
+                    WHAT ARE<br /><img src={liefLogoGreen} alt="Lïef" className="inline-block h-[1.3em] w-auto" style={{ verticalAlign: "bottom", marginTop: "-0.25em", marginBottom: "-0.15em", marginRight: "0.12em" }} />BLOCKS<span className="v2-neon-period">?</span>
                   </motion.h2>
                   <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="mb-6" style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
-                    LIEF Blocks are our proprietary EPS (Expanded Polystyrene) foam structural panels — the building blocks of every LIEF project. These precision-engineered panels form the structural core of walls, floors, and roofs.
+                    LÏEF Blocks are proprietary EPS (Expanded Polystyrene) foam structural panels that form the structural core of walls, floors, and roofs. Once assembled, they're coated with SABS (Saebi Alternative Building System) — a cementitious compound that transforms foam panels into fire-proof, mold-proof, termite-proof concrete structures.
                   </motion.p>
                   <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.24, ease }} style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
-                    Once assembled, they're coated with SABS (Saebi Alternative Building System) — a proprietary cementitious compound that transforms foam panels into fire-proof, mold-proof, termite-proof concrete structures. The result: buildings that are stronger, faster to construct, and radically more efficient than anything built with wood or steel.
+                    As Arizona's premier SABS-certified developer and builder, we offer this advanced building system alongside traditional construction methods — giving our partners the flexibility to choose the right approach for every project.
                   </motion.p>
                 </div>
 
@@ -268,7 +271,7 @@ const LiefBlocks = () => {
             {statsInView && (
               <>
                 <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="mb-6" style={{ fontSize: "1.25rem", textTransform: "uppercase", letterSpacing: "0.22em", color: "rgba(0,255,136,.6)" }}>
-                  <span className="inline-block w-6 h-px mr-3 align-middle" style={{ background: "rgba(0,255,136,.6)" }} />
+
                   Performance
                 </motion.div>
 
@@ -277,7 +280,7 @@ const LiefBlocks = () => {
                 </motion.h2>
 
                 <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="max-w-[550px] mb-20" style={{ fontWeight: 300, fontSize: "1.25rem", color: "rgba(245,245,243,.7)", lineHeight: 1.8 }}>
-                  Arizona's #1 SABS-trained builder. Lief Blocks with SABS Technology radically reduces the number of trades required on-site, allowing for total schedule control and unprecedented quality consistency.
+                  Arizona's #1 SABS-trained builder. Lïef Blocks with SABS Technology radically reduces the number of trades required on-site, allowing for total schedule control and unprecedented quality consistency.
                 </motion.p>
 
                 {/* Attribute cards */}
@@ -332,14 +335,14 @@ const LiefBlocks = () => {
             {techInView && (
               <>
                 <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="v2-label mb-6">
-                  <span className="inline-block w-6 h-px mr-3 align-middle" style={{ background: "rgba(0,255,136,.6)" }} />
+
                   Certified Technicals
                 </motion.div>
                 <motion.h2 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="v2-headline text-4xl md:text-6xl lg:text-7xl mb-6" style={{ color: "var(--v2-white)" }}>
                   ICC/ES<br /><span style={{ color: "var(--v2-neon)" }}>APPROVED<span className="v2-neon-period">.</span></span>
                 </motion.h2>
                 <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="max-w-[600px] mb-16" style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
-                  Every component of the LIEF Blocks system is tested, certified, and code-compliant. No shortcuts. No workarounds.
+                  Every component of the LÏEF Blocks system is tested, certified, and code-compliant. No shortcuts. No workarounds.
                 </motion.p>
 
                 <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.24, ease }} className="grid grid-cols-1 md:grid-cols-2 gap-px">
@@ -375,7 +378,7 @@ const LiefBlocks = () => {
             {vidInView && (
               <>
                 <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="v2-label mb-6">
-                  <span className="inline-block w-6 h-px mr-3 align-middle" style={{ background: "rgba(0,255,136,.6)" }} />
+
                   See It Built
                 </motion.div>
                 <motion.h2 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="v2-headline text-4xl md:text-5xl mb-12" style={{ color: "var(--v2-white)" }}>
@@ -386,7 +389,7 @@ const LiefBlocks = () => {
                   <div className="relative w-full" style={{ aspectRatio: "16/9", border: "1px solid var(--v2-rule)", overflow: "hidden" }}>
                     <iframe
                       src="https://www.youtube.com/embed/aQFVqs_XrEY"
-                      title="How LIEF Blocks Work"
+                      title="How LÏEF Blocks Work"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       className="absolute inset-0 w-full h-full"
@@ -416,8 +419,8 @@ const LiefBlocks = () => {
             {projInView && (
               <>
                 <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="v2-label mb-6">
-                  <span className="inline-block w-6 h-px mr-3 align-middle" style={{ background: "rgba(0,255,136,.6)" }} />
-                  Built With LIEF Blocks
+
+                  Built With LÏEF Blocks
                 </motion.div>
                 <motion.h2 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="v2-headline text-4xl md:text-6xl lg:text-7xl mb-16" style={{ color: "var(--v2-white)" }}>
                   THE WORK<br /><span style={{ color: "var(--v2-neon)" }}>SPEAKS<span className="v2-neon-period">.</span></span>
@@ -490,18 +493,18 @@ const LiefBlocks = () => {
         <section className="relative py-12 md:py-28" style={{ background: "var(--v2-deep)", borderTop: "1px solid var(--v2-rule)" }}>
           <div ref={calcRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
             {calcInView && (
-              <>
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="text-center mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }}>
                   <div className="v2-label mb-6">Savings Calculator</div>
-                  <h2 className="v2-headline text-4xl md:text-5xl mb-4" style={{ color: "var(--v2-white)" }}>
-                    SEE THE<br /><span style={{ color: "var(--v2-neon)" }}>DIFFERENCE<span className="v2-neon-period">.</span></span>
+                  <h2 className="v2-headline text-4xl md:text-6xl lg:text-7xl mb-6" style={{ color: "var(--v2-white)" }}>
+                    SEE THE<br /><span style={{ color: "var(--v2-neon)" }}>DIFFERENCE</span><span className="v2-neon-period">.</span>
                   </h2>
-                  <p className="max-w-md mx-auto" style={{ fontWeight: 300, fontSize: "1.1rem", color: "var(--v2-muted)", lineHeight: 1.7 }}>
-                    Estimate your project savings with LIEF Blocks compared to traditional construction.
+                  <p className="max-w-md" style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
+                    Estimate your project savings with LÏEF Blocks compared to traditional construction.
                   </p>
                 </motion.div>
 
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="max-w-[600px] mx-auto p-8 md:p-10" style={{ border: "1px solid var(--v2-rule)", background: "rgba(0,255,136,.01)" }}>
+                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="p-8 md:p-10" style={{ border: "1px solid var(--v2-rule)", background: "rgba(0,255,136,.01)" }}>
                   <label className="block mb-2" style={{ fontSize: "0.85rem", color: "var(--v2-dim)", letterSpacing: "0.05em" }}>Project Type</label>
                   <select
                     value={projectType}
@@ -546,7 +549,7 @@ const LiefBlocks = () => {
                     *Estimates based on average project data. Actual savings vary by project scope, location, and specifications.
                   </p>
                 </motion.div>
-              </>
+              </div>
             )}
           </div>
         </section>
@@ -557,11 +560,11 @@ const LiefBlocks = () => {
           <div ref={ctaRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 text-center flex flex-col items-center">
             {ctaInView && (
               <>
-                <motion.h2 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="v2-headline mb-6" style={{ fontSize: "clamp(3rem, 6vw, 5rem)", color: "var(--v2-white)" }}>
-                  BUILD WITH<br />LIEF BLOCKS<span className="v2-neon-period">.</span>
+                <motion.h2 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="v2-headline mb-6" style={{ fontSize: "clamp(3rem, 6vw, 5rem)", color: "var(--v2-white)", lineHeight: 1.2 }}>
+                  BUILD WITH<br />LÏEF BLOCKS<span className="v2-neon-period">.</span>
                 </motion.h2>
                 <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="mb-10 max-w-[420px]" style={{ fontWeight: 300, fontSize: "1.3rem", color: "var(--v2-muted)", lineHeight: 1.7 }}>
-                  Whether you're a developer, builder, or investor — let's talk about how LIEF Blocks can transform your next project.
+                  Whether you're a developer, builder, or investor — let's talk about how LÏEF Blocks can transform your next project.
                 </motion.p>
                 <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="flex flex-wrap justify-center gap-4">
                   <a
