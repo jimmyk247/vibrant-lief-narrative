@@ -65,6 +65,10 @@ const V2Nav = () => {
 
   const isLinkActive = (link: NavLink) => {
     if (link.type === "route") {
+      if (link.href === "/" && location.pathname === "/") {
+        // Home is only active when no scroll section is in view
+        return !activeSection;
+      }
       return location.pathname === link.href;
     }
     // For scroll links, check if we're on homepage and section is active

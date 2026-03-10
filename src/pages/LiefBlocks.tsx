@@ -13,6 +13,40 @@ import silverImg from "@/assets/v2/silver-mountain.jpg";
 import basinImg from "@/assets/v2/pahrump-basin.jpg";
 import dotsNeon from "@/assets/v2/dots-neon.png";
 
+/* ── PARTNER LOGOS ── */
+import logoRitzCarlton from "@/assets/v2/logos/ritz-carlton.png";
+import logoDiscovery from "@/assets/v2/logos/discovery-channel.png";
+import logoPgaTour from "@/assets/v2/logos/pga-tour.png";
+import logoAD from "@/assets/v2/logos/architectural-digest.png";
+import logoCobra from "@/assets/v2/logos/shelby.png";
+import logoLacma from "@/assets/v2/logos/lacma.png";
+import logoHgtv from "@/assets/v2/logos/hgtv.png";
+import logoPlanetGreen from "@/assets/v2/logos/planet-green.png";
+import logoDiy from "@/assets/v2/logos/diy-network.png";
+import logoOakley from "@/assets/v2/logos/oakley.png";
+import logoForbes from "@/assets/v2/logos/forbes.png";
+import logoMarucci from "@/assets/v2/logos/marucci.png";
+import logoBuilder from "@/assets/v2/logos/builder-magazine.png";
+import logoFoxRacing from "@/assets/v2/logos/fox.png";
+import logoMaya from "@/assets/v2/logos/maya.png";
+import logoKW from "@/assets/v2/logos/keller-williams.png";
+import logoZillow from "@/assets/v2/logos/zillow.png";
+import logoUSNews from "@/assets/v2/logos/us-news.png";
+import logoRobbReport from "@/assets/v2/logos/robb-report.png";
+import logoLATimes from "@/assets/v2/logos/la-times.png";
+
+/* ── PRESS LOGOS ── */
+import logoNBC from "@/assets/v2/logos/nbc.svg";
+import logoFoxNews from "@/assets/v2/logos/fox-news.svg";
+import logoCBS from "@/assets/v2/logos/cbs.svg";
+import logoPBS from "@/assets/v2/logos/pbs.svg";
+import logoAZCentral from "@/assets/v2/logos/az-central.svg";
+import logoAZFamily from "@/assets/v2/logos/az-family.svg";
+import logoABC15 from "@/assets/v2/logos/abc15.svg";
+import logoFox10 from "@/assets/v2/logos/fox10.svg";
+import logoAZRepublic from "@/assets/v2/logos/arizona-republic.svg";
+import logoBizJournal from "@/assets/v2/logos/business-journal.svg";
+
 const ease = [.16, 1, .3, 1] as const;
 const accentColor = "#00FF88";
 
@@ -88,14 +122,39 @@ const projects = [
 ];
 
 const pressOutlets = [
-  "NBC", "FOX NEWS", "CBS", "PBS", "AZ CENTRAL", "AZ FAMILY",
-  "ABC15", "FOX 10", "ARIZONA REPUBLIC", "BUSINESS JOURNAL",
+  { name: "NBC", src: logoNBC },
+  { name: "Fox News", src: logoFoxNews },
+  { name: "CBS", src: logoCBS },
+  { name: "PBS", src: logoPBS },
+  { name: "AZ Central", src: logoAZCentral },
+  { name: "AZ Family", src: logoAZFamily },
+  { name: "ABC15", src: logoABC15 },
+  { name: "Fox 10", src: logoFox10 },
+  { name: "Arizona Republic", src: logoAZRepublic },
+  { name: "Business Journal", src: logoBizJournal },
 ];
 
 const trustLogos = [
-  "Ritz-Carlton", "Discovery", "PGA Tour", "Architectural Digest",
-  "LACMA", "HGTV", "Forbes", "Builder",
-  "Robb Report", "Los Angeles Times", "U.S. News", "Keller Williams",
+  { name: "Ritz-Carlton", src: logoRitzCarlton },
+  { name: "Discovery Channel", src: logoDiscovery },
+  { name: "PGA Tour", src: logoPgaTour },
+  { name: "Architectural Digest", src: logoAD },
+  { name: "Cobra", src: logoCobra },
+  { name: "LACMA", src: logoLacma },
+  { name: "HGTV", src: logoHgtv },
+  { name: "Planet Green", src: logoPlanetGreen },
+  { name: "DIY Network", src: logoDiy },
+  { name: "Oakley", src: logoOakley },
+  { name: "Forbes", src: logoForbes },
+  { name: "Marucci", src: logoMarucci },
+  { name: "Builder", src: logoBuilder },
+  { name: "Fox Racing", src: logoFoxRacing },
+  { name: "Maya", src: logoMaya },
+  { name: "Keller Williams", src: logoKW },
+  { name: "Zillow", src: logoZillow },
+  { name: "U.S. News", src: logoUSNews },
+  { name: "Robb Report", src: logoRobbReport },
+  { name: "Los Angeles Times", src: logoLATimes },
 ];
 
 /* ── CALCULATOR ── */
@@ -457,31 +516,28 @@ const LiefBlocks = () => {
             {pressInView && (
               <>
                 <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="v2-label mb-12">As Featured In</motion.div>
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="flex flex-wrap justify-center gap-8 md:gap-12 mb-20" style={{ opacity: 0.5 }}>
-                  {pressOutlets.map((name) => (
-                    <span
-                      key={name}
-                      className="v2-headline transition-opacity duration-300 hover:opacity-100"
-                      style={{ fontSize: "clamp(0.9rem, 1.5vw, 1.2rem)", color: "var(--v2-white)", letterSpacing: "0.08em", opacity: 0.7 }}
-                    >
-                      {name}
-                    </span>
+                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="flex flex-wrap justify-center items-center gap-8 md:gap-12 mb-20">
+                  {pressOutlets.map((outlet) => (
+                    <img
+                      key={outlet.name}
+                      src={outlet.src}
+                      alt={outlet.name}
+                      className="v2-press-logo"
+                      style={{ height: "48px", width: "auto", objectFit: "contain" }}
+                    />
                   ))}
                 </motion.div>
 
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="v2-label mb-8">Trusted By Industry Leaders</motion.div>
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.24, ease }} className="flex flex-wrap justify-center gap-4">
-                  {trustLogos.map((name) => (
-                    <span
-                      key={name}
-                      className="transition-all duration-300 hover:border-[#555] hover:text-[#ccc]"
-                      style={{
-                        fontSize: "0.8rem", color: "var(--v2-dim)", letterSpacing: "0.05em",
-                        padding: "10px 18px", border: "1px solid var(--v2-rule)",
-                      }}
-                    >
-                      {name}
-                    </span>
+                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="v2-label mb-10">Trusted By Industry Leaders</motion.div>
+                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.24, ease }} className="flex flex-wrap justify-center items-center gap-10 md:gap-14">
+                  {trustLogos.map((logo) => (
+                    <img
+                      key={logo.name}
+                      src={logo.src}
+                      alt={logo.name}
+                      className="v2-partner-logo"
+                      style={{ height: "60px", width: "auto", objectFit: "contain" }}
+                    />
                   ))}
                 </motion.div>
               </>
