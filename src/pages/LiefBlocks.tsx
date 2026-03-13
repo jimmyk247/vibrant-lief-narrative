@@ -67,8 +67,7 @@ const attributes = [
 ];
 
 const stats = [
-  { value: "$13", suffix: "/sq ft", label: "Average Savings", desc: "Average residential construction cost savings" },
-  { value: "14", suffix: "%", label: "Timeline Reduction", desc: "Average reduction across build types" },
+  { value: "4-12", suffix: "x", label: "Average ROI", desc: "Average return on owner's rep investment" },
   { value: "+20", suffix: "%", label: "Efficiency", desc: "Increases total project efficiency" },
   { value: "100", suffix: "+", label: "Projects Delivered", desc: "SABS Technology has delivered 100+ projects in multiple climates and regions" },
 ];

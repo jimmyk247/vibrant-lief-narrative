@@ -1,18 +1,21 @@
-const items = [
-  { value: "$600M+", label: "Billed Project Value" },
-  { value: "300+", label: "Skilled Tradesmen" },
-  { value: "$14/sq ft", label: "Average Savings" },
-  { value: "14%", label: "Average Cost Savings" },
-  { value: "14%", label: "Time Savings" },
-  { value: "$12/sq ft", label: "Build Cost Savings" },
+const items: { value?: string; label: string }[] = [
+  { value: "100+", label: "Years of Expert Advice" },
+  { label: "Consultants at Every Modality" },
+  { value: "14%", label: "Average Time Savings" },
+  { label: "Fire Damage Specialists" },
+  { value: "8%", label: "Avg Bill Cost Savings" },
+  { label: "AI-Powered Oversight Analytics" },
+  { value: "4-12x", label: "ROI on Owner's Rep Fee" },
 ];
 
-const TickerItem = ({ value, label }: { value: string; label: string }) => (
+const TickerItem = ({ value, label }: { value?: string; label: string }) => (
   <span className="flex items-center gap-3 whitespace-nowrap">
-    <span style={{ fontFamily: "'Archivo Black', sans-serif", fontSize: "1rem", color: "var(--v2-neon)" }}>
-      {value}
-    </span>
-    <span style={{ fontSize: "1.25rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.14em", color: "var(--v2-muted)" }}>
+    {value && (
+      <span style={{ fontFamily: "'Archivo Black', sans-serif", fontSize: "1rem", color: "var(--v2-neon)" }}>
+        {value}
+      </span>
+    )}
+    <span style={{ fontSize: "1.25rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.14em", color: value ? "var(--v2-muted)" : "var(--v2-white)" }}>
       {label}
     </span>
     <span style={{ color: "rgba(0,255,136,.15)", margin: "0 24px" }}>◆</span>

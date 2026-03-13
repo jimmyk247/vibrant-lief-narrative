@@ -17,10 +17,10 @@ const rows = [
     num: "02",
     label: "UNRIVALED WORKFORCE",
     title: "An army of masters.",
-    body: "Over 300 skilled tradesmen — each an expert in their craft. This isn't a network of subcontractors. This is a dedicated force that builds together, thinks together, and executes with one singular standard.",
+    body: "Over 300 in-house skilled labor and construction managers — each an expert in their craft. This isn't a network of subcontractors. This is a dedicated force that builds together, thinks together, and executes with one singular standard.",
     statValue: 300,
     statSuffix: "+",
-    statLabel: "SKILLED TRADESMEN",
+    statLabel: "IN-HOUSE TEAM",
   },
   {
     num: "03",

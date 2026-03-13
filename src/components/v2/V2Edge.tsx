@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "./useInView";
-import { Flame, Droplets, Bug, Thermometer, DollarSign, Clock, TrendingUp, CheckCircle } from "lucide-react";
+import { Flame, Droplets, Bug, Thermometer, DollarSign, TrendingUp, CheckCircle } from "lucide-react";
 
 const attributes = [
   { icon: Flame, title: "Anti-Fire", desc: "Non-combustible concrete shell — the ultimate desert safety standard." },
@@ -10,9 +10,8 @@ const attributes = [
 ];
 
 const stats = [
-  { icon: DollarSign, value: "$13", suffix: "/sq ft", label: "Average Savings", desc: "Average residential construction costs" },
-  { icon: Clock, value: "14", suffix: "%", label: "Timeline Reduction", desc: "Average reduction across build types" },
-  { icon: TrendingUp, value: "+20", suffix: "%", label: "Efficiency", desc: "Increases total project efficiency" },
+  { icon: TrendingUp, value: "4-12", suffix: "x", label: "Average ROI", desc: "Average return on owner's rep investment" },
+  { icon: DollarSign, value: "+20", suffix: "%", label: "Efficiency", desc: "Increases total project efficiency" },
   { icon: CheckCircle, value: "100", suffix: "+", label: "SABS Projects Delivered", desc: "SABS Technology has delivered 100+ projects in multiple climates and regions" },
 ];
 
@@ -39,7 +38,7 @@ const V2Edge = () => {
             </motion.h2>
 
             <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="max-w-[550px] mb-20" style={{ fontWeight: 300, fontSize: "1.25rem", color: "rgba(245,245,243,.7)", lineHeight: 1.8 }}>
-              Arizona's #1 SABS-trained builder. Lïef Blocks with SABS Technology. 300+ skilled tradesmen in-house. When most GCs lose weeks waiting on a sub, we deploy from our own army.
+              Arizona's #1 SABS-trained builder. Lïef Blocks with SABS Technology. 300+ in-house skilled labor and construction managers. When most GCs lose weeks waiting on a sub, we deploy from our own army.
             </motion.p>
 
             {/* Attribute cards */}
