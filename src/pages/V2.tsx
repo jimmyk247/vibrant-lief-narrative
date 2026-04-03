@@ -4,6 +4,7 @@ import V2Hero from "@/components/v2/V2Hero";
 import V2Ticker from "@/components/v2/V2Ticker";
 import V2Model from "@/components/v2/V2Model";
 import V2Disciplines from "@/components/v2/V2Disciplines";
+import V2FAQ from "@/components/v2/V2FAQ";
 import V2CTA from "@/components/v2/V2CTA";
 import V2Footer from "@/components/v2/V2Footer";
 
@@ -19,6 +20,7 @@ const V2 = () => {
         <V2Ticker />
         <V2Model />
         <V2Disciplines />
+        <V2FAQ />
         <V2CTA />
       </main>
       <V2Footer />
