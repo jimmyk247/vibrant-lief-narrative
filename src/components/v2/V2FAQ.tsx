@@ -25,9 +25,9 @@ const faqs: FAQItem[] = [
       "SABS stands for Saebi Alternative Building System, a patented technology that uses EPS foam panels with a high-strength cementitious coating called SABSCRETE to create a monolithic structural system. We also like to think of it as Safe, Architectural, Balanced, and Sustainable. SABS delivers 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation, and complete mold and termite immunity, with 15-20% cost savings and faster build times. L\u00efef is the leading SABS builder in Arizona. We offer SABS alongside traditional stick framing and other building methods, so clients get the right system for their project.",
   },
   {
-    question: "Can L\u00efef match any design style?",
+    question: "How does L\u00efef approach design?",
     answer:
-      "Yes. Our design capability is not limited to one aesthetic. Our 301 W Osborn project is Japandi-focused. Other projects draw from contemporary, desert modern, transitional, and classic architectural traditions. We have also partnered with MOR Studio, a science-backed architecture and interior design firm, to bridge the gap between design inspiration and execution. With 50+ years of architectural experience on the team led by Scott Meiers, L\u00efef can translate any vision into a built reality.",
+      "We do not build buildings for the sake of building them. Every project starts with a question: how will this improve the lives of the people who use it? Our design team, led by Scott Meiers with 50+ years across every building type, works alongside MOR Studio to ground each project in research on how people actually live, work, and move through spaces. The result is considered design. Not a style imposed on a project, but a solution that comes from understanding what the project needs to be. That process has produced everything from Japandi-inspired urban residences to desert modern estates to commercial spaces that perform.",
   },
   {
     question: "Who is behind L\u00efef Development?",
