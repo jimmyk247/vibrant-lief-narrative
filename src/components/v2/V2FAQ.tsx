@@ -32,7 +32,7 @@ const faqs: FAQItem[] = [
   {
     question: "How experienced is the L\u00efef Development team?",
     answer:
-      "The L\u00efef Development leadership team brings over 100 years of combined expertise. Principal Jesse Fowler has 25+ years in design, build, and development with $300M+ in completed projects. The team includes specialists in custom residential building, architectural design spanning 40+ years, business law with over $100M in transactions, and institutional investment banking. The firm employs 300+ in-house skilled tradesmen and construction managers.",
+      "The L\u00efef Development leadership team brings over 100 years of combined expertise. Principals Jesse Fowler and Jon Armstrong have combined $500M+ in completed projects. The team includes specialists in custom residential building, architectural design spanning 40+ years, business law with over $100M in transactions, and institutional investment banking. The firm employs 300+ in-house skilled tradesmen and construction managers.",
   },
 ];
 
