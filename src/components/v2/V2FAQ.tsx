@@ -12,7 +12,7 @@ const faqs: FAQItem[] = [
   {
     question: "What makes L\u00efef Development different from other builders?",
     answer:
-      "L\u00efef Development is vertically integrated. Design, engineering, construction, and brand strategy all happen under one roof with 80% in-house capability and over 300 skilled tradesmen. Most builders outsource key phases, which creates communication gaps and quality issues. At L\u00efef, the same team carries your project from first concept to final walkthrough. We also have an in-house brand and creative team, which means every project has a cohesive identity from the way it looks to the way it feels to the way it is presented to the market. That is something most builders and developers simply do not offer.",
+      "L\u00efef Development is vertically integrated. Architecture, engineering, construction, brand, and creative all operate under one roof with 80% in-house capability and over 300 skilled tradesmen. Most builders outsource key phases, which creates gaps between what was envisioned and what gets built. At L\u00efef, the team that designs your project is the same team that engineers it, builds it, and brings it to market. That continuity is what keeps the vision intact from first sketch to final delivery.",
   },
   {
     question: "What types of projects does L\u00efef Development take on?",
