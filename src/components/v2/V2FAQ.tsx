@@ -32,7 +32,7 @@ const faqs: FAQItem[] = [
   {
     question: "Who is behind L\u00efef Development?",
     answer:
-      "L\u00efef is led by a team of principals who each bring deep specialization. Jesse Fowler brings 25+ years in development and construction with $500M+ in completed projects. Jon Armstrong brings 15+ years building custom residential and commercial projects across the Phoenix market through Armstrong Construction Group. Scott Meiers brings 50+ years of architectural design across commercial and residential sectors. Jimmy Khounlavong brings 25+ years of brand and product strategy from Nike and global brands, giving L\u00efef an in-house creative capability that most builders lack. The team is backed by general counsel, investor relations, and a network of 300+ skilled tradesmen.",
+      "L\u00efef was built by people who have spent their careers doing the work, not talking about it. Jesse Fowler and Jon Armstrong have delivered $500M+ in projects between them across custom residential, commercial, and community development. Scott Meiers has been designing buildings for over 50 years across more project types than most firms will see in a lifetime. Jimmy Khounlavong spent 16 years at Nike building some of the most recognized product lines in the world before bringing that discipline to how L\u00efef thinks about brand, story, and market position. Behind them is general counsel, investor relations, and a workforce of 300+ skilled tradesmen. It is not a collection of resumes. It is a team that was assembled because each person fills a gap the others cannot.",
   },
 ];
 
