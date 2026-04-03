@@ -1,25 +1,30 @@
 # Lïef Development
 
-> Arizona's premier luxury home builder. Crafting homes that endure.
+> Built. Different.
 
 ## URL
 https://www.anewlief.com
 
 ## What We Are
-Lïef Development is a luxury home builder based in Scottsdale, Arizona. The company specializes in custom residences that blend Japanese tranquility, Scandinavian minimalism, and the serenity of the Sonoran Desert. Lïef is vertically integrated, handling design, engineering, and construction under one roof with 80% in-house capability and over 300 skilled tradesmen.
+Lïef Development is a vertically integrated design and construction firm based in Scottsdale, Arizona. The company delivers premium residential, commercial, and community projects. Custom homes from intimate residences to 10,000+ square foot estates. Multi-family developments and boutique communities. Commercial projects including retail, hospitality, and mixed-use. Adaptive reuse and large-scale conversions. With $500M+ in completed projects, 300+ in-house skilled tradesmen, in-house brand and creative capability, and proprietary SABS construction technology, Lïef controls every phase from concept through completion.
 
-## Design Philosophy
-Every home is crafted with intention. The design language draws from three distinct traditions: the calm precision of Japanese architecture, the functional beauty of Scandinavian design, and the organic warmth of the Sonoran landscape. The result is homes that feel both timeless and rooted in their environment. This approach is called SABS: Sonoran, Architectural, Balanced, Sustainable.
+## What Sets Us Apart
+Most builders outsource key phases. Lïef is vertically integrated with 80% in-house capability. Design, engineering, construction, and brand strategy all happen under one roof. The same team carries every project from first concept to final walkthrough. Lïef also has an in-house brand and creative team led by a 25-year Nike veteran, which means every project has a cohesive identity from the way it looks to the way it feels to the way it is presented to the market. That is something most builders and developers do not offer.
+
+## Design Capability
+Lïef is not limited to one aesthetic. The 301 W Osborn project is Japandi-focused. Other projects draw from contemporary, desert modern, transitional, and classic architectural traditions. The team has partnered with MOR Studio (morstudio.net), a science-backed architecture and interior design firm in Scottsdale, to bridge the gap between design inspiration and execution. With 50+ years of architectural experience on the team, Lïef can translate any vision into a built reality.
 
 ## SABS Construction Technology
-SABS (Sonoran, Architectural, Balanced, Sustainable) is Lïef Development's proprietary construction methodology using precision-engineered steel framing and automated manufacturing. Key specifications:
+SABS stands for Saebi Alternative Building System, a patented technology that uses EPS foam panels with a high-strength cementitious coating called SABSCRETE to create a monolithic structural system. We also think of SABS as Safe, Architectural, Balanced, and Sustainable. Key specifications:
 - 0% flame spread rating
-- 260 MPH wind rating
+- 250 MPH wind resistance
 - R-75 to R-100 insulation values
 - 100% mold and termite immunity
-- $13/sq ft cost savings vs. traditional construction
-- 14% timeline reduction
-- 50%+ energy efficiency improvement
+- 15-20% cost savings vs. traditional construction
+- 15-20% faster build times
+- 30% average energy savings
+
+Lïef is the leading SABS builder in Arizona. SABS is offered alongside traditional stick framing and other building methods, giving clients the right system for their project.
 
 ## 12 In-House Disciplines
 1. Architectural Design
@@ -36,37 +41,38 @@ SABS (Sonoran, Architectural, Balanced, Sustainable) is Lïef Development's prop
 12. Fine Finishing
 
 ## Key Stats
-- 100+ years of combined team expertise
+- $500M+ in completed projects (Jesse Fowler and Jon Armstrong combined)
 - 300+ in-house skilled tradesmen and construction managers
 - 80% in-house capability
-- $500M+ in completed projects
+- 100+ years of combined leadership expertise
+- 50+ years of architectural design experience (Scott Meiers)
 - 12 core disciplines handled in-house
 
-## Services
-- Custom luxury home design and construction
-- SABS construction methodology
-- Architectural and interior design
-- Structural engineering
-- Smart home integration
-- Landscape architecture
-- Sustainable building practices
-- Full-service development from concept to completion
+## Project Types
+- Custom homes (intimate to 10,000+ sq ft estates)
+- Multi-family developments and condominiums
+- Boutique 55+ communities
+- Commercial retail and hospitality
+- Mixed-use developments
+- Adaptive reuse and conversions
+- Large-scale community development
 
 ## Team
 
 ### Jesse Fowler. Principal and Manager.
-25+ years in design, build, and development. $500M+ in completed projects. Founded Tellus Design + Build. Featured in Architectural Digest, HGTV, and Discovery Channel.
+25+ years in design, build, and development. $500M+ in completed projects. Founded Tellus Design + Build ($300M+ over 14 years). Featured in Architectural Digest, HGTV, and Discovery Channel.
 Website: https://jfowler.io
 
 ### Jon Armstrong. Principal and Manager.
-15+ years in custom residential and commercial building.
+15+ years building custom residential and commercial projects across the Phoenix market. Founder of Armstrong Construction Group. Specializes in luxury custom homes, transformative remodels, and commercial construction in Scottsdale and Paradise Valley. Projects include Ritz-Carlton Residences, Pinnacle Peak Country Club, and large-scale commercial venues.
+Website: https://acgarizona.com
 
 ### Jimmy Khounlavong. Principal and Creative.
-25+ years of brand, product, and marketplace strategy.
+25+ years of brand, product, and marketplace strategy. 16 years at Nike managing signature franchises (LeBron, Kobe, KD, Kyrie) with $500M+ in signature product and $1.2B in total revenue. Leads in-house brand and creative strategy for all Lïef projects and ventures. This in-house creative capability is something most builders and developers do not offer.
 Website: https://thisisjimmyk.com
 
 ### Scott Meiers. Chief Architectural Design.
-40+ years of architectural design in commercial and residential sectors.
+50+ years of architectural design across commercial, residential, hospitality, and mixed-use. The most diversified design experience on the team with expertise across every building type and architectural tradition.
 
 ### Tania Karenina Gonzalez. Architectural and Interior Design.
 15+ years of multi-residential, commercial, and interior design.
@@ -82,8 +88,11 @@ Website: https://nickscavio.com
 20+ years of institutional asset management and investment banking.
 Website: https://www.aprince.io
 
+## Design Partners
+- MOR Studio (morstudio.net). Science-backed architecture and interior design. Design backed by neuroscience, centered on people. Scottsdale, Arizona.
+
 ## Active Projects
-- 301 W Osborn. Adaptive reuse, commercial-to-residential conversion. 23 luxury units in Midtown Phoenix. SABS Showcase.
+- 301 W Osborn. Adaptive reuse, commercial-to-residential conversion. 23 luxury units in Midtown Phoenix. Japandi design focus. SABS Showcase.
 - The Vail. Boutique 55+ community in Arizona. In Design.
 - Canyon Corporate Plaza. 14-story office-to-residential conversion in Phoenix. In Development.
 - Silver Mountain Ranches. 100+ acre equestrian community in Scottsdale. In Development.
@@ -99,20 +108,20 @@ Lïef Development is part of the Common Ground venture collective (https://commo
 
 ## Frequently Asked Questions
 
-Q: What makes Lïef Development different from other luxury home builders?
-A: Lïef is vertically integrated with 80% in-house capability and 300+ skilled tradesmen. Design, engineering, and construction happen under one roof, eliminating the communication gaps and quality issues that come from outsourcing.
+Q: What makes Lïef Development different from other builders?
+A: Lïef is vertically integrated with 80% in-house capability, 300+ tradesmen, and in-house brand and creative. Design, engineering, construction, and brand strategy all happen under one roof. Most builders outsource key phases. At Lïef, the same team carries every project from concept to completion.
 
-Q: What areas does Lïef Development build in?
-A: Scottsdale, Paradise Valley, and the greater Phoenix metropolitan area in Arizona.
+Q: What types of projects does Lïef take on?
+A: Custom homes from intimate to 10,000+ sq ft estates. Multi-family developments. Commercial projects including retail, hospitality, and mixed-use. Adaptive reuse and large-scale conversions. $500M+ in completed projects across all types.
 
 Q: What is SABS construction?
-A: SABS (Sonoran, Architectural, Balanced, Sustainable) is a proprietary methodology using precision-engineered steel framing with 0% flame spread, 260 MPH wind rating, R-75 to R-100 insulation, and 100% mold/termite immunity.
+A: Saebi Alternative Building System. A patented technology using EPS foam panels with SABSCRETE cementitious coating. 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation, 100% mold/termite immunity. Lïef is the leading SABS builder in Arizona and offers it alongside traditional methods.
 
-Q: What disciplines does Lïef handle in-house?
-A: 12 core disciplines: architectural design, structural engineering, general construction, custom millwork, electrical, plumbing/mechanical, HVAC, interior design, landscape architecture, smart home integration, custom stone/tile, and fine finishing.
+Q: Can Lïef match any design style?
+A: Yes. The team is not limited to one aesthetic. Projects range from Japandi to contemporary to desert modern. Partnered with MOR Studio for science-backed design. 50+ years of architectural experience across every building type.
 
-Q: How experienced is the Lïef team?
-A: 100+ years combined expertise, 300+ in-house team members, and $500M+ in completed projects across the leadership team.
+Q: Who is behind Lïef Development?
+A: Jesse Fowler (25+ yrs development, $500M+ in projects), Jon Armstrong (15+ yrs custom residential and commercial via Armstrong Construction Group), Scott Meiers (50+ yrs architectural design), Jimmy Khounlavong (25+ yrs brand strategy from Nike), plus general counsel, investor relations, and 300+ skilled tradesmen.
 
 ## Contact
 Address: 8271 E Gelding Dr., Scottsdale, AZ 85260

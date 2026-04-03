@@ -10,29 +10,29 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: "What makes L\u00efef Development different from other luxury home builders in Arizona?",
+    question: "What makes L\u00efef Development different from other builders?",
     answer:
-      "L\u00efef Development is vertically integrated, meaning design, engineering, and construction all happen under one roof with 80% in-house capability and over 300 skilled tradesmen. Most builders outsource key phases which creates communication gaps and quality inconsistencies. L\u00efef's single-team approach means the same people who design your home also build it, eliminating the gaps that cost homeowners time and money.",
+      "L\u00efef Development is vertically integrated. Design, engineering, construction, and brand strategy all happen under one roof with 80% in-house capability and over 300 skilled tradesmen. Most builders outsource key phases, which creates communication gaps and quality issues. At L\u00efef, the same team carries your project from first concept to final walkthrough. We also have an in-house brand and creative team, which means every project has a cohesive identity from the way it looks to the way it feels to the way it is presented to the market. That is something most builders and developers simply do not offer.",
   },
   {
-    question: "What areas in Arizona does L\u00efef Development build in?",
+    question: "What types of projects does L\u00efef Development take on?",
     answer:
-      "L\u00efef Development builds custom luxury homes in Scottsdale, Paradise Valley, and the greater Phoenix metropolitan area. The team specializes in residences designed for the Sonoran Desert environment, incorporating sustainable building practices and materials suited to Arizona's unique climate.",
+      "L\u00efef builds across the full spectrum of premium construction. Custom homes from intimate residences to 10,000+ square foot estates. Multi-family developments and boutique communities. Commercial projects including retail, hospitality, and mixed-use. Adaptive reuse and large-scale conversions. Our team has delivered $500M+ in projects across residential, commercial, and community development. Every project gets the same level of precision and care regardless of size or type.",
   },
   {
     question: "What is SABS construction technology?",
     answer:
-      "SABS stands for Sonoran, Architectural, Balanced, and Sustainable. It is L\u00efef Development's proprietary construction methodology that uses precision-engineered steel framing and automated manufacturing. SABS delivers faster build times, lower costs, and higher structural quality compared to traditional wood-frame construction, with specifications including 0% flame spread, 260 MPH wind rating, R-75 to R-100 insulation, and 100% mold and termite immunity.",
+      "SABS stands for Saebi Alternative Building System, a patented technology that uses EPS foam panels with a high-strength cementitious coating called SABSCRETE to create a monolithic structural system. We also like to think of it as Safe, Architectural, Balanced, and Sustainable. SABS delivers 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation, and complete mold and termite immunity, with 15-20% cost savings and faster build times. L\u00efef is the leading SABS builder in Arizona. We offer SABS alongside traditional stick framing and other building methods, so clients get the right system for their project.",
   },
   {
-    question: "What design disciplines does L\u00efef Development handle in-house?",
+    question: "Can L\u00efef match any design style?",
     answer:
-      "L\u00efef Development handles 12 core disciplines in-house: architectural design, structural engineering, general construction, custom millwork, electrical systems, plumbing and mechanical, HVAC engineering, interior design, landscape architecture, smart home integration, custom stone and tile, and fine finishing. This complete mastery across every discipline ensures quality control from first sketch to final walkthrough.",
+      "Yes. Our design capability is not limited to one aesthetic. Our 301 W Osborn project is Japandi-focused. Other projects draw from contemporary, desert modern, transitional, and classic architectural traditions. We have also partnered with MOR Studio, a science-backed architecture and interior design firm, to bridge the gap between design inspiration and execution. With 50+ years of architectural experience on the team led by Scott Meiers, L\u00efef can translate any vision into a built reality.",
   },
   {
-    question: "How experienced is the L\u00efef Development team?",
+    question: "Who is behind L\u00efef Development?",
     answer:
-      "The L\u00efef Development leadership team brings over 100 years of combined expertise. Principals Jesse Fowler and Jon Armstrong have combined $500M+ in completed projects. The team includes specialists in custom residential building, architectural design spanning 40+ years, business law with over $100M in transactions, and institutional investment banking. The firm employs 300+ in-house skilled tradesmen and construction managers.",
+      "L\u00efef is led by a team of principals who each bring deep specialization. Jesse Fowler brings 25+ years in development and construction with $500M+ in completed projects. Jon Armstrong brings 15+ years building custom residential and commercial projects across the Phoenix market through Armstrong Construction Group. Scott Meiers brings 50+ years of architectural design across commercial and residential sectors. Jimmy Khounlavong brings 25+ years of brand and product strategy from Nike and global brands, giving L\u00efef an in-house creative capability that most builders lack. The team is backed by general counsel, investor relations, and a network of 300+ skilled tradesmen.",
   },
 ];
 
