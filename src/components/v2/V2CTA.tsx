@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import { useInView } from "./useInView";
 import dotsGreen from "@/assets/v2/dots-green.png";
+import { useContactModal } from "@/contexts/ContactModalContext";
 
 const ease = [.16, 1, .3, 1] as const;
 
 const V2CTA = () => {
+  const { openModal } = useContactModal();
   const { ref, inView } = useInView(0.1);
 
   return (
@@ -22,20 +24,20 @@ const V2CTA = () => {
             <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="mb-10 max-w-[380px]" style={{ fontWeight: 300, fontSize: "1.3rem", color: "var(--v2-muted)", lineHeight: 1.7 }}>
               Whether you're an investor, a developer, or a future homeowner — we'd like to hear from you.
             </motion.p>
-            <motion.a
+            <motion.button
               initial={{ opacity: 0, y: 35 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.75, delay: 0.16, ease }}
-              href="mailto:hello@liefdev.com"
+              onClick={openModal}
               className="inline-block transition-all duration-300 hover:brightness-110"
               style={{
                 fontFamily: "var(--v2-font-body)", fontSize: "1.25rem", textTransform: "uppercase",
                 letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-neon)",
-                color: "var(--v2-deep)", padding: "16px 40px", textDecoration: "none",
+                color: "var(--v2-deep)", padding: "16px 40px", border: "none", cursor: "pointer",
               }}
             >
               Start a Conversation
-            </motion.a>
+            </motion.button>
           </>
         )}
       </div>

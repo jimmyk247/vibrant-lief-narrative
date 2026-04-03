@@ -46,8 +46,8 @@ const Footer = () => {
               Lip Loi Creative
             </a>
             {" "}|{" "}Enhanced by{" "}
-            <a href="https://apexx.agency" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" style={{ color: "#8B5CF6" }}>
-              APEXX AI
+            <a href="https://commonground.ventures" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" style={{ color: "#8B5CF6" }}>
+              Common Ground
             </a>
           </motion.p>
 

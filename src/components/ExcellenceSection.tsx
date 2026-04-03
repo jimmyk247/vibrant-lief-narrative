@@ -43,10 +43,10 @@ const stats = [
   },
   {
     icon: TrendingUp,
-    value: "+20",
+    value: "+50",
     unit: "%",
-    label: "Efficiency",
-    detail: "Increases total project efficiency",
+    label: "Energy Efficiency",
+    detail: "R-75 to R-100 insulation cuts HVAC costs by half compared to conventional construction",
   },
   {
     icon: BadgeCheck,

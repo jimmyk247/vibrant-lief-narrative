@@ -1,21 +1,23 @@
-const items: { value?: string; label: string }[] = [
-  { value: "100+", label: "Years of Expert Advice" },
-  { label: "Consultants at Every Modality" },
+const items = [
+  { value: "$600M+", label: "Billed Project Value" },
+  { value: "300+", label: "Skilled Tradesmen" },
+  { value: "100+", label: "Years of Expertise" },
   { value: "14%", label: "Average Time Savings" },
-  { label: "Fire Damage Specialists" },
-  { value: "8%", label: "Avg Bill Cost Savings" },
-  { label: "AI-Powered Oversight Analytics" },
-  { value: "4-12x", label: "ROI on Owner's Rep Fee" },
+  { value: "2–6×", label: "Average Return on Investment" },
+  { value: "", label: "Consultants in Every Modality" },
+  { value: "", label: "Fire Damage Specialists" },
+  { value: "", label: "AI-Powered Oversight & Analytics" },
+  { value: "", label: "Palisades · Santa Barbara · Greensburg · Phoenix" },
 ];
 
 const TickerItem = ({ value, label }: { value?: string; label: string }) => (
   <span className="flex items-center gap-3 whitespace-nowrap">
     {value && (
-      <span style={{ fontFamily: "'Archivo Black', sans-serif", fontSize: "1rem", color: "var(--v2-neon)" }}>
+      <span style={{ fontFamily: "'Archivo Black', sans-serif", fontSize: "1.25rem", color: "var(--v2-neon)" }}>
         {value}
       </span>
     )}
-    <span style={{ fontSize: "1.25rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.14em", color: value ? "var(--v2-muted)" : "var(--v2-white)" }}>
+    <span style={{ fontSize: "1.25rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.14em", color: "var(--v2-muted)" }}>
       {label}
     </span>
     <span style={{ color: "rgba(0,255,136,.15)", margin: "0 24px" }}>◆</span>

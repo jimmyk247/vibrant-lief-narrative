@@ -21,7 +21,7 @@ const V2Communities = () => {
       </div>
 
       {/* Ghost text */}
-      <div className="v2-ghost-text hidden lg:block top-8 right-8 text-right" style={{ fontSize: "min(12vw, 150px)", color: "rgba(0,107,63,.24)" }}>PROJECTS</div>
+      <div className="v2-ghost-text hidden lg:block top-8 right-8 text-right" style={{ fontSize: "min(9vw, 110px)", color: "rgba(0,107,63,.24)" }}>PROJECTS</div>
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <img src={dotsNeon} alt="" className="w-[176vw] max-w-[1512px] opacity-[0.01]" />
       </div>
@@ -101,7 +101,7 @@ const V2Communities = () => {
 
           {/* The Vail */}
           <div className="relative overflow-hidden group" style={{ minHeight: "320px" }}>
-            <img src={theVailImg} alt="The Vail" className="absolute inset-0 w-full h-full object-cover grayscale brightness-[.45] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.65]" />
+            <img src={theVailImg} alt="The Vail" className="absolute inset-0 w-full h-full object-cover grayscale brightness-[.45] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.65]" style={{ transform: "scale(1.10)" }} />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.92) 0%, rgba(10,10,10,.35) 55%, transparent 100%)" }} />
             <div className="absolute bottom-0 left-0 p-6 md:p-8 z-10">
               <span style={{ fontSize: "1.25rem", textTransform: "uppercase", color: "var(--v2-neon)", letterSpacing: "0.1em" }}>● Planning & Design</span>

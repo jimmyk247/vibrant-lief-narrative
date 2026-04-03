@@ -25,11 +25,11 @@ const rows = [
   {
     num: "03",
     label: "GENERATIONAL EXPERIENCE",
-    title: "Twenty-five years of proof.",
-    body: "Experience doesn't list on a brochure. It shows in the silence of a perfectly sealed home. In walls that breathe with the desert. In craftsmanship that our grandchildren will inherit. Twenty-five years of doing it right.",
-    statValue: 25,
+    title: "Over a century of proof.",
+    body: "Experience doesn't list on a brochure. It shows in the silence of a perfectly sealed home. In walls that breathe with the desert. In craftsmanship that our grandchildren will inherit. Over a century of doing it right.",
+    statValue: 100,
     statSuffix: "+",
-    statLabel: "YEARS OF EXCELLENCE",
+    statLabel: "YEARS OF EXPERTISE",
   },
 ];
 
@@ -62,7 +62,7 @@ const V2Model = () => {
 
   return (
     <section id="model" className="relative py-12 md:py-28" style={{ background: "var(--v2-deep)" }}>
-      <div className="v2-ghost-text hidden lg:block top-20 right-8 text-right" style={{ fontSize: "min(12vw, 150px)", color: "rgba(0,107,63,.24)" }}>MODEL</div>
+      <div className="v2-ghost-text hidden lg:block top-20 right-8 text-right" style={{ fontSize: "min(9.6vw, 120px)", color: "rgba(0,107,63,.24)" }}>MODEL</div>
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <img src={dotsNeon} alt="" className="w-[176vw] max-w-[1512px] opacity-[0.01]" />
       </div>
@@ -88,7 +88,7 @@ const V2Model = () => {
                   className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-6 md:gap-12 items-start py-10 md:py-14"
                   style={{ borderTop: "1px solid var(--v2-rule)" }}
                 >
-                  <span className="v2-headline" style={{ fontSize: "clamp(3rem, 5vw, 4.5rem)", color: "rgba(0,255,136,.06)", lineHeight: 1 }}>
+                  <span className="v2-headline" style={{ fontSize: "clamp(3rem, 5vw, 4.5rem)", color: "rgba(0,107,63,.24)", lineHeight: 1 }}>
                     {row.num}
                   </span>
 

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "./useInView";
-import { Flame, Droplets, Bug, Thermometer, DollarSign, TrendingUp, CheckCircle } from "lucide-react";
+import { Flame, Droplets, Bug, Thermometer, DollarSign, TrendingUp, CheckCircle, Clock } from "lucide-react";
 
 const attributes = [
   { icon: Flame, title: "Anti-Fire", desc: "Non-combustible concrete shell — the ultimate desert safety standard." },
@@ -10,8 +10,9 @@ const attributes = [
 ];
 
 const stats = [
-  { icon: TrendingUp, value: "4-12", suffix: "x", label: "Average ROI", desc: "Average return on owner's rep investment" },
-  { icon: DollarSign, value: "+20", suffix: "%", label: "Efficiency", desc: "Increases total project efficiency" },
+  { icon: DollarSign, value: "$13", suffix: "/sq ft", label: "Average Savings", desc: "Average residential construction costs" },
+  { icon: Clock, value: "14", suffix: "%", label: "Timeline Reduction", desc: "Average reduction across build types" },
+  { icon: TrendingUp, value: "+50", suffix: "%", label: "Energy Efficiency", desc: "R-75 to R-100 insulation cuts HVAC costs by half compared to conventional construction" },
   { icon: CheckCircle, value: "100", suffix: "+", label: "SABS Projects Delivered", desc: "SABS Technology has delivered 100+ projects in multiple climates and regions" },
 ];
 

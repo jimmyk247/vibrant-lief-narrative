@@ -21,7 +21,7 @@ const milestones = [
   },
   {
     year: "2015",
-    title: "300+ Trades Strong",
+    title: "300+ Tradesmen Strong",
     description:
       "Reached a milestone that validated our model: over 300 specialized tradespeople under one roof, each a master of their discipline.",
   },

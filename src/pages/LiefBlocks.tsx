@@ -1,16 +1,13 @@
 import "@/styles/v2.css";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "@/components/v2/useInView";
 import { Flame, Droplets, Bug, Thermometer, Shield, Wind, Recycle, Volume2 } from "lucide-react";
 import V2Nav from "@/components/v2/V2Nav";
 import V2Footer from "@/components/v2/V2Footer";
+import { useContactModal } from "@/contexts/ContactModalContext";
 import logoConcrete from "@/assets/v2/logo-concrete.png";
 import liefLogoGreen from "@/assets/v2/lief-logo-green.png";
-import osbornImg from "@/assets/v2/301-osborn.png";
-import canyonImg from "@/assets/v2/canyon-corporate.jpg";
-import silverImg from "@/assets/v2/silver-mountain.jpg";
-import basinImg from "@/assets/v2/pahrump-basin.jpg";
 import dotsNeon from "@/assets/v2/dots-neon.png";
 
 /* ── PARTNER LOGOS ── */
@@ -60,65 +57,31 @@ const specs = [
 ];
 
 const attributes = [
-  { icon: Flame, title: "Anti-Fire", desc: "Non-combustible concrete shell with 0% flame spread — the ultimate desert safety standard." },
+  { icon: Flame, title: "Anti-Fire", desc: "Non-combustible concrete shell with 0% flame spread. The ultimate desert safety standard." },
   { icon: Droplets, title: "Anti-Mold & Moisture", desc: "100% impermeable to Arizona's extreme monsoon elements. Zero moisture intrusion." },
   { icon: Bug, title: "Anti-Termite", desc: "Zero wood framing means zero risk from structural pests. Permanent protection." },
   { icon: Thermometer, title: "Thermal Performance", desc: "R-75 to R-100 insulation rating. Massive HVAC overhead reduction through high-density insulation." },
+  { icon: Wind, title: "260 MPH Wind Rating", desc: "Exceeds Florida hurricane zone requirements. Built for extreme conditions" },
+  { icon: Recycle, title: "100% Recyclable", desc: "EPS foam core is fully recyclable. Zero construction waste to landfill" },
 ];
 
 const stats = [
-  { value: "4-12", suffix: "x", label: "Average ROI", desc: "Average return on owner's rep investment" },
-  { value: "+20", suffix: "%", label: "Efficiency", desc: "Increases total project efficiency" },
+  { value: "$13", suffix: "/sq ft", label: "Average Savings", desc: "Average residential construction cost savings" },
+  { value: "14", suffix: "%", label: "Timeline Reduction", desc: "Average reduction across build types" },
+  { value: "+50", suffix: "%", label: "Energy Efficiency", desc: "R-75 to R-100 insulation cuts HVAC costs by half compared to conventional construction" },
   { value: "100", suffix: "+", label: "Projects Delivered", desc: "SABS Technology has delivered 100+ projects in multiple climates and regions" },
 ];
 
 const technicals = [
   { title: "ICC-ES ESR-1638", detail: "Evaluation report covering structural use in residential and commercial applications" },
   { title: "ASTM C578 Type XI", detail: "Standard specification for rigid cellular polystyrene thermal insulation" },
-  { title: "ASTM E-84 Class A", detail: "Surface burning characteristics — Class A fire rating for flame spread and smoke development" },
+  { title: "ASTM E-84 Class A", detail: "Surface burning characteristics. Class A fire rating for flame spread and smoke development" },
   { title: "STC 52 Sound Rating", detail: "Sound Transmission Class rating exceeding standard wood-frame construction" },
   { title: "Category A–F Seismic", detail: "Engineered for all seismic design categories per IBC requirements" },
-  { title: "100% Recyclable", detail: "EPS foam core is fully recyclable — zero construction waste to landfill" },
-  { title: "260 MPH Wind Rating", detail: "Exceeds Florida hurricane zone requirements — built for extreme conditions" },
-  { title: "R-75 to R-100 Insulation", detail: "Superior thermal envelope far exceeding conventional construction standards" },
+  { title: "100% Recyclable", detail: "EPS foam core is fully recyclable. Zero construction waste to landfill" },
 ];
 
-const technicalIcons = [Shield, Shield, Flame, Volume2, Shield, Recycle, Wind, Thermometer];
-
-const projects = [
-  {
-    img: osbornImg,
-    name: "301 W Osborn",
-    type: "Adaptive Reuse",
-    desc: "Commercial to residential conversion. 23 luxury urban units with secure parking & conditioned storage. Full SABS build.",
-    location: "Midtown, Phoenix AZ",
-    status: "SABS Showcase",
-  },
-  {
-    img: canyonImg,
-    name: "Canyon Corporate Plaza",
-    type: "Office-to-Residential",
-    desc: "14-story conversion from commercial office to modern residential. SABS cementitious coating system throughout.",
-    location: "Phoenix, AZ",
-    status: "In Development",
-  },
-  {
-    img: silverImg,
-    name: "Silver Mountain Ranches",
-    type: "Equestrian Community",
-    desc: "100+ acre equestrian community with luxury custom homes built using LÏEF Blocks with SABS Technology.",
-    location: "Scottsdale, AZ",
-    status: "In Development",
-  },
-  {
-    img: basinImg,
-    name: "440 Basin Avenue",
-    type: "Multi-Family",
-    desc: "204-unit multi-family development. $56M savings vs. traditional construction methods.",
-    location: "Pahrump, NV",
-    status: "In Development",
-  },
-];
+const technicalIcons = [Shield, Shield, Flame, Volume2, Shield, Recycle];
 
 const pressOutlets = [
   { name: "NBC", src: logoNBC },
@@ -169,26 +132,32 @@ const projectTypes: Record<string, { traditional: number; liefBlocks: number }> 
 /* ── PAGE ── */
 
 const LiefBlocks = () => {
+  const { openModal } = useContactModal();
   const [projectType, setProjectType] = useState("Single Family Residential");
   const [sqft, setSqft] = useState(5000);
+  const [playingVideo, setPlayingVideo] = useState<string | null>(null);
   const costs = projectTypes[projectType];
   const totalSavings = (costs.traditional - costs.liefBlocks) * sqft;
   const savingsPercent = Math.round(((costs.traditional - costs.liefBlocks) / costs.traditional) * 100);
 
-  const heroRef = useRef<HTMLElement>(null);
-  const { scrollYProgress: heroScroll } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
-  const heroOpacity = useTransform(heroScroll, [0, 0.5], [1, 0]);
-  const heroY = useTransform(heroScroll, [0, 0.5], [0, 100]);
-
+  const { ref: heroRef, inView: heroInView } = useInView(0.1);
   const { ref: whatRef, inView: whatInView } = useInView(0.1);
   const { ref: specsRef, inView: specsInView } = useInView(0.1);
   const { ref: statsRef, inView: statsInView } = useInView(0.1);
   const { ref: techRef, inView: techInView } = useInView(0.1);
   const { ref: vidRef, inView: vidInView } = useInView(0.1);
-  const { ref: projRef, inView: projInView } = useInView(0.1);
   const { ref: pressRef, inView: pressInView } = useInView(0.1);
   const { ref: calcRef, inView: calcInView } = useInView(0.1);
   const { ref: ctaRef, inView: ctaInView } = useInView(0.1);
+
+  // Parallax scroll transforms
+  const { scrollY } = useScroll();
+  const heroGlowY = useTransform(scrollY, [0, 600], [0, -60]);
+  const ghostTextY = useTransform(scrollY, [0, 3000], [0, -120]);
+  const dotsScale = useTransform(scrollY, [0, 1500], [1, 1.08]);
+
+  // Anti-flicker: always render content, control animation via inView
+  const show = (inView: boolean, y = 35) => inView ? { opacity: 1, y: 0 } : { opacity: 0, y };
 
   return (
     <div className="v2 min-h-screen overflow-x-hidden">
@@ -197,86 +166,129 @@ const LiefBlocks = () => {
 
         {/* ════════ HERO ════════ */}
         <section ref={heroRef} className="relative h-screen flex items-center overflow-x-hidden" style={{ background: "var(--v2-deep)" }}>
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-0 w-[70%] h-[70%]" style={{ background: "radial-gradient(ellipse at top right, rgba(0,107,63,.15), transparent 70%)" }} />
-            <div className="absolute bottom-0 left-0 w-[50%] h-[50%]" style={{ background: "radial-gradient(ellipse at bottom left, rgba(0,255,136,.06), transparent 70%)" }} />
-          </div>
-          <motion.div style={{ opacity: heroOpacity, y: heroY, willChange: "transform, opacity" }} className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12">
-            <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.3, ease }}>
-              <div className="v2-label mb-8">
-                Proprietary Building System
-              </div>
-              <div className="mb-4">
-                <img src={liefLogoGreen} alt="Lïef" className="h-[clamp(4.6rem,20.7vw,10.91rem)] md:h-[clamp(5.03rem,13.42vw,10.91rem)] w-auto block mb-[-1rem] md:mb-[-0.15em]" style={{ border: "none", filter: "brightness(0) invert(1)" }} />
-                <h1 className="v2-headline leading-[1.1] md:leading-[0.3]" style={{ fontSize: "clamp(36px, 10vw, 80px)", color: "var(--v2-white)" }}>
-                  BLOCKS<br className="md:hidden" /><span className="md:inline"> &nbsp;</span><span style={{ color: "var(--v2-neon)" }}>x</span>&nbsp; SABS
-                </h1>
-              </div>
-              <p className="mt-10 max-w-[550px]" style={{ fontWeight: 300, fontSize: "1.1rem", color: "var(--v2-muted)", lineHeight: 1.6 }}>
-                Our proprietary EPS foam structural panel system, engineered with SABS cementitious technology. Faster. Stronger. Smarter.
-              </p>
-              <div className="flex flex-wrap gap-4 mt-10">
-                <a
-                  href="mailto:hello@liefdev.com"
-                  className="inline-block transition-all duration-300 hover:brightness-110"
-                  style={{
-                    fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase",
-                    letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-neon)",
-                    color: "var(--v2-deep)", padding: "10px 24px", textDecoration: "none",
-                  }}
-                >
-                  Get a Quote
-                </a>
-                <button
-                  onClick={() => document.querySelector("#what-section")?.scrollIntoView({ behavior: "smooth" })}
-                  className="transition-all duration-300 hover:bg-[#00FF88] hover:text-[#0a0a0a]"
-                  style={{
-                    fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase",
-                    letterSpacing: "0.14em", color: accentColor, border: `1px solid ${accentColor}`,
-                    padding: "10px 24px", background: "transparent", cursor: "pointer",
-                  }}
-                >
-                  Learn More
-                </button>
-              </div>
-            </motion.div>
+          {/* Ambient glows */}
+          <motion.div className="absolute inset-0 pointer-events-none" style={{ y: heroGlowY }}>
+            <div className="absolute top-0 right-0 w-[60%] h-[60%]" style={{ background: "radial-gradient(ellipse at top right, rgba(0,107,63,.12), transparent 70%)" }} />
+            <div className="absolute bottom-0 left-0 w-[50%] h-[50%]" style={{ background: "radial-gradient(ellipse at bottom left, rgba(0,255,136,.04), transparent 70%)" }} />
           </motion.div>
 
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
-            <span style={{ fontSize: "0.7rem", letterSpacing: "0.3em", textTransform: "uppercase", color: "var(--v2-dim)" }}>SCROLL</span>
-            <div style={{ width: "1px", height: "40px", background: `linear-gradient(to bottom, ${accentColor}, transparent)` }} />
+          <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 w-full -mt-[8vh]">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={show(heroInView, 20)}
+                  transition={{ duration: 0.75, delay: 0.3, ease }}
+                  className="mb-3 md:mb-4"
+                >
+                  <span className="v2-label hidden md:inline text-[1.25rem]">
+                    L&iuml;ef x SABS
+                  </span>
+                  <span
+                    className="md:hidden"
+                    style={{ fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--v2-neon)" }}
+                  >
+                    L&iuml;ef x SABS
+                  </span>
+                </motion.div>
+
+                <motion.h1
+                  initial={{ opacity: 0, y: 35 }}
+                  animate={show(heroInView)}
+                  transition={{ duration: 0.75, delay: 0.45, ease }}
+                  className="v2-headline leading-[0.95] mb-6 md:mb-8"
+                  style={{ fontSize: "clamp(2.2rem, 5.5vw, 5rem)", letterSpacing: "-0.02em" }}
+                >
+                  SABS&trade; TECHNOLOGY<span className="v2-neon-period">.</span>
+                  <br />
+                  <span style={{ color: "var(--v2-neon)" }}>YOUR STRUCTURAL EDGE</span><span className="v2-neon-period">.</span>
+                </motion.h1>
+
+                <motion.p
+                  initial={{ opacity: 0, y: 35 }}
+                  animate={show(heroInView)}
+                  transition={{ duration: 0.75, delay: 0.6, ease }}
+                  style={{ fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.1rem, 3vw, 1.4rem)", color: "var(--v2-muted)", lineHeight: 1.5 }}
+                >
+                  Our premier Structural Concrete Insulated Panel System. Faster. Stronger. Smarter.
+                </motion.p>
+
+                <motion.p
+                  initial={{ opacity: 0, y: 35 }}
+                  animate={show(heroInView)}
+                  transition={{ duration: 0.75, delay: 0.75, ease }}
+                  className="mt-2 max-w-[560px]"
+                  style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.6 }}
+                >
+                  Fire-proof, mold-proof, termite-proof concrete structures with built-in R-75 to R-100 insulation. We deploy it through our proprietary L&iuml;ef Block&trade; components, engineered to bring this technology from blueprint to build.
+                </motion.p>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 35 }}
+                  animate={show(heroInView)}
+                  transition={{ duration: 0.75, delay: 0.9, ease }}
+                  className="mt-5 md:mt-12 flex flex-wrap gap-3 md:gap-4"
+                >
+                  <button
+                    onClick={openModal}
+                    className="transition-all duration-300 hover:brightness-110"
+                    style={{
+                      fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase",
+                      letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-neon)",
+                      color: "var(--v2-deep)", border: "none", padding: "10px 24px", cursor: "pointer",
+                    }}
+                  >
+                    Get a Quote
+                  </button>
+                  <button
+                    onClick={() => document.querySelector("#what-section")?.scrollIntoView({ behavior: "smooth" })}
+                    className="transition-all duration-300 hover:bg-[#00FF88] hover:text-[#0a0a0a]"
+                    style={{
+                      fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase",
+                      letterSpacing: "0.14em", fontWeight: 600, background: "transparent",
+                      color: "var(--v2-neon)", border: "1px solid var(--v2-neon)", padding: "10px 24px", cursor: "pointer",
+                    }}
+                  >
+                    Learn More
+                  </button>
+                </motion.div>
+          </div>
+
+          {/* Scroll indicator */}
+          <div className="absolute bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+            <span style={{ fontSize: "1.25rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--v2-muted)" }}>Scroll</span>
+            <div className="w-px h-8 md:h-12" style={{ background: "linear-gradient(to bottom, var(--v2-neon), transparent)" }} />
           </div>
         </section>
 
         {/* ════════ WHAT ARE LÏEF BLOCKS ════════ */}
         <section id="what-section" className="relative py-12 md:py-28" style={{ background: "var(--v2-deep)", borderTop: "1px solid var(--v2-rule)" }}>
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-            <img src={dotsNeon} alt="" className="w-[176vw] max-w-[1512px] opacity-[0.01]" />
+            <motion.img src={dotsNeon} alt="" className="w-[176vw] max-w-[1512px] opacity-[0.01]" style={{ scale: dotsScale }} />
           </div>
           <div ref={whatRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
-            {whatInView && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-12 items-center">
                 <div>
-                  <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="v2-label mb-6">
-
+                  <motion.div initial={{ opacity: 0, y: 35 }} animate={show(whatInView)} transition={{ duration: 0.75, ease }} className="v2-label mb-6">
                     The Technology
                   </motion.div>
-                  <motion.h2 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="v2-headline text-3xl md:text-5xl lg:text-6xl mb-6" style={{ color: "var(--v2-white)" }}>
-                    WHAT ARE<br /><img src={liefLogoGreen} alt="Lïef" className="inline-block h-[1.3em] w-auto" style={{ verticalAlign: "bottom", marginTop: "-0.25em", marginBottom: "-0.15em", marginRight: "0.12em" }} />BLOCKS<span className="v2-neon-period">?</span>
+                  <motion.h2 initial={{ opacity: 0, y: 35 }} animate={show(whatInView)} transition={{ duration: 0.75, delay: 0.08, ease }} className="v2-headline text-3xl md:text-5xl lg:text-6xl mb-6" style={{ color: "var(--v2-white)" }}>
+                    WHAT IS SABS&trade;<span className="v2-neon-period">?</span>
                   </motion.h2>
-                  <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="mb-6" style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
-                    LÏEF Blocks are proprietary EPS (Expanded Polystyrene) foam structural panels that form the structural core of walls, floors, and roofs. Once assembled, they're coated with SABS (Saebi Alternative Building System) — a cementitious compound that transforms foam panels into fire-proof, mold-proof, termite-proof concrete structures.
+                  <motion.p initial={{ opacity: 0, y: 35 }} animate={show(whatInView)} transition={{ duration: 0.75, delay: 0.16, ease }} className="mb-6" style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
+                    SABS (Saebi Alternative Building System) is a patented cementitious coating technology that transforms lightweight structural panels into fire-proof, mold-proof, termite-proof concrete structures. The result: a monolithic building envelope with zero flame spread, 260 MPH wind resistance, and built-in R-75 to R-100 insulation, exceeding every major structural and energy code in the industry.
                   </motion.p>
-                  <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.24, ease }} style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
-                    As Arizona's premier SABS-certified developer and builder, we offer this advanced building system alongside traditional construction methods — giving our partners the flexibility to choose the right approach for every project.
+                  <motion.p initial={{ opacity: 0, y: 35 }} animate={show(whatInView)} transition={{ duration: 0.75, delay: 0.24, ease }} style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
+                    We deploy SABS through our proprietary L&iuml;ef Block&trade; components, precision-engineered EPS panels that form the structural core of walls, floors, and roofs. Once assembled and coated with the SABS compound, the system creates a seamless, reinforced concrete structure from the ground up.
+                  </motion.p>
+                  <motion.p initial={{ opacity: 0, y: 35 }} animate={show(whatInView)} transition={{ duration: 0.75, delay: 0.32, ease }} className="mt-6" style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
+                    We build across the full construction spectrum &mdash; wood frame, steel, and advanced modular &mdash; and we've incorporated SABS into our methods because its structural properties are simply unmatched. For our clients, that means another high-performance option and a builder equipped to match the right system to every project.
                   </motion.p>
                 </div>
 
-                {/* Visual — block diagram */}
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.32, ease }} className="flex justify-center">
-                  <div className="w-full max-w-[360px]">
-                    <div className="grid grid-cols-3 gap-2 mb-4">
-                      {Array.from({ length: 6 }).map((_, i) => (
+                {/* Visual: block diagram — hidden on mobile */}
+                <motion.div initial={{ opacity: 0, y: 35 }} animate={show(whatInView)} transition={{ duration: 0.75, delay: 0.40, ease }} className="hidden md:flex justify-center items-center">
+                  <div className="w-full max-w-[420px]">
+                    <div className="grid grid-cols-3 gap-3 mb-5">
+                      {Array.from({ length: 12 }).map((_, i) => (
                         <div
                           key={i}
                           className="transition-all duration-500"
@@ -290,59 +302,36 @@ const LiefBlocks = () => {
                         />
                       ))}
                     </div>
-                    <p className="text-center" style={{ fontSize: "0.8rem", letterSpacing: "0.15em", textTransform: "uppercase", color: accentColor }}>
-                      EPS Foam Core + SABS Coating = Structural Concrete
-                    </p>
+                    <div className="text-center" style={{ letterSpacing: "0.12em", textTransform: "uppercase", color: accentColor }}>
+                      <p style={{ fontSize: "1.05rem", fontWeight: 600 }}>L&iuml;ef EPS Core x SABS Coating</p>
+                      <p style={{ fontSize: "1.05rem", fontWeight: 600 }}>= Structural Concrete</p>
+                    </div>
                   </div>
                 </motion.div>
               </div>
-            )}
           </div>
         </section>
 
-        {/* ════════ SPECS GRID ════════ */}
-        <section className="relative py-12 md:py-20" style={{ background: "var(--v2-deep)", borderTop: "1px solid var(--v2-rule)" }}>
-          <div ref={specsRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
-            {specsInView && (
-              <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="grid grid-cols-2 md:grid-cols-4 gap-px">
-                {specs.map((spec) => (
-                  <div
-                    key={spec.label}
-                    className="p-6 md:p-8 text-center transition-all duration-500"
-                    style={{ border: "1px solid var(--v2-rule)", background: "rgba(0,255,136,.02)" }}
-                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = accentColor; e.currentTarget.style.boxShadow = `0 0 30px rgba(0,255,136,.08)`; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--v2-rule)"; e.currentTarget.style.boxShadow = "none"; }}
-                  >
-                    <div className="v2-headline mb-2" style={{ fontSize: "clamp(1.2rem, 2.5vw, 1.6rem)", color: accentColor }}>{spec.value}</div>
-                    <div style={{ fontSize: "0.85rem", color: "var(--v2-dim)", letterSpacing: "0.05em" }}>{spec.label}</div>
-                  </div>
-                ))}
-              </motion.div>
-            )}
-          </div>
-        </section>
 
         {/* ════════ ATTRIBUTES + STATS (The Edge style) ════════ */}
         <section className="relative py-12 md:py-28" style={{ background: "#006B3F" }}>
           <div className="absolute inset-x-0 top-0 h-[40%] pointer-events-none" style={{ background: "linear-gradient(180deg, rgba(0,0,0,.12), transparent)" }} />
           <div ref={statsRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
-            {statsInView && (
-              <>
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="mb-6" style={{ fontSize: "1.25rem", textTransform: "uppercase", letterSpacing: "0.22em", color: "rgba(0,255,136,.6)" }}>
+                <motion.div initial={{ opacity: 0, y: 35 }} animate={show(statsInView)} transition={{ duration: 0.75, ease }} className="mb-6" style={{ fontSize: "1.25rem", textTransform: "uppercase", letterSpacing: "0.22em", color: "rgba(0,255,136,.6)" }}>
 
                   Performance
                 </motion.div>
 
-                <motion.h2 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="v2-headline text-4xl md:text-6xl lg:text-7xl mb-6" style={{ color: "var(--v2-white)" }}>
+                <motion.h2 initial={{ opacity: 0, y: 35 }} animate={show(statsInView)} transition={{ duration: 0.75, delay: 0.08, ease }} className="v2-headline text-4xl md:text-6xl lg:text-7xl mb-6" style={{ color: "var(--v2-white)" }}>
                   WE BUILD<br /><span style={{ color: "var(--v2-neon)" }}>SMARTER<span className="v2-neon-period">.</span></span>
                 </motion.h2>
 
-                <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="max-w-[550px] mb-20" style={{ fontWeight: 300, fontSize: "1.25rem", color: "rgba(245,245,243,.7)", lineHeight: 1.8 }}>
+                <motion.p initial={{ opacity: 0, y: 35 }} animate={show(statsInView)} transition={{ duration: 0.75, delay: 0.16, ease }} className="max-w-[550px] mb-20" style={{ fontWeight: 300, fontSize: "1.25rem", color: "rgba(245,245,243,.7)", lineHeight: 1.8 }}>
                   Arizona's #1 SABS-trained builder. Lïef Blocks with SABS Technology radically reduces the number of trades required on-site, allowing for total schedule control and unprecedented quality consistency.
                 </motion.p>
 
                 {/* Attribute cards */}
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.24, ease }} className="grid grid-cols-1 sm:grid-cols-2 gap-px mb-px">
+                <motion.div initial={{ opacity: 0, y: 35 }} animate={show(statsInView)} transition={{ duration: 0.75, delay: 0.24, ease }} className="grid grid-cols-1 sm:grid-cols-2 gap-px mb-px">
                   {attributes.map((attr) => {
                     const Icon = attr.icon;
                     return (
@@ -364,7 +353,7 @@ const LiefBlocks = () => {
                 </motion.div>
 
                 {/* Stat cards */}
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.32, ease }} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px">
+                <motion.div initial={{ opacity: 0, y: 35 }} animate={show(statsInView)} transition={{ duration: 0.75, delay: 0.32, ease }} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px">
                   {stats.map((stat) => (
                     <div
                       key={stat.label}
@@ -377,33 +366,29 @@ const LiefBlocks = () => {
                         {stat.value}<span style={{ fontSize: "0.5em", fontWeight: 400 }}>{stat.suffix}</span>
                       </div>
                       <div className="mb-2" style={{ fontSize: "1rem", textTransform: "uppercase", color: "var(--v2-white)", letterSpacing: "0.1em", fontWeight: 600 }}>{stat.label}</div>
-                      <div style={{ fontSize: "0.9rem", color: "rgba(245,245,243,.55)", lineHeight: 1.5 }}>{stat.desc}</div>
+                      <div style={{ fontSize: "1rem", color: "rgba(245,245,243,.55)", lineHeight: 1.5 }}>{stat.desc}</div>
                     </div>
                   ))}
                 </motion.div>
-              </>
-            )}
           </div>
         </section>
 
         {/* ════════ ICC CERTIFIED TECHNICALS ════════ */}
         <section className="relative py-12 md:py-28" style={{ background: "var(--v2-deep)" }}>
-          <div className="v2-ghost-text hidden lg:block top-16 right-8" style={{ fontSize: "min(10vw, 140px)", color: "rgba(0,255,136,.04)" }}>CERTIFIED</div>
+          <motion.div className="v2-ghost-text hidden lg:block top-32 right-8" style={{ fontSize: "min(10vw, 140px)", color: "rgba(0,255,136,.04)", y: ghostTextY }}>CERTIFIED</motion.div>
           <div ref={techRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
-            {techInView && (
-              <>
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="v2-label mb-6">
+                <motion.div initial={{ opacity: 0, y: 35 }} animate={show(techInView)} transition={{ duration: 0.75, ease }} className="v2-label mb-6">
 
                   Certified Technicals
                 </motion.div>
-                <motion.h2 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="v2-headline text-4xl md:text-6xl lg:text-7xl mb-6" style={{ color: "var(--v2-white)" }}>
+                <motion.h2 initial={{ opacity: 0, y: 35 }} animate={show(techInView)} transition={{ duration: 0.75, delay: 0.08, ease }} className="v2-headline text-4xl md:text-6xl lg:text-7xl mb-6" style={{ color: "var(--v2-white)" }}>
                   ICC/ES<br /><span style={{ color: "var(--v2-neon)" }}>APPROVED<span className="v2-neon-period">.</span></span>
                 </motion.h2>
-                <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="max-w-[600px] mb-16" style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
+                <motion.p initial={{ opacity: 0, y: 35 }} animate={show(techInView)} transition={{ duration: 0.75, delay: 0.16, ease }} className="max-w-[600px] mb-16" style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
                   Every component of the LÏEF Blocks system is tested, certified, and code-compliant. No shortcuts. No workarounds.
                 </motion.p>
 
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.24, ease }} className="grid grid-cols-1 md:grid-cols-2 gap-px">
+                <motion.div initial={{ opacity: 0, y: 35 }} animate={show(techInView)} transition={{ duration: 0.75, delay: 0.24, ease }} className="grid grid-cols-1 md:grid-cols-2 gap-px">
                   {technicals.map((tech, i) => {
                     const Icon = technicalIcons[i];
                     return (
@@ -419,137 +404,103 @@ const LiefBlocks = () => {
                         </div>
                         <div>
                           <h4 className="mb-2" style={{ fontWeight: 600, fontSize: "1.1rem", color: "var(--v2-white)" }}>{tech.title}</h4>
-                          <p style={{ fontSize: "0.95rem", color: "var(--v2-dim)", lineHeight: 1.6 }}>{tech.detail}</p>
+                          <p style={{ fontSize: "1rem", color: "var(--v2-dim)", lineHeight: 1.6 }}>{tech.detail}</p>
                         </div>
                       </div>
                     );
                   })}
                 </motion.div>
-              </>
-            )}
           </div>
         </section>
 
         {/* ════════ VIDEO ════════ */}
         <section className="relative py-12 md:py-28" style={{ background: "var(--v2-deep)", borderTop: "1px solid var(--v2-rule)" }}>
           <div ref={vidRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
-            {vidInView && (
-              <>
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="v2-label mb-6">
+                <motion.div initial={{ opacity: 0, y: 35 }} animate={show(vidInView)} transition={{ duration: 0.75, ease }} className="v2-label mb-6">
 
                   See It Built
                 </motion.div>
-                <motion.h2 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="v2-headline text-4xl md:text-5xl mb-12" style={{ color: "var(--v2-white)" }}>
+                <motion.h2 initial={{ opacity: 0, y: 35 }} animate={show(vidInView)} transition={{ duration: 0.75, delay: 0.08, ease }} className="v2-headline text-4xl md:text-5xl mb-12" style={{ color: "var(--v2-white)" }}>
                   HOW IT WORKS<span className="v2-neon-period">.</span>
                 </motion.h2>
 
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="relative w-full" style={{ aspectRatio: "16/9", border: "1px solid var(--v2-rule)", overflow: "hidden" }}>
-                    <iframe
-                      src="https://www.youtube.com/embed/aQFVqs_XrEY"
-                      title="How LÏEF Blocks Work"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="absolute inset-0 w-full h-full"
-                      style={{ border: "none" }}
-                    />
-                  </div>
-                  <div className="relative w-full" style={{ aspectRatio: "16/9", border: "1px solid var(--v2-rule)", overflow: "hidden" }}>
-                    <iframe
-                      src="https://www.youtube.com/embed/vXAN6usiCGg"
-                      title="SABS Build System"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="absolute inset-0 w-full h-full"
-                      style={{ border: "none" }}
-                    />
-                  </div>
-                </motion.div>
-              </>
-            )}
-          </div>
-        </section>
-
-        {/* ════════ PROJECTS ════════ */}
-        <section className="relative overflow-hidden py-12 md:py-28" style={{ background: "var(--v2-deep)" }}>
-          <div className="v2-ghost-text hidden lg:block top-8 right-8 text-right" style={{ fontSize: "min(12vw, 150px)", color: "rgba(0,107,63,.24)" }}>PROJECTS</div>
-          <div ref={projRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
-            {projInView && (
-              <>
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="v2-label mb-6">
-
-                  Built With LÏEF Blocks
-                </motion.div>
-                <motion.h2 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="v2-headline text-4xl md:text-6xl lg:text-7xl mb-16" style={{ color: "var(--v2-white)" }}>
-                  THE WORK<br /><span style={{ color: "var(--v2-neon)" }}>SPEAKS<span className="v2-neon-period">.</span></span>
-                </motion.h2>
-
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="grid grid-cols-1 md:grid-cols-2 gap-px">
-                  {projects.map((proj) => (
-                    <div key={proj.name} className="relative overflow-hidden group" style={{ minHeight: "380px", border: "1px solid var(--v2-rule)" }}>
-                      <img src={proj.img} alt={proj.name} className="absolute inset-0 w-full h-full object-cover grayscale brightness-[.4] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.6]" />
-                      <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.95) 0%, rgba(10,10,10,.3) 60%, transparent 100%)" }} />
-                      <div className="absolute top-4 left-4 z-10">
-                        <span className="inline-flex items-center gap-2 px-3 py-1.5" style={{ background: "rgba(0,0,0,.8)", border: `1px solid ${accentColor}`, fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", color: accentColor }}>
-                          <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: accentColor, display: "inline-block" }} />
-                          {proj.status}
-                        </span>
-                      </div>
-                      <div className="absolute bottom-0 left-0 p-8 z-10">
-                        <h3 className="v2-headline text-xl md:text-2xl mb-1" style={{ color: "var(--v2-white)" }}>{proj.name}</h3>
-                        <p className="mb-2" style={{ fontSize: "0.9rem", color: accentColor, letterSpacing: "0.05em" }}>{proj.type}</p>
-                        <p className="max-w-md mb-3" style={{ fontSize: "0.95rem", color: "var(--v2-muted)", lineHeight: 1.6 }}>{proj.desc}</p>
-                        <p style={{ fontSize: "0.8rem", color: "var(--v2-dim)" }}>{proj.location}</p>
-                      </div>
+                <motion.div initial={{ opacity: 0, y: 35 }} animate={show(vidInView)} transition={{ duration: 0.75, delay: 0.16, ease }} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[
+                    { id: "aQFVqs_XrEY", title: "SABS Start to Finish Process", scale: "1" },
+                    { id: "vXAN6usiCGg", title: "Timelapse of SABS Texas Project", scale: "1.35" },
+                  ].map((vid) => (
+                    <div key={vid.id} className="relative w-full" style={{ aspectRatio: "16/9", border: "1px solid var(--v2-rule)", overflow: "hidden" }}>
+                      {playingVideo === vid.id ? (
+                        <iframe
+                          src={`https://www.youtube.com/embed/${vid.id}?autoplay=1&rel=0`}
+                          title={vid.title}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="absolute inset-0 w-full h-full"
+                          style={{ border: "none" }}
+                        />
+                      ) : (
+                        <div
+                          onClick={() => setPlayingVideo(vid.id)}
+                          className="group cursor-pointer absolute inset-0 w-full h-full"
+                        >
+                          <img
+                            src={`https://img.youtube.com/vi/${vid.id}/maxresdefault.jpg`}
+                            alt={vid.title}
+                            className="absolute inset-0 w-full h-full object-cover transition-all duration-700"
+                            style={{
+                              filter: "grayscale(100%)",
+                              opacity: 0.6,
+                              transform: `scale(${vid.scale})`,
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.filter = "grayscale(0%)";
+                              e.currentTarget.style.opacity = "1";
+                              e.currentTarget.style.transform = `scale(${parseFloat(vid.scale) + 0.1})`;
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.filter = "grayscale(100%)";
+                              e.currentTarget.style.opacity = "0.6";
+                              e.currentTarget.style.transform = `scale(${vid.scale})`;
+                            }}
+                          />
+                          {/* Custom green play button */}
+                          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <svg
+                              viewBox="0 0 100 100"
+                              fill="none"
+                              className="w-12 h-12 sm:w-14 sm:h-14 md:w-20 md:h-20 lg:w-[100px] lg:h-[100px] transition-all duration-500"
+                              style={{ filter: "drop-shadow(0 6px 20px rgba(0,0,0,0.7))" }}
+                              ref={(el) => {
+                                if (!el) return;
+                                const parent = el.closest('.group');
+                                if (!parent) return;
+                                parent.addEventListener('mouseenter', () => {
+                                  el.style.filter = "drop-shadow(0 0 30px rgba(0,255,136,0.6)) drop-shadow(0 6px 20px rgba(0,0,0,0.7))";
+                                  el.style.transform = "scale(1.15)";
+                                });
+                                parent.addEventListener('mouseleave', () => {
+                                  el.style.filter = "drop-shadow(0 6px 20px rgba(0,0,0,0.7))";
+                                  el.style.transform = "scale(1)";
+                                });
+                              }}
+                            >
+                              <polygon points="34,18 34,82 84,50" fill="var(--v2-neon)" />
+                            </svg>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </motion.div>
-              </>
-            )}
-          </div>
-        </section>
-
-        {/* ════════ AS FEATURED IN ════════ */}
-        <section className="relative py-12 md:py-20" style={{ background: "var(--v2-deep)", borderTop: "1px solid var(--v2-rule)" }}>
-          <div ref={pressRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 text-center">
-            {pressInView && (
-              <>
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="v2-label mb-12">As Featured In</motion.div>
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="flex flex-wrap justify-center items-center gap-8 md:gap-12 mb-20">
-                  {pressOutlets.map((outlet) => (
-                    <img
-                      key={outlet.name}
-                      src={outlet.src}
-                      alt={outlet.name}
-                      className="v2-press-logo"
-                      style={{ height: "48px", width: "auto", objectFit: "contain" }}
-                    />
-                  ))}
-                </motion.div>
-
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="v2-label mb-10">Trusted By Industry Leaders</motion.div>
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.24, ease }} className="flex flex-wrap justify-center items-center gap-10 md:gap-14">
-                  {trustLogos.map((logo) => (
-                    <img
-                      key={logo.name}
-                      src={logo.src}
-                      alt={logo.name}
-                      className="v2-partner-logo"
-                      style={{ height: "60px", width: "auto", objectFit: "contain" }}
-                    />
-                  ))}
-                </motion.div>
-              </>
-            )}
           </div>
         </section>
 
         {/* ════════ COST CALCULATOR ════════ */}
         <section className="relative py-12 md:py-28" style={{ background: "var(--v2-deep)", borderTop: "1px solid var(--v2-rule)" }}>
           <div ref={calcRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
-            {calcInView && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }}>
+                <motion.div initial={{ opacity: 0, y: 35 }} animate={show(calcInView)} transition={{ duration: 0.75, ease }}>
                   <div className="v2-label mb-6">Savings Calculator</div>
                   <h2 className="v2-headline text-4xl md:text-6xl lg:text-7xl mb-6" style={{ color: "var(--v2-white)" }}>
                     SEE THE<br /><span style={{ color: "var(--v2-neon)" }}>DIFFERENCE</span><span className="v2-neon-period">.</span>
@@ -559,8 +510,8 @@ const LiefBlocks = () => {
                   </p>
                 </motion.div>
 
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="p-8 md:p-10" style={{ border: "1px solid var(--v2-rule)", background: "rgba(0,255,136,.01)" }}>
-                  <label className="block mb-2" style={{ fontSize: "0.85rem", color: "var(--v2-dim)", letterSpacing: "0.05em" }}>Project Type</label>
+                <motion.div initial={{ opacity: 0, y: 35 }} animate={show(calcInView)} transition={{ duration: 0.75, delay: 0.08, ease }} className="p-8 md:p-10" style={{ border: "1px solid var(--v2-rule)", background: "rgba(0,255,136,.01)" }}>
+                  <label className="block mb-2" style={{ fontSize: "1rem", color: "var(--v2-dim)", letterSpacing: "0.05em" }}>Project Type</label>
                   <select
                     value={projectType}
                     onChange={(e) => setProjectType(e.target.value)}
@@ -572,7 +523,7 @@ const LiefBlocks = () => {
                     ))}
                   </select>
 
-                  <label className="block mb-2" style={{ fontSize: "0.85rem", color: "var(--v2-dim)", letterSpacing: "0.05em" }}>
+                  <label className="block mb-2" style={{ fontSize: "1rem", color: "var(--v2-dim)", letterSpacing: "0.05em" }}>
                     Square Footage: <span style={{ color: accentColor, fontWeight: 600 }}>{sqft.toLocaleString()} sq ft</span>
                   </label>
                   <input
@@ -591,21 +542,51 @@ const LiefBlocks = () => {
                       <div className="v2-headline mb-1" style={{ fontSize: "clamp(1.5rem, 3vw, 2.2rem)", color: accentColor }}>
                         ${totalSavings.toLocaleString()}
                       </div>
-                      <div style={{ fontSize: "0.8rem", color: "var(--v2-dim)" }}>Estimated Savings</div>
+                      <div style={{ fontSize: "1rem", color: "var(--v2-dim)" }}>Estimated Savings</div>
                     </div>
                     <div>
                       <div className="v2-headline mb-1" style={{ fontSize: "clamp(1.5rem, 3vw, 2.2rem)", color: accentColor }}>
                         {savingsPercent}%
                       </div>
-                      <div style={{ fontSize: "0.8rem", color: "var(--v2-dim)" }}>Cost Reduction</div>
+                      <div style={{ fontSize: "1rem", color: "var(--v2-dim)" }}>Cost Reduction</div>
                     </div>
                   </div>
-                  <p className="mt-4" style={{ fontSize: "0.7rem", color: "var(--v2-dim)", fontStyle: "italic", opacity: 0.7 }}>
+                  <p className="mt-4" style={{ fontSize: "1rem", color: "var(--v2-dim)", fontStyle: "italic", opacity: 0.7 }}>
                     *Estimates based on average project data. Actual savings vary by project scope, location, and specifications.
                   </p>
                 </motion.div>
               </div>
-            )}
+          </div>
+        </section>
+
+        {/* ════════ AS FEATURED IN ════════ */}
+        <section className="relative py-12 md:py-20" style={{ background: "var(--v2-deep)", borderTop: "1px solid var(--v2-rule)" }}>
+          <div ref={pressRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 text-center">
+                <motion.div initial={{ opacity: 0, y: 35 }} animate={show(pressInView)} transition={{ duration: 0.75, ease }} className="v2-label mb-12">As Featured In</motion.div>
+                <motion.div initial={{ opacity: 0, y: 35 }} animate={show(pressInView)} transition={{ duration: 0.75, delay: 0.08, ease }} className="flex flex-wrap justify-center items-center gap-8 md:gap-12 mb-20">
+                  {pressOutlets.map((outlet) => (
+                    <img
+                      key={outlet.name}
+                      src={outlet.src}
+                      alt={outlet.name}
+                      className="v2-press-logo"
+                      style={{ height: "48px", width: "auto", objectFit: "contain" }}
+                    />
+                  ))}
+                </motion.div>
+
+                <motion.div initial={{ opacity: 0, y: 35 }} animate={show(pressInView)} transition={{ duration: 0.75, delay: 0.16, ease }} className="v2-label mb-10">Trusted By Industry Leaders</motion.div>
+                <motion.div initial={{ opacity: 0, y: 35 }} animate={show(pressInView)} transition={{ duration: 0.75, delay: 0.24, ease }} className="flex flex-wrap justify-center items-center gap-10 md:gap-14">
+                  {trustLogos.map((logo) => (
+                    <img
+                      key={logo.name}
+                      src={logo.src}
+                      alt={logo.name}
+                      className="v2-partner-logo"
+                      style={{ height: "60px", width: "auto", objectFit: "contain" }}
+                    />
+                  ))}
+                </motion.div>
           </div>
         </section>
 
@@ -613,51 +594,47 @@ const LiefBlocks = () => {
         <section className="relative py-16 md:py-28" style={{ background: "var(--v2-black)", borderTop: "1px solid var(--v2-rule)" }}>
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px" style={{ height: "100px", background: `linear-gradient(to bottom, ${accentColor}, transparent)` }} />
           <div ref={ctaRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 text-center flex flex-col items-center">
-            {ctaInView && (
-              <>
-                <motion.h2 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease }} className="v2-headline mb-6" style={{ fontSize: "clamp(3rem, 6vw, 5rem)", color: "var(--v2-white)", lineHeight: 1.2 }}>
-                  BUILD WITH<br />LÏEF BLOCKS<span className="v2-neon-period">.</span>
+                <motion.h2 initial={{ opacity: 0, y: 35 }} animate={show(ctaInView)} transition={{ duration: 0.75, ease }} className="v2-headline mb-6" style={{ fontSize: "clamp(3rem, 6vw, 5rem)", color: "var(--v2-white)", lineHeight: 1.2 }}>
+                  BUILD WITH US<span className="v2-neon-period">.</span>
                 </motion.h2>
-                <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08, ease }} className="mb-10 max-w-[420px]" style={{ fontWeight: 300, fontSize: "1.3rem", color: "var(--v2-muted)", lineHeight: 1.7 }}>
-                  Whether you're a developer, builder, or investor — let's talk about how LÏEF Blocks can transform your next project.
+                <motion.p initial={{ opacity: 0, y: 35 }} animate={show(ctaInView)} transition={{ duration: 0.75, delay: 0.08, ease }} className="mb-10 max-w-[420px]" style={{ fontWeight: 300, fontSize: "1.3rem", color: "var(--v2-muted)", lineHeight: 1.7 }}>
+                  Whether you're a developer, builder, or investor, let's talk about how LÏEF x SABS can transform your next project.
                 </motion.p>
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="flex flex-wrap justify-center gap-4">
-                  <a
-                    href="mailto:hello@liefdev.com"
+                <motion.div initial={{ opacity: 0, y: 35 }} animate={show(ctaInView)} transition={{ duration: 0.75, delay: 0.16, ease }} className="flex flex-wrap justify-center gap-4">
+                  <button
+                    onClick={openModal}
                     className="inline-block transition-all duration-300 hover:brightness-110"
                     style={{
                       fontFamily: "var(--v2-font-body)", fontSize: "1.1rem", textTransform: "uppercase",
                       letterSpacing: "0.14em", fontWeight: 600, background: accentColor,
-                      color: "var(--v2-deep)", padding: "16px 40px", textDecoration: "none",
+                      color: "var(--v2-deep)", padding: "16px 40px", border: "none", cursor: "pointer",
                     }}
                   >
                     Start a Conversation
-                  </a>
-                  <a
-                    href="tel:+14805551234"
+                  </button>
+                  <button
+                    onClick={openModal}
                     className="inline-block transition-all duration-300 hover:bg-[#00FF88] hover:text-[#0a0a0a]"
                     style={{
                       fontFamily: "var(--v2-font-body)", fontSize: "1.1rem", textTransform: "uppercase",
                       letterSpacing: "0.14em", color: accentColor, border: `1px solid ${accentColor}`,
-                      padding: "16px 40px", textDecoration: "none",
+                      padding: "16px 40px", background: "transparent", cursor: "pointer",
                     }}
                   >
-                    Call Us
-                  </a>
+                    Contact Us
+                  </button>
                 </motion.div>
 
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.24, ease }} className="flex flex-wrap justify-center gap-12 mt-16">
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={show(ctaInView, 20)} transition={{ duration: 0.75, delay: 0.24, ease }} className="flex flex-wrap justify-center gap-12 mt-16">
                   <div className="text-center">
-                    <div style={{ fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--v2-dim)", marginBottom: "8px" }}>Email</div>
-                    <a href="mailto:hello@liefdev.com" style={{ fontSize: "0.95rem", color: "var(--v2-muted)", textDecoration: "none" }} className="hover:text-[#00FF88] transition-colors">hello@liefdev.com</a>
+                    <div style={{ fontSize: "1rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--v2-dim)", marginBottom: "8px" }}>Email</div>
+                    <a href="mailto:hello@liefdev.com" style={{ fontSize: "1rem", color: "var(--v2-muted)", textDecoration: "none" }} className="hover:text-[#00FF88] transition-colors">hello@liefdev.com</a>
                   </div>
                   <div className="text-center">
-                    <div style={{ fontSize: "0.7rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--v2-dim)", marginBottom: "8px" }}>Location</div>
-                    <span style={{ fontSize: "0.95rem", color: "var(--v2-muted)" }}>Phoenix, Arizona</span>
+                    <div style={{ fontSize: "1rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--v2-dim)", marginBottom: "8px" }}>Location</div>
+                    <span style={{ fontSize: "1rem", color: "var(--v2-muted)" }}>Phoenix, Arizona</span>
                   </div>
                 </motion.div>
-              </>
-            )}
           </div>
         </section>
 

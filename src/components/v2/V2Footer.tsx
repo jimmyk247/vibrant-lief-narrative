@@ -2,7 +2,7 @@ import logoConcrete from "@/assets/v2/logo-concrete.png";
 import dotsConcrete from "@/assets/v2/dots-concrete.png";
 
 const footerLinks = {
-  explore: ["Home", "The Model", "Projects", "Lïef x SABS", "Team"],
+  explore: ["Home", "The Model", "AI", "Projects", "Lïef x SABS", "Team", "Testimonials"],
   partner: ["Developers", "Managing General Contractor", "Distributors"],
 };
 
@@ -13,16 +13,27 @@ const V2Footer = () => {
       return;
     }
     if (label === "Lïef x SABS") {
-      window.location.href = "/liefblocks";
+      window.location.href = "/sabs";
       return;
     }
     if (label === "Team") {
       window.location.href = "/team";
       return;
     }
+    if (label === "Projects") {
+      window.location.href = "/projects";
+      return;
+    }
+    if (label === "AI") {
+      window.location.href = "/ai";
+      return;
+    }
+    if (label === "Testimonials") {
+      window.location.href = "/testimonials";
+      return;
+    }
     const map: Record<string, string> = {
       "The Model": "#model",
-      Projects: "#communities",
     };
     const target = map[label];
     if (target) document.querySelector(target)?.scrollIntoView({ behavior: "smooth" });
@@ -117,8 +128,8 @@ const V2Footer = () => {
               Lip Loi Creative
             </a>
             &nbsp;|&nbsp;Enhanced by{" "}
-            <a href="https://apexx.agency" target="_blank" rel="noopener noreferrer" style={{ color: "#8B5CF6", textDecoration: "none" }} className="hover-purple transition-colors duration-300">
-              APEXX AI
+            <a href="https://commonground.ventures" target="_blank" rel="noopener noreferrer" style={{ color: "#8B5CF6", textDecoration: "none" }} className="hover-purple transition-colors duration-300">
+              Common Ground
             </a>
           </p>
         </div>

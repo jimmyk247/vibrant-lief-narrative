@@ -22,8 +22,8 @@ interface TeamMember {
 }
 
 const principals: TeamMember[] = [
-  { name: "Jesse Fowler", role: "Principal / Manager", cred: "20+ Yrs in Design, Build & Development", img: jesseImg, zoom: 1.32 },
-  { name: "Jimmy Khounlavong", role: "Principal / Creative Director", cred: "20+ Yrs of Brand, Product & Marketplace Strategy", img: jimmyImg, zoom: 1.10 },
+  { name: "Jesse Fowler", role: "Principal / Manager", cred: "25+ Yrs in Design, Build & Development", img: jesseImg, zoom: 1.32 },
+  { name: "Jimmy Khounlavong", role: "Principal / Creative", cred: "25+ Yrs of Brand, Product & Marketplace Strategy", img: jimmyImg, zoom: 1.10 },
   { name: "Jon Armstrong", role: "Principal / Manager", cred: "15+ Yrs in Custom Residential & Commercial Building", img: jonImg, zoom: 1.32 },
 ];
 
@@ -79,7 +79,7 @@ const V2Team = () => {
 
   return (
     <section id="team" className="relative py-12 md:py-28" style={{ background: "var(--v2-deep)" }}>
-      <div className="v2-ghost-text hidden lg:block top-16 right-8" style={{ fontSize: "min(12vw, 160px)", color: "rgba(0,255,136,.23)" }}>TEAM</div>
+      <div className="v2-ghost-text hidden lg:block top-16 right-8" style={{ fontSize: "min(9.6vw, 120px)", color: "rgba(0,255,136,.23)" }}>TEAM</div>
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <img src={dotsNeon} alt="" className="w-[176vw] max-w-[1512px] opacity-[0.01]" />
       </div>

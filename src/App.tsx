@@ -5,11 +5,15 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import About from "./pages/About";
-import Projects from "./pages/Projects";
 import NotFound from "./pages/NotFound";
 import V2 from "./pages/V2";
 import LiefBlocks from "./pages/LiefBlocks";
+import ProjectsPage from "./pages/ProjectsPage";
 import TeamPage from "./pages/TeamPage";
+import AIPage from "./pages/AIPage";
+import TestimonialsPage from "./pages/TestimonialsPage";
+import { ContactModalProvider } from "@/contexts/ContactModalContext";
+import ContactModal from "@/components/v2/ContactModal";
 
 const queryClient = new QueryClient();
 
@@ -19,16 +23,22 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<V2 />} />
-          <Route path="/v1" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/liefblocks" element={<LiefBlocks />} />
-          <Route path="/team" element={<TeamPage />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <ContactModalProvider>
+          <Routes>
+            <Route path="/" element={<V2 />} />
+            <Route path="/v1" element={<Index />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/sabs" element={<LiefBlocks />} />
+            <Route path="/liefblocks" element={<LiefBlocks />} />
+            <Route path="/ai" element={<AIPage />} />
+            <Route path="/team" element={<TeamPage />} />
+            <Route path="/testimonials" element={<TestimonialsPage />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <ContactModal />
+        </ContactModalProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

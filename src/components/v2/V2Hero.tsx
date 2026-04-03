@@ -2,10 +2,12 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import logoLight from "@/assets/lief-logo-light.png";
 import dotsNeon from "@/assets/v2/dots-neon.png";
+import { useContactModal } from "@/contexts/ContactModalContext";
 
 const stagger = (i: number) => ({ delay: 0.3 + i * 0.15 });
 
 const V2Hero = () => {
+  const { openModal } = useContactModal();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const heroLogoOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
@@ -51,7 +53,7 @@ const V2Hero = () => {
           <span className="v2-label hidden md:inline text-[1.25rem]">Development + Construction · Phoenix, AZ</span>
           <span
             className="md:hidden"
-            style={{ fontSize: "0.62rem", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--v2-neon)" }}
+            style={{ fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--v2-neon)" }}
           >
             <span className="inline-block w-4 h-px mr-2 align-middle" style={{ background: "var(--v2-neon)" }} />
             Development + Construction · Phoenix, AZ
@@ -89,11 +91,11 @@ const V2Hero = () => {
           className="mt-2 md:mt-2 max-w-[420px] hidden md:block"
           style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.6 }}
         >
-          Development + Construction consolidated.
+          Development + Construction Consolidated.
           <br className="hidden sm:inline" />
-          300+ in-house skilled labor and construction managers,
+          300+ Skilled Tradesmen.
           <br className="hidden sm:inline" />
-          one team, no gaps. Phoenix, AZ.
+          One Team, No Gaps.
         </motion.p>
 
         <motion.div
@@ -113,8 +115,8 @@ const V2Hero = () => {
           >
             View Projects
           </button>
-          <a
-            href="mailto:hello@liefdev.com"
+          <button
+            onClick={openModal}
             className="transition-all duration-300 hover:bg-[#00FF88] hover:text-[#0a0a0a]"
             style={{
               fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase",
@@ -123,7 +125,7 @@ const V2Hero = () => {
             }}
           >
             Partner With Us
-          </a>
+          </button>
         </motion.div>
       </div>
 

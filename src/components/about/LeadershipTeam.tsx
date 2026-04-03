@@ -8,16 +8,16 @@ const leaders = [
   {
     name: "Jesse Fowler",
     role: "Principal / Manager",
-    experience: "20+ Years in Design, Build Development",
+    experience: "25+ Years in Design, Build Development",
     image: jesseFowler,
     imagePosition: "object-[center_15%]",
     description:
-      "The visionary. Jesse brings two decades of design-build expertise to Arizona, fusing development strategy with hands-on construction knowledge to deliver luxury homes that exceed expectations.",
+      "The visionary. Jesse brings over two decades of design-build expertise to Arizona, fusing development strategy with hands-on construction knowledge to deliver luxury homes that exceed expectations.",
   },
   {
     name: "Jimmy Khounlavong",
     role: "Principal / Creative Director",
-    experience: "20+ Years of Brand, Product & Marketplace Strategy",
+    experience: "25+ Years of Brand, Product & Marketplace Strategy",
     image: jimmyKhounlavong,
     imagePosition: "object-[center_15%]",
     description:

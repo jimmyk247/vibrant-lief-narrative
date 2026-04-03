@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import logoConcrete from "@/assets/v2/logo-concrete.png";
+import { useContactModal } from "@/contexts/ContactModalContext";
 
 interface NavLink {
   href: string;
@@ -13,9 +14,11 @@ interface NavLink {
 const navLinks: NavLink[] = [
   { href: "/", label: "Home", type: "route" },
   { href: "#model", label: "The Model", type: "scroll" },
-  { href: "#communities", label: "Projects", type: "scroll" },
-  { href: "/liefblocks", label: "LÏEF X SABS", type: "route" },
+  { href: "/ai", label: "AI", type: "route" },
+  { href: "/projects", label: "Projects", type: "route" },
+  { href: "/sabs", label: "LÏEF X SABS", type: "route" },
   { href: "/team", label: "Team", type: "route" },
+  { href: "/testimonials", label: "Testimonials", type: "route" },
 ];
 
 const V2Nav = () => {
@@ -26,6 +29,12 @@ const V2Nav = () => {
   const [contactHovered, setContactHovered] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const { openModal } = useContactModal();
+
+  const handleContact = () => {
+    setMobileOpen(false);
+    openModal();
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -140,7 +149,7 @@ const V2Nav = () => {
         </div>
 
         {/* Desktop */}
-        <nav className="hidden lg:flex items-center gap-10">
+        <nav className="hidden lg:flex items-center gap-7">
           {navLinks.map((l) => {
             const active = isLinkActive(l);
             const hovered = hoveredLink === l.href;
@@ -153,9 +162,9 @@ const V2Nav = () => {
                 className="transition-all duration-300"
                 style={{
                   fontFamily: "'DM Sans', sans-serif",
-                  fontSize: "1rem",
+                  fontSize: "0.85rem",
                   textTransform: "uppercase",
-                  letterSpacing: "0.16em",
+                  letterSpacing: "0.14em",
                   color: active || hovered
                     ? "#00FF88"
                     : scrolled
@@ -170,16 +179,16 @@ const V2Nav = () => {
               </button>
             );
           })}
-          <a
-            href="mailto:hello@liefdev.com"
-            className="transition-all duration-300"
+          <button
+            onClick={handleContact}
             onMouseEnter={() => setContactHovered(true)}
             onMouseLeave={() => setContactHovered(false)}
+            className="transition-all duration-300"
             style={{
               fontFamily: "'DM Sans', sans-serif",
-              fontSize: "1rem",
+              fontSize: "0.85rem",
               textTransform: "uppercase",
-              letterSpacing: "0.16em",
+              letterSpacing: "0.14em",
               color: contactHovered ? "#0a0a0a" : "#00FF88",
               border: "1px solid #00FF88",
               padding: "8px 20px",
@@ -188,7 +197,7 @@ const V2Nav = () => {
             }}
           >
             Contact
-          </a>
+          </button>
         </nav>
 
         {/* Mobile toggle */}
@@ -230,20 +239,22 @@ const V2Nav = () => {
                   {l.label}
                 </button>
               ))}
-              <a
-                href="mailto:hello@liefdev.com"
+              <button
+                onClick={handleContact}
                 style={{
                   fontFamily: "'DM Sans', sans-serif",
                   fontSize: "1rem",
                   textTransform: "uppercase",
                   letterSpacing: "0.16em",
                   color: "#00FF88",
-                  textDecoration: "none",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
                   textAlign: "left",
                 }}
               >
                 Contact
-              </a>
+              </button>
             </nav>
           </motion.div>
         )}
