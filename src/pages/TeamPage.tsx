@@ -1,4 +1,5 @@
 import "@/styles/v2.css";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { useInView } from "@/components/v2/useInView";
 import V2Nav from "@/components/v2/V2Nav";
@@ -82,6 +83,16 @@ const TeamPage = () => {
   const { ref, inView } = useInView(0.1);
 
   return (
+    <>
+    <Helmet>
+      <title>Our Team | Li&#239;ef Development</title>
+      <meta name="description" content="Meet the principals and leadership behind Li&#239;ef Development. Construction, design, legal, financial, and brand expertise building Arizona's finest homes." />
+      <link rel="canonical" href="https://www.anewlief.com/team" />
+      <meta property="og:title" content="Our Team | Li&#239;ef Development" />
+      <meta property="og:description" content="Meet the principals and leadership behind Li&#239;ef Development. Construction, design, legal, financial, and brand expertise." />
+      <meta property="og:url" content="https://www.anewlief.com/team" />
+      <meta property="og:image" content="https://www.anewlief.com/og-image.jpg" />
+    </Helmet>
     <div className="v2 min-h-screen overflow-x-hidden">
       <V2Nav />
       <main>
@@ -129,6 +140,7 @@ const TeamPage = () => {
       </main>
       <V2Footer />
     </div>
+    </>
   );
 };
 

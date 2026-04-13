@@ -1,5 +1,6 @@
 import "@/styles/v2.css";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "@/components/v2/useInView";
 import { Flame, Droplets, Bug, Thermometer, Shield, Wind, Recycle, Volume2 } from "lucide-react";
@@ -160,6 +161,16 @@ const LiefBlocks = () => {
   const show = (inView: boolean, y = 35) => inView ? { opacity: 1, y: 0 } : { opacity: 0, y };
 
   return (
+    <>
+    <Helmet>
+      <title>SABS Technology | Li&#239;ef Development</title>
+      <meta name="description" content="Smart Automated Building System by Li&#239;ef Development. Fire-resistant, pest-proof, energy-efficient building technology for luxury homes in Arizona." />
+      <link rel="canonical" href="https://www.anewlief.com/sabs" />
+      <meta property="og:title" content="SABS Technology | Li&#239;ef Development" />
+      <meta property="og:description" content="Smart Automated Building System. Fire-resistant, pest-proof, energy-efficient building technology for luxury homes in Arizona." />
+      <meta property="og:url" content="https://www.anewlief.com/sabs" />
+      <meta property="og:image" content="https://www.anewlief.com/og-image.jpg" />
+    </Helmet>
     <div className="v2 min-h-screen overflow-x-hidden">
       <V2Nav />
       <main>
@@ -641,6 +652,7 @@ const LiefBlocks = () => {
       </main>
       <V2Footer />
     </div>
+    </>
   );
 };
 

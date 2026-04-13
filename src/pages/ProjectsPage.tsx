@@ -1,5 +1,6 @@
 import "@/styles/v2.css";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { useInView } from "@/components/v2/useInView";
 import V2Nav from "@/components/v2/V2Nav";
@@ -70,6 +71,16 @@ const ProjectsPage = () => {
   }, []);
 
   return (
+    <>
+    <Helmet>
+      <title>Projects | Li&#239;ef Development</title>
+      <meta name="description" content="Explore luxury residential and commercial construction projects by Li&#239;ef Development across Arizona and Nevada. Custom homes, adaptive reuse, and multi-family developments." />
+      <link rel="canonical" href="https://www.anewlief.com/projects" />
+      <meta property="og:title" content="Projects | Li&#239;ef Development" />
+      <meta property="og:description" content="Explore luxury residential and commercial construction projects by Li&#239;ef Development across Arizona and Nevada." />
+      <meta property="og:url" content="https://www.anewlief.com/projects" />
+      <meta property="og:image" content="https://www.anewlief.com/og-image.jpg" />
+    </Helmet>
     <div className="v2 min-h-screen overflow-x-hidden">
       <V2Nav />
       <main className="pt-16 md:pt-20">
@@ -129,6 +140,7 @@ const ProjectsPage = () => {
       </main>
       <V2Footer />
     </div>
+    </>
   );
 };
 
