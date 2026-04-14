@@ -3,8 +3,8 @@ const items = [
   { value: "300+", label: "Skilled Tradesmen" },
   { value: "100+", label: "Years of Expertise" },
   { value: "14%", label: "Average Time Savings" },
-  { value: "2–6×", label: "Average Return on Investment" },
-  { value: "#1", label: "SABS\u2122 Build Partner" },
+  { value: "$600+", label: "Million in Completed Projects" },
+  { value: "#1", label: "SABS\u2122 Installer in North America" },
 ];
 
 const TickerItem = ({ value, label }: { value?: string; label: string }) => (

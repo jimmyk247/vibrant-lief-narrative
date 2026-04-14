@@ -27,9 +27,9 @@ const milestones = [
   },
   {
     year: "2020",
-    title: "Lïef Blocks Certification",
+    title: "SABS Certification",
     description:
-      "Became Arizona's first and only builder certified in Lïef Blocks with SABS Technology—homes engineered to endure for 300 years.",
+      "Became Arizona's first and only builder certified in SABS Technology—homes engineered to endure for 300 years.",
   },
   {
     year: "2024",

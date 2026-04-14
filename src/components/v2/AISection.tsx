@@ -82,13 +82,13 @@ const AISection = () => {
                 {/* ROI Card */}
                 <div className="p-8 md:p-10" style={{ background: "var(--v2-green)", border: "1px solid rgba(0,255,136,.1)" }}>
                   <span className="v2-headline block text-center" style={{ fontSize: "clamp(3rem, 6vw, 5rem)", color: "var(--v2-white)" }}>
-                    2–6×
+                    14%
                   </span>
                   <span className="v2-label block text-center mt-2" style={{ fontSize: "1rem" }}>
-                    AVERAGE RETURN ON INVESTMENT
+                    AVERAGE TIME SAVINGS
                   </span>
                   <p className="mt-4 text-center" style={{ fontSize: "1rem", color: "rgba(255,255,255,.7)", lineHeight: 1.6 }}>
-                    There is no better return on your money than hiring an owner's rep. Our clients see an average of 2–6× their investment returned, with accountability and oversight that pays for itself many times over.
+                    Our AI-powered oversight tools catch issues before they become delays. Clients see an average of 14% time savings across their project timeline through real-time scheduling, automated progress tracking, and proactive risk detection.
                   </p>
                 </div>
 

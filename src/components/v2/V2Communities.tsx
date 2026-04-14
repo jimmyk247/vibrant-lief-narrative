@@ -52,7 +52,7 @@ const V2Communities = () => {
               <h3 className="v2-headline text-xl md:text-2xl mt-3 mb-2" style={{ color: "var(--v2-white)" }}>301 W OSBORN</h3>
               <p style={{ fontSize: "1.25rem", color: "var(--v2-neon)", marginBottom: "12px" }}>Midtown · Phoenix, AZ</p>
               <p className="max-w-md" style={{ fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.7 }}>
-                Commercial to residential adaptive reuse. Lïef Blocks with SABS Technology. Luxury urban living — 23 units, secure parking & conditioned storage.
+                Commercial to residential adaptive reuse. EPS foam panels with SABS Technology. Luxury urban living — 23 units, secure parking & conditioned storage.
               </p>
             </div>
           </div>
@@ -95,7 +95,7 @@ const V2Communities = () => {
               <span style={{ fontSize: "1.25rem", textTransform: "uppercase", color: "var(--v2-neon)", letterSpacing: "0.1em" }}>● In Development</span>
               <h3 className="v2-headline text-lg md:text-xl mt-2 mb-1" style={{ color: "var(--v2-white)" }}>SILVER MOUNTAIN RANCHES</h3>
               <p style={{ fontSize: "1.25rem", color: "var(--v2-neon)", marginBottom: "8px" }}>Scottsdale, AZ</p>
-              <p className="max-w-sm" style={{ fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.6 }}>100+ acre equestrian community. Luxury custom homes built with LÏEF Blocks.</p>
+              <p className="max-w-sm" style={{ fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.6 }}>100+ acre equestrian community. Luxury custom homes built with EPS foam panels.</p>
             </div>
           </div>
 

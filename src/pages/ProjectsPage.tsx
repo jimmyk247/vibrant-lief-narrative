@@ -47,7 +47,7 @@ const projects = [
     img: silverImg,
     name: "Silver Mountain Ranches",
     type: "Equestrian Community",
-    desc: "100+ acre equestrian community with luxury custom homes built using L\u00efef Blocks with SABS Technology.",
+    desc: "100+ acre equestrian community with luxury custom homes built with EPS foam panels and SABS Technology.",
     location: "Scottsdale, AZ",
     status: "In Development",
     featured: false,

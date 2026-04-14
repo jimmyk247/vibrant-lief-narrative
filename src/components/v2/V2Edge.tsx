@@ -39,7 +39,7 @@ const V2Edge = () => {
             </motion.h2>
 
             <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="max-w-[550px] mb-20" style={{ fontWeight: 300, fontSize: "1.25rem", color: "rgba(245,245,243,.7)", lineHeight: 1.8 }}>
-              Arizona's #1 SABS-trained builder. Lïef Blocks with SABS Technology. 300+ in-house skilled labor and construction managers. When most GCs lose weeks waiting on a sub, we deploy from our own army.
+              Arizona's #1 SABS-trained builder. EPS foam panels with SABS Technology. 300+ in-house skilled labor and construction managers. When most GCs lose weeks waiting on a sub, we deploy from our own army.
             </motion.p>
 
             {/* Attribute cards */}

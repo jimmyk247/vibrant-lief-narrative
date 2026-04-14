@@ -15,7 +15,7 @@ Most builders outsource key phases, which creates gaps between what was envision
 Lïef does not build for the sake of building. Every project starts with a question: how will this improve the lives of the people who use it? The design team, led by Scott Meiers with 50+ years across every building type, works alongside MOR Studio (morstudio.net) to ground each project in research on how people actually live, work, and move through spaces. The result is considered design. Not a style imposed on a project, but a solution that comes from understanding what the project needs to be. That process has produced everything from Japandi-inspired urban residences to desert modern estates to commercial spaces that perform.
 
 ## SABS Construction Technology
-SABS stands for Saebi Alternative Building System, a patented technology that uses EPS foam panels, we call them Lïef Blocks, with a high-strength cementitious coating called SABSCRETE to create a monolithic structural system. We also think of SABS as Safe, Architectural, Balanced, and Sustainable. Key specifications:
+SABS stands for Saebi Alternative Building System, a patented technology that uses EPS foam panels with a high-strength cementitious coating called SABSCRETE to create a monolithic structural system. We also think of SABS as Safe, Architectural, Balanced, and Sustainable. Key specifications:
 - 0% flame spread rating
 - 250 MPH wind resistance
 - R-75 to R-100 insulation values

@@ -270,7 +270,7 @@ const LiefBlocks = () => {
           </div>
         </section>
 
-        {/* ════════ WHAT ARE LÏEF BLOCKS ════════ */}
+        {/* ════════ WHAT IS SABS ════════ */}
         <section id="what-section" className="relative py-12 md:py-28" style={{ background: "var(--v2-deep)", borderTop: "1px solid var(--v2-rule)" }}>
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
             <motion.img src={dotsNeon} alt="" className="w-[176vw] max-w-[1512px] opacity-[0.01]" style={{ scale: dotsScale }} />
@@ -288,7 +288,7 @@ const LiefBlocks = () => {
                     SABS (Saebi Alternative Building System) is a patented cementitious coating technology that transforms lightweight structural panels into fire-proof, mold-proof, termite-proof concrete structures. The result: a monolithic building envelope with zero flame spread, 260 MPH wind resistance, and built-in R-75 to R-100 insulation, exceeding every major structural and energy code in the industry.
                   </motion.p>
                   <motion.p initial={{ opacity: 0, y: 35 }} animate={show(whatInView)} transition={{ duration: 0.75, delay: 0.24, ease }} style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
-                    We deploy SABS through our proprietary L&iuml;ef Block&trade; components, precision-engineered EPS panels that form the structural core of walls, floors, and roofs. Once assembled and coated with the SABS compound, the system creates a seamless, reinforced concrete structure from the ground up.
+                    We deploy SABS through precision-engineered EPS foam panels that form the structural core of walls, floors, and roofs. Once assembled and coated with the SABS compound, the system creates a seamless, reinforced concrete structure from the ground up.
                   </motion.p>
                   <motion.p initial={{ opacity: 0, y: 35 }} animate={show(whatInView)} transition={{ duration: 0.75, delay: 0.32, ease }} className="mt-6" style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
                     We build across the full construction spectrum &mdash; wood frame, steel, and advanced modular &mdash; and we've incorporated SABS into our methods because its structural properties are simply unmatched. For our clients, that means another high-performance option and a builder equipped to match the right system to every project.
@@ -338,7 +338,7 @@ const LiefBlocks = () => {
                 </motion.h2>
 
                 <motion.p initial={{ opacity: 0, y: 35 }} animate={show(statsInView)} transition={{ duration: 0.75, delay: 0.16, ease }} className="max-w-[550px] mb-20" style={{ fontWeight: 300, fontSize: "1.25rem", color: "rgba(245,245,243,.7)", lineHeight: 1.8 }}>
-                  Arizona's #1 SABS-trained builder. Lïef Blocks with SABS Technology radically reduces the number of trades required on-site, allowing for total schedule control and unprecedented quality consistency.
+                  Arizona's #1 SABS-trained builder. EPS foam panels with SABS Technology radically reduce the number of trades required on-site, allowing for total schedule control and unprecedented quality consistency.
                 </motion.p>
 
                 {/* Attribute cards */}
@@ -396,7 +396,7 @@ const LiefBlocks = () => {
                   ICC/ES<br /><span style={{ color: "var(--v2-neon)" }}>APPROVED<span className="v2-neon-period">.</span></span>
                 </motion.h2>
                 <motion.p initial={{ opacity: 0, y: 35 }} animate={show(techInView)} transition={{ duration: 0.75, delay: 0.16, ease }} className="max-w-[600px] mb-16" style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
-                  Every component of the LÏEF Blocks system is tested, certified, and code-compliant. No shortcuts. No workarounds.
+                  Every component of the SABS panel system is tested, certified, and code-compliant. No shortcuts. No workarounds.
                 </motion.p>
 
                 <motion.div initial={{ opacity: 0, y: 35 }} animate={show(techInView)} transition={{ duration: 0.75, delay: 0.24, ease }} className="grid grid-cols-1 md:grid-cols-2 gap-px">
@@ -517,7 +517,7 @@ const LiefBlocks = () => {
                     SEE THE<br /><span style={{ color: "var(--v2-neon)" }}>DIFFERENCE</span><span className="v2-neon-period">.</span>
                   </h2>
                   <p className="max-w-md" style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
-                    Estimate your project savings with LÏEF Blocks compared to traditional construction.
+                    Estimate your project savings with SABS panels compared to traditional construction.
                   </p>
                 </motion.div>
 
