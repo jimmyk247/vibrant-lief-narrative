@@ -1,5 +1,4 @@
 const items = [
-  { value: "$600M+", label: "Billed Project Value" },
   { value: "300+", label: "Skilled Tradesmen" },
   { value: "100+", label: "Years of Expertise" },
   { value: "14%", label: "Average Time Savings" },
