@@ -95,7 +95,7 @@ const V2Edge = () => {
                 <span style={{ color: accentColor }}>Structural Superiority:</span> Anti-Fire, Anti-Mold, and Anti-Termite protection are standard.
               </p>
               <p className="max-w-2xl mx-auto" style={{ fontSize: "1.25rem", color: "rgba(245,245,243,.55)", lineHeight: 1.7 }}>
-                Lïef Blocks with SABS Technology radically reduces the number of trades required on-site, allowing for total schedule control and unprecedented quality consistency.
+                EPS foam panels with SABS Technology radically reduce the number of trades required on-site, allowing for total schedule control and unprecedented quality consistency.
               </p>
             </motion.div>
           </>

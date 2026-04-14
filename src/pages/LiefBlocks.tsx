@@ -229,7 +229,7 @@ const LiefBlocks = () => {
                   className="mt-2 max-w-[560px]"
                   style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.6 }}
                 >
-                  Fire-proof, mold-proof, termite-proof concrete structures with built-in R-75 to R-100 insulation. We deploy it through our proprietary L&iuml;ef Block&trade; components, engineered to bring this technology from blueprint to build.
+                  Fire-proof, mold-proof, termite-proof concrete structures with built-in R-75 to R-100 insulation. We deploy it through precision-engineered EPS foam panels, designed to bring this technology from blueprint to build.
                 </motion.p>
 
                 <motion.div
