@@ -314,7 +314,7 @@ const LiefBlocks = () => {
                       ))}
                     </div>
                     <div className="text-center" style={{ letterSpacing: "0.12em", textTransform: "uppercase", color: accentColor }}>
-                      <p style={{ fontSize: "1.05rem", fontWeight: 600 }}>L&iuml;ef EPS Core x SABS Coating</p>
+                      <p style={{ fontSize: "1.05rem", fontWeight: 600 }}>EPS Core x SABS Coating</p>
                       <p style={{ fontSize: "1.05rem", fontWeight: 600 }}>= Structural Concrete</p>
                     </div>
                   </div>
