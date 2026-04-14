@@ -323,19 +323,26 @@ const LiefBlocks = () => {
                         const xOffset = (col - 1) * spread * 20;
                         const yOffset = (row - 1.5) * spread * 14;
                         const locked = spread < 0.05;
-                        const seamColor = "rgba(245,245,243,0.15)";
+                        const fusing = spread < 0.15 && !locked;
+                        const interiorColor = locked
+                          ? "rgba(245,245,243,0.15)"
+                          : fusing
+                            ? "rgba(255,255,255,0.9)"
+                            : accentColor;
+                        const interiorGlow = fusing ? "0 0 6px rgba(255,255,255,0.6)" : "none";
                         return (
                           <div
                             key={i}
                             style={{
                               aspectRatio: "2/1",
                               transform: `translate(${xOffset}px, ${yOffset}px)`,
-                              borderTop: `1px solid ${locked && row > 0 ? seamColor : accentColor}`,
-                              borderRight: `1px solid ${locked && col < 2 ? seamColor : accentColor}`,
-                              borderBottom: `1px solid ${locked && row < 3 ? seamColor : accentColor}`,
-                              borderLeft: `1px solid ${locked && col > 0 ? seamColor : accentColor}`,
+                              borderTop: `1px solid ${row > 0 ? interiorColor : accentColor}`,
+                              borderRight: `1px solid ${col < 2 ? interiorColor : accentColor}`,
+                              borderBottom: `1px solid ${row < 3 ? interiorColor : accentColor}`,
+                              borderLeft: `1px solid ${col > 0 ? interiorColor : accentColor}`,
                               background: locked ? "rgba(0,255,136,.06)" : "rgba(0,255,136,.04)",
-                              transition: "border-color 0.3s ease, background 0.3s ease",
+                              boxShadow: fusing ? `inset ${interiorGlow}` : "none",
+                              transition: "border-color 0.2s ease, background 0.3s ease, box-shadow 0.2s ease",
                             }}
                           />
                         );
