@@ -1,5 +1,5 @@
 import "@/styles/v2.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "@/components/v2/useInView";
@@ -137,7 +137,6 @@ const LiefBlocks = () => {
   const [projectType, setProjectType] = useState("Single Family Residential");
   const [sqft, setSqft] = useState(5000);
   const [playingVideo, setPlayingVideo] = useState<string | null>(null);
-  const [assembled, setAssembled] = useState(false);
   const costs = projectTypes[projectType];
   const totalSavings = (costs.traditional - costs.liefBlocks) * sqft;
   const savingsPercent = Math.round(((costs.traditional - costs.liefBlocks) / costs.traditional) * 100);
@@ -152,12 +151,18 @@ const LiefBlocks = () => {
   const { ref: calcRef, inView: calcInView } = useInView(0.1);
   const { ref: ctaRef, inView: ctaInView } = useInView(0.1);
 
+  // Scroll-driven block assembly animation
+  const blockDiagramRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress: blockProgress } = useScroll({
+    target: blockDiagramRef,
+    offset: ["start 85%", "center 45%"],
+  });
+  const spreadValue = useTransform(blockProgress, [0, 1], [1, 0]);
+  const [spread, setSpread] = useState(1);
   useEffect(() => {
-    if (whatInView && !assembled) {
-      const timer = setTimeout(() => setAssembled(true), 600);
-      return () => clearTimeout(timer);
-    }
-  }, [whatInView, assembled]);
+    const unsubscribe = spreadValue.on("change", (v: number) => setSpread(v));
+    return unsubscribe;
+  }, [spreadValue]);
 
   // Parallax scroll transforms
   const { scrollY } = useScroll();
@@ -303,37 +308,45 @@ const LiefBlocks = () => {
                   </motion.p>
                 </div>
 
-                {/* Visual: block diagram — hidden on mobile */}
-                <motion.div initial={{ opacity: 0, y: 35 }} animate={show(whatInView)} transition={{ duration: 0.75, delay: 0.40, ease }} className="hidden md:flex justify-center items-center">
-                  <div className="w-full max-w-[420px]">
-                    <div
-                      className="grid grid-cols-3 mb-5"
-                      style={{
-                        gap: assembled ? "2px" : "14px",
-                        transition: "gap 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
-                        background: assembled ? "#006B3F" : "transparent",
-                        padding: assembled ? "2px" : "0",
-                        borderRadius: assembled ? "2px" : "0",
-                      }}
-                    >
-                      {Array.from({ length: 12 }).map((_, i) => (
-                        <div
-                          key={i}
-                          style={{
-                            aspectRatio: "2/1",
-                            border: assembled ? "none" : `1px solid ${accentColor}`,
-                            background: assembled ? "var(--v2-deep)" : "rgba(0,255,136,.05)",
-                            transition: "background 0.6s ease 0.4s, border 0.3s ease 0.3s",
-                          }}
-                        />
-                      ))}
+                {/* Visual: block diagram — scroll-driven assembly, hidden on mobile */}
+                <div ref={blockDiagramRef} className="hidden md:flex justify-center items-center">
+                  <motion.div
+                    initial={{ opacity: 0, y: 35 }}
+                    animate={show(whatInView)}
+                    transition={{ duration: 0.75, delay: 0.40, ease }}
+                    className="w-full max-w-[420px]"
+                  >
+                    <div className="grid grid-cols-3 mb-5" style={{ gap: 0 }}>
+                      {Array.from({ length: 12 }).map((_, i) => {
+                        const col = i % 3;
+                        const row = Math.floor(i / 3);
+                        const xOffset = (col - 1) * spread * 20;
+                        const yOffset = (row - 1.5) * spread * 14;
+                        const locked = spread < 0.05;
+                        const seamColor = "rgba(245,245,243,0.15)";
+                        return (
+                          <div
+                            key={i}
+                            style={{
+                              aspectRatio: "2/1",
+                              transform: `translate(${xOffset}px, ${yOffset}px)`,
+                              borderTop: `1px solid ${locked && row > 0 ? seamColor : accentColor}`,
+                              borderRight: `1px solid ${locked && col < 2 ? seamColor : accentColor}`,
+                              borderBottom: `1px solid ${locked && row < 3 ? seamColor : accentColor}`,
+                              borderLeft: `1px solid ${locked && col > 0 ? seamColor : accentColor}`,
+                              background: locked ? "rgba(0,255,136,.06)" : "rgba(0,255,136,.04)",
+                              transition: "border-color 0.3s ease, background 0.3s ease",
+                            }}
+                          />
+                        );
+                      })}
                     </div>
                     <div className="text-center" style={{ letterSpacing: "0.12em", textTransform: "uppercase", color: accentColor }}>
                       <p style={{ fontSize: "1.05rem", fontWeight: 600 }}>EPS Core x SABS Coating</p>
                       <p style={{ fontSize: "1.05rem", fontWeight: 600 }}>= Structural Concrete</p>
                     </div>
-                  </div>
-                </motion.div>
+                  </motion.div>
+                </div>
               </div>
           </div>
         </section>
