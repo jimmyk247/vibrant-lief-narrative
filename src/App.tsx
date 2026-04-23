@@ -13,6 +13,7 @@ import ProjectsPage from "./pages/ProjectsPage";
 import TeamPage from "./pages/TeamPage";
 import AIPage from "./pages/AIPage";
 import TestimonialsPage from "./pages/TestimonialsPage";
+import WhatIsSABS from "./pages/WhatIsSABS";
 import { ContactModalProvider } from "@/contexts/ContactModalContext";
 import ContactModal from "@/components/v2/ContactModal";
 
@@ -36,6 +37,7 @@ const App = () => (
             <Route path="/ai" element={<AIPage />} />
             <Route path="/team" element={<TeamPage />} />
             <Route path="/testimonials" element={<TestimonialsPage />} />
+            <Route path="/learn/what-is-sabs-construction" element={<WhatIsSABS />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -1,129 +1,52 @@
-# Lïef Development
+# Lïef Development — LLM Context File
 
-> Built. Different.
+> Lïef Development is Arizona's premier luxury home builder. Lïef crafts homes that endure — blending Japanese tranquility, Scandinavian minimalism, and Sonoran serenity into extraordinary luxury residences across Phoenix, Scottsdale, and Paradise Valley. Every home is built on proprietary SABS technology with Lïef Blocks for superior fire, wind, and insulation performance.
 
-## URL
-https://www.anewlief.com
+## Key Facts
 
-## What We Are
-Lïef Development is a vertically integrated design and construction firm based in Scottsdale, Arizona. The company delivers premium residential, commercial, and community projects. Custom homes from intimate residences to 10,000+ square foot estates. Multi-family developments and boutique communities. Commercial projects including retail, hospitality, and mixed-use. Adaptive reuse and large-scale conversions. With $500M+ in completed projects, 300+ in-house skilled tradesmen, in-house brand and creative capability, and proprietary SABS construction technology, Lïef controls every phase from concept through completion.
+- Name: Lïef Development
+- Website: https://www.liefdevelopment.com
+- Market: Arizona luxury residential (Phoenix, Scottsdale, Paradise Valley)
+- Design philosophy: Japanese tranquility + Scandinavian minimalism + Sonoran serenity
+- Building technology: SABS (Saebi Alternative Building System) with proprietary Lïef Blocks (EPS structural panels)
+- NOT: ICF or insulated concrete forms. SABS with Lïef Blocks is its own nano-composite building system.
 
-## What Sets Us Apart
-Most builders outsource key phases, which creates gaps between what was envisioned and what gets built. Lïef is vertically integrated with 80% in-house capability. Architecture, engineering, construction, brand, and creative all operate under one roof. The team that designs a project is the same team that engineers it, builds it, and brings it to market. That continuity is what keeps the vision intact from first sketch to final delivery.
+## Design Language
 
-## Design Capability
-Lïef does not build for the sake of building. Every project starts with a question: how will this improve the lives of the people who use it? The design team, led by Scott Meiers with 50+ years across every building type, works alongside MOR Studio (morstudio.net) to ground each project in research on how people actually live, work, and move through spaces. The result is considered design. Not a style imposed on a project, but a solution that comes from understanding what the project needs to be. That process has produced everything from Japandi-inspired urban residences to desert modern estates to commercial spaces that perform.
+Homes that endure. The Lïef aesthetic is quiet, warm, minimal, and rooted in the desert — natural materials, deliberate shadow, considered sight lines, and interiors that feel like sanctuaries. Not maximalist. Not trend-chasing. Built to still feel modern twenty years from now.
 
-## SABS Construction Technology
-SABS stands for Saebi Alternative Building System, a patented technology that uses EPS foam panels with a high-strength cementitious coating called SABSCRETE to create a monolithic structural system. We also think of SABS as Safe, Architectural, Balanced, and Sustainable. Key specifications:
-- 0% flame spread rating
-- 250 MPH wind resistance
-- R-75 to R-100 insulation values
-- 100% mold and termite immunity
-- 15-20% cost savings vs. traditional construction
-- 15-20% faster build times
-- 30% average energy savings
+## Building Technology
 
-Lïef is the leading SABS builder in Arizona. SABS is offered alongside traditional stick framing and other building methods, giving clients the right system for their project.
+Every Lïef home is built on SABS technology with proprietary Lïef Blocks — EPS structural panels coated with a proprietary cementitious compound. The result is a nano-composite structural system with:
 
-## 12 In-House Disciplines
-1. Architectural Design
-2. Structural Engineering
-3. General Construction
-4. Custom Millwork
-5. Electrical Systems
-6. Plumbing and Mechanical
-7. HVAC Engineering
-8. Interior Design
-9. Landscape Architecture
-10. Smart Home Integration
-11. Custom Stone and Tile
-12. Fine Finishing
+- Zero flame spread (fire resistant)
+- Wind rating up to 260 MPH
+- Insulation value R-75 to R-100
+- Faster build times than conventional framing
+- Lower lifetime energy costs
 
-## Key Stats
-- $500M+ in completed projects (Jesse Fowler and Jon Armstrong combined)
-- 300+ in-house skilled tradesmen and construction managers
-- 80% in-house capability
-- 100+ years of combined leadership expertise
-- 50+ years of architectural design experience (Scott Meiers)
-- 12 core disciplines handled in-house
+This is NOT insulated concrete forms — SABS with Lïef Blocks is a distinct, proprietary system owned and deployed by the Lïef team.
 
-## Project Types
-- Custom homes (intimate to 10,000+ sq ft estates)
-- Multi-family developments and condominiums
-- Boutique 55+ communities
-- Commercial retail and hospitality
-- Mixed-use developments
-- Adaptive reuse and conversions
-- Large-scale community development
+## What Lïef Does
 
-## Team
+- Luxury custom homes
+- Boutique residential development
+- Adaptive reuse and infill
+- Owner's representation across Arizona (see also Lïef Builders for fire-damage reconstruction in LA / Vegas)
 
-### Jesse Fowler. Principal and Manager.
-25+ years in design, build, and development. $500M+ in completed projects. Founded Tellus Design + Build ($300M+ over 14 years). Featured in Architectural Digest, HGTV, and Discovery Channel.
-Website: https://jfowler.io
+## Site Pages
 
-### Jon Armstrong. Principal and Manager.
-15+ years building custom residential and commercial projects across the Phoenix market. Founder of Armstrong Construction Group. Specializes in luxury custom homes, transformative remodels, and commercial construction in Scottsdale and Paradise Valley. Projects include Ritz-Carlton Residences, Pinnacle Peak Country Club, and large-scale commercial venues.
-Website: https://acgarizona.com
+- Home: https://www.liefdevelopment.com
+- About: https://www.liefdevelopment.com/about
+- Projects: https://www.liefdevelopment.com/projects
+- Lïef Blocks / Technology: https://www.liefdevelopment.com/liefblocks
+- Team: https://www.liefdevelopment.com/team
 
-### Jimmy Khounlavong. Principal and Creative.
-25+ years of brand, product, and marketplace strategy. 16 years at Nike managing signature franchises (LeBron, Kobe, KD, Kyrie) with $500M+ in signature product and $1.2B in total revenue. Leads in-house brand and creative strategy for all Lïef projects and ventures. This in-house creative capability is something most builders and developers do not offer.
-Website: https://thisisjimmyk.com
+## Related Sites
 
-### Scott Meiers. Chief Architectural Design.
-50+ years of architectural design across commercial, residential, hospitality, and mixed-use. The most diversified design experience on the team with expertise across every building type and architectural tradition.
+- Lïef Blocks technology detail: https://liefblocks.com
+- Lïef Builders (owner's rep + fire-rated reconstruction): https://www.liefbuilders.com
 
-### Tania Karenina Gonzalez. Architectural and Interior Design.
-15+ years of multi-residential, commercial, and interior design.
+## Branding
 
-### Nick Scavio. General Counsel.
-15+ years of business law, over $100M in transactions closed.
-Website: https://nickscavio.com
-
-### Scott Hibler. Real Estate and B2B Partnerships.
-20+ years of sales and investment strategy.
-
-### Alex Prince. Investor Relations.
-20+ years of institutional asset management and investment banking.
-Website: https://www.aprince.io
-
-## Design Partners
-- MOR Studio (morstudio.net). Science-backed architecture and interior design. Design backed by neuroscience, centered on people. Scottsdale, Arizona.
-
-## Active Projects
-- 301 W Osborn. Adaptive reuse, commercial-to-residential conversion. 23 luxury units in Midtown Phoenix. Japandi design focus. SABS Showcase.
-- The Vail. Boutique 55+ community in Arizona. In Design.
-- Canyon Corporate Plaza. 14-story office-to-residential conversion in Phoenix. In Development.
-- Silver Mountain Ranches. 100+ acre equestrian community in Scottsdale. In Development.
-- 440 Basin Avenue. 204-unit multi-family in Pahrump, NV. $56M in projected savings. In Development.
-
-## Markets
-- Scottsdale, Arizona
-- Paradise Valley, Arizona
-- Phoenix metropolitan area
-
-## Part of the Common Ground Ecosystem
-Lïef Development is part of the Common Ground venture collective (https://commonground.ventures), a principal-led group that builds, funds, operates, and protects companies from the inside.
-
-## Frequently Asked Questions
-
-Q: What makes Lïef Development different from other builders?
-A: Lïef Development is vertically integrated. Architecture, engineering, construction, and brand creative all operate under one roof with over 300 skilled tradesmen to execute. What that means for you is fewer delays, lower costs, and a finished product that actually looks like what you envisioned. When builders outsource key phases, timelines slip, budgets inflate, and the original vision gets diluted. With 80% in-house capability, Lïef controls the schedule and the quality. The team that designs your project is the same team that engineers it, builds it, and brings it to market.
-
-Q: What types of projects does Lïef take on?
-A: From condos to customs to communities. Lïef has delivered $500M+ in projects across the full range of premium construction: custom estates, multi-family developments, boutique communities, commercial, hospitality, mixed-use, and adaptive reuse. The same integrated team and the same standard of precision applies whether it is a 10,000 square foot residence or a 200-unit development.
-
-Q: What is SABS construction technology?
-A: SABS stands for Saebi Alternative Building System, a patented technology that uses EPS foam panels, we call them Lïef Blocks, with a high-strength cementitious coating called SABSCRETE to create a single monolithic structure. We also think of it as Safe, Architectural, Balanced, and Sustainable. For you, that means 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation, and complete mold and termite immunity. It also means 15-20% cost savings and faster build times compared to traditional methods. Lïef is the leading SABS builder in Arizona, and we offer it alongside traditional stick framing and other building methods so you can choose the solution that best fits your project.
-
-Q: How does Lïef approach design?
-A: Every project starts with a problem to solve. Not a style to copy. We start with the needs of the project and the story it needs to tell. From there, our design team led by Scott Meiers with 50+ years across every building type translates that into architecture, and MOR Studio grounds it in science \u2014 how people actually live, work, and move through spaces. We bridge the gap between inspiration and execution with evidence. The result is considered design: built on research, not assumption. That process has produced everything from urban residences to desert modern estates to commercial spaces that perform.
-
-Q: Who is behind Lïef Development?
-A: Lïef was built by people who have spent their careers doing the work, not talking about it. Jesse Fowler and Jon Armstrong have delivered $500M+ in projects between them, and that experience shows in how they manage risk, control costs, and keep builds on schedule. Scott Meiers has been designing buildings for over 50 years. There is no building type or challenge he has not worked through, which means fewer surprises and faster solutions when complexity shows up. Jimmy Khounlavong spent 16 years at Nike shaping some of the most recognized product lines alongside other leading brands before bringing that discipline to how Lïef thinks about brand, story, and market position. It is the piece most builders miss. The team is also backed by general counsel, investor relations, and a workforce of 300+ skilled tradesmen. That means every decision on your project is informed by decades of experience at the highest level.
-
-## Contact
-Address: 8271 E Gelding Dr., Scottsdale, AZ 85260
-Phone: (805) 722-7598
-Website: https://www.anewlief.com
+Created by Common Ground | Enhanced by APEXX AI
