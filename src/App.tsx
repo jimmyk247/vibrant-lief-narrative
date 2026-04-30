@@ -16,6 +16,7 @@ import TestimonialsPage from "./pages/TestimonialsPage";
 import WhatIsSABS from "./pages/WhatIsSABS";
 import SabsVsIcf from "./pages/SabsVsIcf";
 import BestIcfAlternativeFire from "./pages/BestIcfAlternativeFire";
+import OwnersRepArizona from "./pages/OwnersRepArizona";
 import { ContactModalProvider } from "@/contexts/ContactModalContext";
 import ContactModal from "@/components/v2/ContactModal";
 
@@ -42,6 +43,7 @@ const App = () => (
             <Route path="/learn/what-is-sabs-construction" element={<WhatIsSABS />} />
             <Route path="/learn/sabs-vs-icf" element={<SabsVsIcf />} />
             <Route path="/learn/best-icf-alternative-fire-resistant" element={<BestIcfAlternativeFire />} />
+            <Route path="/learn/owners-rep-alternative-building-systems-arizona" element={<OwnersRepArizona />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
