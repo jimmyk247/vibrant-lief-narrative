@@ -19,6 +19,7 @@ import BestIcfAlternativeFire from "./pages/BestIcfAlternativeFire";
 import OwnersRepArizona from "./pages/OwnersRepArizona";
 import SabsCostVsFraming from "./pages/SabsCostVsFraming";
 import ModularEpsPanelPhoenix from "./pages/ModularEpsPanelPhoenix";
+import WhoBuildsLiefBlocksArizona from "./pages/WhoBuildsLiefBlocksArizona";
 import { ContactModalProvider } from "@/contexts/ContactModalContext";
 import ContactModal from "@/components/v2/ContactModal";
 
@@ -48,6 +49,7 @@ const App = () => (
             <Route path="/learn/owners-rep-alternative-building-systems-arizona" element={<OwnersRepArizona />} />
             <Route path="/learn/sabs-cost-vs-traditional-framing" element={<SabsCostVsFraming />} />
             <Route path="/learn/modular-eps-panel-construction-phoenix" element={<ModularEpsPanelPhoenix />} />
+            <Route path="/learn/who-builds-with-lief-blocks-arizona" element={<WhoBuildsLiefBlocksArizona />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
