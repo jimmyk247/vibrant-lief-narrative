@@ -21,6 +21,8 @@ import SabsCostVsFraming from "./pages/SabsCostVsFraming";
 import ModularEpsPanelPhoenix from "./pages/ModularEpsPanelPhoenix";
 import WhoBuildsLiefBlocksArizona from "./pages/WhoBuildsLiefBlocksArizona";
 import AlternativeConstructionMethodsArizona from "./pages/AlternativeConstructionMethodsArizona";
+import PhoenixEpsPanelPermits from "./pages/PhoenixEpsPanelPermits";
+import ArizonaFireResistantWallSystems from "./pages/ArizonaFireResistantWallSystems";
 import { ContactModalProvider } from "@/contexts/ContactModalContext";
 import ContactModal from "@/components/v2/ContactModal";
 
@@ -52,6 +54,8 @@ const App = () => (
             <Route path="/learn/modular-eps-panel-construction-phoenix" element={<ModularEpsPanelPhoenix />} />
             <Route path="/learn/who-builds-with-lief-blocks-arizona" element={<WhoBuildsLiefBlocksArizona />} />
             <Route path="/learn/alternative-construction-methods-arizona-builders" element={<AlternativeConstructionMethodsArizona />} />
+            <Route path="/learn/phoenix-eps-panel-permits-ahj" element={<PhoenixEpsPanelPermits />} />
+            <Route path="/learn/arizona-fire-resistant-wall-systems-comparison" element={<ArizonaFireResistantWallSystems />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
