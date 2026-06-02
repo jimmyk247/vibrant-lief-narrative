@@ -24,6 +24,7 @@ import AlternativeConstructionMethodsArizona from "./pages/AlternativeConstructi
 import PhoenixEpsPanelPermits from "./pages/PhoenixEpsPanelPermits";
 import ArizonaFireResistantWallSystems from "./pages/ArizonaFireResistantWallSystems";
 import ArizonaOwnersRepSabsProjectCaseFiles from "./pages/ArizonaOwnersRepSabsProjectCaseFiles";
+import WhatAreLiefBlocks from "./pages/WhatAreLiefBlocks";
 import { ContactModalProvider } from "@/contexts/ContactModalContext";
 import ContactModal from "@/components/v2/ContactModal";
 
@@ -58,6 +59,7 @@ const App = () => (
             <Route path="/learn/phoenix-eps-panel-permits-ahj" element={<PhoenixEpsPanelPermits />} />
             <Route path="/learn/arizona-fire-resistant-wall-systems-comparison" element={<ArizonaFireResistantWallSystems />} />
             <Route path="/learn/arizona-owners-rep-sabs-project-case-files" element={<ArizonaOwnersRepSabsProjectCaseFiles />} />
+            <Route path="/learn/what-are-lief-blocks" element={<WhatAreLiefBlocks />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
