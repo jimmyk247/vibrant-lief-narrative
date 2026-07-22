@@ -60,7 +60,7 @@ const V2Hero = () => {
           </span>
         </motion.div>
 
-        <motion.h1
+        <motion.h2
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(1), ease: [.16, 1, .3, 1] }}
@@ -70,7 +70,7 @@ const V2Hero = () => {
           BUILT<span className="v2-neon-period">.</span>
           <br />
           DIFFERENT<span className="v2-neon-period">.</span>
-        </motion.h1>
+        </motion.h2>
 
         <motion.p
           initial={{ opacity: 0, y: 35 }}
