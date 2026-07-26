@@ -13,10 +13,10 @@ const V2 = () => {
   return (
     <>
     <Helmet>
-      <title>Li&#239;ef Development | Arizona's Premier Luxury Home Builder</title>
+      <title>L&#239;ef Development | Arizona's Premier Luxury Home Builder</title>
       <meta name="description" content="Crafting architectural masterpieces across Arizona. Luxury custom homes, adaptive reuse, and commercial developments with proprietary SABS technology." />
       <link rel="canonical" href="https://www.anewlief.com/" />
-      <meta property="og:title" content="Li&#239;ef Development | Arizona's Premier Luxury Home Builder" />
+      <meta property="og:title" content="L&#239;ef Development | Arizona's Premier Luxury Home Builder" />
       <meta property="og:description" content="Crafting architectural masterpieces across Arizona. Luxury custom homes, adaptive reuse, and commercial developments with proprietary SABS technology." />
       <meta property="og:url" content="https://www.anewlief.com/" />
       <meta property="og:image" content="https://www.anewlief.com/og-image.jpg" />

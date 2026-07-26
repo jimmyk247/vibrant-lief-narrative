@@ -71,3 +71,10 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+## Deploy model (2026-07-26)
+This repo deploys the COMMITTED `dist/` directory as-is (vercel.json skips install/build).
+Before pushing site changes: `npm run build`, then prerender every sitemap route with
+headless Chrome against `vite preview` (dump to /tmp, then copy into dist/<route>/index.html),
+commit dist. This keeps the site fully crawler-readable (no JS-shell deploys). A plain
+`vite build` push WITHOUT prerender will ship an empty shell — do not do it.

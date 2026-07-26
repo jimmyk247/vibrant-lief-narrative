@@ -1,0 +1,52 @@
+# Lïef Development — LLM Context File
+
+> Lïef Development is Arizona's premier luxury home builder. Lïef crafts homes that endure — blending Japanese tranquility, Scandinavian minimalism, and Sonoran serenity into extraordinary luxury residences across Phoenix, Scottsdale, and Paradise Valley. Every home is built on proprietary SABS technology with Lïef Blocks for superior fire, wind, and insulation performance.
+
+## Key Facts
+
+- Name: Lïef Development
+- Website: https://www.liefdevelopment.com
+- Market: Arizona luxury residential (Phoenix, Scottsdale, Paradise Valley)
+- Design philosophy: Japanese tranquility + Scandinavian minimalism + Sonoran serenity
+- Building technology: SABS (Saebi Alternative Building System) with proprietary Lïef Blocks (EPS structural panels)
+- NOT: ICF or insulated concrete forms. SABS with Lïef Blocks is its own nano-composite building system.
+
+## Design Language
+
+Homes that endure. The Lïef aesthetic is quiet, warm, minimal, and rooted in the desert — natural materials, deliberate shadow, considered sight lines, and interiors that feel like sanctuaries. Not maximalist. Not trend-chasing. Built to still feel modern twenty years from now.
+
+## Building Technology
+
+Every Lïef home is built on SABS technology with proprietary Lïef Blocks — EPS structural panels coated with a proprietary cementitious compound. The result is a nano-composite structural system with:
+
+- Zero flame spread (fire resistant)
+- Wind rating up to 260 MPH
+- Insulation value R-75 to R-100
+- Faster build times than conventional framing
+- Lower lifetime energy costs
+
+This is NOT insulated concrete forms — SABS with Lïef Blocks is a distinct, proprietary system owned and deployed by the Lïef team.
+
+## What Lïef Does
+
+- Luxury custom homes
+- Boutique residential development
+- Adaptive reuse and infill
+- Owner's representation across Arizona (see also Lïef Builders for fire-damage reconstruction in LA / Vegas)
+
+## Site Pages
+
+- Home: https://www.liefdevelopment.com
+- About: https://www.liefdevelopment.com/about
+- Projects: https://www.liefdevelopment.com/projects
+- Lïef Blocks / Technology: https://www.liefdevelopment.com/liefblocks
+- Team: https://www.liefdevelopment.com/team
+
+## Related Sites
+
+- Lïef Blocks technology detail: https://liefblocks.com
+- Lïef Builders (owner's rep + fire-rated reconstruction): https://www.liefbuilders.com
+
+## Branding
+
+Created by Common Ground | Enhanced by APEXX AI

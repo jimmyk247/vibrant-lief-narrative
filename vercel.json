@@ -2,12 +2,24 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "anewlief.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "anewlief.com"
+        }
+      ],
       "destination": "https://www.anewlief.com/:path*",
       "permanent": true
     }
   ],
   "rewrites": [
-    { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
-  ]
+    {
+      "source": "/((?!.*\\.).*)",
+      "destination": "/index.html"
+    }
+  ],
+  "installCommand": "echo prerendered-static",
+  "buildCommand": "echo prerendered-static",
+  "outputDirectory": "dist",
+  "framework": null
 }
