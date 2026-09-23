@@ -114,13 +114,6 @@ const V2Footer = () => {
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4" style={{ borderTop: "1px solid var(--v2-rule)" }}>
           <div>
             <p style={{ fontSize: "1.25rem", color: "var(--v2-dim)" }}>© 2026 Lïef Development + Construction</p>
-            <p style={{ fontSize: "1.25rem", color: "var(--v2-dim)", opacity: 0.6, marginTop: "4px" }}>
-              A{" "}
-              <a href="https://commonground.ventures" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }} className="hover:text-[#00FF88] transition-colors duration-300">
-                Common Ground
-              </a>{" "}
-              venture.
-            </p>
           </div>
           <p style={{ fontSize: "1.25rem", color: "var(--v2-dim)", opacity: 0.5 }}>
             Created by{" "}
