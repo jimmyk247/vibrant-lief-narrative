@@ -41,11 +41,7 @@ const Footer = () => {
             viewport={{ once: true }}
             className="font-body text-greek-villa/40 text-sm"
           >
-            Branded by{" "}
-            <a href="https://liploicreative.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" style={{ color: "#D4A843" }}>
-              Lip Loi Creative
-            </a>
-            {" "}|{" "}Enhanced by{" "}
+            Created by{" "}
             <a href="https://commonground.ventures" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" style={{ color: "#8B5CF6" }}>
               Common Ground
             </a>
