@@ -117,8 +117,9 @@ footer a.hover-gold:hover {
   color: #f8d456 !important;
 }
 
-footer a.hover-purple:hover {
-  color: #9b59b6 !important;
+/* Common Ground credit: burnt orange at rest, Lïef green on hover */
+footer a.hover-cg:hover {
+  color: #00FF88 !important;
 }
 
 /* ── Partner & press logos ── */

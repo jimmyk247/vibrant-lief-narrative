@@ -42,7 +42,7 @@ const Footer = () => {
             className="font-body text-greek-villa/40 text-sm"
           >
             Created by{" "}
-            <a href="https://commonground.ventures" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" style={{ color: "#8B5CF6" }}>
+            <a href="https://www.commonground.ventures/" target="_blank" rel="noopener noreferrer" className="hover-cg transition-colors duration-300" style={{ color: "#C2410C", textDecoration: "none" }}>
               Common Ground
             </a>
           </motion.p>
